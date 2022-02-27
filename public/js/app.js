@@ -5815,7 +5815,10 @@ var Authenticated = function Authenticated(_ref) {
   }, react_1["default"].createElement(NavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('dashboard'),
     active: (0, ziggy_js_1["default"])().current('dashboard')
-  }, "Dashboard"))), react_1["default"].createElement("div", {
+  }, "Dashboard"), react_1["default"].createElement(NavLink_1["default"], {
+    href: (0, ziggy_js_1["default"])('itineraries.index'),
+    active: (0, ziggy_js_1["default"])().current('itineraries.index')
+  }, "Itineraries"))), react_1["default"].createElement("div", {
     className: "hidden sm:flex sm:items-center sm:ml-6"
   }, react_1["default"].createElement("div", {
     className: "ml-3 relative"
@@ -5870,7 +5873,10 @@ var Authenticated = function Authenticated(_ref) {
   }, react_1["default"].createElement(ResponsiveNavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('dashboard'),
     active: (0, ziggy_js_1["default"])().current('dashboard')
-  }, "Dashboard")), react_1["default"].createElement("div", {
+  }, "Dashboard"), react_1["default"].createElement(ResponsiveNavLink_1["default"], {
+    href: (0, ziggy_js_1["default"])('itineraries.index'),
+    active: (0, ziggy_js_1["default"])().current('itineraries.index')
+  }, "Itineraries")), react_1["default"].createElement("div", {
     className: "pt-4 pb-1 border-t border-gray-200"
   }, react_1["default"].createElement("div", {
     className: "px-4"
@@ -6768,6 +6774,7 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 var Index = function Index(props) {
+  var itinerary = props.itinerary;
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors,
@@ -6784,7 +6791,7 @@ var Index = function Index(props) {
     className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
   }, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "You're logged in!")))));
+  }, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2)))))));
 };
 
 exports["default"] = Index;
@@ -6817,6 +6824,7 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 var Index = function Index(props) {
+  var itinerary = props.itinerary;
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors,
@@ -6833,7 +6841,7 @@ var Index = function Index(props) {
     className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
   }, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "You're logged in!")))));
+  }, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2)))))));
 };
 
 exports["default"] = Index;
@@ -6866,6 +6874,7 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 var Index = function Index(props) {
+  var itineraries = props.itineraries;
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors,
@@ -6882,7 +6891,7 @@ var Index = function Index(props) {
     className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
   }, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "You're logged in!")))));
+  }, react_1["default"].createElement("pre", null, JSON.stringify(itineraries, undefined, 2)))))));
 };
 
 exports["default"] = Index;
@@ -6915,6 +6924,7 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 var Index = function Index(props) {
+  var itinerary = props.itinerary;
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors,
@@ -6931,7 +6941,7 @@ var Index = function Index(props) {
     className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
   }, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "You're logged in!")))));
+  }, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2)))))));
 };
 
 exports["default"] = Index;
