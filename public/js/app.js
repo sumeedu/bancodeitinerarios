@@ -7375,7 +7375,9 @@ var Index = function Index(props) {
     errors: props.errors
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos"
-  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+  }), react_1["default"].createElement(Container_1["default"], {
+    className: "p-6"
+  }, react_1["default"].createElement("div", {
     className: "grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8"
   }, itineraries && itineraries.map(function (item) {
     return react_1["default"].createElement("div", {
@@ -7383,7 +7385,7 @@ var Index = function Index(props) {
       className: "flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg mb-10"
     }, react_1["default"].createElement("img", {
       className: "w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg",
-      src: "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+      src: "https://placeimg.com/120/120/tech",
       alt: ""
     }), react_1["default"].createElement("div", {
       className: "p-6 flex flex-col justify-start"
