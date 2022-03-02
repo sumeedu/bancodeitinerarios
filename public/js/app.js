@@ -5308,7 +5308,7 @@ var Container = function Container(_ref) {
   return react_1["default"].createElement("div", {
     className: "py-12"
   }, react_1["default"].createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8" + className
+    className: "max-w-7xl mx-auto ".concat(className)
   }, children));
 };
 
@@ -7460,31 +7460,43 @@ var Index = function Index(props) {
     errors: props.errors
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos | ".concat(itinerary.name)
-  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("h3", {
-    className: "font-semibold mb-6 text-xl"
-  }, itinerary.name), react_1["default"].createElement("p", null, "Criado por: ", itinerary.user.name), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+  }), react_1["default"].createElement(Container_1["default"], {
+    className: "bg-white mx-4 shadow-sm rounded-t-lg"
+  }, react_1["default"].createElement("div", {
+    className: "grid grid-cols-3 gap-4"
+  }, react_1["default"].createElement("div", {
+    className: "col-span-2 p-6"
+  }, react_1["default"].createElement("div", {
+    className: "mb-6 border-b pb-6"
+  }, react_1["default"].createElement("h3", {
+    className: "text-gray-900 text-xl font-medium mb-2 text-xl"
+  }, itinerary.name), react_1["default"].createElement("p", {
+    className: "text-gray-600 text-xs"
+  }, "Criado por: ", itinerary.user.name)), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Descri\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.description), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Objetivos"), react_1["default"].createElement("p", null, itinerary.objective), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Import\xE2ncia"), react_1["default"].createElement("p", null, itinerary.importance), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Forma\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.formation), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
-  }, "Refer\xEAncia"), react_1["default"].createElement("p", null, itinerary.reference), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+    className: "font-semibold mt-4 mb-2 text-lg"
+  }, "Refer\xEAncia"), react_1["default"].createElement("p", null, itinerary.reference)), react_1["default"].createElement("div", {
+    className: "bg-gray-50 p-6 rounded-tr-lg"
+  }, react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "\xC1reas do Conhecimento"), react_1["default"].createElement("p", null, areas.join(', ')), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Eixos Estruturantes"), react_1["default"].createElement("p", null, axis.join(', ')), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-md"
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Objetivos da ONU"), react_1["default"].createElement("div", {
     className: "flex flex-wrap gap-1"
   }, objectives.map(function (n, k) {
     return react_1["default"].createElement(ObjectiveIcon_1["default"], {
       name: n
     });
-  }))));
+  }))))));
 };
 
 exports["default"] = Index;

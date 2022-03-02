@@ -24,38 +24,48 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
     >
       <Head title={`Itinerários Formativos | ${itinerary.name}`}/>
 
-      <Container>
-        <h3 className="font-semibold mb-6 text-xl">{itinerary.name}</h3>
-        <p>Criado por: {itinerary.user.name}</p>
+      <Container className="bg-white mx-4 shadow-sm rounded-t-lg">
+        <div className="grid grid-cols-3 gap-4">
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Descrição</h4>
-        <p>{itinerary.description}</p>
+          <div className="col-span-2 p-6">
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Objetivos</h4>
-        <p>{itinerary.objective}</p>
+            <div className="mb-6 border-b pb-6">
+              <h3 className="text-gray-900 text-xl font-medium mb-2 text-xl">{itinerary.name}</h3>
+              <p className="text-gray-600 text-xs">Criado por: {itinerary.user.name}</p>
+            </div>
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Importância</h4>
-        <p>{itinerary.importance}</p>
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Descrição</h4>
+            <p>{itinerary.description}</p>
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Formação</h4>
-        <p>{itinerary.formation}</p>
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivos</h4>
+            <p>{itinerary.objective}</p>
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Referência</h4>
-        <p>{itinerary.reference}</p>
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Importância</h4>
+            <p>{itinerary.importance}</p>
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Áreas do Conhecimento</h4>
-        <p>{areas.join(', ')}</p>
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Formação</h4>
+            <p>{itinerary.formation}</p>
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Eixos Estruturantes</h4>
-        <p>{axis.join(', ')}</p>
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Referência</h4>
+            <p>{itinerary.reference}</p>
+          </div>
 
-        <h4 className="font-semibold mt-4 mb-2 text-md">Objetivos da ONU</h4>
-        <div className="flex flex-wrap gap-1">
-          {objectives.map((n, k) => (
-            <ObjectiveIcon name={n} />
-          ))}
+          <div className="bg-gray-50 p-6 rounded-tr-lg">
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Áreas do Conhecimento</h4>
+            <p>{areas.join(', ')}</p>
+
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Eixos Estruturantes</h4>
+            <p>{axis.join(', ')}</p>
+
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivos da ONU</h4>
+            <div className="flex flex-wrap gap-1">
+              {objectives.map((n, k) => (
+                <ObjectiveIcon name={n} />
+              ))}
+            </div>
+          </div>
+
         </div>
-
       </Container>
     </Authenticated>
   )
