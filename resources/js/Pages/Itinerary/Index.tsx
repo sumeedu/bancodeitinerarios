@@ -20,6 +20,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
           {itineraries && itineraries.map((item: any) => (
               <div key={item.id} className="bg-white rounded-lg overflow-hidden mb-10">
                 <h3 className="mb-4 font-semibold text-md">{item.name}</h3>
+                <p>Criado por: {item.user.name}</p>
                 <p>{item.description}</p>
                 <Link href={route('itineraries.show', {itinerary: item})}>
                   Ver mais

@@ -19,7 +19,7 @@ class ItineraryController extends Controller
      */
     public function index() : Response
     {
-        $itineraries = Itinerary::all();
+        $itineraries = Itinerary::all()->load('user');
         return Inertia::render('Itinerary/Index', ['itineraries' => $itineraries]);
     }
 
@@ -56,6 +56,7 @@ class ItineraryController extends Controller
      */
     public function show(Itinerary $itinerary): Response
     {
+        $itinerary->load('user');
         return Inertia::render('Itinerary/Show', ['itinerary' => $itinerary]);
     }
 

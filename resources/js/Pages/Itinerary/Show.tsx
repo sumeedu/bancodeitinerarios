@@ -16,6 +16,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
 
       <Container>
         <h3 className="font-semibold mb-6 text-xl">{itinerary.name}</h3>
+        <p>Criado por: {itinerary.user.name}</p>
 
         <h4 className="font-semibold mt-4 mb-2 text-md">Descrição</h4>
         <p>{itinerary.description}</p>

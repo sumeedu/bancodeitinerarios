@@ -6914,7 +6914,7 @@ var Index = function Index(props) {
       className: "bg-white rounded-lg overflow-hidden mb-10"
     }, react_1["default"].createElement("h3", {
       className: "mb-4 font-semibold text-md"
-    }, item.name), react_1["default"].createElement("p", null, item.description), react_1["default"].createElement(inertia_react_1.Link, {
+    }, item.name), react_1["default"].createElement("p", null, "Criado por: ", item.user.name), react_1["default"].createElement("p", null, item.description), react_1["default"].createElement(inertia_react_1.Link, {
       href: (0, ziggy_js_1["default"])('itineraries.show', {
         itinerary: item
       })
@@ -6965,7 +6965,7 @@ var Index = function Index(props) {
     title: "Dashboard"
   }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("h3", {
     className: "font-semibold mb-6 text-xl"
-  }, itinerary.name), react_1["default"].createElement("h4", {
+  }, itinerary.name), react_1["default"].createElement("p", null, "Criado por: ", itinerary.user.name), react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-md"
   }, "Descri\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.description), react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-md"
