@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('objective');
-            $table->text('methodology');
+            $table->text('importance');
+            $table->text('formation');
+            $table->text('reference');
             $table->foreignId('user_id')->constrained();
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

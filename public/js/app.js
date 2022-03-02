@@ -5281,6 +5281,41 @@ exports["default"] = Checkbox;
 
 /***/ }),
 
+/***/ "./resources/js/Components/Container.tsx":
+/*!***********************************************!*\
+  !*** ./resources/js/Components/Container.tsx ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Container = function Container(_ref) {
+  var className = _ref.className,
+      children = _ref.children;
+  return react_1["default"].createElement("div", {
+    className: "py-12"
+  }, react_1["default"].createElement("div", {
+    className: "max-w-7xl mx-auto sm:px-6 lg:px-8" + className
+  }, children));
+};
+
+exports["default"] = Container;
+
+/***/ }),
+
 /***/ "./resources/js/Components/Dropdown.tsx":
 /*!**********************************************!*\
   !*** ./resources/js/Components/Dropdown.tsx ***!
@@ -6724,6 +6759,8 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
+var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
+
 function Dashboard(props) {
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
@@ -6733,15 +6770,9 @@ function Dashboard(props) {
     }, "Dashboard")
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Dashboard"
-  }), react_1["default"].createElement("div", {
-    className: "py-12"
-  }, react_1["default"].createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
-  }, react_1["default"].createElement("div", {
-    className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
-  }, react_1["default"].createElement("div", {
+  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "You're logged in!")))));
+  }, "You're logged in!")));
 }
 
 exports["default"] = Dashboard;
@@ -6773,6 +6804,8 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
+var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
+
 var Index = function Index(props) {
   var itinerary = props.itinerary;
   return react_1["default"].createElement(Authenticated_1["default"], {
@@ -6783,15 +6816,7 @@ var Index = function Index(props) {
     }, "Dashboard")
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Dashboard"
-  }), react_1["default"].createElement("div", {
-    className: "py-12"
-  }, react_1["default"].createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
-  }, react_1["default"].createElement("div", {
-    className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
-  }, react_1["default"].createElement("div", {
-    className: "p-6 bg-white border-b border-gray-200"
-  }, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2)))))));
+  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2))));
 };
 
 exports["default"] = Index;
@@ -6823,6 +6848,8 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
+var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
+
 var Index = function Index(props) {
   var itinerary = props.itinerary;
   return react_1["default"].createElement(Authenticated_1["default"], {
@@ -6833,15 +6860,7 @@ var Index = function Index(props) {
     }, "Dashboard")
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Dashboard"
-  }), react_1["default"].createElement("div", {
-    className: "py-12"
-  }, react_1["default"].createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
-  }, react_1["default"].createElement("div", {
-    className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
-  }, react_1["default"].createElement("div", {
-    className: "p-6 bg-white border-b border-gray-200"
-  }, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2)))))));
+  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2))));
 };
 
 exports["default"] = Index;
@@ -6871,7 +6890,11 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.tsx"));
 
+var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
+
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
+var ziggy_js_1 = __importDefault(__webpack_require__(/*! ziggy-js */ "./node_modules/ziggy-js/dist/index.js"));
 
 var Index = function Index(props) {
   var itineraries = props.itineraries;
@@ -6883,15 +6906,20 @@ var Index = function Index(props) {
     }, "Dashboard")
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Dashboard"
-  }), react_1["default"].createElement("div", {
-    className: "py-12"
-  }, react_1["default"].createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
-  }, react_1["default"].createElement("div", {
-    className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
-  }, react_1["default"].createElement("div", {
-    className: "p-6 bg-white border-b border-gray-200"
-  }, react_1["default"].createElement("pre", null, JSON.stringify(itineraries, undefined, 2)))))));
+  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+    className: "grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+  }, itineraries && itineraries.map(function (item) {
+    return react_1["default"].createElement("div", {
+      key: item.id,
+      className: "bg-white rounded-lg overflow-hidden mb-10"
+    }, react_1["default"].createElement("h3", {
+      className: "mb-4 font-semibold text-md"
+    }, item.name), react_1["default"].createElement("p", null, item.description), react_1["default"].createElement(inertia_react_1.Link, {
+      href: (0, ziggy_js_1["default"])('itineraries.show', {
+        itinerary: item
+      })
+    }, "Ver mais"));
+  }))));
 };
 
 exports["default"] = Index;
@@ -6923,6 +6951,8 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
+var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
+
 var Index = function Index(props) {
   var itinerary = props.itinerary;
   return react_1["default"].createElement(Authenticated_1["default"], {
@@ -6933,15 +6963,19 @@ var Index = function Index(props) {
     }, "Dashboard")
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Dashboard"
-  }), react_1["default"].createElement("div", {
-    className: "py-12"
-  }, react_1["default"].createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
-  }, react_1["default"].createElement("div", {
-    className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
-  }, react_1["default"].createElement("div", {
-    className: "p-6 bg-white border-b border-gray-200"
-  }, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2)))))));
+  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("h3", {
+    className: "font-semibold mb-6 text-xl"
+  }, itinerary.name), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Descri\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.description), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Objetivos"), react_1["default"].createElement("p", null, itinerary.objective), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Import\xE2ncia"), react_1["default"].createElement("p", null, itinerary.importance), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Forma\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.formation), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Refer\xEAncia"), react_1["default"].createElement("p", null, itinerary.reference)));
 };
 
 exports["default"] = Index;

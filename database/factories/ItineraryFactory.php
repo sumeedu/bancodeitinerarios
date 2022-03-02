@@ -19,8 +19,10 @@ class ItineraryFactory extends Factory
         return [
             'name' => $this->faker->sentence(3),
             'description' => $this->faker->paragraph(6),
-            'objective' => $this->faker->paragraph(3),
-            'methodology' => $this->faker->paragraph(3),
+            'objective' => $this->faker->paragraph(6),
+            'importance' => $this->faker->paragraph(6),
+            'formation' => $this->faker->paragraph(6),
+            'reference' => $this->faker->paragraph(3),
         ];
     }
 }
