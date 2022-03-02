@@ -7464,7 +7464,7 @@ var Index = function Index(props) {
   }, "Eixos Estruturantes"), react_1["default"].createElement("p", null, axis.join(', ')), react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-md"
   }, "Objetivos da ONU"), react_1["default"].createElement("div", {
-    className: "flex gap-1"
+    className: "flex flex-wrap gap-1"
   }, objectives.map(function (n, k) {
     return react_1["default"].createElement(ObjectiveIcon_1["default"], {
       name: n

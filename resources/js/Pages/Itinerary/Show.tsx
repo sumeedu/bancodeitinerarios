@@ -50,7 +50,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
         <p>{axis.join(', ')}</p>
 
         <h4 className="font-semibold mt-4 mb-2 text-md">Objetivos da ONU</h4>
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-1">
           {objectives.map((n, k) => (
             <ObjectiveIcon name={n} />
           ))}
