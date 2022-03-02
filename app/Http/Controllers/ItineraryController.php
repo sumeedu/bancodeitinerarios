@@ -56,7 +56,7 @@ class ItineraryController extends Controller
      */
     public function show(Itinerary $itinerary): Response
     {
-        $itinerary->load('user');
+        $itinerary->load('user', 'categories');
         return Inertia::render('Itinerary/Show', ['itinerary' => $itinerary]);
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Itinerary;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -15,8 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create()->each(function ($user) {
-            $user->itineraries()->saveMany(Itinerary::factory(3)->make());
-        });
+        $this->call([
+            CategoriesSeeder::class,
+            UserSeeder::class,
+        ]);
+
+
     }
 }

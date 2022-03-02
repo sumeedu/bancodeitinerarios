@@ -6757,8 +6757,6 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.tsx"));
 
-var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-
 var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
 
 function Dashboard(props) {
@@ -6768,9 +6766,7 @@ function Dashboard(props) {
     header: react_1["default"].createElement("h2", {
       className: "font-semibold text-xl text-gray-800 leading-tight"
     }, "Dashboard")
-  }, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Dashboard"
-  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
+  }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
   }, "You're logged in!")));
 }
@@ -6955,6 +6951,20 @@ var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container
 
 var Index = function Index(props) {
   var itinerary = props.itinerary;
+
+  function getCategoryByType(obj, type) {
+    var list = [];
+    obj.categories.filter(function (c) {
+      return c.type === type;
+    }).map(function (c) {
+      return list.push(c.name);
+    });
+    return list;
+  }
+
+  var areas = getCategoryByType(itinerary, 'area');
+  var axis = getCategoryByType(itinerary, 'axis');
+  var objectives = getCategoryByType(itinerary, 'objective');
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors,
@@ -6975,7 +6985,13 @@ var Index = function Index(props) {
     className: "font-semibold mt-4 mb-2 text-md"
   }, "Forma\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.formation), react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-md"
-  }, "Refer\xEAncia"), react_1["default"].createElement("p", null, itinerary.reference)));
+  }, "Refer\xEAncia"), react_1["default"].createElement("p", null, itinerary.reference), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "\xC1reas do Conhecimento"), react_1["default"].createElement("p", null, areas.join(', ')), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Eixos Estruturantes"), react_1["default"].createElement("p", null, axis.join(', ')), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-md"
+  }, "Objetivos da ONU"), react_1["default"].createElement("p", null, objectives.join(', '))));
 };
 
 exports["default"] = Index;

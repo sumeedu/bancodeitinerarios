@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('itineraries', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->text('objective');
-            $table->text('importance');
-            $table->text('formation');
-            $table->text('reference');
-            $table->foreignId('user_id')->constrained();
-            $table->timestamp('published_at')->nullable();
+            $table->enum('type', ['area', 'axis', 'objective']);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('itineraries');
+        Schema::dropIfExists('categories');
     }
 };

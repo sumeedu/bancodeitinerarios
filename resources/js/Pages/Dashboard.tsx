@@ -10,8 +10,6 @@ function Dashboard(props: React.PropsWithChildren<any>) {
             errors={props.errors}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
         >
-          <Head title="Dashboard" />
-
           <Container>
             <div className="p-6 bg-white border-b border-gray-200">You're logged in!</div>
           </Container>

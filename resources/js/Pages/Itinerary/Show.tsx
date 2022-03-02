@@ -6,6 +6,16 @@ import Container from "@/Components/Container";
 const Index: React.FC = (props: React.PropsWithChildren<any>) => {
   const {itinerary} = props
 
+  function getCategoryByType(obj: any, type: string): any[] {
+    let list : any[] = []
+    obj.categories.filter((c: any) => c.type === type).map((c: any) => list.push(c.name))
+    return list
+  }
+
+  let areas: any[] = getCategoryByType(itinerary, 'area')
+  let axis : any[] = getCategoryByType(itinerary, 'axis')
+  let objectives : any[] = getCategoryByType(itinerary, 'objective')
+
   return (
     <Authenticated
       auth={props.auth}
@@ -32,6 +42,16 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
 
         <h4 className="font-semibold mt-4 mb-2 text-md">Referência</h4>
         <p>{itinerary.reference}</p>
+
+        <h4 className="font-semibold mt-4 mb-2 text-md">Áreas do Conhecimento</h4>
+        <p>{areas.join(', ')}</p>
+
+        <h4 className="font-semibold mt-4 mb-2 text-md">Eixos Estruturantes</h4>
+        <p>{axis.join(', ')}</p>
+
+        <h4 className="font-semibold mt-4 mb-2 text-md">Objetivos da ONU</h4>
+        <p>{objectives.join(', ')}</p>
+
       </Container>
     </Authenticated>
   )
