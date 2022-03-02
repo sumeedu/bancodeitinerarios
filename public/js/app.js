@@ -7376,18 +7376,33 @@ var Index = function Index(props) {
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos"
   }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
-    className: "grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+    className: "grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8"
   }, itineraries && itineraries.map(function (item) {
     return react_1["default"].createElement("div", {
       key: item.id,
-      className: "bg-white rounded-lg overflow-hidden mb-10"
+      className: "flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg mb-10"
+    }, react_1["default"].createElement("img", {
+      className: "w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg",
+      src: "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+      alt: ""
+    }), react_1["default"].createElement("div", {
+      className: "p-6 flex flex-col justify-start"
+    }, react_1["default"].createElement("div", {
+      className: "flex-1"
     }, react_1["default"].createElement("h3", {
-      className: "mb-4 font-semibold text-md"
-    }, item.name), react_1["default"].createElement("p", null, "Criado por: ", item.user.name), react_1["default"].createElement("p", null, item.description), react_1["default"].createElement(inertia_react_1.Link, {
+      className: "text-gray-900 text-xl font-medium mb-2"
+    }, item.name), react_1["default"].createElement("p", {
+      className: "text-gray-700 mb-4 overflow-hidden"
+    }, item.description), react_1["default"].createElement("p", {
+      className: "text-gray-600 text-xs"
+    }, "Criado por: ", item.user.name)), react_1["default"].createElement("div", {
+      className: "text-right"
+    }, react_1["default"].createElement(inertia_react_1.Link, {
+      className: "px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out",
       href: (0, ziggy_js_1["default"])('itineraries.show', {
         itinerary: item
       })
-    }, "Ver mais"));
+    }, "Ver mais"))));
   }))));
 };
 

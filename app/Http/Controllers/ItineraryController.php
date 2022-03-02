@@ -20,6 +20,9 @@ class ItineraryController extends Controller
     public function index() : Response
     {
         $itineraries = Itinerary::all()->load('user');
+
+        // @TODO Filters
+
         return Inertia::render('Itinerary/Index', ['itineraries' => $itineraries]);
     }
 
