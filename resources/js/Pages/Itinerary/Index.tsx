@@ -11,9 +11,8 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
     <Authenticated
       auth={props.auth}
       errors={props.errors}
-      header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
     >
-      <Head title="Dashboard"/>
+      <Head title="Itinerários Formativos"/>
 
       <Container>
         <div className="grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">

@@ -8,7 +8,7 @@ import route from 'ziggy-js'
 
 interface Props {
   auth: any
-  header: React.ReactNode
+  header?: React.ReactNode
   errors: any
 }
 
@@ -28,11 +28,8 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
               </div>
 
               <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                  Dashboard
-                </NavLink>
                 <NavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
-                  Itineraries
+                  Itinerários Formativos
                 </NavLink>
               </div>
             </div>
@@ -101,11 +98,8 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
 
         <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
           <div className="pt-2 pb-3 space-y-1">
-            <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-              Dashboard
-            </ResponsiveNavLink>
             <ResponsiveNavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
-              Itineraries
+              Itinerários Formativos
             </ResponsiveNavLink>
           </div>
 

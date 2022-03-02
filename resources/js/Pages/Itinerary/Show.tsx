@@ -2,6 +2,7 @@ import React from 'react'
 import Authenticated from "@/Layouts/Authenticated";
 import {Head} from "@inertiajs/inertia-react";
 import Container from "@/Components/Container";
+import ObjectiveIcon from "@/Components/ObjectiveIcon";
 
 const Index: React.FC = (props: React.PropsWithChildren<any>) => {
   const {itinerary} = props
@@ -20,9 +21,8 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
     <Authenticated
       auth={props.auth}
       errors={props.errors}
-      header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
     >
-      <Head title="Dashboard"/>
+      <Head title={`Itinerários Formativos | ${itinerary.name}`}/>
 
       <Container>
         <h3 className="font-semibold mb-6 text-xl">{itinerary.name}</h3>
@@ -50,7 +50,11 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
         <p>{axis.join(', ')}</p>
 
         <h4 className="font-semibold mt-4 mb-2 text-md">Objetivos da ONU</h4>
-        <p>{objectives.join(', ')}</p>
+        <div className="flex gap-1">
+          {objectives.map((n, k) => (
+            <ObjectiveIcon name={n} />
+          ))}
+        </div>
 
       </Container>
     </Authenticated>
