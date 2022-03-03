@@ -7620,7 +7620,7 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("div", {
     className: "mb-6 border-b pb-6"
   }, react_1["default"].createElement("h3", {
-    className: "text-gray-900 text-xl font-medium mb-2 text-xl"
+    className: "text-gray-900 text-xl font-medium mb-2"
   }, itinerary.name), react_1["default"].createElement("div", {
     className: "flex flex-row mt-2 py-3 "
   }, react_1["default"].createElement("div", {

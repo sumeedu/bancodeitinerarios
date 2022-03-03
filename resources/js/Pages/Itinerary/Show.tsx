@@ -32,7 +32,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
           <div className="col-span-2 p-6">
 
             <div className="mb-6 border-b pb-6">
-              <h3 className="text-gray-900 text-xl font-medium mb-2 text-xl">{itinerary.name}</h3>
+              <h3 className="text-gray-900 text-xl font-medium mb-2">{itinerary.name}</h3>
 
               <div className="flex flex-row mt-2 py-3 ">
                 <div className="w-auto h-auto rounded-full border-2">
