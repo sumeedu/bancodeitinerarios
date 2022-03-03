@@ -7582,7 +7582,7 @@ var Index = function Index(props) {
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos | ".concat(itinerary.name)
   }), react_1["default"].createElement(Container_1["default"], {
-    className: "bg-white mx-4 shadow-sm rounded-t-lg"
+    className: "bg-white shadow-sm rounded-t-lg"
   }, react_1["default"].createElement("div", {
     className: "grid grid-cols-3 gap-4"
   }, react_1["default"].createElement("div", {

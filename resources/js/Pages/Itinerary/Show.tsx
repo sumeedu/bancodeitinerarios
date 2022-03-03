@@ -26,7 +26,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
     >
       <Head title={`Itinerários Formativos | ${itinerary.name}`}/>
 
-      <Container className="bg-white mx-4 shadow-sm rounded-t-lg">
+      <Container className="bg-white shadow-sm rounded-t-lg">
         <div className="grid grid-cols-3 gap-4">
 
           <div className="col-span-2 p-6">
