@@ -18,6 +18,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
         <div className="grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8">
           {itineraries && itineraries.map((item: any) => (
               <div key={item.id} className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg mb-10">
+
                 <img
                   className="w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
                   src="https://placeimg.com/120/120/tech" alt=""/>

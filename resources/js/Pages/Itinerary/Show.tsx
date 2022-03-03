@@ -28,7 +28,6 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
         <div className="grid grid-cols-3 gap-4">
 
           <div className="col-span-2 p-6">
-
             <div className="mb-6 border-b pb-6">
               <h3 className="text-gray-900 text-xl font-medium mb-2 text-xl">{itinerary.name}</h3>
               <p className="text-gray-600 text-xs">Criado por: {itinerary.user.name}</p>
