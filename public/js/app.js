@@ -7523,9 +7523,266 @@ var Index = function Index(props) {
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos"
   }), react_1["default"].createElement(Container_1["default"], {
-    className: "p-6"
+    className: "flex"
   }, react_1["default"].createElement("div", {
-    className: "grid grid-cols-1 grid-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8"
+    className: "w-64 mr-8"
+  }, react_1["default"].createElement("div", {
+    className: "ml-auto relative max-w-xs w-full h-full bg-white shadow-xl py-4 pb-12 flex flex-col overflow-y-auto"
+  }, react_1["default"].createElement("div", {
+    className: "px-4 flex items-center justify-between"
+  }, react_1["default"].createElement("h2", {
+    className: "text-lg font-medium text-gray-900"
+  }, "Filters"), react_1["default"].createElement("button", {
+    type: "button",
+    className: "-mr-2 w-10 h-10 bg-white p-2 rounded-md flex items-center justify-center text-gray-400"
+  }, react_1["default"].createElement("span", {
+    className: "sr-only"
+  }, "Close menu"), react_1["default"].createElement("svg", {
+    className: "h-6 w-6",
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M6 18L18 6M6 6l12 12"
+  })))), react_1["default"].createElement("form", {
+    className: "mt-4 border-t border-gray-200"
+  }, react_1["default"].createElement("h3", {
+    className: "sr-only"
+  }, "Categories"), react_1["default"].createElement("ul", {
+    role: "list",
+    className: "font-medium text-gray-900 px-2 py-3"
+  }, react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block px-2 py-3"
+  }, " Totes ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block px-2 py-3"
+  }, " Backpacks ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block px-2 py-3"
+  }, " Travel Bags ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block px-2 py-3"
+  }, " Hip Bags ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block px-2 py-3"
+  }, " Laptop Sleeves "))), react_1["default"].createElement("div", {
+    className: "border-t border-gray-200 px-4 py-6"
+  }, react_1["default"].createElement("h3", {
+    className: "-mx-2 -my-3 flow-root"
+  }, react_1["default"].createElement("button", {
+    type: "button",
+    className: "px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500",
+    "aria-controls": "filter-section-mobile-0",
+    "aria-expanded": "false"
+  }, react_1["default"].createElement("span", {
+    className: "font-medium text-gray-900"
+  }, " Color "), react_1["default"].createElement("span", {
+    className: "ml-6 flex items-center"
+  }, react_1["default"].createElement("svg", {
+    className: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
+    clipRule: "evenodd"
+  })), react_1["default"].createElement("svg", {
+    className: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z",
+    clipRule: "evenodd"
+  }))))), react_1["default"].createElement("div", {
+    className: "pt-6",
+    id: "filter-section-mobile-0"
+  }, react_1["default"].createElement("div", {
+    className: "space-y-6"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-color-0",
+    name: "color[]",
+    value: "white",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300     rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-color-0",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " White ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-color-1",
+    name: "color[]",
+    value: "beige",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-color-1",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " Beige ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-color-2",
+    name: "color[]",
+    value: "blue",
+    type: "checkbox",
+    defaultChecked: true,
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-color-2",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " Blue ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-color-3",
+    name: "color[]",
+    value: "brown",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-color-3",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " Brown ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-color-4",
+    name: "color[]",
+    value: "green",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-color-4",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " Green ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-color-5",
+    name: "color[]",
+    value: "purple",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-color-5",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " Purple "))))), react_1["default"].createElement("div", {
+    className: "border-t border-gray-200 px-4 py-6"
+  }, react_1["default"].createElement("h3", {
+    className: "-mx-2 -my-3 flow-root"
+  }, react_1["default"].createElement("button", {
+    type: "button",
+    className: "px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500",
+    "aria-controls": "filter-section-mobile-2",
+    "aria-expanded": "false"
+  }, react_1["default"].createElement("span", {
+    className: "font-medium text-gray-900"
+  }, " Size "), react_1["default"].createElement("span", {
+    className: "ml-6 flex items-center"
+  }, react_1["default"].createElement("svg", {
+    className: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
+    clipRule: "evenodd"
+  })), react_1["default"].createElement("svg", {
+    className: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z",
+    clipRule: "evenodd"
+  }))))), react_1["default"].createElement("div", {
+    className: "pt-6",
+    id: "filter-section-mobile-2"
+  }, react_1["default"].createElement("div", {
+    className: "space-y-6"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-size-0",
+    name: "size[]",
+    value: "2l",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-size-0",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " 2L ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-size-1",
+    name: "size[]",
+    value: "6l",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-size-1",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " 6L ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-size-2",
+    name: "size[]",
+    value: "12l",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-size-2",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " 12L ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-size-3",
+    name: "size[]",
+    value: "18l",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-size-3",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " 18L ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-size-4",
+    name: "size[]",
+    value: "20l",
+    type: "checkbox",
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-size-4",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " 20L ")), react_1["default"].createElement("div", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("input", {
+    id: "filter-mobile-size-5",
+    name: "size[]",
+    value: "40l",
+    type: "checkbox",
+    defaultChecked: true,
+    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+  }), react_1["default"].createElement("label", {
+    htmlFor: "filter-mobile-size-5",
+    className: "ml-3 min-w-0 flex-1 text-gray-500"
+  }, " 40L ")))))))), react_1["default"].createElement("div", {
+    className: "grid grid-cols-2 gap-4"
   }, itineraries && itineraries.map(function (item) {
     return react_1["default"].createElement("div", {
       key: item.id,
@@ -7624,7 +7881,7 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("h3", {
     className: "text-gray-900 text-4xl mb-2"
   }, itinerary.name), react_1["default"].createElement("div", {
-    className: "flex flex-row mt-2 py-3 "
+    className: "flex flex-row mt-2 py-3"
   }, react_1["default"].createElement("div", {
     className: "w-auto h-auto rounded-full border-2"
   }, react_1["default"].createElement("img", {

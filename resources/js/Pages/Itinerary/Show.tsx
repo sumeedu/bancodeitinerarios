@@ -34,7 +34,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
             <div className="mb-6 border-b pb-6">
               <h3 className="text-gray-900 text-4xl mb-2">{itinerary.name}</h3>
 
-              <div className="flex flex-row mt-2 py-3 ">
+              <div className="flex flex-row mt-2 py-3">
                 <div className="w-auto h-auto rounded-full border-2">
                   <img className='w-12 h-12 object-cover rounded-full shadow' alt='User avatar'
                        src='https://i.pravatar.cc/200' />
