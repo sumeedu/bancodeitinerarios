@@ -6215,13 +6215,13 @@ var ReviewBox = function ReviewBox(props) {
   }, react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: " w-1/5 text-indigo-500 tracking-tighter"
+    className: " w-1/5 text-blue-600 tracking-tighter"
   }, react_1["default"].createElement("span", null, "5 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-7/12 bg-indigo-600 rounded-lg h-2"
+    className: " w-7/12 bg-blue-600 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6229,13 +6229,13 @@ var ReviewBox = function ReviewBox(props) {
   }, "51%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 text-indigo-500 tracking-tighter"
+    className: "w-1/5 text-blue-600 tracking-tighter"
   }, react_1["default"].createElement("span", null, "4 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 bg-indigo-600 rounded-lg h-2"
+    className: "w-1/5 bg-blue-600 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6243,13 +6243,13 @@ var ReviewBox = function ReviewBox(props) {
   }, "17%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 text-indigo-500 tracking-tighter"
+    className: "w-1/5 text-blue-600 tracking-tighter"
   }, react_1["default"].createElement("span", null, "3 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-3/12 bg-indigo-600 rounded-lg h-2"
+    className: " w-3/12 bg-blue-600 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6257,13 +6257,13 @@ var ReviewBox = function ReviewBox(props) {
   }, "19%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: " w-1/5 text-indigo-500 tracking-tighter"
+    className: " w-1/5 text-blue-600 tracking-tighter"
   }, react_1["default"].createElement("span", null, "2 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-1/5 bg-indigo-600 rounded-lg h-2"
+    className: " w-1/5 bg-blue-600 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6271,13 +6271,13 @@ var ReviewBox = function ReviewBox(props) {
   }, "8%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 text-indigo-500 tracking-tighter"
+    className: "w-1/5 text-blue-600 tracking-tighter"
   }, react_1["default"].createElement("span", null, "1 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-2/12 bg-indigo-600 rounded-lg h-2"
+    className: " w-2/12 bg-blue-600 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6285,11 +6285,13 @@ var ReviewBox = function ReviewBox(props) {
   }, "5%"))))), react_1["default"].createElement("div", {
     className: "w-full"
   }, react_1["default"].createElement("h3", {
-    className: "font-medium tracking-tight"
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Fa\xE7a um review"), react_1["default"].createElement("p", {
     className: "text-gray-700 text-sm py-1"
   }, "e d\xEA seu feedback sobre esse itiner\xE1rio."), react_1["default"].createElement("button", {
-    className: "bg-gray-100 border border-gray-400 px-3 py-1 rounded  text-gray-800 mt-2"
+    className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
+    type: "button",
+    id: "button-addon2"
   }, "Fazer um review")));
 };
 
@@ -7638,15 +7640,15 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("div", {
     className: 'text-gray-400 font-thin text-xs'
   }, "Atualizado a ", (0, moment_1["default"])(itinerary.updated_at).fromNow()))))), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-lg"
+    className: "font-semibold mt-8 mb-2 text-lg"
   }, "Descri\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.description), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-lg"
+    className: "font-semibold mt-8 mb-2 text-lg"
   }, "Objetivos"), react_1["default"].createElement("p", null, itinerary.objective), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-lg"
+    className: "font-semibold mt-8 mb-2 text-lg"
   }, "Import\xE2ncia"), react_1["default"].createElement("p", null, itinerary.importance), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-lg"
+    className: "font-semibold mt-8 mb-2 text-lg"
   }, "Forma\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.formation), react_1["default"].createElement("h4", {
-    className: "font-semibold mt-4 mb-2 text-lg"
+    className: "font-semibold mt-8 mb-2 text-lg"
   }, "Refer\xEAncia"), react_1["default"].createElement("p", null, itinerary.reference), react_1["default"].createElement("div", null, react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-lg"
   }, "Matrizes"), react_1["default"].createElement("div", {

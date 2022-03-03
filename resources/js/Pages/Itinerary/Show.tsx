@@ -50,19 +50,19 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
               </div>
             </div>
 
-            <h4 className="font-semibold mt-4 mb-2 text-lg">Descrição</h4>
+            <h4 className="font-semibold mt-8 mb-2 text-lg">Descrição</h4>
             <p>{itinerary.description}</p>
 
-            <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivos</h4>
+            <h4 className="font-semibold mt-8 mb-2 text-lg">Objetivos</h4>
             <p>{itinerary.objective}</p>
 
-            <h4 className="font-semibold mt-4 mb-2 text-lg">Importância</h4>
+            <h4 className="font-semibold mt-8 mb-2 text-lg">Importância</h4>
             <p>{itinerary.importance}</p>
 
-            <h4 className="font-semibold mt-4 mb-2 text-lg">Formação</h4>
+            <h4 className="font-semibold mt-8 mb-2 text-lg">Formação</h4>
             <p>{itinerary.formation}</p>
 
-            <h4 className="font-semibold mt-4 mb-2 text-lg">Referência</h4>
+            <h4 className="font-semibold mt-8 mb-2 text-lg">Referência</h4>
             <p>{itinerary.reference}</p>
 
             <div>
