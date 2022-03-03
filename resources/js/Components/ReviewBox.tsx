@@ -73,7 +73,7 @@ const ReviewBox: React.FC = (props) => {
           </div>
         </div>
       </div>
-      <div className="w-full px-4">
+      <div className="w-full">
         <h3 className="font-medium tracking-tight">Faça um review</h3>
         <p className="text-gray-700 text-sm py-1">
           e dê seu feedback sobre esse itinerário.

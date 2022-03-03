@@ -76,7 +76,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
             <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivos da ONU</h4>
             <div className="flex flex-wrap gap-1">
               {objectives.map((n, k) => (
-                <ObjectiveIcon name={n} />
+                <ObjectiveIcon key={k} name={n} />
               ))}
             </div>
 

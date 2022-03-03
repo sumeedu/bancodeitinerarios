@@ -5683,7 +5683,7 @@ var ObjIcon1 = function ObjIcon1() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.758 137.438H137.28V.91H.758v136.528Z",
     fill: "#D4293B"
@@ -5712,7 +5712,7 @@ var ObjIcon2 = function ObjIcon2() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.23 137.371h136.524V.844H.23V137.37Z",
     fill: "#D5A13D"
@@ -5735,7 +5735,7 @@ var ObjIcon3 = function ObjIcon3() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.254 137.438h136.519V.91H.253v136.528Z",
     fill: "#4D9846"
@@ -5761,7 +5761,7 @@ var ObjIcon4 = function ObjIcon4() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.781 137.438h136.524V.91H.781v136.528Z",
     fill: "#B91E2E"
@@ -5787,7 +5787,7 @@ var ObjIcon5 = function ObjIcon5() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.598 137.441H137.12V.911H.598v136.53Z",
     fill: "#E0442F"
@@ -5813,7 +5813,7 @@ var ObjIcon6 = function ObjIcon6() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.547 137.441H137.07V.911H.547v136.53Z",
     fill: "#2EB0D2"
@@ -5836,7 +5836,7 @@ var ObjIcon7 = function ObjIcon7() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)",
+    clipPath: "url(#a)",
     filter: "url(#b)"
   }, react_1["default"].createElement("path", {
     d: "M.422 136.836h136.523V.309H.422v136.527Z",
@@ -5859,7 +5859,7 @@ var ObjIcon7 = function ObjIcon7() {
     filterUnits: "userSpaceOnUse",
     "color-interpolation-filters": "sRGB"
   }, react_1["default"].createElement("feFlood", {
-    "flood-opacity": "0",
+    floodOpacity: "0",
     result: "BackgroundImageFix"
   }), react_1["default"].createElement("feColorMatrix", {
     "in": "SourceAlpha",
@@ -5891,7 +5891,7 @@ var ObjIcon8 = function ObjIcon8() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.855 137.375H137.38V.848H.855v136.527Z",
     fill: "#991E41"
@@ -5920,7 +5920,7 @@ var ObjIcon9 = function ObjIcon9() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.84 136.633h136.523V.109H.84v136.524Z",
     fill: "#E46830"
@@ -5943,7 +5943,7 @@ var ObjIcon10 = function ObjIcon10() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.313 136.652h136.523V.129H.312v136.523Z",
     fill: "#CD1B62"
@@ -5969,7 +5969,7 @@ var ObjIcon11 = function ObjIcon11() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.598 136.652H137.12V.129H.598v136.523Z",
     fill: "#ED972F"
@@ -5992,7 +5992,7 @@ var ObjIcon12 = function ObjIcon12() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.457 136.656h136.52V.129H.457v136.527Z",
     fill: "#B78830"
@@ -6015,7 +6015,7 @@ var ObjIcon13 = function ObjIcon13() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.125 136.742h136.52V.211H.125v136.531Z",
     fill: "#407B43"
@@ -6038,7 +6038,7 @@ var ObjIcon14 = function ObjIcon14() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.254 136.742h136.519V.215H.253v136.527Z",
     fill: "#248BC2"
@@ -6061,7 +6061,7 @@ var ObjIcon15 = function ObjIcon15() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.25 136.742h136.523V.215H.25v136.527Z",
     fill: "#5BAD49"
@@ -6084,7 +6084,7 @@ var ObjIcon16 = function ObjIcon16() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.027 136.742h136.524V.211H.027v136.531Z",
     fill: "#0B6495"
@@ -6110,7 +6110,7 @@ var ObjIcon17 = function ObjIcon17() {
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, react_1["default"].createElement("g", {
-    "clip-path": "url(#a)"
+    clipPath: "url(#a)"
   }, react_1["default"].createElement("path", {
     d: "M.563 136.742h136.523V.215H.562v136.527Z",
     fill: "#1A4668"
@@ -6283,7 +6283,7 @@ var ReviewBox = function ReviewBox(props) {
   }, react_1["default"].createElement("span", {
     className: "text-sm"
   }, "5%"))))), react_1["default"].createElement("div", {
-    className: "w-full px-4"
+    className: "w-full"
   }, react_1["default"].createElement("h3", {
     className: "font-medium tracking-tight"
   }, "Fa\xE7a um review"), react_1["default"].createElement("p", {
@@ -7629,6 +7629,7 @@ var Index = function Index(props) {
     className: "flex flex-wrap gap-1"
   }, objectives.map(function (n, k) {
     return react_1["default"].createElement(ObjectiveIcon_1["default"], {
+      key: k,
       name: n
     });
   })), react_1["default"].createElement("div", {
