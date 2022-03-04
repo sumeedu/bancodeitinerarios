@@ -8065,6 +8065,7 @@ var MatrixTable_1 = __importDefault(__webpack_require__(/*! @/Components/MatrixT
 
 var Index = function Index(props) {
   var itinerary = props.itinerary;
+  moment_1["default"].locale('pt-br');
 
   function getCategoryByType(obj, type) {
     var list = [];
@@ -8110,7 +8111,7 @@ var Index = function Index(props) {
     className: 'flex w-full mt-1'
   }, react_1["default"].createElement("div", {
     className: 'text-gray-400 font-thin text-xs'
-  }, "Atualizado a ", (0, moment_1["default"])(itinerary.updated_at).fromNow()))))), react_1["default"].createElement("h4", {
+  }, "Atualizado ", (0, moment_1["default"])(itinerary.updated_at).fromNow()))))), react_1["default"].createElement("h4", {
     className: "font-semibold mt-8 mb-2 text-lg"
   }, "Descri\xE7\xE3o"), react_1["default"].createElement("p", null, itinerary.description), react_1["default"].createElement("h4", {
     className: "font-semibold mt-8 mb-2 text-lg"

@@ -10,6 +10,8 @@ import MatrixTable from "@/Components/MatrixTable";
 const Index: React.FC = (props: React.PropsWithChildren<any>) => {
   const {itinerary} = props
 
+  moment.locale('pt-br');
+
   function getCategoryByType(obj: any, type: string): any[] {
     let list : any[] = []
     obj.categories.filter((c: any) => c.type === type).map((c: any) => list.push(c.name))
@@ -44,7 +46,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
                   <div className='text-gray-600 text-sm font-semibold'>{itinerary.user.name}</div>
                   <div className='flex w-full mt-1'>
                     <div className='text-gray-400 font-thin text-xs'>
-                      Atualizado a {moment(itinerary.updated_at).fromNow()}
+                      Atualizado {moment(itinerary.updated_at).fromNow()}
                     </div>
                   </div>
                 </div>
