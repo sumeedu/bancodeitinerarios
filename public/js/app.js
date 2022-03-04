@@ -6324,7 +6324,7 @@ var ReviewBox = function ReviewBox(props) {
     className: "mb-1 tracking-wide py-4"
   }, react_1["default"].createElement("h2", {
     className: "text-gray-800 font-semibold mt-1"
-  }, "67 reviews"), react_1["default"].createElement("div", {
+  }, "67 avalia\xE7\xF5es"), react_1["default"].createElement("div", {
     className: "border-b pb-3"
   }, react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
@@ -6398,7 +6398,9 @@ var ReviewBox = function ReviewBox(props) {
     className: "text-sm"
   }, "5%"))))), react_1["default"].createElement("div", {
     className: "flow-root"
-  }, react_1["default"].createElement("ul", {
+  }, react_1["default"].createElement("h3", {
+    className: "font-semibold mt-4 mb-3 text-lg"
+  }, "Avalia\xE7\xF5es"), react_1["default"].createElement("ul", {
     role: "list",
     className: "divide-y divide-gray-200 dark:divide-gray-700"
   }, Array.from({
@@ -6430,13 +6432,13 @@ var ReviewBox = function ReviewBox(props) {
     className: "mt-4 w-full"
   }, react_1["default"].createElement("h3", {
     className: "font-semibold mt-4 mb-0 text-lg"
-  }, "Fa\xE7a um review"), react_1["default"].createElement("p", {
+  }, "Fa\xE7a uma avalia\xE7\xE3o"), react_1["default"].createElement("p", {
     className: "text-gray-700 text-sm mb-3 py-1"
-  }, "e d\xEA seu feedback sobre esse itiner\xE1rio."), react_1["default"].createElement("button", {
+  }, "e d\xEA sua opini\xE3o sobre esse itiner\xE1rio."), react_1["default"].createElement("button", {
     className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
     type: "button",
     id: "button-addon2"
-  }, "Fazer um review")));
+  }, "Fazer uma avaliza\xE7\xE3o")));
 };
 
 exports["default"] = ReviewBox;

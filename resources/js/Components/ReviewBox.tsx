@@ -4,7 +4,7 @@ const ReviewBox: React.FC = (props) => {
   return (
     <div className="mx-auto py-4 max-w-sm ">
       <div className="mb-1 tracking-wide py-4">
-        <h2 className="text-gray-800 font-semibold mt-1">67 reviews</h2>
+        <h2 className="text-gray-800 font-semibold mt-1">67 avaliações</h2>
         <div className="border-b pb-3">
           <div className="flex items-center mt-1">
             <div className=" w-1/5 text-blue-600 tracking-tighter">
@@ -75,6 +75,7 @@ const ReviewBox: React.FC = (props) => {
       </div>
 
       <div className="flow-root">
+        <h3 className="font-semibold mt-4 mb-3 text-lg">Avaliações</h3>
         <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
           {Array.from({length: 5}).map((c: any, k: number) => (
             <li key={k} className="py-3 sm:py-4">
@@ -104,12 +105,12 @@ const ReviewBox: React.FC = (props) => {
       </div>
 
       <div className="mt-4 w-full">
-        <h3 className="font-semibold mt-4 mb-0 text-lg">Faça um review</h3>
+        <h3 className="font-semibold mt-4 mb-0 text-lg">Faça uma avaliação</h3>
         <p className="text-gray-700 text-sm mb-3 py-1">
-          e dê seu feedback sobre esse itinerário.
+          e dê sua opinião sobre esse itinerário.
         </p>
         <button className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
-          Fazer um review
+          Fazer uma avalização
         </button>
       </div>
 
