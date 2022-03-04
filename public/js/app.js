@@ -6670,14 +6670,14 @@ var Authenticated = function Authenticated(_ref) {
     placeholder: "Search",
     "aria-label": "Search"
   }), react_1["default"].createElement("button", {
-    className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded rounded-l-none shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
+    className: "btn px-6 py-2.5 bg-gray-200 text-gray-700 hover:text-gray-50 font-medium text-xs leading-tight uppercase rounded rounded-l-none hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
     type: "submit"
   }, react_1["default"].createElement("svg", {
     "aria-hidden": "true",
     focusable: "false",
     "data-prefix": "fas",
     "data-icon": "search",
-    className: "w-4",
+    className: "w-4 ",
     role: "img",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 512 512"
@@ -6717,7 +6717,7 @@ var Authenticated = function Authenticated(_ref) {
     className: "ml-3 relative"
   }, react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('login'),
-    className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+    className: "btn px-6 py-2.5 bg-gray-100 text-gray-700 text-xs leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
   }, "Login"))), react_1["default"].createElement("div", {
     className: "-mr-2 flex items-center sm:hidden"
   }, react_1["default"].createElement("button", {
