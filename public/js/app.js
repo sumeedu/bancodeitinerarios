@@ -5663,7 +5663,7 @@ var MatrixTable = function MatrixTable(_ref) {
     }, react_1["default"].createElement("thead", {
       className: "text-xs font-semibold uppercase text-gray-400 bg-gray-50"
     }, react_1["default"].createElement("tr", null, react_1["default"].createElement("th", {
-      className: "p-2 whitespace-nowrap"
+      className: "p-2 w-90 whitespace-nowrap"
     }, react_1["default"].createElement("div", {
       className: "font-semibold text-left"
     }, "Componentes Curriculares")), react_1["default"].createElement("th", {
@@ -5687,12 +5687,8 @@ var MatrixTable = function MatrixTable(_ref) {
       return react_1["default"].createElement("tr", {
         key: k
       }, react_1["default"].createElement("td", {
-        className: "p-2 whitespace-nowrap"
-      }, react_1["default"].createElement("div", {
-        className: "flex items-center"
-      }, react_1["default"].createElement("div", {
-        className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-      }, subject.name))), react_1["default"].createElement("td", {
+        className: "p-2"
+      }, subject.name), react_1["default"].createElement("td", {
         className: "p-2 whitespace-nowrap"
       }, react_1["default"].createElement("div", {
         className: "text-left"

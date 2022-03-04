@@ -838,6 +838,15 @@ select {
 .w-12 {
   width: 3rem;
 }
+.w-40 {
+  width: 10rem;
+}
+.w-60 {
+  width: 15rem;
+}
+.w-80 {
+  width: 20rem;
+}
 .min-w-0 {
   min-width: 0px;
 }

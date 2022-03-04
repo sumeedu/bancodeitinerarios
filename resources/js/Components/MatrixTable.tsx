@@ -25,7 +25,7 @@ const MatrixTable : React.FC<Props> = ({matrices}) => {
                   <table className="table-auto w-full">
                     <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                     <tr>
-                      <th className="p-2 whitespace-nowrap">
+                      <th className="p-2 w-90 whitespace-nowrap">
                         <div className="font-semibold text-left">Componentes Curriculares</div>
                       </th>
                       <th className="p-2 whitespace-nowrap">
@@ -46,12 +46,8 @@ const MatrixTable : React.FC<Props> = ({matrices}) => {
                       total.hours += parseInt(subject.lessons_hours)
                       return (
                         <tr key={k}>
-                          <td className="p-2 whitespace-nowrap">
-                            <div className="flex items-center">
-                              <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                                {subject.name}
-                              </div>
-                            </div>
+                          <td className="p-2">
+                            {subject.name}
                           </td>
                           <td className="p-2 whitespace-nowrap">
                             <div className="text-left">
