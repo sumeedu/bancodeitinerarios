@@ -1,6 +1,13 @@
-import React from "react";
+import React, {useState} from "react"
 
 const ReviewBox: React.FC = (props) => {
+  const [showReviewForm, setShowReviewForm] = useState(false)
+
+  const submitReview = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    setShowReviewForm(false)
+  }
+
   return (
     <div className="mx-auto py-4 max-w-sm ">
       <div className="mb-1 tracking-wide py-4">
@@ -106,12 +113,36 @@ const ReviewBox: React.FC = (props) => {
 
       <div className="mt-4 w-full">
         <h3 className="font-semibold mt-4 mb-0 text-lg">Faça uma avaliação</h3>
-        <p className="text-gray-700 text-sm mb-3 py-1">
-          e dê sua opinião sobre esse itinerário.
-        </p>
-        <button className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
-          Fazer uma avalização
-        </button>
+        {!showReviewForm ? (
+          <div>
+            <p className="text-gray-700 text-sm mb-3 py-1">
+              e dê sua opinião sobre esse itinerário.
+            </p>
+            <button
+              onClick={() => setShowReviewForm(!showReviewForm)}
+              className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+              type="button"
+            >
+              Fazer uma avalização
+            </button>
+          </div>
+        ) : (
+          <div>
+            <form className="mt-4" onSubmit={submitReview}>
+              <textarea
+                id="message"
+                rows={4}
+                className="block mb-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Leave a comment..."></textarea>
+              <button
+                className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+                type="submit"
+              >
+                Enviar
+              </button>
+            </form>
+          </div>
+        )}
       </div>
 
     </div>
