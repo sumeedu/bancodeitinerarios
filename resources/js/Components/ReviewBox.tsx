@@ -73,15 +73,46 @@ const ReviewBox: React.FC = (props) => {
           </div>
         </div>
       </div>
-      <div className="w-full">
-        <h3 className="font-semibold mt-4 mb-2 text-lg">Faça um review</h3>
-        <p className="text-gray-700 text-sm py-1">
+
+      <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+          {Array.from({length: 5}).map((c: any, k: number) => (
+            <li key={k} className="py-3 sm:py-4">
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0">
+                  <img className="w-8 h-8 rounded-full"
+                       src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Neil image" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-900 truncate dark:text-white">
+                    Neil Sims
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    5/5
+                  </p>
+                </div>
+              </div>
+              <div className="py-2">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Excelente estruturação do conteúdo. Estou utilizando na grade de ensino da minha escola
+                  e os resultados são excelentes. Todos os materiais de apoio ajudam bastante.
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-4 w-full">
+        <h3 className="font-semibold mt-4 mb-0 text-lg">Faça um review</h3>
+        <p className="text-gray-700 text-sm mb-3 py-1">
           e dê seu feedback sobre esse itinerário.
         </p>
         <button className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
           Fazer um review
         </button>
       </div>
+
     </div>
   );
 }

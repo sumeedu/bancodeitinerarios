@@ -6397,11 +6397,41 @@ var ReviewBox = function ReviewBox(props) {
   }, react_1["default"].createElement("span", {
     className: "text-sm"
   }, "5%"))))), react_1["default"].createElement("div", {
-    className: "w-full"
+    className: "flow-root"
+  }, react_1["default"].createElement("ul", {
+    role: "list",
+    className: "divide-y divide-gray-200 dark:divide-gray-700"
+  }, Array.from({
+    length: 5
+  }).map(function (c, k) {
+    return react_1["default"].createElement("li", {
+      key: k,
+      className: "py-3 sm:py-4"
+    }, react_1["default"].createElement("div", {
+      className: "flex items-center gap-4"
+    }, react_1["default"].createElement("div", {
+      className: "flex-shrink-0"
+    }, react_1["default"].createElement("img", {
+      className: "w-8 h-8 rounded-full",
+      src: "https://flowbite.com/docs/images/people/profile-picture-1.jpg",
+      alt: "Neil image"
+    })), react_1["default"].createElement("div", {
+      className: "flex-1 min-w-0"
+    }, react_1["default"].createElement("p", {
+      className: "text-sm font-semibold text-gray-900 truncate dark:text-white"
+    }, "Neil Sims"), react_1["default"].createElement("p", {
+      className: "text-sm text-gray-500 dark:text-gray-400"
+    }, "5/5"))), react_1["default"].createElement("div", {
+      className: "py-2"
+    }, react_1["default"].createElement("p", {
+      className: "text-sm text-gray-500 dark:text-gray-400"
+    }, "Excelente estrutura\xE7\xE3o do conte\xFAdo. Estou utilizando na grade de ensino da minha escola e os resultados s\xE3o excelentes. Todos os materiais de apoio ajudam bastante.")));
+  }))), react_1["default"].createElement("div", {
+    className: "mt-4 w-full"
   }, react_1["default"].createElement("h3", {
-    className: "font-semibold mt-4 mb-2 text-lg"
+    className: "font-semibold mt-4 mb-0 text-lg"
   }, "Fa\xE7a um review"), react_1["default"].createElement("p", {
-    className: "text-gray-700 text-sm py-1"
+    className: "text-gray-700 text-sm mb-3 py-1"
   }, "e d\xEA seu feedback sobre esse itiner\xE1rio."), react_1["default"].createElement("button", {
     className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
     type: "button",
