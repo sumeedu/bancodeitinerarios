@@ -5618,6 +5618,119 @@ exports["default"] = Label;
 
 /***/ }),
 
+/***/ "./resources/js/Components/MatrixTable.tsx":
+/*!*************************************************!*\
+  !*** ./resources/js/Components/MatrixTable.tsx ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var MatrixTable = function MatrixTable(_ref) {
+  var matrices = _ref.matrices;
+  return react_1["default"].createElement(react_1["default"].Fragment, null, matrices.map(function (matrix, k) {
+    var total = {
+      weekly: 0,
+      lessons: 0,
+      hours: 0
+    };
+    return react_1["default"].createElement("div", {
+      key: k,
+      className: "w-full bg-white shadow-sm rounded-sm border border-gray-200"
+    }, react_1["default"].createElement("header", {
+      className: "px-5 py-4 border-b border-gray-100"
+    }, react_1["default"].createElement("h2", {
+      className: "font-semibold text-gray-800"
+    }, matrix.name)), react_1["default"].createElement("div", {
+      className: "p-3"
+    }, react_1["default"].createElement("div", {
+      className: "overflow-x-auto"
+    }, react_1["default"].createElement("table", {
+      className: "table-auto w-full"
+    }, react_1["default"].createElement("thead", {
+      className: "text-xs font-semibold uppercase text-gray-400 bg-gray-50"
+    }, react_1["default"].createElement("tr", null, react_1["default"].createElement("th", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "font-semibold text-left"
+    }, "Componentes Curriculares")), react_1["default"].createElement("th", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "font-semibold text-left"
+    }, "Aulas Semanais")), react_1["default"].createElement("th", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "font-semibold text-left"
+    }, "Aulas Totais")), react_1["default"].createElement("th", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "font-semibold text-center"
+    }, "Total Horas")))), react_1["default"].createElement("tbody", {
+      className: "text-sm divide-y divide-gray-100"
+    }, matrix.subjects.map(function (subject, k) {
+      total.weekly += parseInt(subject.lessons_weekly);
+      total.lessons += parseInt(subject.lessons_total);
+      total.hours += parseInt(subject.lessons_hours);
+      return react_1["default"].createElement("tr", {
+        key: k
+      }, react_1["default"].createElement("td", {
+        className: "p-2 whitespace-nowrap"
+      }, react_1["default"].createElement("div", {
+        className: "flex items-center"
+      }, react_1["default"].createElement("div", {
+        className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
+      }, subject.name))), react_1["default"].createElement("td", {
+        className: "p-2 whitespace-nowrap"
+      }, react_1["default"].createElement("div", {
+        className: "text-left"
+      }, subject.lessons_weekly)), react_1["default"].createElement("td", {
+        className: "p-2 whitespace-nowrap"
+      }, react_1["default"].createElement("div", {
+        className: "text-left"
+      }, subject.lessons_total)), react_1["default"].createElement("td", {
+        className: "p-2 whitespace-nowrap"
+      }, react_1["default"].createElement("div", {
+        className: "text-left"
+      }, subject.lessons_hours)));
+    }), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "flex items-center"
+    }, react_1["default"].createElement("div", {
+      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
+    }, "TOTAL"))), react_1["default"].createElement("td", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "text-left font-bold"
+    }, total.weekly)), react_1["default"].createElement("td", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "text-left font-bold"
+    }, total.lessons)), react_1["default"].createElement("td", {
+      className: "p-2 whitespace-nowrap"
+    }, react_1["default"].createElement("div", {
+      className: "text-left font-bold"
+    }, total.hours))))))));
+  }));
+};
+
+exports["default"] = MatrixTable;
+
+/***/ }),
+
 /***/ "./resources/js/Components/NavLink.tsx":
 /*!*********************************************!*\
   !*** ./resources/js/Components/NavLink.tsx ***!
@@ -7849,6 +7962,8 @@ var moment_1 = __importDefault(__webpack_require__(/*! moment */ "./node_modules
 
 var ReviewBox_1 = __importDefault(__webpack_require__(/*! @/Components/ReviewBox */ "./resources/js/Components/ReviewBox.tsx"));
 
+var MatrixTable_1 = __importDefault(__webpack_require__(/*! @/Components/MatrixTable */ "./resources/js/Components/MatrixTable.tsx"));
+
 var Index = function Index(props) {
   var itinerary = props.itinerary;
 
@@ -7910,153 +8025,8 @@ var Index = function Index(props) {
     className: "font-semibold mt-4 mb-2 text-lg"
   }, "Matrizes"), react_1["default"].createElement("div", {
     className: "flex flex-col gap-3"
-  }, Array.from({
-    length: 3
-  }, function (v, k) {
-    return k + 1;
-  }).map(function (i) {
-    return react_1["default"].createElement("div", {
-      key: i,
-      className: "w-full bg-white shadow-sm rounded-sm border border-gray-200"
-    }, react_1["default"].createElement("header", {
-      className: "px-5 py-4 border-b border-gray-100"
-    }, react_1["default"].createElement("h2", {
-      className: "font-semibold text-gray-800"
-    }, "Com quantas estrat\xE9gias chegamos a uma solu\xE7\xE3o?")), react_1["default"].createElement("div", {
-      className: "p-3"
-    }, react_1["default"].createElement("div", {
-      className: "overflow-x-auto"
-    }, react_1["default"].createElement("table", {
-      className: "table-auto w-full"
-    }, react_1["default"].createElement("thead", {
-      className: "text-xs font-semibold uppercase text-gray-400 bg-gray-50"
-    }, react_1["default"].createElement("tr", null, react_1["default"].createElement("th", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "font-semibold text-left"
-    }, "Componentes Curriculares")), react_1["default"].createElement("th", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "font-semibold text-left"
-    }, "Aulas Semanais")), react_1["default"].createElement("th", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "font-semibold text-left"
-    }, "Aulas Totais")), react_1["default"].createElement("th", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "font-semibold text-center"
-    }, "Total Horas")))), react_1["default"].createElement("tbody", {
-      className: "text-sm divide-y divide-gray-100"
-    }, react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "flex items-center"
-    }, react_1["default"].createElement("div", {
-      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-    }, "Clube de Jovens Leitores"))), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "2")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "40")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "30"))), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "flex items-center"
-    }, react_1["default"].createElement("div", {
-      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-    }, "Clube da imagem"))), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "2")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "40")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "30"))), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "flex items-center"
-    }, react_1["default"].createElement("div", {
-      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-    }, "Clube de Quadrinhos"))), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "2")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "40")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "30"))), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "flex items-center"
-    }, react_1["default"].createElement("div", {
-      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-    }, "Clube de eSports e Jogos Digitais"))), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "2")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "40")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "30"))), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "flex items-center"
-    }, react_1["default"].createElement("div", {
-      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-    }, "Clube de exatas: resolu\xE7\xE3o de problemas"))), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "2")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "40")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left"
-    }, "30"))), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "flex items-center"
-    }, react_1["default"].createElement("div", {
-      className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
-    }, "TOTAL"))), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left font-bold"
-    }, "10")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left font-bold"
-    }, "200")), react_1["default"].createElement("td", {
-      className: "p-2 whitespace-nowrap"
-    }, react_1["default"].createElement("div", {
-      className: "text-left font-bold"
-    }, "150"))))))));
+  }, react_1["default"].createElement(MatrixTable_1["default"], {
+    matrices: itinerary.matrices
   })))), react_1["default"].createElement("div", {
     className: "bg-gray-50 p-6 rounded-tr-lg"
   }, react_1["default"].createElement("h4", {
