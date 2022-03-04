@@ -152,7 +152,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
               </form>
             </div>
           </div>
-
+         
           <div className="col-span-3 p-6">
             <div className="grid grid-cols-2 gap-4">
               {itineraries && itineraries.map((item: any) => (
@@ -163,8 +163,8 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
                       src="https://placeimg.com/120/120/tech" alt=""/>
                     <div className="p-6 flex flex-col justify-start">
                       <div className="flex-1">
-                        <h3 className="text-gray-900 text-xl font-medium mb-2">{item.name}</h3>
-                        <p className="text-gray-700 mb-4 overflow-hidden">{item.description}</p>
+                        <h3 className="text-gray-900 text-xl font-medium mb-2 line-clamp-1">{item.name}</h3>
+                        <p className="text-gray-700 mb-4 overflow-hidden line-clamp-3">{item.description}</p>
                         <p className="text-gray-600 text-xs">Criado por: {item.user.name}</p>
                       </div>
                       <div className="text-right">

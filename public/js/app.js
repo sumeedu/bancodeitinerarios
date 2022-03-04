@@ -7913,9 +7913,9 @@ var Index = function Index(props) {
     }, react_1["default"].createElement("div", {
       className: "flex-1"
     }, react_1["default"].createElement("h3", {
-      className: "text-gray-900 text-xl font-medium mb-2"
+      className: "text-gray-900 text-xl font-medium mb-2 line-clamp-1"
     }, item.name), react_1["default"].createElement("p", {
-      className: "text-gray-700 mb-4 overflow-hidden"
+      className: "text-gray-700 mb-4 overflow-hidden line-clamp-3"
     }, item.description), react_1["default"].createElement("p", {
       className: "text-gray-600 text-xs"
     }, "Criado por: ", item.user.name)), react_1["default"].createElement("div", {
