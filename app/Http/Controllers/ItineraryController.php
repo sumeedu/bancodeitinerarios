@@ -17,9 +17,13 @@ class ItineraryController extends Controller
      *
      * @return Response
      */
-    public function index() : Response
+    public function index(Request $request) : Response
     {
-        $itineraries = Itinerary::all()->load('user');
+        $itineraries = Itinerary::with('user')->where(function($query) use ($request) {
+            $query->when($request->has('s'), function($q) use($request) {
+                $q->where('name', 'like', "%{$request->get('s')}%");
+            });
+        })->get();
 
         // @TODO Filters
 
