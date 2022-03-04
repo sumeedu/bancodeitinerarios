@@ -7507,20 +7507,23 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.tsx"));
 
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
+
+var ziggy_js_1 = __importDefault(__webpack_require__(/*! ziggy-js */ "./node_modules/ziggy-js/dist/index.js"));
 
 var Dashboard = function Dashboard(_ref) {
   var auth = _ref.auth,
       errors = _ref.errors;
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: auth,
-    errors: errors,
-    header: react_1["default"].createElement("h2", {
-      className: "font-semibold text-xl text-gray-800 leading-tight"
-    }, "Dashboard")
+    errors: errors
   }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "You're logged in!")));
+  }, "Olarrrr! Este \xE9 um prot\xF3tipo do sistema de Itiner\xE1rios Formativos da Sum\xE9 Solutions. Use a nossa busca ou ", react_1["default"].createElement(inertia_react_1.Link, {
+    href: (0, ziggy_js_1["default"])('itineraries.index')
+  }, "clique aqui para navegar no cat\xE1logo"), ".")));
 };
 
 exports["default"] = Dashboard;
