@@ -637,8 +637,14 @@ select {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
 .m-0 {
   margin: 0px;
+}
+.m-4 {
+  margin: 1rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -920,6 +926,9 @@ select {
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .flex-row {
   flex-direction: row;
 }
@@ -1121,6 +1130,9 @@ select {
 .fill-current {
   fill: currentColor;
 }
+.fill-gray-900 {
+  fill: #111827;
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1133,6 +1145,9 @@ select {
 }
 .p-2 {
   padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .px-4 {
   padding-left: 1rem;

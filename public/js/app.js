@@ -7652,33 +7652,16 @@ var Index = function Index(props) {
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos"
   }), react_1["default"].createElement(Container_1["default"], {
-    className: "flex"
+    className: "bg-white shadow-sm rounded-t-lg"
   }, react_1["default"].createElement("div", {
-    className: "w-64 mr-8"
+    className: "grid grid-cols-4 gap-4"
   }, react_1["default"].createElement("div", {
-    className: "ml-auto relative max-w-xs w-full h-full bg-white shadow-xl py-4 pb-12 flex flex-col overflow-y-auto"
-  }, react_1["default"].createElement("div", {
+    className: "bg-gray-50 p-6 rounded-tr-lg"
+  }, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
     className: "px-4 flex items-center justify-between"
   }, react_1["default"].createElement("h2", {
     className: "text-lg font-medium text-gray-900"
-  }, "Filters"), react_1["default"].createElement("button", {
-    type: "button",
-    className: "-mr-2 w-10 h-10 bg-white p-2 rounded-md flex items-center justify-center text-gray-400"
-  }, react_1["default"].createElement("span", {
-    className: "sr-only"
-  }, "Close menu"), react_1["default"].createElement("svg", {
-    className: "h-6 w-6",
-    xmlns: "http://www.w3.org/2000/svg",
-    fill: "none",
-    viewBox: "0 0 24 24",
-    stroke: "currentColor",
-    "aria-hidden": "true"
-  }, react_1["default"].createElement("path", {
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "2",
-    d: "M6 18L18 6M6 6l12 12"
-  })))), react_1["default"].createElement("form", {
+  }, "Filters")), react_1["default"].createElement("form", {
     className: "mt-4 border-t border-gray-200"
   }, react_1["default"].createElement("h3", {
     className: "sr-only"
@@ -7911,6 +7894,8 @@ var Index = function Index(props) {
     htmlFor: "filter-mobile-size-5",
     className: "ml-3 min-w-0 flex-1 text-gray-500"
   }, " 40L ")))))))), react_1["default"].createElement("div", {
+    className: "col-span-3 p-6"
+  }, react_1["default"].createElement("div", {
     className: "grid grid-cols-2 gap-4"
   }, itineraries && itineraries.map(function (item) {
     return react_1["default"].createElement("div", {
@@ -7938,7 +7923,7 @@ var Index = function Index(props) {
         itinerary: item
       })
     }, "Ver mais"))));
-  }))));
+  }))))));
 };
 
 exports["default"] = Index;
