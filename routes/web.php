@@ -27,13 +27,15 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->name('dashboard');
+
+Route::resource('itineraries', ItineraryController::class)->only('index', 'show');
+
 Route::middleware(['auth', 'verified'])->group(function() {
 
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-
-    Route::resource('itineraries', ItineraryController::class);
+    Route::resource('itineraries', ItineraryController::class)->except('index', 'show');
 
 });
 

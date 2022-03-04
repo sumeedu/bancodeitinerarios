@@ -53,31 +53,33 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
                   Itinerários Formativos
                 </NavLink>
               </div>
+
               <div className="hidden sm:flex sm:items-center sm:ml-6">
+              {auth.user ? (
                 <div className="ml-3 relative">
                   <Dropdown>
                     <Dropdown.Trigger>
-                                          <span className="inline-flex rounded-md">
-                                              <button
-                                                type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                              >
-                                                  {auth.user.name}
+                      <span className="inline-flex rounded-md">
+                          <button
+                            type="button"
+                            className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                          >
+                              {auth.user.name}
 
-                                                <svg
-                                                  className="ml-2 -mr-0.5 h-4 w-4"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  viewBox="0 0 20 20"
-                                                  fill="currentColor"
-                                                >
-                                                      <path
-                                                        fillRule="evenodd"
-                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clipRule="evenodd"
-                                                      />
-                                                  </svg>
-                                              </button>
-                                          </span>
+                            <svg
+                              className="ml-2 -mr-0.5 h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                            >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                  />
+                              </svg>
+                          </button>
+                      </span>
                     </Dropdown.Trigger>
 
                     <Dropdown.Content>
@@ -87,7 +89,15 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
                     </Dropdown.Content>
                   </Dropdown>
                 </div>
+              ) : (
+                <div className="ml-3 relative">
+                  <Link href={route('login')} className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center">
+                    Login
+                  </Link>
+                </div>
+              )}
               </div>
+
               <div className="-mr-2 flex items-center sm:hidden">
                 <button
                   onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
@@ -122,6 +132,7 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
             </ResponsiveNavLink>
           </div>
 
+          {auth.user ? (
           <div className="pt-4 pb-1 border-t border-gray-200">
             <div className="px-4">
               <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
@@ -134,6 +145,14 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
               </ResponsiveNavLink>
             </div>
           </div>
+          ) : (
+          <div className="mt-3 space-y-1">
+            <ResponsiveNavLink href={route('login')} as="button">
+              Login
+            </ResponsiveNavLink>
+          </div>
+          )}
+
         </div>
       </nav>
 

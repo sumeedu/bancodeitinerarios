@@ -6590,7 +6590,7 @@ var Authenticated = function Authenticated(_ref) {
     active: (0, ziggy_js_1["default"])().current('itineraries.index')
   }, "Itiner\xE1rios Formativos")), react_1["default"].createElement("div", {
     className: "hidden sm:flex sm:items-center sm:ml-6"
-  }, react_1["default"].createElement("div", {
+  }, auth.user ? react_1["default"].createElement("div", {
     className: "ml-3 relative"
   }, react_1["default"].createElement(Dropdown_1["default"], null, react_1["default"].createElement(Dropdown_1["default"].Trigger, null, react_1["default"].createElement("span", {
     className: "inline-flex rounded-md"
@@ -6610,7 +6610,12 @@ var Authenticated = function Authenticated(_ref) {
     href: (0, ziggy_js_1["default"])('logout'),
     method: "post",
     as: "button"
-  }, "Log Out"))))), react_1["default"].createElement("div", {
+  }, "Log Out")))) : react_1["default"].createElement("div", {
+    className: "ml-3 relative"
+  }, react_1["default"].createElement(inertia_react_1.Link, {
+    href: (0, ziggy_js_1["default"])('login'),
+    className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+  }, "Login"))), react_1["default"].createElement("div", {
     className: "-mr-2 flex items-center sm:hidden"
   }, react_1["default"].createElement("button", {
     onClick: function onClick() {
@@ -6643,7 +6648,7 @@ var Authenticated = function Authenticated(_ref) {
   }, react_1["default"].createElement(ResponsiveNavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('itineraries.index'),
     active: (0, ziggy_js_1["default"])().current('itineraries.index')
-  }, "Itiner\xE1rios Formativos")), react_1["default"].createElement("div", {
+  }, "Itiner\xE1rios Formativos")), auth.user ? react_1["default"].createElement("div", {
     className: "pt-4 pb-1 border-t border-gray-200"
   }, react_1["default"].createElement("div", {
     className: "px-4"
@@ -6657,7 +6662,12 @@ var Authenticated = function Authenticated(_ref) {
     method: "post",
     href: (0, ziggy_js_1["default"])('logout'),
     as: "button"
-  }, "Log Out"))))), header && react_1["default"].createElement("header", {
+  }, "Log Out"))) : react_1["default"].createElement("div", {
+    className: "mt-3 space-y-1"
+  }, react_1["default"].createElement(ResponsiveNavLink_1["default"], {
+    href: (0, ziggy_js_1["default"])('login'),
+    as: "button"
+  }, "Login")))), header && react_1["default"].createElement("header", {
     className: "bg-white shadow"
   }, react_1["default"].createElement("div", {
     className: "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
@@ -7491,17 +7501,19 @@ var Authenticated_1 = __importDefault(__webpack_require__(/*! @/Layouts/Authenti
 
 var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
 
-function Dashboard(props) {
+var Dashboard = function Dashboard(_ref) {
+  var auth = _ref.auth,
+      errors = _ref.errors;
   return react_1["default"].createElement(Authenticated_1["default"], {
-    auth: props.auth,
-    errors: props.errors,
+    auth: auth,
+    errors: errors,
     header: react_1["default"].createElement("h2", {
       className: "font-semibold text-xl text-gray-800 leading-tight"
     }, "Dashboard")
   }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
   }, "You're logged in!")));
-}
+};
 
 exports["default"] = Dashboard;
 
