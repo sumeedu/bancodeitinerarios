@@ -104,7 +104,7 @@ const ObjIcon7 = () => (
       <clipPath id="a">
         <path fill="#fff" transform="translate(.422 .309)" d="M0 0h136.523v136.527H0z"/>
       </clipPath>
-      <filter id="b" x="-3.578" y=".309" width="144.523" height="144.527" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <filter id="b" x="-3.578" y=".309" width="144.523" height="144.527" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset dy="4"/>

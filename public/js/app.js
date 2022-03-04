@@ -5970,7 +5970,7 @@ var ObjIcon7 = function ObjIcon7() {
     width: "144.523",
     height: "144.527",
     filterUnits: "userSpaceOnUse",
-    "color-interpolation-filters": "sRGB"
+    colorInterpolationFilters: "sRGB"
   }, react_1["default"].createElement("feFlood", {
     floodOpacity: "0",
     result: "BackgroundImageFix"
