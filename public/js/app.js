@@ -5696,34 +5696,34 @@ var MatrixTable = function MatrixTable(_ref) {
       }, subject.name), react_1["default"].createElement("td", {
         className: "p-2 whitespace-nowrap"
       }, react_1["default"].createElement("div", {
-        className: "text-left"
+        className: "text-center"
       }, subject.lessons_weekly)), react_1["default"].createElement("td", {
         className: "p-2 whitespace-nowrap"
       }, react_1["default"].createElement("div", {
-        className: "text-left"
+        className: "text-center"
       }, subject.lessons_total)), react_1["default"].createElement("td", {
         className: "p-2 whitespace-nowrap"
       }, react_1["default"].createElement("div", {
-        className: "text-left"
+        className: "text-center"
       }, subject.lessons_hours)));
     }), react_1["default"].createElement("tr", null, react_1["default"].createElement("td", {
       className: "p-2 whitespace-nowrap"
     }, react_1["default"].createElement("div", {
-      className: "flex items-center"
+      className: "flex items-center font-bold"
     }, react_1["default"].createElement("div", {
       className: "w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"
     }, "TOTAL"))), react_1["default"].createElement("td", {
       className: "p-2 whitespace-nowrap"
     }, react_1["default"].createElement("div", {
-      className: "text-left font-bold"
+      className: "text-center font-bold"
     }, total.weekly)), react_1["default"].createElement("td", {
       className: "p-2 whitespace-nowrap"
     }, react_1["default"].createElement("div", {
-      className: "text-left font-bold"
+      className: "text-center font-bold"
     }, total.lessons)), react_1["default"].createElement("td", {
       className: "p-2 whitespace-nowrap"
     }, react_1["default"].createElement("div", {
-      className: "text-left font-bold"
+      className: "text-center font-bold"
     }, total.hours))))))));
   }));
 };

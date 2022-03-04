@@ -50,17 +50,17 @@ const MatrixTable : React.FC<Props> = ({matrices}) => {
                             {subject.name}
                           </td>
                           <td className="p-2 whitespace-nowrap">
-                            <div className="text-left">
+                            <div className="text-center">
                               {subject.lessons_weekly}
                             </div>
                           </td>
                           <td className="p-2 whitespace-nowrap">
-                            <div className="text-left">
+                            <div className="text-center">
                               {subject.lessons_total}
                             </div>
                           </td>
                           <td className="p-2 whitespace-nowrap">
-                            <div className="text-left">
+                            <div className="text-center">
                               {subject.lessons_hours}
                             </div>
                           </td>
@@ -69,24 +69,24 @@ const MatrixTable : React.FC<Props> = ({matrices}) => {
                     })}
                     <tr>
                       <td className="p-2 whitespace-nowrap">
-                        <div className="flex items-center">
+                        <div className="flex items-center font-bold">
                           <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                             TOTAL
                           </div>
                         </div>
                       </td>
                       <td className="p-2 whitespace-nowrap">
-                        <div className="text-left font-bold">
+                        <div className="text-center font-bold">
                           {total.weekly}
                         </div>
                       </td>
                       <td className="p-2 whitespace-nowrap">
-                        <div className="text-left font-bold">
+                        <div className="text-center font-bold">
                           {total.lessons}
                         </div>
                       </td>
                       <td className="p-2 whitespace-nowrap">
-                        <div className="text-left font-bold">
+                        <div className="text-center font-bold">
                           {total.hours}
                         </div>
                       </td>
