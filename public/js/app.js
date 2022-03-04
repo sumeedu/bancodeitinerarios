@@ -8115,21 +8115,21 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("div", {
     className: "mb-6 border-b pb-6"
   }, react_1["default"].createElement("h3", {
-    className: "text-gray-900 text-4xl mb-2"
+    className: "text-gray-900 font-bold text-5xl mb-2"
   }, itinerary.name), react_1["default"].createElement("div", {
-    className: "flex flex-row mt-2 py-3"
+    className: "flex flex-row mt-2 pt-3"
   }, react_1["default"].createElement("div", {
-    className: "w-auto h-auto rounded-full border-2"
+    className: "self-center"
   }, react_1["default"].createElement("img", {
-    className: 'w-12 h-12 object-cover rounded-full shadow',
+    className: 'w-10 h-10 object-cover rounded-full border-2',
     alt: 'User avatar',
     src: 'https://i.pravatar.cc/200'
   })), react_1["default"].createElement("div", {
-    className: "flex flex-col mb-2 ml-4 mt-1"
+    className: "flex flex-col ml-4 self-center"
   }, react_1["default"].createElement("div", {
     className: 'text-gray-600 text-sm font-semibold'
   }, itinerary.user.name), react_1["default"].createElement("div", {
-    className: 'flex w-full mt-1'
+    className: 'flex w-full'
   }, react_1["default"].createElement("div", {
     className: 'text-gray-400 font-thin text-xs'
   }, "Atualizado ", (0, moment_1["default"])(itinerary.updated_at).fromNow()))))), react_1["default"].createElement("h4", {

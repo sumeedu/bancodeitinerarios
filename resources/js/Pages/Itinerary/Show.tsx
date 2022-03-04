@@ -35,16 +35,16 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
           <div className="col-span-2 p-6">
 
             <div className="mb-6 border-b pb-6">
-              <h3 className="text-gray-900 text-4xl mb-2">{itinerary.name}</h3>
+              <h3 className="text-gray-900 font-bold text-5xl mb-2">{itinerary.name}</h3>
 
-              <div className="flex flex-row mt-2 py-3">
-                <div className="w-auto h-auto rounded-full border-2">
-                  <img className='w-12 h-12 object-cover rounded-full shadow' alt='User avatar'
+              <div className="flex flex-row mt-2 pt-3">
+                <div className="self-center">
+                  <img className='w-10 h-10 object-cover rounded-full border-2' alt='User avatar'
                        src='https://i.pravatar.cc/200' />
                 </div>
-                <div className="flex flex-col mb-2 ml-4 mt-1">
+                <div className="flex flex-col ml-4 self-center">
                   <div className='text-gray-600 text-sm font-semibold'>{itinerary.user.name}</div>
-                  <div className='flex w-full mt-1'>
+                  <div className='flex w-full'>
                     <div className='text-gray-400 font-thin text-xs'>
                       Atualizado {moment(itinerary.updated_at).fromNow()}
                     </div>
