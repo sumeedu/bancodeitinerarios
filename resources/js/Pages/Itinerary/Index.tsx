@@ -18,7 +18,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
       <Container className="bg-white shadow-sm rounded-t-lg">
         <div className="grid grid-cols-4 gap-4">
 
-          <div className="bg-gray-50 p-6 rounded-tr-lg">
+          <div className="bg-gray-50 p-6 rounded-tl-lg">
             <div>
               <div className="px-4 flex items-center justify-between">
                 <h2 className="text-lg font-medium text-gray-900">Filters</h2>

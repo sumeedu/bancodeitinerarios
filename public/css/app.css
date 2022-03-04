@@ -1049,6 +1049,9 @@ select {
 .rounded-tr-lg {
   border-top-right-radius: 0.5rem;
 }
+.rounded-tl-lg {
+  border-top-left-radius: 0.5rem;
+}
 .border {
   border-width: 1px;
 }

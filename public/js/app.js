@@ -7656,7 +7656,7 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("div", {
     className: "grid grid-cols-4 gap-4"
   }, react_1["default"].createElement("div", {
-    className: "bg-gray-50 p-6 rounded-tr-lg"
+    className: "bg-gray-50 p-6 rounded-tl-lg"
   }, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
     className: "px-4 flex items-center justify-between"
   }, react_1["default"].createElement("h2", {
