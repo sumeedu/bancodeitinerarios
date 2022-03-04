@@ -7994,33 +7994,54 @@ var Index = function Index(props) {
   }, " 40L ")))))))), react_1["default"].createElement("div", {
     className: "col-span-3 p-6"
   }, react_1["default"].createElement("div", {
-    className: "grid grid-cols-2 gap-4"
+    className: "gap-4"
   }, itineraries && itineraries.map(function (item) {
-    return react_1["default"].createElement("div", {
+    return react_1["default"].createElement("a", {
       key: item.id,
-      className: "flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg mb-10"
-    }, react_1["default"].createElement("img", {
-      className: "w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg",
-      src: "https://placeimg.com/120/120/tech",
-      alt: ""
-    }), react_1["default"].createElement("div", {
+      className: "flex flex-col md:flex-row sm:flex-col-reverse rounded-lg bg-white shadow-lg mb-10 z-0 relative",
+      href: (0, ziggy_js_1["default"])('itineraries.show', {
+        itinerary: item
+      })
+    }, react_1["default"].createElement("div", {
       className: "p-6 flex flex-col justify-start"
     }, react_1["default"].createElement("div", {
       className: "flex-1"
     }, react_1["default"].createElement("h3", {
-      className: "text-gray-900 text-xl font-medium mb-2 line-clamp-1"
+      className: "text-gray-900 text-3xl font-bold  mb-2 line-clamp-1"
     }, item.name), react_1["default"].createElement("p", {
       className: "text-gray-700 mb-4 overflow-hidden line-clamp-3"
     }, item.description), react_1["default"].createElement("p", {
       className: "text-gray-600 text-xs"
     }, "Criado por: ", item.user.name)), react_1["default"].createElement("div", {
-      className: "text-right"
-    }, react_1["default"].createElement(inertia_react_1.Link, {
-      className: "px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out",
-      href: (0, ziggy_js_1["default"])('itineraries.show', {
-        itinerary: item
-      })
-    }, "Ver mais"))));
+      className: "px-6 pt-4 pb-2 flex justify-end"
+    }, react_1["default"].createElement("a", {
+      className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
+      href: '#'
+    }, "inclus\xE3o"), react_1["default"].createElement("a", {
+      className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
+      href: '#'
+    }, "tecnologia"), react_1["default"].createElement("a", {
+      className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
+      href: '#'
+    }, "humanas"))), react_1["default"].createElement("img", {
+      className: "w-64 h-64 object-cover pt-6 pr-6 pb-12",
+      src: "https://placeimg.com/120/120/tech",
+      alt: item.description
+    }), react_1["default"].createElement("a", {
+      href: "",
+      className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-blue-600 hover:text-gray-50 hover:delay-100"
+    }, react_1["default"].createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "h-5 w-5",
+      fill: "none",
+      viewBox: "0 0   24 24",
+      stroke: "currentColor",
+      strokeWidth: 2
+    }, react_1["default"].createElement("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+    }))));
   }))))));
 };
 
