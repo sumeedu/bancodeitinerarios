@@ -5758,10 +5758,11 @@ var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./nod
 var NavLink = function NavLink(_ref) {
   var href = _ref.href,
       active = _ref.active,
+      className = _ref.className,
       children = _ref.children;
   return react_1["default"].createElement(inertia_react_1.Link, {
     href: href,
-    className: active ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out' : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out'
+    className: "\n              ".concat(active ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out' : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out', "\n            ").concat(className)
   }, children);
 };
 
@@ -6305,6 +6306,8 @@ exports["default"] = ResponsiveNavLink;
 "use strict";
 
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6351,15 +6354,25 @@ var __importStar = this && this.__importStar || function (mod) {
   return result;
 };
 
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var ziggy_js_1 = __importDefault(__webpack_require__(/*! ziggy-js */ "./node_modules/ziggy-js/dist/index.js"));
+
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 var ReviewBox = function ReviewBox(_ref) {
-  var _ref$reviews = _ref.reviews,
-      reviews = _ref$reviews === void 0 ? [] : _ref$reviews;
+  var itinerary = _ref.itinerary;
+  var reviews = itinerary.reviews;
   var ofMax = 5;
 
   var _ref2 = (0, react_1.useState)(false),
@@ -6367,9 +6380,30 @@ var ReviewBox = function ReviewBox(_ref) {
       showReviewForm = _ref3[0],
       setShowReviewForm = _ref3[1];
 
+  var _ref4 = (0, inertia_react_1.useForm)({
+    itinerary_id: itinerary.id,
+    comment: '',
+    rate: 3
+  }),
+      data = _ref4.data,
+      setData = _ref4.setData,
+      post = _ref4.post;
+
   var submitReview = function submitReview(e) {
     e.preventDefault();
-    setShowReviewForm(false);
+    post((0, ziggy_js_1["default"])('reviews.store'));
+    setShowReviewForm(!showReviewForm);
+    setData(Object.assign(Object.assign({}, data), {
+      comment: ''
+    }));
+  };
+
+  var handleChange = function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setData(function (data) {
+      return Object.assign(Object.assign({}, data), _defineProperty({}, key, value));
+    });
   };
 
   return react_1["default"].createElement("div", {
@@ -6496,8 +6530,11 @@ var ReviewBox = function ReviewBox(_ref) {
     className: "mt-4",
     onSubmit: submitReview
   }, react_1["default"].createElement("textarea", {
-    id: "message",
+    onChange: handleChange,
+    id: "comment",
+    name: "comment",
     rows: 4,
+    defaultValue: data.comment,
     className: "block mb-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
     placeholder: "Leave a comment..."
   }), react_1["default"].createElement("button", {
@@ -8173,7 +8210,7 @@ var Index = function Index(props) {
   })), react_1["default"].createElement("div", {
     className: "mt-4"
   }, react_1["default"].createElement(ReviewBox_1["default"], {
-    reviews: itinerary.reviews
+    itinerary: itinerary
   }))))));
 };
 

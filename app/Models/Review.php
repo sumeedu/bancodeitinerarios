@@ -20,6 +20,18 @@ class Review extends Model
     ];
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'comment',
+        'rate',
+        'user_id',
+        'itinerary_id',
+    ];
+
+    /**
      * The user
      *
      * @return BelongsTo

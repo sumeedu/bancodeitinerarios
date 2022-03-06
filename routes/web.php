@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ItineraryController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,11 +32,15 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::resource('itineraries', ItineraryController::class)->only('index', 'show');
+Route::resource('itineraries', ItineraryController::class)
+    ->only('index', 'show');
 
 Route::middleware(['auth', 'verified'])->group(function() {
 
-    Route::resource('itineraries', ItineraryController::class)->except('index', 'show');
+    Route::resource('itineraries', ItineraryController::class)
+        ->except('index', 'show');
+    Route::resource('reviews', ReviewController::class)
+        ->only('store', 'delete');
 
 });
 

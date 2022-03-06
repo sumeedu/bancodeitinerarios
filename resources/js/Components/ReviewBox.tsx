@@ -1,16 +1,39 @@
 import React, {useState} from "react"
+import route from 'ziggy-js'
+import {useForm} from "@inertiajs/inertia-react";
 
 interface Props {
-  reviews: any
+  itinerary: any
 }
 
-const ReviewBox: React.FC<Props> = ({reviews = []}) => {
+const ReviewBox: React.FC<Props> = ({itinerary}) => {
+  const { reviews } = itinerary
+
   const ofMax = 5;
   const [showReviewForm, setShowReviewForm] = useState(false)
+  const {data, setData, post} = useForm({
+    itinerary_id: itinerary.id,
+    comment: '',
+    rate: 3,
+  })
 
   const submitReview = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    setShowReviewForm(false)
+
+    post(route('reviews.store'))
+
+    setShowReviewForm(!showReviewForm)
+    setData({...data, comment: ''});
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const key = e.target.id
+    const value = e.target.value
+
+    setData(data => ({
+      ...data,
+      [key]: value
+    }))
   }
 
   return (
@@ -135,8 +158,11 @@ const ReviewBox: React.FC<Props> = ({reviews = []}) => {
           <div>
             <form className="mt-4" onSubmit={submitReview}>
               <textarea
-                id="message"
+                onChange={handleChange}
+                id="comment"
+                name="comment"
                 rows={4}
+                defaultValue={data.comment}
                 className="block mb-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Leave a comment..."></textarea>
               <button

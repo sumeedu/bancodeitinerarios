@@ -88,7 +88,6 @@ class ItineraryController extends Controller
     public function update(UpdateRequest $request, Itinerary $itinerary): RedirectResponse
     {
         $itinerary->save($request->validated());
-
         return redirect()
             ->route('itineraries.edit', ['itinerary' => $itinerary])
             ->with('message', 'Itinerary was successfully updated!');

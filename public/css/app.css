@@ -601,6 +601,9 @@ select {
   white-space: nowrap;
   border-width: 0;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -663,6 +666,10 @@ select {
 .-my-3 {
   margin-top: -0.75rem;
   margin-bottom: -0.75rem;
+}
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
