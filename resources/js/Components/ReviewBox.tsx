@@ -1,6 +1,11 @@
 import React, {useState} from "react"
 
-const ReviewBox: React.FC = (props) => {
+interface Props {
+  reviews: any
+}
+
+const ReviewBox: React.FC<Props> = ({reviews = []}) => {
+  const ofMax = 5;
   const [showReviewForm, setShowReviewForm] = useState(false)
 
   const submitReview = (e: React.SyntheticEvent) => {
@@ -81,10 +86,11 @@ const ReviewBox: React.FC = (props) => {
         </div>
       </div>
 
+      {reviews && (
       <div className="flow-root">
         <h3 className="font-semibold mt-4 mb-3 text-lg">Avaliações</h3>
         <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-          {Array.from({length: 5}).map((c: any, k: number) => (
+          {reviews.map((review: any, k: number) => (
             <li key={k} className="py-3 sm:py-4">
               <div className="flex items-center gap-4">
                 <div className="flex-shrink-0">
@@ -93,24 +99,23 @@ const ReviewBox: React.FC = (props) => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-semibold text-gray-900 truncate dark:text-white">
-                    Neil Sims
+                    {review.user.name}
                   </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    5/5
+                    {review.rate}/{ofMax}
                   </p>
                 </div>
               </div>
               <div className="py-2">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Excelente estruturação do conteúdo. Estou utilizando na grade de ensino da minha escola
-                  e os resultados são excelentes. Todos os materiais de apoio ajudam bastante.
+                  {review.comment}
                 </p>
               </div>
             </li>
           ))}
         </ul>
       </div>
-
+      )}
       <div className="mt-4 w-full">
         <h3 className="font-semibold mt-4 mb-0 text-lg">Faça uma avaliação</h3>
         {!showReviewForm ? (

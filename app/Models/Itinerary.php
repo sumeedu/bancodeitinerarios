@@ -41,4 +41,14 @@ class Itinerary extends Model
     {
         return $this->hasMany(Matrix::class);
     }
+
+    /**
+     * The reviews that are related to this itinerary
+     *
+     * @return HasMany
+     */
+    public function reviews() : HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
 }

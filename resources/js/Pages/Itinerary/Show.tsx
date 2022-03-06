@@ -94,7 +94,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
             </div>
 
             <div className="mt-4">
-              <ReviewBox />
+              <ReviewBox reviews={itinerary.reviews} />
             </div>
 
           </div>

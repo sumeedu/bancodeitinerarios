@@ -52,4 +52,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Itinerary::class);
     }
+
+    /**
+     * The user's reviews
+     *
+     * @return HasMany
+     */
+    public function reviews() : HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
 }

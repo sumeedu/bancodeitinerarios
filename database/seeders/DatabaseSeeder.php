@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CategoriesSeeder::class,
             ItinerarySeeder::class,
             MatrixSeeder::class,
+            ReviewSeeder::class,
         ]);
 
 

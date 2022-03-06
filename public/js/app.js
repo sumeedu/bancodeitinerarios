@@ -6357,11 +6357,15 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var ReviewBox = function ReviewBox(props) {
-  var _ref = (0, react_1.useState)(false),
-      _ref2 = _slicedToArray(_ref, 2),
-      showReviewForm = _ref2[0],
-      setShowReviewForm = _ref2[1];
+var ReviewBox = function ReviewBox(_ref) {
+  var _ref$reviews = _ref.reviews,
+      reviews = _ref$reviews === void 0 ? [] : _ref$reviews;
+  var ofMax = 5;
+
+  var _ref2 = (0, react_1.useState)(false),
+      _ref3 = _slicedToArray(_ref2, 2),
+      showReviewForm = _ref3[0],
+      setShowReviewForm = _ref3[1];
 
   var submitReview = function submitReview(e) {
     e.preventDefault();
@@ -6446,16 +6450,14 @@ var ReviewBox = function ReviewBox(props) {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
     className: "text-sm"
-  }, "5%"))))), react_1["default"].createElement("div", {
+  }, "5%"))))), reviews && react_1["default"].createElement("div", {
     className: "flow-root"
   }, react_1["default"].createElement("h3", {
     className: "font-semibold mt-4 mb-3 text-lg"
   }, "Avalia\xE7\xF5es"), react_1["default"].createElement("ul", {
     role: "list",
     className: "divide-y divide-gray-200 dark:divide-gray-700"
-  }, Array.from({
-    length: 5
-  }).map(function (c, k) {
+  }, reviews.map(function (review, k) {
     return react_1["default"].createElement("li", {
       key: k,
       className: "py-3 sm:py-4"
@@ -6471,13 +6473,13 @@ var ReviewBox = function ReviewBox(props) {
       className: "flex-1 min-w-0"
     }, react_1["default"].createElement("p", {
       className: "text-sm font-semibold text-gray-900 truncate dark:text-white"
-    }, "Neil Sims"), react_1["default"].createElement("p", {
+    }, review.user.name), react_1["default"].createElement("p", {
       className: "text-sm text-gray-500 dark:text-gray-400"
-    }, "5/5"))), react_1["default"].createElement("div", {
+    }, review.rate, "/", ofMax))), react_1["default"].createElement("div", {
       className: "py-2"
     }, react_1["default"].createElement("p", {
       className: "text-sm text-gray-500 dark:text-gray-400"
-    }, "Excelente estrutura\xE7\xE3o do conte\xFAdo. Estou utilizando na grade de ensino da minha escola e os resultados s\xE3o excelentes. Todos os materiais de apoio ajudam bastante.")));
+    }, review.comment)));
   }))), react_1["default"].createElement("div", {
     className: "mt-4 w-full"
   }, react_1["default"].createElement("h3", {
@@ -8165,7 +8167,9 @@ var Index = function Index(props) {
     });
   })), react_1["default"].createElement("div", {
     className: "mt-4"
-  }, react_1["default"].createElement(ReviewBox_1["default"], null))))));
+  }, react_1["default"].createElement(ReviewBox_1["default"], {
+    reviews: itinerary.reviews
+  }))))));
 };
 
 exports["default"] = Index;

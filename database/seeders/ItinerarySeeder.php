@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Review;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Itinerary;
