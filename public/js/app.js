@@ -6372,6 +6372,7 @@ var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./nod
 
 var ReviewBox = function ReviewBox(_ref) {
   var itinerary = _ref.itinerary;
+  var auth = (0, inertia_react_1.usePage)().props.auth;
   var reviews = itinerary.reviews;
   var ofMax = 5;
 
@@ -6514,7 +6515,7 @@ var ReviewBox = function ReviewBox(_ref) {
     }, react_1["default"].createElement("p", {
       className: "text-sm text-gray-500 dark:text-gray-400"
     }, review.comment)));
-  }))), react_1["default"].createElement("div", {
+  }))), auth.user && react_1["default"].createElement("div", {
     className: "mt-4 w-full"
   }, react_1["default"].createElement("h3", {
     className: "font-semibold mt-4 mb-0 text-lg"

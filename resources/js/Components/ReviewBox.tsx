@@ -1,12 +1,13 @@
 import React, {useState} from "react"
 import route from 'ziggy-js'
-import {useForm} from "@inertiajs/inertia-react";
+import {useForm, usePage} from "@inertiajs/inertia-react";
 
 interface Props {
   itinerary: any
 }
 
 const ReviewBox: React.FC<Props> = ({itinerary}) => {
+  const { auth } = usePage<any>().props
   const { reviews } = itinerary
 
   const ofMax = 5;
@@ -139,6 +140,8 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
         </ul>
       </div>
       )}
+
+      {auth.user && (
       <div className="mt-4 w-full">
         <h3 className="font-semibold mt-4 mb-0 text-lg">Faça uma avaliação</h3>
         {!showReviewForm ? (
@@ -175,6 +178,7 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
           </div>
         )}
       </div>
+      )}
 
     </div>
   );
