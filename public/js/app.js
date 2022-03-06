@@ -7998,16 +7998,16 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("div", {
     className: "gap-4"
   }, itineraries && itineraries.map(function (item) {
-    return react_1["default"].createElement("a", {
+    return react_1["default"].createElement("div", {
       key: item.id,
-      className: "flex flex-col md:flex-row sm:flex-col-reverse rounded-lg bg-white shadow-lg mb-10 z-0 relative",
+      className: "flex flex-col md:flex-row sm:flex-col-reverse rounded-lg bg-white shadow-lg mb-10 z-0 relative"
+    }, react_1["default"].createElement("div", {
+      className: "p-6 flex flex-col justify-start"
+    }, react_1["default"].createElement("a", {
+      className: "flex-1",
       href: (0, ziggy_js_1["default"])('itineraries.show', {
         itinerary: item
       })
-    }, react_1["default"].createElement("div", {
-      className: "p-6 flex flex-col justify-start"
-    }, react_1["default"].createElement("div", {
-      className: "flex-1"
     }, react_1["default"].createElement("h3", {
       className: "text-gray-900 text-3xl font-bold  mb-2 line-clamp-1"
     }, item.name), react_1["default"].createElement("p", {
@@ -8025,11 +8025,16 @@ var Index = function Index(props) {
     }, "tecnologia"), react_1["default"].createElement("a", {
       className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
       href: '#'
-    }, "humanas"))), react_1["default"].createElement("img", {
-      className: "w-64 h-64 object-cover pt-6 pr-6 pb-12",
+    }, "humanas"))), react_1["default"].createElement("a", {
+      className: 'contents',
+      href: (0, ziggy_js_1["default"])('itineraries.show', {
+        itinerary: item
+      })
+    }, react_1["default"].createElement("img", {
+      className: "w-64 h-64 pt-6 pr-6 pb-12",
       src: "https://placeimg.com/120/120/tech",
       alt: item.description
-    }), react_1["default"].createElement("a", {
+    })), react_1["default"].createElement("a", {
       href: "",
       className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-blue-600 hover:text-gray-50 hover:delay-100"
     }, react_1["default"].createElement("svg", {
