@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from '@/Components/Dropdown'
 import NavLink from '@/Components/NavLink'
+import MegaMenu from '@/Components/MegaMenu';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink'
 import {Link} from '@inertiajs/inertia-react'
 import route from 'ziggy-js'
@@ -51,6 +52,12 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
               </div>
             </div>
             <div className='flex'>
+
+              <div className="flex mx-8 self-center ">
+              <MegaMenu></MegaMenu>
+              </div>
+              
+
               <div className="hidden space-x-8 sm:-my-px sm:flex">
                 <NavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
                   Itinerários Formativos

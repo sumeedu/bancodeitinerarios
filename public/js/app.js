@@ -5732,6 +5732,80 @@ exports["default"] = MatrixTable;
 
 /***/ }),
 
+/***/ "./resources/js/Components/MegaMenu.tsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Components/MegaMenu.tsx ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var MegaMenu = function MegaMenu(_ref) {
+  var children = _ref.children;
+  return react_1["default"].createElement("ul", {
+    className: 'flex'
+  }, react_1["default"].createElement("li", {
+    className: 'hoverable hover:bg-gray-700 hover:text-white'
+  }, react_1["default"].createElement("a", {
+    href: "",
+    className: 'Relative block py6 px4 lg:p-6 text-sm lg:text-base font-bold hover:bg-gray-700 hover:text-white'
+  }, "Show Menu"), react_1["default"].createElement("div", {
+    className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700"
+  }, react_1["default"].createElement("div", {
+    className: "container mx-auto w-full flex flex-wrap justify-between"
+  }, react_1["default"].createElement("ul", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
+  }, react_1["default"].createElement("h3", {
+    className: "font-bold text-xl text-white text-bold mb-2"
+  }, "\xC1reas do Conhecimento"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Lando Calrissian")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Nien Nunb")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Mon Mothma")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Wedge Antilles")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Admiral Gial Ackbar"))), react_1["default"].createElement("ul", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
+  }, react_1["default"].createElement("h3", {
+    className: "font-bold text-xl text-white text-bold mb-2"
+  }, "Eixo Estruturantes"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Obi-Wan Kenobi"))), react_1["default"].createElement("ul", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3"
+  }, react_1["default"].createElement("h3", {
+    className: "font-bold text-xl text-white text-bold mb-2"
+  }, "Objetivos de Desenvolvimento Sustent\xE1vel"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
+    href: "#",
+    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+  }, "Obi-Wan Kenobi")))))));
+};
+
+exports["default"] = MegaMenu;
+
+/***/ }),
+
 /***/ "./resources/js/Components/NavLink.tsx":
 /*!*********************************************!*\
   !*** ./resources/js/Components/NavLink.tsx ***!
@@ -6661,6 +6735,8 @@ var Dropdown_1 = __importDefault(__webpack_require__(/*! @/Components/Dropdown *
 
 var NavLink_1 = __importDefault(__webpack_require__(/*! @/Components/NavLink */ "./resources/js/Components/NavLink.tsx"));
 
+var MegaMenu_1 = __importDefault(__webpack_require__(/*! @/Components/MegaMenu */ "./resources/js/Components/MegaMenu.tsx"));
+
 var ResponsiveNavLink_1 = __importDefault(__webpack_require__(/*! @/Components/ResponsiveNavLink */ "./resources/js/Components/ResponsiveNavLink.tsx"));
 
 var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
@@ -6727,6 +6803,8 @@ var Authenticated = function Authenticated(_ref) {
   }))))))), react_1["default"].createElement("div", {
     className: 'flex'
   }, react_1["default"].createElement("div", {
+    className: "flex mx-8 self-center "
+  }, react_1["default"].createElement(MegaMenu_1["default"], null)), react_1["default"].createElement("div", {
     className: "hidden space-x-8 sm:-my-px sm:flex"
   }, react_1["default"].createElement(NavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('itineraries.index'),
