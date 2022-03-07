@@ -43,12 +43,12 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
         <h2 className="text-gray-800 font-semibold mt-1">67 avaliações</h2>
         <div className="border-b pb-3">
           <div className="flex items-center mt-1">
-            <div className=" w-1/5 text-blue-600 tracking-tighter">
+            <div className=" w-1/5 text-gray-700 tracking-tighter">
               <span>5 stars</span>
             </div>
             <div className="w-3/5">
               <div className="bg-gray-300 w-full rounded-lg h-2">
-                <div className=" w-7/12 bg-blue-600 rounded-lg h-2"></div>
+                <div className=" w-7/12 bg-gray-700 rounded-lg h-2"></div>
               </div>
             </div>
             <div className="w-1/5 text-gray-700 pl-3">
@@ -56,12 +56,12 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
             </div>
           </div>
           <div className="flex items-center mt-1">
-            <div className="w-1/5 text-blue-600 tracking-tighter">
+            <div className="w-1/5 text-gray-700 tracking-tighter">
               <span>4 stars</span>
             </div>
             <div className="w-3/5">
               <div className="bg-gray-300 w-full rounded-lg h-2">
-                <div className="w-1/5 bg-blue-600 rounded-lg h-2"></div>
+                <div className="w-1/5 bg-gray-700 rounded-lg h-2"></div>
               </div>
             </div>
             <div className="w-1/5 text-gray-700 pl-3">
@@ -69,12 +69,12 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
             </div>
           </div>
           <div className="flex items-center mt-1">
-            <div className="w-1/5 text-blue-600 tracking-tighter">
+            <div className="w-1/5 text-gray-700 tracking-tighter">
               <span>3 stars</span>
             </div>
             <div className="w-3/5">
               <div className="bg-gray-300 w-full rounded-lg h-2">
-                <div className=" w-3/12 bg-blue-600 rounded-lg h-2"></div>
+                <div className=" w-3/12 bg-gray-700 rounded-lg h-2"></div>
               </div>
             </div>
             <div className="w-1/5 text-gray-700 pl-3">
@@ -82,12 +82,12 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
             </div>
           </div>
           <div className="flex items-center mt-1">
-            <div className=" w-1/5 text-blue-600 tracking-tighter">
+            <div className=" w-1/5 text-gray-700 tracking-tighter">
               <span>2 stars</span>
             </div>
             <div className="w-3/5">
               <div className="bg-gray-300 w-full rounded-lg h-2">
-                <div className=" w-1/5 bg-blue-600 rounded-lg h-2"></div>
+                <div className=" w-1/5 bg-gray-700 rounded-lg h-2"></div>
               </div>
             </div>
             <div className="w-1/5 text-gray-700 pl-3">
@@ -95,12 +95,12 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
             </div>
           </div>
           <div className="flex items-center mt-1">
-            <div className="w-1/5 text-blue-600 tracking-tighter">
+            <div className="w-1/5 text-gray-700 tracking-tighter">
               <span>1 stars</span>
             </div>
             <div className="w-3/5">
               <div className="bg-gray-300 w-full rounded-lg h-2">
-                <div className=" w-2/12 bg-blue-600 rounded-lg h-2"></div>
+                <div className=" w-2/12 bg-gray-700 rounded-lg h-2"></div>
               </div>
             </div>
             <div className="w-1/5 text-gray-700 pl-3">
@@ -151,7 +151,7 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
             </p>
             <button
               onClick={() => setShowReviewForm(!showReviewForm)}
-              className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+              className="btn px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-800  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
               type="button"
             >
               Fazer uma avalização
@@ -166,10 +166,10 @@ const ReviewBox: React.FC<Props> = ({itinerary}) => {
                 name="comment"
                 rows={4}
                 defaultValue={data.comment}
-                className="block mb-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block mb-3 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Leave a comment..."></textarea>
               <button
-                className="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+                className="btn px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                 type="submit"
               >
                 Enviar

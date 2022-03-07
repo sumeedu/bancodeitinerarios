@@ -86,7 +86,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
             <h4 className="font-semibold mt-4 mb-2 text-lg">Eixos Estruturantes</h4>
             <p>{axis.join(', ')}</p>
 
-            <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivos da ONU</h4>
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivo de Desenvolvimento Sustentável</h4>
             <div className="flex flex-wrap gap-1">
               {objectives.map((n, k) => (
                 <ObjectiveIcon key={k} name={n} />

@@ -6463,13 +6463,13 @@ var ReviewBox = function ReviewBox(_ref) {
   }, react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: " w-1/5 text-blue-600 tracking-tighter"
+    className: " w-1/5 text-gray-700 tracking-tighter"
   }, react_1["default"].createElement("span", null, "5 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-7/12 bg-blue-600 rounded-lg h-2"
+    className: " w-7/12 bg-gray-700 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6477,13 +6477,13 @@ var ReviewBox = function ReviewBox(_ref) {
   }, "51%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 text-blue-600 tracking-tighter"
+    className: "w-1/5 text-gray-700 tracking-tighter"
   }, react_1["default"].createElement("span", null, "4 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 bg-blue-600 rounded-lg h-2"
+    className: "w-1/5 bg-gray-700 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6491,13 +6491,13 @@ var ReviewBox = function ReviewBox(_ref) {
   }, "17%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 text-blue-600 tracking-tighter"
+    className: "w-1/5 text-gray-700 tracking-tighter"
   }, react_1["default"].createElement("span", null, "3 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-3/12 bg-blue-600 rounded-lg h-2"
+    className: " w-3/12 bg-gray-700 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6505,13 +6505,13 @@ var ReviewBox = function ReviewBox(_ref) {
   }, "19%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: " w-1/5 text-blue-600 tracking-tighter"
+    className: " w-1/5 text-gray-700 tracking-tighter"
   }, react_1["default"].createElement("span", null, "2 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-1/5 bg-blue-600 rounded-lg h-2"
+    className: " w-1/5 bg-gray-700 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6519,13 +6519,13 @@ var ReviewBox = function ReviewBox(_ref) {
   }, "8%"))), react_1["default"].createElement("div", {
     className: "flex items-center mt-1"
   }, react_1["default"].createElement("div", {
-    className: "w-1/5 text-blue-600 tracking-tighter"
+    className: "w-1/5 text-gray-700 tracking-tighter"
   }, react_1["default"].createElement("span", null, "1 stars")), react_1["default"].createElement("div", {
     className: "w-3/5"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-300 w-full rounded-lg h-2"
   }, react_1["default"].createElement("div", {
-    className: " w-2/12 bg-blue-600 rounded-lg h-2"
+    className: " w-2/12 bg-gray-700 rounded-lg h-2"
   }))), react_1["default"].createElement("div", {
     className: "w-1/5 text-gray-700 pl-3"
   }, react_1["default"].createElement("span", {
@@ -6570,7 +6570,7 @@ var ReviewBox = function ReviewBox(_ref) {
     onClick: function onClick() {
       return setShowReviewForm(!showReviewForm);
     },
-    className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
+    className: "btn px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-800  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
     type: "button"
   }, "Fazer uma avaliza\xE7\xE3o")) : react_1["default"].createElement("div", null, react_1["default"].createElement("form", {
     className: "mt-4",
@@ -6581,10 +6581,10 @@ var ReviewBox = function ReviewBox(_ref) {
     name: "comment",
     rows: 4,
     defaultValue: data.comment,
-    className: "block mb-3 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+    className: "block mb-3 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
     placeholder: "Leave a comment..."
   }), react_1["default"].createElement("button", {
-    className: "btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
+    className: "btn px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
     type: "submit"
   }, "Enviar")))));
 };
@@ -8277,7 +8277,7 @@ var Index = function Index(props) {
       alt: item.description
     })), react_1["default"].createElement("a", {
       href: "",
-      className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-blue-600 hover:text-gray-50 hover:delay-100"
+      className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-gray-700 hover:text-gray-50 hover:delay-150"
     }, react_1["default"].createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-5 w-5",
@@ -8404,7 +8404,7 @@ var Index = function Index(props) {
     className: "font-semibold mt-4 mb-2 text-lg"
   }, "Eixos Estruturantes"), react_1["default"].createElement("p", null, axis.join(', ')), react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-lg"
-  }, "Objetivos da ONU"), react_1["default"].createElement("div", {
+  }, "Objetivo de Desenvolvimento Sustent\xE1vel"), react_1["default"].createElement("div", {
     className: "flex flex-wrap gap-1"
   }, objectives.map(function (n, k) {
     return react_1["default"].createElement(ObjectiveIcon_1["default"], {
