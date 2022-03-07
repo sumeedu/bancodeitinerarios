@@ -32,15 +32,29 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::resource('itineraries', ItineraryController::class)
-    ->only('index', 'show');
+Route::resource('reviews', ReviewController::class)
+    ->only(['store', 'delete'])
+    ->middleware(['auth', 'verified']);
 
-Route::middleware(['auth', 'verified'])->group(function() {
 
-    Route::resource('itineraries', ItineraryController::class)
-        ->except('index', 'show');
-    Route::resource('reviews', ReviewController::class)
-        ->only('store', 'delete');
+Route::controller(ItineraryController::class)->group(function() {
+
+    Route::middleware(['auth', 'verified'])->group(function() {
+
+        Route::get('/itinerarios/cadastrar', 'create')->name('itineraries.create');
+        Route::post('/itinerarios', 'store')->name('itineraries.store');
+
+        Route::get('/itinerarios/{itinerary}/edit', 'edit')->name('itineraries.edit');
+        Route::put('/itinerarios/{itinerary}', 'update')->name('itineraries.update');
+
+        Route::delete('/itinerarios', 'destroy')->name('itineraries.destroy');
+
+    });
+
+    Route::get('/itinerarios', 'index')->name('itineraries.index');
+    Route::get('/itinerarios/{itinerary}', 'show')->name('itineraries.show');
 
 });
+
+// Route::resource('itineraries', ItineraryController::class);
 

@@ -7674,6 +7674,8 @@ exports["default"] = Dashboard;
 "use strict";
 
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -7692,20 +7694,138 @@ var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./nod
 
 var Container_1 = __importDefault(__webpack_require__(/*! @/Components/Container */ "./resources/js/Components/Container.tsx"));
 
-var Index = function Index(props) {
-  var itinerary = props.itinerary;
+var ziggy_js_1 = __importDefault(__webpack_require__(/*! ziggy-js */ "./node_modules/ziggy-js/dist/index.js"));
+
+var Create = function Create(props) {
+  var _ref = (0, inertia_react_1.useForm)({
+    name: '',
+    description: '',
+    objective: '',
+    importance: '',
+    formation: '',
+    reference: '',
+    matrices: []
+  }),
+      data = _ref.data,
+      setData = _ref.setData,
+      post = _ref.post;
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    post((0, ziggy_js_1["default"])('activities.store'));
+  };
+
+  var handleChange = function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setData(function (data) {
+      return Object.assign(Object.assign({}, data), _defineProperty({}, key, value));
+    });
+  };
+
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors,
     header: react_1["default"].createElement("h2", {
       className: "font-semibold text-xl text-gray-800 leading-tight"
-    }, "Dashboard")
+    }, "Cadastrar um Itiner\xE1rio Informativo")
   }, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Dashboard"
-  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("pre", null, JSON.stringify(itinerary, undefined, 2))));
+    title: "Cadastrar um Itiner\xE1rio Informativo"
+  }), react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("form", {
+    onSubmit: handleSubmit
+  }, react_1["default"].createElement("div", {
+    className: "px-4 py-5 space-y-6 bg-white sm:p-6"
+  }, react_1["default"].createElement("div", {
+    className: "grid grid-cols-3 gap-6"
+  }, react_1["default"].createElement("div", {
+    className: "col-span-3 sm:col-span-2"
+  }, react_1["default"].createElement("label", {
+    htmlFor: "name",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Name"), react_1["default"].createElement("div", {
+    className: "flex mt-1 rounded-md shadow-sm"
+  }, react_1["default"].createElement("input", {
+    type: "text",
+    name: "name",
+    id: "name",
+    className: "flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm",
+    placeholder: "My activity",
+    value: data.name,
+    onChange: handleChange
+  })))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "description",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Description"), react_1["default"].createElement("div", {
+    className: "mt-1"
+  }, react_1["default"].createElement("textarea", {
+    id: "description",
+    name: "description",
+    rows: 8,
+    className: "block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+    placeholder: "This activity description",
+    defaultValue: data.description,
+    onChange: handleChange
+  }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "taxonomy",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Taxonomy"), react_1["default"].createElement("div", {
+    className: "mt-1"
+  }, react_1["default"].createElement("select", {
+    id: "taxonomy",
+    name: "taxonomy",
+    autoComplete: "taxonomy-bloom",
+    className: "block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+    onChange: handleChange
+  }, react_1["default"].createElement("option", {
+    value: "",
+    disabled: true
+  }, "Select the taxonomy"), react_1["default"].createElement("option", {
+    value: "create"
+  }, "Create"), react_1["default"].createElement("option", {
+    value: "evaluate"
+  }, "Evaluate"), react_1["default"].createElement("option", {
+    value: "analyze"
+  }, "Analyze"), react_1["default"].createElement("option", {
+    value: "apply"
+  }, "Apply"), react_1["default"].createElement("option", {
+    value: "understand"
+  }, "Understand"), react_1["default"].createElement("option", {
+    value: "remember"
+  }, "Remember")))), react_1["default"].createElement("div", {
+    className: "grid grid-cols-3 gap-6"
+  }, react_1["default"].createElement("div", {
+    className: "col-span-3 sm:col-span-2"
+  }, react_1["default"].createElement("div", {
+    className: "mt-4 space-y-4"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-start"
+  }, react_1["default"].createElement("div", {
+    className: "flex items-center h-5"
+  }, react_1["default"].createElement("input", {
+    id: "allows_fork",
+    name: "allows_fork",
+    type: "checkbox",
+    className: "w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500",
+    // defaultChecked={''}
+    onChange: handleChange
+  })), react_1["default"].createElement("div", {
+    className: "ml-3 text-sm"
+  }, react_1["default"].createElement("label", {
+    htmlFor: "allows_fork",
+    className: "font-medium text-gray-700"
+  }, "Allows fork"), react_1["default"].createElement("p", {
+    className: "text-gray-500"
+  }, "Allows other person to create a copy of this activity."))))))), react_1["default"].createElement("div", {
+    className: "px-4 py-3 text-right bg-gray-50 sm:px-6"
+  }, react_1["default"].createElement("div", {
+    className: "flex space-x-3"
+  }, react_1["default"].createElement("button", {
+    type: "submit",
+    className: "inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  }, "Save"))))));
 };
 
-exports["default"] = Index;
+exports["default"] = Create;
 
 /***/ }),
 
