@@ -61,7 +61,7 @@ const Authenticated: React.FC<Props> = ({
               <div className="self-center sm:flex ">
                 <MegaMenu>
                   <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-2">Áreas do Conhecimento</h3>
+                    <h3 className="font-bold text-xl text-white text-bold mb-4">Áreas do Conhecimento</h3>
                     {categories.area.map((v: any, k: number) => (
                       <li key={k}>
                         <a
@@ -74,7 +74,7 @@ const Authenticated: React.FC<Props> = ({
                     ))}
                   </ul>
                   <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-2">Eixo Estruturantes</h3>
+                    <h3 className="font-bold text-xl text-white text-bold mb-4">Eixo Estruturantes</h3>
                     {categories.axis.map((v: any, k: number) => (
                       <li key={k}>
                         <a
@@ -87,7 +87,7 @@ const Authenticated: React.FC<Props> = ({
                     ))}
                   </ul>
                   <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-2">Objetivos de Desenvolvimento Sustentável</h3>
+                    <h3 className="font-bold text-xl text-white text-bold mb-4">Objetivos de Desenvolvimento Sustentável</h3>
                     {categories.objective.map((v: any, k: number) => (
                       <li key={k}>
                         <a

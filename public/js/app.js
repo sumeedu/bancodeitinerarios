@@ -5771,7 +5771,7 @@ var MegaMenu = function MegaMenu(_ref) {
   }))), react_1["default"].createElement("div", {
     className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700 left-0"
   }, react_1["default"].createElement("div", {
-    className: "container mx-auto w-full flex flex-wrap justify-between"
+    className: "container w-full flex flex-wrap justify-center"
   }, children)));
 };
 
@@ -6805,10 +6805,7 @@ var Authenticated = function Authenticated(_ref) {
   }, "Objetivos de Desenvolvimento Sustent\xE1vel"), categories.objective.map(function (v, k) {
     return react_1["default"].createElement("li", {
       key: k
-    }, react_1["default"].createElement("a", {
-      href: "#".concat(v.id),
-      className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-    }, v.name));
+    });
   })))), react_1["default"].createElement("div", {
     className: "flex hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement(NavLink_1["default"], {
