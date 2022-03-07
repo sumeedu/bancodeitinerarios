@@ -5772,40 +5772,7 @@ var MegaMenu = function MegaMenu(_ref) {
     className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700"
   }, react_1["default"].createElement("div", {
     className: "container mx-auto w-full flex flex-wrap justify-between"
-  }, react_1["default"].createElement("ul", {
-    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
-  }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-2"
-  }, "\xC1reas do Conhecimento"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Lando Calrissian")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Nien Nunb")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Mon Mothma")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Wedge Antilles")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Admiral Gial Ackbar"))), react_1["default"].createElement("ul", {
-    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
-  }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-2"
-  }, "Eixo Estruturantes"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Obi-Wan Kenobi"))), react_1["default"].createElement("ul", {
-    className: "px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3"
-  }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-2"
-  }, "Objetivos de Desenvolvimento Sustent\xE1vel"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Obi-Wan Kenobi"))))));
+  }, children)));
 };
 
 exports["default"] = MegaMenu;
@@ -6757,6 +6724,7 @@ var Authenticated = function Authenticated(_ref) {
       showingNavigationDropdown = _ref3[0],
       setShowingNavigationDropdown = _ref3[1];
 
+  var categories = (0, inertia_react_1.usePage)().props.app.menu.categories;
   return react_1["default"].createElement("div", {
     className: "min-h-screen bg-gray-100"
   }, react_1["default"].createElement("nav", {
@@ -6808,7 +6776,40 @@ var Authenticated = function Authenticated(_ref) {
     className: "flex items-center"
   }, react_1["default"].createElement("div", {
     className: "self-center sm:flex "
-  }, react_1["default"].createElement(MegaMenu_1["default"], null)), react_1["default"].createElement("div", {
+  }, react_1["default"].createElement(MegaMenu_1["default"], null, react_1["default"].createElement("ul", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
+  }, react_1["default"].createElement("h3", {
+    className: "font-bold text-xl text-white text-bold mb-2"
+  }, "\xC1reas do Conhecimento"), categories.area.map(function (v, k) {
+    return react_1["default"].createElement("li", {
+      key: k
+    }, react_1["default"].createElement("a", {
+      href: "#".concat(v.id),
+      className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+    }, v.name));
+  })), react_1["default"].createElement("ul", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
+  }, react_1["default"].createElement("h3", {
+    className: "font-bold text-xl text-white text-bold mb-2"
+  }, "Eixo Estruturantes"), categories.axis.map(function (v, k) {
+    return react_1["default"].createElement("li", {
+      key: k
+    }, react_1["default"].createElement("a", {
+      href: "#".concat(v.id),
+      className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+    }, v.name));
+  })), react_1["default"].createElement("ul", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3"
+  }, react_1["default"].createElement("h3", {
+    className: "font-bold text-xl text-white text-bold mb-2"
+  }, "Objetivos de Desenvolvimento Sustent\xE1vel"), categories.objective.map(function (v, k) {
+    return react_1["default"].createElement("li", {
+      key: k
+    }, react_1["default"].createElement("a", {
+      href: "#".concat(v.id),
+      className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+    }, v.name));
+  })))), react_1["default"].createElement("div", {
     className: "flex hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement(NavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('itineraries.index'),

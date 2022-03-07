@@ -4,17 +4,23 @@ import Dropdown from '@/Components/Dropdown'
 import NavLink from '@/Components/NavLink'
 import MegaMenu from '@/Components/MegaMenu';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink'
-import {Link} from '@inertiajs/inertia-react'
+import {Link, usePage} from '@inertiajs/inertia-react'
 import route from 'ziggy-js'
 
 interface Props {
   auth: any
   header?: React.ReactNode
   errors: any
+  app: any
 }
 
-const Authenticated: React.FC<Props> = ({auth, header, children}) => {
+const Authenticated: React.FC<Props> = ({
+  auth,
+  header,
+  children
+}) => {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+  const { categories } = usePage<any>().props.app.menu
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -54,7 +60,47 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
             <div className="flex items-center">
 
               <div className="self-center sm:flex ">
-              <MegaMenu></MegaMenu>
+                <MegaMenu>
+                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                    <h3 className="font-bold text-xl text-white text-bold mb-2">Áreas do Conhecimento</h3>
+                    {categories.area.map((v: any, k: number) => (
+                      <li key={k}>
+                        <a
+                          href={`#${v.id}`}
+                          className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+                        >
+                          {v.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                    <h3 className="font-bold text-xl text-white text-bold mb-2">Eixo Estruturantes</h3>
+                    {categories.axis.map((v: any, k: number) => (
+                      <li key={k}>
+                        <a
+                          href={`#${v.id}`}
+                          className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+                        >
+                          {v.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3">
+                    <h3 className="font-bold text-xl text-white text-bold mb-2">Objetivos de Desenvolvimento Sustentável</h3>
+                    {categories.objective.map((v: any, k: number) => (
+                      <li key={k}>
+                        <a
+                          href={`#${v.id}`}
+                          className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+                        >
+                          {v.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </MegaMenu>
               </div>
               <div className="flex hover:bg-gray-700 hover:text-white">
                 <NavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
