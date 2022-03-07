@@ -4,16 +4,15 @@
 
 .mega-menu {
     display: none;
-    left: 0;
     position: absolute;
     text-align: left;
     width: 100%;
     z-index: 100;
 }
 
-.hoverable {
+/* .hoverable {
     position: static;
-}
+} */
 
 
 

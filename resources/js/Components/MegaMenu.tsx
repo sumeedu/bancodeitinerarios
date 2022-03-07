@@ -8,8 +8,8 @@ const MegaMenu: React.FC<Props> = ({
   children
 }) =>{
     return(
-
-        <div className="hoverable hover:bg-gray-700 hover:text-white">
+        
+        <div className="hoverable hover:bg-gray-700 hover:text-white static">
 
             <a
                 className="flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100 cursor-pointer "
@@ -29,8 +29,8 @@ const MegaMenu: React.FC<Props> = ({
                 />
                 </svg>
             </a>
-
-            <div className="mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700">
+            
+            <div className="mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700 left-0">
                 <div className="container mx-auto w-full flex flex-wrap justify-between">
                   {children}
                 </div>

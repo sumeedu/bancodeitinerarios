@@ -11,7 +11,6 @@ interface Props {
   auth: any
   header?: React.ReactNode
   errors: any
-  app: any
 }
 
 const Authenticated: React.FC<Props> = ({

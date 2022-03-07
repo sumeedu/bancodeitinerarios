@@ -5756,7 +5756,7 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 var MegaMenu = function MegaMenu(_ref) {
   var children = _ref.children;
   return react_1["default"].createElement("div", {
-    className: "hoverable hover:bg-gray-700 hover:text-white"
+    className: "hoverable hover:bg-gray-700 hover:text-white static"
   }, react_1["default"].createElement("a", {
     className: "flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100 cursor-pointer "
   }, "Show Menu", react_1["default"].createElement("svg", {
@@ -5769,7 +5769,7 @@ var MegaMenu = function MegaMenu(_ref) {
     d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
     clipRule: "evenodd"
   }))), react_1["default"].createElement("div", {
-    className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700"
+    className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700 left-0"
   }, react_1["default"].createElement("div", {
     className: "container mx-auto w-full flex flex-wrap justify-between"
   }, children)));
