@@ -5756,7 +5756,7 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 var MegaMenu = function MegaMenu(_ref) {
   var children = _ref.children;
   return react_1["default"].createElement("div", {
-    className: "hoverable hover:bg-gray-700 hover:text-white static"
+    className: "hoverable hover:bg-gray-700 hover:text-white static "
   }, react_1["default"].createElement("a", {
     className: "flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100 cursor-pointer "
   }, "Show Menu", react_1["default"].createElement("svg", {
@@ -5771,7 +5771,7 @@ var MegaMenu = function MegaMenu(_ref) {
   }))), react_1["default"].createElement("div", {
     className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700 left-0"
   }, react_1["default"].createElement("div", {
-    className: "container w-full flex flex-wrap justify-center"
+    className: "container m-auto w-full flex flex-wrap justify-center"
   }, children)));
 };
 
@@ -6754,11 +6754,11 @@ var Authenticated = function Authenticated(_ref) {
     name: "s",
     id: "s",
     type: "search",
-    className: "form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded rounded-r-none transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none",
+    className: "form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded rounded-r-none transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700  focus:outline-none",
     placeholder: "Search",
     "aria-label": "Search"
   }), react_1["default"].createElement("button", {
-    className: "btn px-6 py-2.5 bg-gray-100 text-slate-500 hover:text-gray-50 leading-tight rounded rounded-l-none hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center",
+    className: "btn px-6 py-2.5 bg-gray-100 text-slate-500 leading-tight rounded rounded-l-none  hover:bg-gray-700 hover:text-white transition duration-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-700 active:shadow-lg ease-in-out flex items-center",
     type: "submit"
   }, react_1["default"].createElement("svg", {
     "aria-hidden": "true",
@@ -6779,7 +6779,7 @@ var Authenticated = function Authenticated(_ref) {
   }, react_1["default"].createElement(MegaMenu_1["default"], null, react_1["default"].createElement("ul", {
     className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
   }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-2"
+    className: "font-bold text-xl text-white text-bold mb-4"
   }, "\xC1reas do Conhecimento"), categories.area.map(function (v, k) {
     return react_1["default"].createElement("li", {
       key: k
@@ -6790,7 +6790,7 @@ var Authenticated = function Authenticated(_ref) {
   })), react_1["default"].createElement("ul", {
     className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
   }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-2"
+    className: "font-bold text-xl text-white text-bold mb-4"
   }, "Eixo Estruturantes"), categories.axis.map(function (v, k) {
     return react_1["default"].createElement("li", {
       key: k
@@ -6801,11 +6801,14 @@ var Authenticated = function Authenticated(_ref) {
   })), react_1["default"].createElement("ul", {
     className: "px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3"
   }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-2"
+    className: "font-bold text-xl text-white text-bold mb-4"
   }, "Objetivos de Desenvolvimento Sustent\xE1vel"), categories.objective.map(function (v, k) {
     return react_1["default"].createElement("li", {
       key: k
-    });
+    }, react_1["default"].createElement("a", {
+      href: "#".concat(v.id),
+      className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+    }, v.name));
   })))), react_1["default"].createElement("div", {
     className: "flex hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement(NavLink_1["default"], {
