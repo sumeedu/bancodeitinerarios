@@ -8,20 +8,14 @@
     position: absolute;
     text-align: left;
     width: 100%;
-   z-index: 100;
+    z-index: 100;
 }
 
 .hoverable {
     position: static;
 }
 
-.hoverable > a:after {
-    content: "\25BC";
-    font-size: 10px;
-    padding-left: 6px;
-    position: relative;
-    top: -1px;
-}
+
 
 .hoverable:hover .mega-menu {
     display: block;

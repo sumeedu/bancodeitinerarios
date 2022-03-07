@@ -51,20 +51,18 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
                 </form>
               </div>
             </div>
-            <div className='flex'>
+            <div className="flex items-center">
 
-              <div className="flex mx-8 self-center ">
+              <div className="self-center sm:flex ">
               <MegaMenu></MegaMenu>
               </div>
-              
-
-              <div className="hidden space-x-8 sm:-my-px sm:flex">
+              <div className="flex hover:bg-gray-700 hover:text-white">
                 <NavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
                   Itinerários Formativos
                 </NavLink>
               </div>
 
-              <div className="hidden sm:flex sm:items-center sm:ml-6">
+              <div className="flex">
               {auth.user ? (
                 <div className="ml-3 relative">
                   <Dropdown>
@@ -100,7 +98,7 @@ const Authenticated: React.FC<Props> = ({auth, header, children}) => {
                   </Dropdown>
                 </div>
               ) : (
-                <div className="ml-3 relative">
+                <div className="relative">
                   <Link href={route('login')} className="btn px-6 py-2.5 bg-gray-100 textslate-500 leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center">
                     Login
                   </Link>

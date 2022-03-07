@@ -5755,14 +5755,20 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var MegaMenu = function MegaMenu(_ref) {
   var children = _ref.children;
-  return react_1["default"].createElement("ul", {
-    className: 'flex'
-  }, react_1["default"].createElement("li", {
-    className: 'hoverable hover:bg-gray-700 hover:text-white'
+  return react_1["default"].createElement("div", {
+    className: "hoverable hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement("a", {
-    href: "",
-    className: 'Relative block py6 px4 lg:p-6 text-sm lg:text-base font-bold hover:bg-gray-700 hover:text-white'
-  }, "Show Menu"), react_1["default"].createElement("div", {
+    className: "flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100 cursor-pointer "
+  }, "Show Menu", react_1["default"].createElement("svg", {
+    className: "ml-2 -mr-0.5 h-4 w-4",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+    clipRule: "evenodd"
+  }))), react_1["default"].createElement("div", {
     className: "mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700"
   }, react_1["default"].createElement("div", {
     className: "container mx-auto w-full flex flex-wrap justify-between"
@@ -5799,7 +5805,7 @@ var MegaMenu = function MegaMenu(_ref) {
   }, "Objetivos de Desenvolvimento Sustent\xE1vel"), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
     href: "#",
     className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-  }, "Obi-Wan Kenobi")))))));
+  }, "Obi-Wan Kenobi"))))));
 };
 
 exports["default"] = MegaMenu;
@@ -5831,12 +5837,10 @@ var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./nod
 
 var NavLink = function NavLink(_ref) {
   var href = _ref.href,
-      active = _ref.active,
-      className = _ref.className,
       children = _ref.children;
   return react_1["default"].createElement(inertia_react_1.Link, {
     href: href,
-    className: "\n              ".concat(active ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out' : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out', "\n            ").concat(className)
+    className: "flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100"
   }, children);
 };
 
@@ -6801,16 +6805,16 @@ var Authenticated = function Authenticated(_ref) {
     fill: "currentColor",
     d: "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
   }))))))), react_1["default"].createElement("div", {
-    className: 'flex'
+    className: "flex items-center"
   }, react_1["default"].createElement("div", {
-    className: "flex mx-8 self-center "
+    className: "self-center sm:flex "
   }, react_1["default"].createElement(MegaMenu_1["default"], null)), react_1["default"].createElement("div", {
-    className: "hidden space-x-8 sm:-my-px sm:flex"
+    className: "flex hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement(NavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('itineraries.index'),
     active: (0, ziggy_js_1["default"])().current('itineraries.index')
   }, "Itiner\xE1rios Formativos")), react_1["default"].createElement("div", {
-    className: "hidden sm:flex sm:items-center sm:ml-6"
+    className: "flex"
   }, auth.user ? react_1["default"].createElement("div", {
     className: "ml-3 relative"
   }, react_1["default"].createElement(Dropdown_1["default"], null, react_1["default"].createElement(Dropdown_1["default"].Trigger, null, react_1["default"].createElement("span", {
@@ -6832,7 +6836,7 @@ var Authenticated = function Authenticated(_ref) {
     method: "post",
     as: "button"
   }, "Log Out")))) : react_1["default"].createElement("div", {
-    className: "ml-3 relative"
+    className: "relative"
   }, react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('login'),
     className: "btn px-6 py-2.5 bg-gray-100 textslate-500 leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
