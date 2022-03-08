@@ -8023,54 +8023,27 @@ var Create = function Create(props) {
   }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
     htmlFor: "taxonomy",
     className: "block text-sm font-medium text-gray-700"
-  }, "Taxonomy"), react_1["default"].createElement("div", {
+  }, "Periodicidade"), react_1["default"].createElement("div", {
     className: "mt-1"
   }, react_1["default"].createElement("select", {
-    id: "taxonomy",
-    name: "taxonomy",
-    autoComplete: "taxonomy-bloom",
+    id: "cycle",
+    name: "cycle",
     className: "block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
     onChange: handleChange
   }, react_1["default"].createElement("option", {
     value: "",
     disabled: true
-  }, "Select the taxonomy"), react_1["default"].createElement("option", {
-    value: "create"
-  }, "Create"), react_1["default"].createElement("option", {
-    value: "evaluate"
-  }, "Evaluate"), react_1["default"].createElement("option", {
-    value: "analyze"
-  }, "Analyze"), react_1["default"].createElement("option", {
-    value: "apply"
-  }, "Apply"), react_1["default"].createElement("option", {
-    value: "understand"
-  }, "Understand"), react_1["default"].createElement("option", {
-    value: "remember"
-  }, "Remember")))), react_1["default"].createElement("div", {
-    className: "grid grid-cols-3 gap-6"
-  }, react_1["default"].createElement("div", {
-    className: "col-span-3 sm:col-span-2"
-  }, react_1["default"].createElement("div", {
-    className: "mt-4 space-y-4"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-start"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center h-5"
-  }, react_1["default"].createElement("input", {
-    id: "allows_fork",
-    name: "allows_fork",
-    type: "checkbox",
-    className: "w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500",
-    // defaultChecked={''}
-    onChange: handleChange
-  })), react_1["default"].createElement("div", {
-    className: "ml-3 text-sm"
-  }, react_1["default"].createElement("label", {
-    htmlFor: "allows_fork",
-    className: "font-medium text-gray-700"
-  }, "Allows fork"), react_1["default"].createElement("p", {
-    className: "text-gray-500"
-  }, "Allows other person to create a copy of this activity."))))))), react_1["default"].createElement("div", {
+  }, "Selecione a periodicidade das aulas"), react_1["default"].createElement("option", {
+    value: "weekly"
+  }, "Semanal"), react_1["default"].createElement("option", {
+    value: "monthly"
+  }, "Mensal"), react_1["default"].createElement("option", {
+    value: "bimonthly"
+  }, "Bimestral"), react_1["default"].createElement("option", {
+    value: "semiannual"
+  }, "Semestral"), react_1["default"].createElement("option", {
+    value: "yearly"
+  }, "Anual"))))), react_1["default"].createElement("div", {
     className: "px-4 py-3 text-right bg-gray-50 sm:px-6"
   }, react_1["default"].createElement("div", {
     className: "flex space-x-3"

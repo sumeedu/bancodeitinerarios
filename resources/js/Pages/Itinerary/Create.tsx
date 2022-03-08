@@ -172,50 +172,22 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
 
             <div>
               <label htmlFor="taxonomy" className="block text-sm font-medium text-gray-700">
-                Taxonomy
+                Periodicidade
               </label>
               <div className="mt-1">
                 <select
-                  id="taxonomy"
-                  name="taxonomy"
-                  autoComplete="taxonomy-bloom"
+                  id="cycle"
+                  name="cycle"
                   className="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   onChange={handleChange}
-                  // defaultValue={data.taxonomy}
                 >
-                  <option value="" disabled>Select the taxonomy</option>
-                  <option value="create">Create</option>
-                  <option value="evaluate">Evaluate</option>
-                  <option value="analyze">Analyze</option>
-                  <option value="apply">Apply</option>
-                  <option value="understand">Understand</option>
-                  <option value="remember">Remember</option>
+                  <option value="" disabled>Selecione a periodicidade das aulas</option>
+                  <option value="weekly">Semanal</option>
+                  <option value="monthly">Mensal</option>
+                  <option value="bimonthly">Bimestral</option>
+                  <option value="semiannual">Semestral</option>
+                  <option value="yearly">Anual</option>
                 </select>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6">
-              <div className="col-span-3 sm:col-span-2">
-                <div className="mt-4 space-y-4">
-                  <div className="flex items-start">
-                    <div className="flex items-center h-5">
-                      <input
-                        id="allows_fork"
-                        name="allows_fork"
-                        type="checkbox"
-                        className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-                        // defaultChecked={''}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="ml-3 text-sm">
-                      <label htmlFor="allows_fork" className="font-medium text-gray-700">
-                        Allows fork
-                      </label>
-                      <p className="text-gray-500">Allows other person to create a copy of this activity.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
