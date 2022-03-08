@@ -56,7 +56,7 @@ const Authenticated: React.FC<Props> = ({
                 </form>
               </div>
             </div>
-
+            {/* MegaMenu */}
             <div className="flex items-center">
               <div className="self-center sm:flex ">
                 <MegaMenu label="Categorias">
@@ -166,39 +166,40 @@ const Authenticated: React.FC<Props> = ({
                 </button>
               </div>
             </div>
+            {/* itinerários formativos e login button */}
+            <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
+              <div className="pt-2 pb-3 space-y-1">
+                <ResponsiveNavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
+                  Itinerários Formativos
+                </ResponsiveNavLink>
+              </div>
 
+              {auth.user ? (
+              <div className="pt-4 pb-1 border-t border-gray-200">
+                <div className="px-4">
+                  <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
+                  <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
+                </div>
+
+                <div className="mt-3 space-y-1">
+                  <ResponsiveNavLink method="post" href={route('logout')} as="button">
+                    Sair
+                  </ResponsiveNavLink>
+                </div>
+              </div>
+              ) : (
+              <div className="mt-3 space-y-1">
+                <ResponsiveNavLink href={route('login')} as="button">
+                  Entrar
+                </ResponsiveNavLink>
+              </div>
+              )}
+
+            </div>
           </div>
         </div>
 
-        <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
-          <div className="pt-2 pb-3 space-y-1">
-            <ResponsiveNavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
-              Itinerários Formativos
-            </ResponsiveNavLink>
-          </div>
 
-          {auth.user ? (
-          <div className="pt-4 pb-1 border-t border-gray-200">
-            <div className="px-4">
-              <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
-              <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
-            </div>
-
-            <div className="mt-3 space-y-1">
-              <ResponsiveNavLink method="post" href={route('logout')} as="button">
-                Sair
-              </ResponsiveNavLink>
-            </div>
-          </div>
-          ) : (
-          <div className="mt-3 space-y-1">
-            <ResponsiveNavLink href={route('login')} as="button">
-              Entrar
-            </ResponsiveNavLink>
-          </div>
-          )}
-
-        </div>
       </nav>
 
       {header && (

@@ -6981,7 +6981,7 @@ var Authenticated = function Authenticated(_ref) {
     strokeLinejoin: "round",
     strokeWidth: "2",
     d: "M6 18L18 6M6 6l12 12"
-  }))))))), react_1["default"].createElement("div", {
+  }))))), react_1["default"].createElement("div", {
     className: (showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'
   }, react_1["default"].createElement("div", {
     className: "pt-2 pb-3 space-y-1"
@@ -7007,7 +7007,7 @@ var Authenticated = function Authenticated(_ref) {
   }, react_1["default"].createElement(ResponsiveNavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('login'),
     as: "button"
-  }, "Entrar")))), header && react_1["default"].createElement("header", {
+  }, "Entrar")))))), header && react_1["default"].createElement("header", {
     className: "bg-white shadow"
   }, react_1["default"].createElement("div", {
     className: "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
@@ -8209,34 +8209,42 @@ var Index = function Index(props) {
         itinerary: item
       })
     }, react_1["default"].createElement("h3", {
-      className: "text-gray-900 text-3xl font-bold  mb-2 line-clamp-1"
+      className: "text-gray-900 text-3xl font-bold  mb-2 line-clamp-1",
+      title: item.name
     }, item.name), react_1["default"].createElement("p", {
-      className: "text-gray-700 mb-4 overflow-hidden line-clamp-3"
+      className: "text-gray-700 mb-4 overflow-hidden line-clamp-3",
+      title: item.description
     }, item.description), react_1["default"].createElement("p", {
-      className: "text-gray-600 text-xs"
+      className: "text-gray-600 text-xs",
+      title: item.user.name
     }, "Criado por: ", item.user.name)), react_1["default"].createElement("div", {
       className: "px-6 pt-4 pb-2 flex justify-end"
     }, react_1["default"].createElement("a", {
       className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
-      href: '#'
+      href: '#',
+      title: 'inclusao tag'
     }, "inclus\xE3o"), react_1["default"].createElement("a", {
       className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
-      href: '#'
+      href: '#',
+      title: 'tecnologia tag'
     }, "tecnologia"), react_1["default"].createElement("a", {
       className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
-      href: '#'
+      href: '#',
+      title: 'robotica tag'
     }, "robotica"))), react_1["default"].createElement("a", {
       className: 'contents',
       href: (0, ziggy_js_1["default"])('itineraries.show', {
         itinerary: item
-      })
+      }),
+      title: "imagem ilustrativa"
     }, react_1["default"].createElement("img", {
       className: "w-64 h-64 pt-6 pr-6 pb-12",
       src: "https://placeimg.com/120/120/tech",
       alt: item.description
     })), react_1["default"].createElement("a", {
       href: "",
-      className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-gray-700 hover:text-gray-50 hover:delay-150"
+      className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-gray-700 hover:text-gray-50 hover:delay-150",
+      title: 'favoritar'
     }, react_1["default"].createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       className: "h-5 w-5",
