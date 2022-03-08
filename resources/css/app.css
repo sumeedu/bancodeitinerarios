@@ -13,3 +13,7 @@
 .hoverable:hover .mega-menu {
     display: block;
 }
+
+.ck-editor__editable_inline {
+    min-height: 500px;
+}

@@ -2,6 +2,9 @@ import React, {ChangeEvent} from 'react'
 import Authenticated from "@/Layouts/Authenticated"
 import {Head, InertiaFormProps, useForm} from "@inertiajs/inertia-react"
 import Container from "@/Components/Container"
+import Event from "@ckeditor/ckeditor5-utils/src/eventinfo"
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import route from 'ziggy-js'
 
 interface Subject {
@@ -41,7 +44,8 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    post(route('activities.store'))
+    console.log(data)
+    // post(route('activities.store'))
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>) => {
@@ -90,14 +94,16 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
                 Description
               </label>
               <div className="mt-1">
-                <textarea
-                  id="description"
-                  name="description"
-                  rows={8}
-                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Descreva o itinerário formativo..."
-                  defaultValue={data.description}
-                  onChange={handleChange}
+                <CKEditor
+                  editor={ ClassicEditor }
+                  data="<p>Descreva o itinerário formativo...</p>"
+                  onChange={(e: Event, editor: ClassicEditor) => {
+                    const text = editor.getData()
+                    setData(data => ({
+                      ...data,
+                      'description': text,
+                    }))
+                  }}
                 />
               </div>
             </div>
@@ -107,15 +113,19 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
                 Objetivos
               </label>
               <div className="mt-1">
-                <textarea
-                  id="objective"
-                  name="objective"
-                  rows={8}
-                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Enumere os objetivos deste itinerário formativo..."
-                  defaultValue={data.objective}
-                  onChange={handleChange}
-                />
+                <div className="mt-1">
+                  <CKEditor
+                    editor={ ClassicEditor }
+                    data="<p>Enumere os objetivos deste itinerário formativo...</p>"
+                    onChange={(e: Event, editor: ClassicEditor) => {
+                      const text = editor.getData()
+                      setData(data => ({
+                        ...data,
+                        'objective': text,
+                      }))
+                    }}
+                  />
+                </div>
               </div>
             </div>
 
@@ -124,14 +134,16 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
                 Importância
               </label>
               <div className="mt-1">
-                <textarea
-                  id="importance"
-                  name="importance"
-                  rows={8}
-                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Pensando na proposta do itinerário formativo, seu contexto social..."
-                  defaultValue={data.importance}
-                  onChange={handleChange}
+                <CKEditor
+                  editor={ ClassicEditor }
+                  data="<p>Pensando na proposta do itinerário formativo, seu contexto social...</p>"
+                  onChange={(e: Event, editor: ClassicEditor) => {
+                    const text = editor.getData()
+                    setData(data => ({
+                      ...data,
+                      'importance': text,
+                    }))
+                  }}
                 />
               </div>
             </div>
@@ -141,31 +153,35 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
                 Formação
               </label>
               <div className="mt-1">
-                <textarea
-                  id="formation"
-                  name="formation"
-                  rows={8}
-                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Espera-se que ao final desse aprofundamento o aluno..."
-                  defaultValue={data.formation}
-                  onChange={handleChange}
+                <CKEditor
+                  editor={ ClassicEditor }
+                  data="<p>Espera-se que ao final desse aprofundamento o aluno...</p>"
+                  onChange={(e: Event, editor: ClassicEditor) => {
+                    const text = editor.getData()
+                    setData(data => ({
+                      ...data,
+                      'formation': text,
+                    }))
+                  }}
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="reference" className="block text-sm font-medium text-gray-700">
                 Referências
               </label>
               <div className="mt-1">
-                <textarea
-                  id="description"
-                  name="description"
-                  rows={8}
-                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Enumere as referências bibliográficas que sustentam esse itinerário informativo."
-                  defaultValue={data.reference}
-                  onChange={handleChange}
+                <CKEditor
+                  editor={ ClassicEditor }
+                  data="<p>Enumere as referências bibliográficas que sustentam esse itinerário informativo.</p>"
+                  onChange={(e: Event, editor: ClassicEditor) => {
+                    const text = editor.getData()
+                    setData(data => ({
+                      ...data,
+                      'reference': text,
+                    }))
+                  }}
                 />
               </div>
             </div>
