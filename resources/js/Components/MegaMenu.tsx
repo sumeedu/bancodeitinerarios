@@ -1,21 +1,22 @@
 import React from 'react';
 
 interface Props {
+  label: string
   children?: React.ReactNode
 }
 
 const MegaMenu: React.FC<Props> = ({
+  label,
   children
 }) =>{
     return(
-        
+
         <div className="hoverable hover:bg-gray-700 hover:text-white static ">
 
             <a
                 className="flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100 cursor-pointer "
             >
-                Show Menu
-
+              {label}
             <svg
                 className="ml-2 -mr-0.5 h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +30,7 @@ const MegaMenu: React.FC<Props> = ({
                 />
                 </svg>
             </a>
-            
+
             <div className="mega-menu p-6 mb-16 sm:mb-0 shalow-xl bg-gray-700 left-0">
                 <div className="container m-auto w-full flex flex-wrap justify-center">
                   {children}

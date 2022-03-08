@@ -5286,6 +5286,128 @@ exports["default"] = Checkbox;
 
 /***/ }),
 
+/***/ "./resources/js/Components/Collapse.tsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Components/Collapse.tsx ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  Object.defineProperty(o, k2, {
+    enumerable: true,
+    get: function get() {
+      return m[k];
+    }
+  });
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Collapse = function Collapse(_ref) {
+  var label = _ref.label,
+      children = _ref.children;
+
+  var _ref2 = (0, react_1.useState)(false),
+      _ref3 = _slicedToArray(_ref2, 2),
+      isOpen = _ref3[0],
+      setIsOpen = _ref3[1];
+
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("h3", {
+    className: "-mx-2 -my-3 flow-root"
+  }, react_1["default"].createElement("button", {
+    type: "button",
+    className: "px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500",
+    "aria-controls": "filter-section-mobile-2",
+    "aria-expanded": "false"
+  }, react_1["default"].createElement("span", {
+    className: "font-medium text-gray-900"
+  }, label), react_1["default"].createElement("span", {
+    className: "ml-6 flex items-center"
+  }, react_1["default"].createElement("span", {
+    className: "cursor-pointer",
+    onClick: function onClick() {
+      return setIsOpen(true);
+    }
+  }, react_1["default"].createElement("svg", {
+    className: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
+    clipRule: "evenodd"
+  }))), react_1["default"].createElement("span", {
+    className: "cursor-pointer",
+    onClick: function onClick() {
+      return setIsOpen(false);
+    }
+  }, react_1["default"].createElement("svg", {
+    className: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, react_1["default"].createElement("path", {
+    fillRule: "evenodd",
+    d: "M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z",
+    clipRule: "evenodd"
+  })))))), react_1["default"].createElement("div", {
+    className: "pt-6 ".concat(isOpen ? 'block' : 'hidden')
+  }, react_1["default"].createElement("div", {
+    className: "space-y-6"
+  }, children)));
+};
+
+exports["default"] = Collapse;
+
+/***/ }),
+
 /***/ "./resources/js/Components/Container.tsx":
 /*!***********************************************!*\
   !*** ./resources/js/Components/Container.tsx ***!
@@ -5754,12 +5876,13 @@ Object.defineProperty(exports, "__esModule", ({
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var MegaMenu = function MegaMenu(_ref) {
-  var children = _ref.children;
+  var label = _ref.label,
+      children = _ref.children;
   return react_1["default"].createElement("div", {
     className: "hoverable hover:bg-gray-700 hover:text-white static "
   }, react_1["default"].createElement("a", {
     className: "flex items-center relative py-6 px-4 lg:p-6 text-sm font-medium hover:bg-gray-700 hover:text-white transition duration-100 cursor-pointer "
-  }, "Show Menu", react_1["default"].createElement("svg", {
+  }, label, react_1["default"].createElement("svg", {
     className: "ml-2 -mr-0.5 h-4 w-4",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
@@ -6724,7 +6847,7 @@ var Authenticated = function Authenticated(_ref) {
       showingNavigationDropdown = _ref3[0],
       setShowingNavigationDropdown = _ref3[1];
 
-  var categories = (0, inertia_react_1.usePage)().props.app.menu.categories;
+  var categories = (0, inertia_react_1.usePage)().props.app.categories;
   return react_1["default"].createElement("div", {
     className: "min-h-screen bg-gray-100"
   }, react_1["default"].createElement("nav", {
@@ -6776,9 +6899,11 @@ var Authenticated = function Authenticated(_ref) {
     className: "flex items-center"
   }, react_1["default"].createElement("div", {
     className: "self-center sm:flex "
-  }, react_1["default"].createElement(MegaMenu_1["default"], null, react_1["default"].createElement("ul", {
+  }, react_1["default"].createElement(MegaMenu_1["default"], {
+    label: "Categorias"
+  }, react_1["default"].createElement("div", {
     className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
-  }, react_1["default"].createElement("h3", {
+  }, react_1["default"].createElement("ul", null, react_1["default"].createElement("h3", {
     className: "font-bold text-xl text-white text-bold mb-4"
   }, "\xC1reas do Conhecimento"), categories.area.map(function (v, k) {
     return react_1["default"].createElement("li", {
@@ -6787,29 +6912,18 @@ var Authenticated = function Authenticated(_ref) {
       href: "#".concat(v.id),
       className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
     }, v.name));
-  })), react_1["default"].createElement("ul", {
-    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
+  }))), react_1["default"].createElement("div", {
+    className: "px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r-0 lg:border-b-0 pb-6 pt-6 lg:pt-3"
   }, react_1["default"].createElement("h3", {
     className: "font-bold text-xl text-white text-bold mb-4"
-  }, "Eixo Estruturantes"), categories.axis.map(function (v, k) {
+  }, "Eixo Estruturantes"), react_1["default"].createElement("ul", null, categories.axis.map(function (v, k) {
     return react_1["default"].createElement("li", {
       key: k
     }, react_1["default"].createElement("a", {
       href: "#".concat(v.id),
       className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
     }, v.name));
-  })), react_1["default"].createElement("ul", {
-    className: "px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3"
-  }, react_1["default"].createElement("h3", {
-    className: "font-bold text-xl text-white text-bold mb-4"
-  }, "Objetivos de Desenvolvimento Sustent\xE1vel"), categories.objective.map(function (v, k) {
-    return react_1["default"].createElement("li", {
-      key: k
-    }, react_1["default"].createElement("a", {
-      href: "#".concat(v.id),
-      className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-    }, v.name));
-  })))), react_1["default"].createElement("div", {
+  }))))), react_1["default"].createElement("div", {
     className: "flex hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement(NavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('itineraries.index'),
@@ -7985,8 +8099,11 @@ var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./nod
 
 var ziggy_js_1 = __importDefault(__webpack_require__(/*! ziggy-js */ "./node_modules/ziggy-js/dist/index.js"));
 
+var Collapse_1 = __importDefault(__webpack_require__(/*! @/Components/Collapse */ "./resources/js/Components/Collapse.tsx"));
+
 var Index = function Index(props) {
-  var itineraries = props.itineraries;
+  var itineraries = props.itineraries,
+      filters = props.filters;
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
     errors: props.errors
@@ -8004,237 +8121,43 @@ var Index = function Index(props) {
     className: "text-lg font-medium text-gray-900"
   }, "Filters")), react_1["default"].createElement("form", {
     className: "mt-4 border-t border-gray-200"
-  }, react_1["default"].createElement("h3", {
-    className: "sr-only"
-  }, "Categories"), react_1["default"].createElement("ul", {
-    role: "list",
-    className: "font-medium text-gray-900 px-2 py-3"
-  }, react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block px-2 py-3"
-  }, " Totes ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block px-2 py-3"
-  }, " Backpacks ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block px-2 py-3"
-  }, " Travel Bags ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block px-2 py-3"
-  }, " Hip Bags ")), react_1["default"].createElement("li", null, react_1["default"].createElement("a", {
-    href: "#",
-    className: "block px-2 py-3"
-  }, " Laptop Sleeves "))), react_1["default"].createElement("div", {
+  }, react_1["default"].createElement("div", {
     className: "border-t border-gray-200 px-4 py-6"
-  }, react_1["default"].createElement("h3", {
-    className: "-mx-2 -my-3 flow-root"
-  }, react_1["default"].createElement("button", {
-    type: "button",
-    className: "px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500",
-    "aria-controls": "filter-section-mobile-0",
-    "aria-expanded": "false"
-  }, react_1["default"].createElement("span", {
-    className: "font-medium text-gray-900"
-  }, " Color "), react_1["default"].createElement("span", {
-    className: "ml-6 flex items-center"
-  }, react_1["default"].createElement("svg", {
-    className: "h-5 w-5",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20",
-    fill: "currentColor",
-    "aria-hidden": "true"
-  }, react_1["default"].createElement("path", {
-    fillRule: "evenodd",
-    d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
-    clipRule: "evenodd"
-  })), react_1["default"].createElement("svg", {
-    className: "h-5 w-5",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20",
-    fill: "currentColor",
-    "aria-hidden": "true"
-  }, react_1["default"].createElement("path", {
-    fillRule: "evenodd",
-    d: "M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z",
-    clipRule: "evenodd"
-  }))))), react_1["default"].createElement("div", {
-    className: "pt-6",
-    id: "filter-section-mobile-0"
-  }, react_1["default"].createElement("div", {
-    className: "space-y-6"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-color-0",
-    name: "color[]",
-    value: "white",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300     rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-color-0",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " White ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-color-1",
-    name: "color[]",
-    value: "beige",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-color-1",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " Beige ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-color-2",
-    name: "color[]",
-    value: "blue",
-    type: "checkbox",
-    defaultChecked: true,
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-color-2",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " Blue ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-color-3",
-    name: "color[]",
-    value: "brown",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-color-3",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " Brown ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-color-4",
-    name: "color[]",
-    value: "green",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-color-4",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " Green ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-color-5",
-    name: "color[]",
-    value: "purple",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-color-5",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " Purple "))))), react_1["default"].createElement("div", {
+  }, react_1["default"].createElement(Collapse_1["default"], {
+    label: "Objetivos"
+  }, filters.objective.map(function (v, k) {
+    return react_1["default"].createElement("div", {
+      key: k,
+      className: "flex items-center"
+    }, react_1["default"].createElement("input", {
+      id: "filter-objective-".concat(v.id),
+      name: "objective[]",
+      value: v.id,
+      type: "checkbox",
+      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+    }), react_1["default"].createElement("label", {
+      htmlFor: "filter-objective-".concat(v.id),
+      className: "ml-3 min-w-0 flex-1 text-gray-500"
+    }, v.name));
+  }))), react_1["default"].createElement("div", {
     className: "border-t border-gray-200 px-4 py-6"
-  }, react_1["default"].createElement("h3", {
-    className: "-mx-2 -my-3 flow-root"
-  }, react_1["default"].createElement("button", {
-    type: "button",
-    className: "px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500",
-    "aria-controls": "filter-section-mobile-2",
-    "aria-expanded": "false"
-  }, react_1["default"].createElement("span", {
-    className: "font-medium text-gray-900"
-  }, " Size "), react_1["default"].createElement("span", {
-    className: "ml-6 flex items-center"
-  }, react_1["default"].createElement("svg", {
-    className: "h-5 w-5",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20",
-    fill: "currentColor",
-    "aria-hidden": "true"
-  }, react_1["default"].createElement("path", {
-    fillRule: "evenodd",
-    d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
-    clipRule: "evenodd"
-  })), react_1["default"].createElement("svg", {
-    className: "h-5 w-5",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20",
-    fill: "currentColor",
-    "aria-hidden": "true"
-  }, react_1["default"].createElement("path", {
-    fillRule: "evenodd",
-    d: "M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z",
-    clipRule: "evenodd"
-  }))))), react_1["default"].createElement("div", {
-    className: "pt-6",
-    id: "filter-section-mobile-2"
-  }, react_1["default"].createElement("div", {
-    className: "space-y-6"
-  }, react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-size-0",
-    name: "size[]",
-    value: "2l",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-size-0",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " 2L ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-size-1",
-    name: "size[]",
-    value: "6l",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-size-1",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " 6L ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-size-2",
-    name: "size[]",
-    value: "12l",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-size-2",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " 12L ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-size-3",
-    name: "size[]",
-    value: "18l",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-size-3",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " 18L ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-size-4",
-    name: "size[]",
-    value: "20l",
-    type: "checkbox",
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-size-4",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " 20L ")), react_1["default"].createElement("div", {
-    className: "flex items-center"
-  }, react_1["default"].createElement("input", {
-    id: "filter-mobile-size-5",
-    name: "size[]",
-    value: "40l",
-    type: "checkbox",
-    defaultChecked: true,
-    className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-  }), react_1["default"].createElement("label", {
-    htmlFor: "filter-mobile-size-5",
-    className: "ml-3 min-w-0 flex-1 text-gray-500"
-  }, " 40L ")))))))), react_1["default"].createElement("div", {
+  }, react_1["default"].createElement(Collapse_1["default"], {
+    label: "Ciclo"
+  }, ['bimestral', 'semestral', 'anual'].map(function (v, k) {
+    return react_1["default"].createElement("div", {
+      key: k,
+      className: "flex items-center"
+    }, react_1["default"].createElement("input", {
+      id: "filter-cycle-".concat(v),
+      name: "cycle[]",
+      value: v,
+      type: "checkbox",
+      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+    }), react_1["default"].createElement("label", {
+      htmlFor: "filter-cycle-".concat(v),
+      className: "ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+    }, v));
+  })))))), react_1["default"].createElement("div", {
     className: "col-span-3 p-6"
   }, react_1["default"].createElement("div", {
     className: "gap-4"

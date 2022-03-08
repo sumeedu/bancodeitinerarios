@@ -19,13 +19,14 @@ const Authenticated: React.FC<Props> = ({
   children
 }) => {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-  const { categories } = usePage<any>().props.app.menu
+  const { categories } = usePage<any>().props.app
 
   return (
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
+
             <div className="flex">
               <div className="shrink-0 flex items-center">
                 <Link href="/">
@@ -56,51 +57,43 @@ const Authenticated: React.FC<Props> = ({
                 </form>
               </div>
             </div>
-            <div className="flex items-center">
 
+            <div className="flex items-center">
               <div className="self-center sm:flex ">
-                <MegaMenu>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-4">Áreas do Conhecimento</h3>
-                    {categories.area.map((v: any, k: number) => (
-                      <li key={k}>
-                        <a
-                          href={`#${v.id}`}
-                          className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-                        >
-                          {v.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                <MegaMenu label="Categorias">
+                  <div className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
+                    <ul>
+                      <h3 className="font-bold text-xl text-white text-bold mb-4">Áreas do Conhecimento</h3>
+                      {categories.area.map((v: any, k: number) => (
+                        <li key={k}>
+                          <a
+                            href={`#${v.id}`}
+                            className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+                          >
+                            {v.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r-0 lg:border-b-0 pb-6 pt-6 lg:pt-3">
                     <h3 className="font-bold text-xl text-white text-bold mb-4">Eixo Estruturantes</h3>
-                    {categories.axis.map((v: any, k: number) => (
-                      <li key={k}>
-                        <a
-                          href={`#${v.id}`}
-                          className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-                        >
-                          {v.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-4">Objetivos de Desenvolvimento Sustentável</h3>
-                    {categories.objective.map((v: any, k: number) => (
-                      <li key={k}>
-                        <a
-                          href={`#${v.id}`}
-                          className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
-                        >
-                          {v.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                    <ul>
+                      {categories.axis.map((v: any, k: number) => (
+                        <li key={k}>
+                          <a
+                            href={`#${v.id}`}
+                            className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
+                          >
+                            {v.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </MegaMenu>
               </div>
+
               <div className="flex hover:bg-gray-700 hover:text-white">
                 <NavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
                   Itinerários Formativos
@@ -175,6 +168,7 @@ const Authenticated: React.FC<Props> = ({
                 </button>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -208,8 +202,6 @@ const Authenticated: React.FC<Props> = ({
 
         </div>
       </nav>
-
-
 
       {header && (
         <header className="bg-white shadow">

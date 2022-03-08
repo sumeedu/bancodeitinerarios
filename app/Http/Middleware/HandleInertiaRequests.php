@@ -39,9 +39,7 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user(),
             ],
             'app' => [
-                'menu' => [
-                    'categories' => fn () => Category::all()->groupBy('type'),
-                ]
+                'categories' => fn () => Category::all()->groupBy('type'),
             ]
         ]);
     }

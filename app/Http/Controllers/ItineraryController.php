@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Itinerary\StoreRequest;
 use App\Http\Requests\Itinerary\UpdateRequest;
+use App\Models\Category;
 use App\Models\Itinerary;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -19,15 +20,19 @@ class ItineraryController extends Controller
      */
     public function index(Request $request) : Response
     {
-        $itineraries = Itinerary::with('user')->where(function($query) use ($request) {
-            $query->when($request->has('s'), function($q) use($request) {
+        $itineraries = Itinerary::with('user')->where(function ($query) use ($request) {
+            $query->when($request->has('s'), function ($q) use ($request) {
                 $q->where('name', 'like', "%{$request->get('s')}%");
             });
         })->get();
 
-        // @TODO Filters
+        $filters = [];
+        $filters['objective'] = Category::where('type', 'objective')->get();
 
-        return Inertia::render('Itinerary/Index', ['itineraries' => $itineraries]);
+        return Inertia::render('Itinerary/Index', [
+            'itineraries' => $itineraries,
+            'filters' => $filters,
+        ]);
     }
 
     /**
