@@ -52,9 +52,6 @@ Route::controller(ItineraryController::class)->group(function() {
     });
 
     Route::get('/itinerarios', 'index')->name('itineraries.index');
+    Route::get('/itinerarios/categoria/{slug}', 'category')->name('itineraries.category');
     Route::get('/itinerarios/{itinerary}', 'show')->name('itineraries.show');
-
 });
-
-// Route::resource('itineraries', ItineraryController::class);
-

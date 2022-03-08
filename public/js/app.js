@@ -6909,7 +6909,9 @@ var Authenticated = function Authenticated(_ref) {
     return react_1["default"].createElement("li", {
       key: k
     }, react_1["default"].createElement("a", {
-      href: "#".concat(v.id),
+      href: (0, ziggy_js_1["default"])('itineraries.category', {
+        slug: v.slug
+      }),
       className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
     }, v.name));
   }))), react_1["default"].createElement("div", {
@@ -6920,7 +6922,9 @@ var Authenticated = function Authenticated(_ref) {
     return react_1["default"].createElement("li", {
       key: k
     }, react_1["default"].createElement("a", {
-      href: "#".concat(v.id),
+      href: (0, ziggy_js_1["default"])('itineraries.category', {
+        slug: v.slug
+      }),
       className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
     }, v.name));
   }))))), react_1["default"].createElement("div", {
@@ -8103,10 +8107,28 @@ var Collapse_1 = __importDefault(__webpack_require__(/*! @/Components/Collapse *
 
 var Index = function Index(props) {
   var itineraries = props.itineraries,
-      filters = props.filters;
+      filters = props.filters; // @TODO Create breadcrumb
+
+  var header = react_1["default"].createElement("h2", {
+    className: "font-semibold text-sm text-gray-800 leading-tight flex"
+  }, "Itiner\xE1rios Informativos", filters.category && react_1["default"].createElement("span", {
+    className: "flex items-center"
+  }, react_1["default"].createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "h-4 w-4",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor",
+    strokeWidth: 2
+  }, react_1["default"].createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M9 5l7 7-7 7"
+  })), filters.category.name));
   return react_1["default"].createElement(Authenticated_1["default"], {
     auth: props.auth,
-    errors: props.errors
+    errors: props.errors,
+    header: header
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos"
   }), react_1["default"].createElement(Container_1["default"], {

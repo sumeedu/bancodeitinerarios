@@ -35,6 +35,22 @@ class ItineraryController extends Controller
         ]);
     }
 
+    public function category(Request $request, string $slug) : Response
+    {
+        $itineraries = Itinerary::whereHas('categories', function ($query) use ($slug) {
+            $query->where('categories.slug', $slug);
+        })->with('user')->get();
+
+        $filters = [];
+        $filters['category'] = Category::where('slug', $slug)->first();
+        $filters['objective'] = Category::where('type', 'objective')->get();
+
+        return Inertia::render('Itinerary/Index', [
+            'itineraries' => $itineraries,
+            'filters' => $filters,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

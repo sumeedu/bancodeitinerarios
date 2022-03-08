@@ -66,7 +66,7 @@ const Authenticated: React.FC<Props> = ({
                       {categories.area.map((v: any, k: number) => (
                         <li key={k}>
                           <a
-                            href={`#${v.id}`}
+                            href={route('itineraries.category', {slug: v.slug})}
                             className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
                           >
                             {v.name}
@@ -81,7 +81,7 @@ const Authenticated: React.FC<Props> = ({
                       {categories.axis.map((v: any, k: number) => (
                         <li key={k}>
                           <a
-                            href={`#${v.id}`}
+                            href={route('itineraries.category', {slug: v.slug})}
                             className="block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
                           >
                             {v.name}

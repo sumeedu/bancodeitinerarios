@@ -827,6 +827,9 @@ select {
 .h-64 {
   height: 16rem;
 }
+.h-3 {
+  height: 0.75rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -874,6 +877,12 @@ select {
 }
 .w-64 {
   width: 16rem;
+}
+.w-2 {
+  width: 0.5rem;
+}
+.w-3 {
+  width: 0.75rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1297,6 +1306,9 @@ select {
 }
 .text-right {
   text-align: right;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
