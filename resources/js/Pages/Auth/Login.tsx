@@ -40,7 +40,7 @@ const Login: React.FC<Props> = ({ status, canResetPassword }) => {
 
     return (
         <Guest>
-            <Head title="Log in" />
+            <Head title="Entrar" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
@@ -48,7 +48,7 @@ const Login: React.FC<Props> = ({ status, canResetPassword }) => {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Email" />
+                    <Label forInput="email" value="E-mail" />
 
                     <Input
                         type="text"
@@ -62,7 +62,7 @@ const Login: React.FC<Props> = ({ status, canResetPassword }) => {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label forInput="password" value="Senha" />
 
                     <Input
                         type="password"
@@ -78,7 +78,7 @@ const Login: React.FC<Props> = ({ status, canResetPassword }) => {
                     <label className="flex items-center">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ml-2 text-sm text-gray-600">Salvar dados</span>
                     </label>
                 </div>
 
@@ -88,12 +88,12 @@ const Login: React.FC<Props> = ({ status, canResetPassword }) => {
                             href={route('password.request')}
                             className="underline text-sm text-gray-600 hover:text-gray-900"
                         >
-                            Forgot your password?
+                            Esqueceu sua senha?
                         </Link>
                     )}
 
                     <Button className="ml-4" processing={processing}>
-                        Log in
+                        Entrar
                     </Button>
                 </div>
             </form>

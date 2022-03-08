@@ -6878,8 +6878,8 @@ var Authenticated = function Authenticated(_ref) {
     id: "s",
     type: "search",
     className: "form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded rounded-r-none transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700  focus:outline-none",
-    placeholder: "Search",
-    "aria-label": "Search"
+    placeholder: "Buscar por...",
+    "aria-label": "Busca"
   }), react_1["default"].createElement("button", {
     className: "btn px-6 py-2.5 bg-gray-100 text-slate-500 leading-tight rounded rounded-l-none  hover:bg-gray-700 hover:text-white transition duration-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-700 active:shadow-lg ease-in-out flex items-center",
     type: "submit"
@@ -6950,12 +6950,12 @@ var Authenticated = function Authenticated(_ref) {
     href: (0, ziggy_js_1["default"])('logout'),
     method: "post",
     as: "button"
-  }, "Log Out")))) : react_1["default"].createElement("div", {
+  }, "Sair")))) : react_1["default"].createElement("div", {
     className: "relative"
   }, react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('login'),
     className: "btn px-6 py-2.5 bg-gray-100 textslate-500 leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
-  }, "Login"))), react_1["default"].createElement("div", {
+  }, "Entrar"))), react_1["default"].createElement("div", {
     className: "-mr-2 flex items-center sm:hidden"
   }, react_1["default"].createElement("button", {
     onClick: function onClick() {
@@ -7002,12 +7002,12 @@ var Authenticated = function Authenticated(_ref) {
     method: "post",
     href: (0, ziggy_js_1["default"])('logout'),
     as: "button"
-  }, "Log Out"))) : react_1["default"].createElement("div", {
+  }, "Sair"))) : react_1["default"].createElement("div", {
     className: "mt-3 space-y-1"
   }, react_1["default"].createElement(ResponsiveNavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('login'),
     as: "button"
-  }, "Login")))), header && react_1["default"].createElement("header", {
+  }, "Entrar")))), header && react_1["default"].createElement("header", {
     className: "bg-white shadow"
   }, react_1["default"].createElement("div", {
     className: "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
@@ -7242,10 +7242,10 @@ var ForgotPassword = function ForgotPassword(_ref) {
   };
 
   return react_1["default"].createElement(Guest_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Forgot Password"
+    title: "Esqueci minha senha"
   }), react_1["default"].createElement("div", {
     className: "mb-4 text-sm text-gray-500 leading-normal"
-  }, "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one."), status && react_1["default"].createElement("div", {
+  }, "Esqueceu sua senha? Sem problemas. Apenas nos informe seu e-mail e n\xF3s enviaremos um link para que voc\xEA possa escolher uma senha nova."), status && react_1["default"].createElement("div", {
     className: "mb-4 font-medium text-sm text-green-600"
   }, status), react_1["default"].createElement(ValidationErrors_1["default"], {
     errors: errors
@@ -7263,7 +7263,7 @@ var ForgotPassword = function ForgotPassword(_ref) {
   }, react_1["default"].createElement(Button_1["default"], {
     className: "ml-4",
     processing: processing
-  }, "Email Password Reset Link"))));
+  }, "Enviar"))));
 };
 
 exports["default"] = ForgotPassword;
@@ -7373,7 +7373,7 @@ var Login = function Login(_ref) {
   };
 
   return react_1["default"].createElement(Guest_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Log in"
+    title: "Entrar"
   }), status && react_1["default"].createElement("div", {
     className: "mb-4 font-medium text-sm text-green-600"
   }, status), react_1["default"].createElement(ValidationErrors_1["default"], {
@@ -7382,7 +7382,7 @@ var Login = function Login(_ref) {
     onSubmit: submit
   }, react_1["default"].createElement("div", null, react_1["default"].createElement(Label_1["default"], {
     forInput: "email",
-    value: "Email"
+    value: "E-mail"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "text",
     name: "email",
@@ -7395,7 +7395,7 @@ var Login = function Login(_ref) {
     className: "mt-4"
   }, react_1["default"].createElement(Label_1["default"], {
     forInput: "password",
-    value: "Password"
+    value: "Senha"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "password",
     name: "password",
@@ -7413,15 +7413,15 @@ var Login = function Login(_ref) {
     handleChange: onHandleChange
   }), react_1["default"].createElement("span", {
     className: "ml-2 text-sm text-gray-600"
-  }, "Remember me"))), react_1["default"].createElement("div", {
+  }, "Salvar dados"))), react_1["default"].createElement("div", {
     className: "flex items-center justify-end mt-4"
   }, canResetPassword && react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('password.request'),
     className: "underline text-sm text-gray-600 hover:text-gray-900"
-  }, "Forgot your password?"), react_1["default"].createElement(Button_1["default"], {
+  }, "Esqueceu sua senha?"), react_1["default"].createElement(Button_1["default"], {
     className: "ml-4",
     processing: processing
-  }, "Log in"))));
+  }, "Entrar"))));
 };
 
 exports["default"] = Login;
@@ -7527,14 +7527,14 @@ var Register = function Register() {
   };
 
   return react_1["default"].createElement(Guest_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Register"
+    title: "Registrar"
   }), react_1["default"].createElement(ValidationErrors_1["default"], {
     errors: errors
   }), react_1["default"].createElement("form", {
     onSubmit: submit
   }, react_1["default"].createElement("div", null, react_1["default"].createElement(Label_1["default"], {
     forInput: "name",
-    value: "Name"
+    value: "Nome"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "text",
     name: "name",
@@ -7548,7 +7548,7 @@ var Register = function Register() {
     className: "mt-4"
   }, react_1["default"].createElement(Label_1["default"], {
     forInput: "email",
-    value: "Email"
+    value: "E-mail"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "email",
     name: "email",
@@ -7561,7 +7561,7 @@ var Register = function Register() {
     className: "mt-4"
   }, react_1["default"].createElement(Label_1["default"], {
     forInput: "password",
-    value: "Password"
+    value: "Senha"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "password",
     name: "password",
@@ -7574,7 +7574,7 @@ var Register = function Register() {
     className: "mt-4"
   }, react_1["default"].createElement(Label_1["default"], {
     forInput: "password_confirmation",
-    value: "Confirm Password"
+    value: "Confirme a senha"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "password",
     name: "password_confirmation",
@@ -7587,10 +7587,10 @@ var Register = function Register() {
   }, react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('login'),
     className: "underline text-sm text-gray-600 hover:text-gray-900"
-  }, "Already registered?"), react_1["default"].createElement(Button_1["default"], {
+  }, "J\xE1 est\xE1 registrado?"), react_1["default"].createElement(Button_1["default"], {
     className: "ml-4",
     processing: processing
-  }, "Register"))));
+  }, "Registrar"))));
 };
 
 exports["default"] = Register;
@@ -7699,14 +7699,14 @@ var ResetPassword = function ResetPassword(_ref) {
   };
 
   return react_1["default"].createElement(Guest_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Reset Password"
+    title: "Alterar senha"
   }), react_1["default"].createElement(ValidationErrors_1["default"], {
     errors: errors
   }), react_1["default"].createElement("form", {
     onSubmit: submit
   }, react_1["default"].createElement("div", null, react_1["default"].createElement(Label_1["default"], {
     forInput: "email",
-    value: "Email"
+    value: "E-mail"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "email",
     name: "email",
@@ -7718,7 +7718,7 @@ var ResetPassword = function ResetPassword(_ref) {
     className: "mt-4"
   }, react_1["default"].createElement(Label_1["default"], {
     forInput: "password",
-    value: "Password"
+    value: "Senha"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "password",
     name: "password",
@@ -7731,7 +7731,7 @@ var ResetPassword = function ResetPassword(_ref) {
     className: "mt-4"
   }, react_1["default"].createElement(Label_1["default"], {
     forInput: "password_confirmation",
-    value: "Confirm Password"
+    value: "Confirme a senha"
   }), react_1["default"].createElement(Input_1["default"], {
     type: "password",
     name: "password_confirmation",
@@ -7744,7 +7744,7 @@ var ResetPassword = function ResetPassword(_ref) {
   }, react_1["default"].createElement(Button_1["default"], {
     className: "ml-4",
     processing: processing
-  }, "Reset Password"))));
+  }, "Alterar senha"))));
 };
 
 exports["default"] = ResetPassword;
@@ -7793,23 +7793,23 @@ var VerifyEmail = function VerifyEmail(_ref) {
   };
 
   return react_1["default"].createElement(Guest_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
-    title: "Email Verification"
+    title: "Verifica\xE7\xE3o de e-mail"
   }), react_1["default"].createElement("div", {
     className: "mb-4 text-sm text-gray-600"
-  }, "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another."), status === 'verification-link-sent' && react_1["default"].createElement("div", {
+  }, "Obrigado por se registrar! Antes de come\xE7ar, voc\xEA poderia verificar seu e-mail clicando no link que n\xF3s acabamos de enviar para voc\xEA? Se voc\xEA n\xE3o recebeu este e-mail, n\xF3s ficaremos feliz em mandar outro."), status === 'verification-link-sent' && react_1["default"].createElement("div", {
     className: "mb-4 font-medium text-sm text-green-600"
-  }, "A new verification link has been sent to the email address you provided during registration."), react_1["default"].createElement("form", {
+  }, "Uma nova mensagem para verifica\xE7\xE3o de e-mail foi enviada para o e-mail que voc\xEA forneceu no seu cadastro."), react_1["default"].createElement("form", {
     onSubmit: submit
   }, react_1["default"].createElement("div", {
     className: "mt-4 flex items-center justify-between"
   }, react_1["default"].createElement(Button_1["default"], {
     processing: processing
-  }, "Resend Verification Email"), react_1["default"].createElement(inertia_react_1.Link, {
+  }, "Enviar e-mail de verifica\xE7\xE3o novamente"), react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('logout'),
     method: "post",
     as: "button",
     className: "underline text-sm text-gray-600 hover:text-gray-900"
-  }, "Log Out"))));
+  }, "Sair"))));
 };
 
 exports["default"] = VerifyEmail;

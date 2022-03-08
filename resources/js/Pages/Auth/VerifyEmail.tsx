@@ -19,22 +19,22 @@ const VerifyEmail: React.FC<Props> = ({ status }) => {
 
     return (
         <Guest>
-            <Head title="Email Verification" />
+            <Head title="Verificação de e-mail" />
 
             <div className="mb-4 text-sm text-gray-600">
-                Thanks for signing up! Before getting started, could you verify your email address by clicking on the
-                link we just emailed to you? If you didn't receive the email, we will gladly send you another.
+              Obrigado por se registrar! Antes de começar, você poderia verificar seu e-mail clicando no link que nós
+              acabamos de enviar para você? Se você não recebeu este e-mail, nós ficaremos feliz em mandar outro.
             </div>
 
             {status === 'verification-link-sent' && (
                 <div className="mb-4 font-medium text-sm text-green-600">
-                    A new verification link has been sent to the email address you provided during registration.
+                  Uma nova mensagem para verificação de e-mail foi enviada para o e-mail que você forneceu no seu cadastro.
                 </div>
             )}
 
             <form onSubmit={submit}>
                 <div className="mt-4 flex items-center justify-between">
-                    <Button processing={processing}>Resend Verification Email</Button>
+                    <Button processing={processing}>Enviar e-mail de verificação novamente</Button>
 
                     <Link
                         href={route('logout')}
@@ -42,7 +42,7 @@ const VerifyEmail: React.FC<Props> = ({ status }) => {
                         as="button"
                         className="underline text-sm text-gray-600 hover:text-gray-900"
                     >
-                        Log Out
+                        Sair
                     </Link>
                 </div>
             </form>

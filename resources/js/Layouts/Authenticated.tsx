@@ -45,8 +45,8 @@ const Authenticated: React.FC<Props> = ({
                       id="s"
                       type="search"
                       className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded rounded-r-none transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700  focus:outline-none"
-                      placeholder="Search"
-                      aria-label="Search">
+                      placeholder="Buscar por..."
+                      aria-label="Busca">
                     </input>
                     <button className="btn px-6 py-2.5 bg-gray-100 text-slate-500 leading-tight rounded rounded-l-none  hover:bg-gray-700 hover:text-white transition duration-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-700 active:shadow-lg ease-in-out flex items-center" type="submit">
                       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" className="w-4 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -130,7 +130,7 @@ const Authenticated: React.FC<Props> = ({
 
                     <Dropdown.Content>
                       <Dropdown.Link href={route('logout')} method="post" as="button">
-                        Log Out
+                        Sair
                       </Dropdown.Link>
                     </Dropdown.Content>
                   </Dropdown>
@@ -138,7 +138,7 @@ const Authenticated: React.FC<Props> = ({
               ) : (
                 <div className="relative">
                   <Link href={route('login')} className="btn px-6 py-2.5 bg-gray-100 textslate-500 leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center">
-                    Login
+                    Entrar
                   </Link>
                 </div>
               )}
@@ -188,14 +188,14 @@ const Authenticated: React.FC<Props> = ({
 
             <div className="mt-3 space-y-1">
               <ResponsiveNavLink method="post" href={route('logout')} as="button">
-                Log Out
+                Sair
               </ResponsiveNavLink>
             </div>
           </div>
           ) : (
           <div className="mt-3 space-y-1">
             <ResponsiveNavLink href={route('login')} as="button">
-              Login
+              Entrar
             </ResponsiveNavLink>
           </div>
           )}

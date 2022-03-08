@@ -27,11 +27,11 @@ const ForgotPassword: React.FC<Props> = ({ status }) => {
 
     return (
         <Guest>
-            <Head title="Forgot Password" />
+            <Head title="Esqueci minha senha" />
 
             <div className="mb-4 text-sm text-gray-500 leading-normal">
-                Forgot your password? No problem. Just let us know your email address and we will email you a password
-                reset link that will allow you to choose a new one.
+                Esqueceu sua senha? Sem problemas. Apenas nos informe seu e-mail e nós enviaremos um link para que você
+                possa escolher uma senha nova.
             </div>
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -50,7 +50,7 @@ const ForgotPassword: React.FC<Props> = ({ status }) => {
 
                 <div className="flex items-center justify-end mt-4">
                     <Button className="ml-4" processing={processing}>
-                        Email Password Reset Link
+                        Enviar
                     </Button>
                 </div>
             </form>

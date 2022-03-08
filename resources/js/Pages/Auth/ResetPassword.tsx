@@ -41,13 +41,13 @@ const ResetPassword: React.FC<Props> = ({ token, email }: Props) => {
 
     return (
         <Guest>
-            <Head title="Reset Password" />
+            <Head title="Alterar senha" />
 
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Email" />
+                    <Label forInput="email" value="E-mail" />
 
                     <Input
                         type="email"
@@ -60,7 +60,7 @@ const ResetPassword: React.FC<Props> = ({ token, email }: Props) => {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label forInput="password" value="Senha" />
 
                     <Input
                         type="password"
@@ -74,7 +74,7 @@ const ResetPassword: React.FC<Props> = ({ token, email }: Props) => {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password_confirmation" value="Confirm Password" />
+                    <Label forInput="password_confirmation" value="Confirme a senha" />
 
                     <Input
                         type="password"
@@ -88,7 +88,7 @@ const ResetPassword: React.FC<Props> = ({ token, email }: Props) => {
 
                 <div className="flex items-center justify-end mt-4">
                     <Button className="ml-4" processing={processing}>
-                        Reset Password
+                        Alterar senha
                     </Button>
                 </div>
             </form>

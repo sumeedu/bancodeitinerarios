@@ -35,13 +35,13 @@ const Register: React.FC = () => {
 
     return (
         <Guest>
-            <Head title="Register" />
+            <Head title="Registrar" />
 
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="name" value="Name" />
+                    <Label forInput="name" value="Nome" />
 
                     <Input
                         type="text"
@@ -56,7 +56,7 @@ const Register: React.FC = () => {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="email" value="Email" />
+                    <Label forInput="email" value="E-mail" />
 
                     <Input
                         type="email"
@@ -70,7 +70,7 @@ const Register: React.FC = () => {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label forInput="password" value="Senha" />
 
                     <Input
                         type="password"
@@ -84,7 +84,7 @@ const Register: React.FC = () => {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password_confirmation" value="Confirm Password" />
+                    <Label forInput="password_confirmation" value="Confirme a senha" />
 
                     <Input
                         type="password"
@@ -98,11 +98,11 @@ const Register: React.FC = () => {
 
                 <div className="flex items-center justify-end mt-4">
                     <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
-                        Already registered?
+                        Já está registrado?
                     </Link>
 
                     <Button className="ml-4" processing={processing}>
-                        Register
+                        Registrar
                     </Button>
                 </div>
             </form>
