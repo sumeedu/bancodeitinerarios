@@ -6865,7 +6865,7 @@ var Authenticated = function Authenticated(_ref) {
   }, react_1["default"].createElement(ApplicationLogo_1["default"], {
     className: "block h-9 w-auto text-gray-500"
   })))), react_1["default"].createElement("div", {
-    className: "searchbox flex justify-center items-center"
+    className: "searchbox hidden md:flex justify-center items-center"
   }, react_1["default"].createElement("div", {
     className: "xl:w-96"
   }, react_1["default"].createElement("form", {
@@ -6898,7 +6898,7 @@ var Authenticated = function Authenticated(_ref) {
   }))))))), react_1["default"].createElement("div", {
     className: "flex items-center"
   }, react_1["default"].createElement("div", {
-    className: "self-center sm:flex "
+    className: "self-center hidden md:flex"
   }, react_1["default"].createElement(MegaMenu_1["default"], {
     label: "Categorias"
   }, react_1["default"].createElement("div", {
@@ -6924,7 +6924,7 @@ var Authenticated = function Authenticated(_ref) {
       className: "block p-3 hover:bg-gray-900 text-gray-300 hover:text-white"
     }, v.name));
   }))))), react_1["default"].createElement("div", {
-    className: "flex hover:bg-gray-700 hover:text-white"
+    className: "hidden md:flex hover:bg-gray-700 hover:text-white"
   }, react_1["default"].createElement(NavLink_1["default"], {
     href: (0, ziggy_js_1["default"])('itineraries.index'),
     active: (0, ziggy_js_1["default"])().current('itineraries.index')
@@ -6951,7 +6951,7 @@ var Authenticated = function Authenticated(_ref) {
     method: "post",
     as: "button"
   }, "Sair")))) : react_1["default"].createElement("div", {
-    className: "relative"
+    className: "relative hidden md:flex"
   }, react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('login'),
     className: "btn px-6 py-2.5 bg-gray-100 textslate-500 leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
@@ -8112,7 +8112,7 @@ var Index = function Index(props) {
   }), react_1["default"].createElement(Container_1["default"], {
     className: "bg-white shadow-sm rounded-t-lg"
   }, react_1["default"].createElement("div", {
-    className: "grid grid-cols-4 gap-4"
+    className: "grid grid-cols-1 gap-1 md:grid-cols-4 md:gap-4"
   }, react_1["default"].createElement("div", {
     className: "bg-gray-50 p-6 rounded-tl-lg"
   }, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
@@ -8238,7 +8238,7 @@ var Index = function Index(props) {
       }),
       title: "imagem ilustrativa"
     }, react_1["default"].createElement("img", {
-      className: "w-64 h-64 pt-6 pr-6 pb-12",
+      className: "w-64 h-64 pt-6 pr-6 pb-12 hidden md:inline-flex",
       src: "https://placeimg.com/120/120/tech",
       alt: item.description
     })), react_1["default"].createElement("a", {

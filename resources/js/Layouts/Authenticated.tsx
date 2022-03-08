@@ -35,7 +35,7 @@ const Authenticated: React.FC<Props> = ({
               </div>
             </div>
             {/*searchbox*/}
-            <div className="searchbox flex justify-center items-center">
+            <div className="searchbox hidden md:flex justify-center items-center">
               <div className="xl:w-96">
                 <form method="GET" action={route('itineraries.index')}>
                   <div className="input-group relative flex items-stretch w-full">
@@ -58,7 +58,7 @@ const Authenticated: React.FC<Props> = ({
             </div>
             {/* MegaMenu */}
             <div className="flex items-center">
-              <div className="self-center sm:flex ">
+              <div className="self-center hidden md:flex">
                 <MegaMenu label="Categorias">
                   <div className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
                     <ul>
@@ -93,7 +93,7 @@ const Authenticated: React.FC<Props> = ({
                 </MegaMenu>
               </div>
 
-              <div className="flex hover:bg-gray-700 hover:text-white">
+              <div className="hidden md:flex hover:bg-gray-700 hover:text-white">
                 <NavLink href={route('itineraries.index')} active={route().current('itineraries.index')}>
                   Itinerários Formativos
                 </NavLink>
@@ -135,7 +135,7 @@ const Authenticated: React.FC<Props> = ({
                   </Dropdown>
                 </div>
               ) : (
-                <div className="relative">
+                <div className="relative hidden md:flex">
                   <Link href={route('login')} className="btn px-6 py-2.5 bg-gray-100 textslate-500 leading-tight uppercase rounded  hover:bg-blue-700 hover:text-gray-50 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center">
                     Entrar
                   </Link>

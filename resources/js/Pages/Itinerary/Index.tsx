@@ -16,7 +16,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
       <Head title="Itinerários Formativos"/>
 
       <Container className="bg-white shadow-sm rounded-t-lg">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-4 md:gap-4">
 
           <div className="bg-gray-50 p-6 rounded-tl-lg">
             <div>
@@ -137,7 +137,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
 
                   <a className='contents' href={route('itineraries.show', {itinerary: item})} title="imagem ilustrativa">
                     <img
-                      className="w-64 h-64 pt-6 pr-6 pb-12"
+                      className="w-64 h-64 pt-6 pr-6 pb-12 hidden md:inline-flex"
                       src="https://placeimg.com/120/120/tech" alt={(item.description)}
                     />
                   </a>
