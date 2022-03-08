@@ -5357,7 +5357,10 @@ var Collapse = function Collapse(_ref) {
       setIsOpen = _ref3[1];
 
   return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("h3", {
-    className: "-mx-2 -my-3 flow-root"
+    className: "-mx-2 -my-3 flow-root",
+    onClick: function onClick() {
+      return setIsOpen(!isOpen);
+    }
   }, react_1["default"].createElement("button", {
     type: "button",
     className: "px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500",
@@ -5368,10 +5371,7 @@ var Collapse = function Collapse(_ref) {
   }, label), react_1["default"].createElement("span", {
     className: "ml-6 flex items-center"
   }, react_1["default"].createElement("span", {
-    className: "cursor-pointer ".concat(isOpen ? 'hidden' : 'block'),
-    onClick: function onClick() {
-      return setIsOpen(true);
-    }
+    className: "cursor-pointer ".concat(isOpen ? 'hidden' : 'block')
   }, react_1["default"].createElement("svg", {
     className: "h-5 w-5  ",
     xmlns: "http://www.w3.org/2000/svg",
@@ -5383,10 +5383,7 @@ var Collapse = function Collapse(_ref) {
     d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
     clipRule: "evenodd"
   }))), react_1["default"].createElement("span", {
-    className: "cursor-pointer ".concat(!isOpen ? 'hidden' : 'block'),
-    onClick: function onClick() {
-      return setIsOpen(false);
-    }
+    className: "cursor-pointer ".concat(!isOpen ? 'hidden' : 'block')
   }, react_1["default"].createElement("svg", {
     className: "h-5 w-5 show",
     xmlns: "http://www.w3.org/2000/svg",
