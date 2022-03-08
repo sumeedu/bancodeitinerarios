@@ -623,17 +623,6 @@ select {
     max-width: 1536px;
   }
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
 .static {
   position: static;
 }
@@ -736,6 +725,9 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.ml-6 {
+  margin-left: 1.5rem;
+}
 .-mr-0\.5 {
   margin-right: -0.125rem;
 }
@@ -768,9 +760,6 @@ select {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.ml-6 {
-  margin-left: 1.5rem;
 }
 .mb-10 {
   margin-bottom: 2.5rem;
@@ -1004,15 +993,15 @@ select {
 .gap-1 {
   gap: 0.25rem;
 }
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -1228,6 +1217,10 @@ select {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1243,10 +1236,6 @@ select {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 .py-2\.5 {
   padding-top: 0.625rem;
@@ -1267,6 +1256,9 @@ select {
 .pt-8 {
   padding-top: 2rem;
 }
+.pt-6 {
+  padding-top: 1.5rem;
+}
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -1278,9 +1270,6 @@ select {
 }
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-.pt-6 {
-  padding-top: 1.5rem;
 }
 .pt-2 {
   padding-top: 0.5rem;
@@ -1547,9 +1536,6 @@ select {
     width: 100%;
     z-index: 100;
 }
-/* .hoverable {
-    position: static;
-} */
 .hoverable:hover .mega-menu {
     display: block;
 }
@@ -1965,10 +1951,6 @@ select {
 
   .lg\:border-b-0 {
     border-bottom-width: 0px;
-  }
-
-  .lg\:border-r {
-    border-right-width: 1px;
   }
 
   .lg\:border-r-0 {

@@ -34,7 +34,6 @@ const Authenticated: React.FC<Props> = ({
                 </Link>
               </div>
             </div>
-
             {/*searchbox*/}
             <div className="searchbox flex justify-center items-center">
               <div className="xl:w-96">
@@ -143,7 +142,6 @@ const Authenticated: React.FC<Props> = ({
                 </div>
               )}
               </div>
-
               <div className="-mr-2 flex items-center sm:hidden">
                 <button
                   onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}

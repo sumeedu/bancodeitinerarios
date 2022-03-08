@@ -5368,12 +5368,12 @@ var Collapse = function Collapse(_ref) {
   }, label), react_1["default"].createElement("span", {
     className: "ml-6 flex items-center"
   }, react_1["default"].createElement("span", {
-    className: "cursor-pointer",
+    className: "cursor-pointer ".concat(isOpen ? 'hidden' : 'block'),
     onClick: function onClick() {
       return setIsOpen(true);
     }
   }, react_1["default"].createElement("svg", {
-    className: "h-5 w-5",
+    className: "h-5 w-5  ",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
     fill: "currentColor",
@@ -5383,12 +5383,12 @@ var Collapse = function Collapse(_ref) {
     d: "M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z",
     clipRule: "evenodd"
   }))), react_1["default"].createElement("span", {
-    className: "cursor-pointer",
+    className: "cursor-pointer ".concat(!isOpen ? 'hidden' : 'block'),
     onClick: function onClick() {
       return setIsOpen(false);
     }
   }, react_1["default"].createElement("svg", {
-    className: "h-5 w-5",
+    className: "h-5 w-5 show",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 20 20",
     fill: "currentColor",
