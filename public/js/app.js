@@ -8119,7 +8119,7 @@ var Index = function Index(props) {
     className: "px-4 flex items-center justify-between"
   }, react_1["default"].createElement("h2", {
     className: "text-lg font-medium text-gray-900"
-  }, "Filters")), react_1["default"].createElement("form", {
+  }, "Filtros")), react_1["default"].createElement("form", {
     className: "mt-4 border-t border-gray-200"
   }, react_1["default"].createElement("div", {
     className: "border-t border-gray-200 px-4 py-6"

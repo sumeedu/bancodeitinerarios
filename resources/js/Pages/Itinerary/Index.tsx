@@ -21,7 +21,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
           <div className="bg-gray-50 p-6 rounded-tl-lg">
             <div>
               <div className="px-4 flex items-center justify-between">
-                <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+                <h2 className="text-lg font-medium text-gray-900">Filtros</h2>
               </div>
               <form className="mt-4 border-t border-gray-200">
 
