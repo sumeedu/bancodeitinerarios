@@ -8471,6 +8471,8 @@ var Index = function Index(props) {
     className: "font-semibold mt-4 mb-2 text-lg"
   }, "Eixos Estruturantes"), react_1["default"].createElement("p", null, axis.join(', ')), react_1["default"].createElement("h4", {
     className: "font-semibold mt-4 mb-2 text-lg"
+  }, "Ciclo"), react_1["default"].createElement("p", null, itinerary.cycle == 'weekly' && "Semanal", itinerary.cycle == 'monthly' && "Mensal", itinerary.cycle == 'bimonthly' && "Bimestral", itinerary.cycle == 'semiannual' && "Semestral", itinerary.cycle == 'yearly' && "Anual"), react_1["default"].createElement("h4", {
+    className: "font-semibold mt-4 mb-2 text-lg"
   }, "Objetivo de Desenvolvimento Sustent\xE1vel"), react_1["default"].createElement("div", {
     className: "flex flex-wrap gap-1"
   }, objectives.map(function (n, k) {

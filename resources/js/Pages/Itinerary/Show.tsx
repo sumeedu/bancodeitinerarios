@@ -86,6 +86,15 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
             <h4 className="font-semibold mt-4 mb-2 text-lg">Eixos Estruturantes</h4>
             <p>{axis.join(', ')}</p>
 
+            <h4 className="font-semibold mt-4 mb-2 text-lg">Ciclo</h4>
+            <p>
+              {itinerary.cycle == 'weekly' && "Semanal"}
+              {itinerary.cycle == 'monthly' && "Mensal"}
+              {itinerary.cycle == 'bimonthly' && "Bimestral"}
+              {itinerary.cycle == 'semiannual' && "Semestral"}
+              {itinerary.cycle == 'yearly' && "Anual"}
+            </p>
+
             <h4 className="font-semibold mt-4 mb-2 text-lg">Objetivo de Desenvolvimento Sustentável</h4>
             <div className="flex flex-wrap gap-1">
               {objectives.map((n, k) => (
