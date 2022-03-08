@@ -4,6 +4,18 @@ import {Head, InertiaFormProps, useForm} from "@inertiajs/inertia-react"
 import Container from "@/Components/Container"
 import route from 'ziggy-js'
 
+interface Subject {
+  name: string
+  lessons_weekly: number
+  lessons_total: number
+  lessons_hours: number
+}
+
+interface Matrix {
+  name: string
+  subjects: Subject[]
+}
+
 interface FormData {
   name: string
   description: string
@@ -11,7 +23,8 @@ interface FormData {
   importance: string
   formation: string
   reference: string
-  matrices: any
+  cycle: string
+  matrices: Matrix[]
 }
 
 const Create: React.FC = (props: React.PropsWithChildren<any>) => {
@@ -22,6 +35,7 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
     importance: '',
     formation: '',
     reference: '',
+    cycle:  '',
     matrices: []
   })
 
@@ -63,7 +77,7 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
                     name="name"
                     id="name"
                     className="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
-                    placeholder="My activity"
+                    placeholder="Nome do itinerário formativo"
                     value={data.name}
                     onChange={handleChange}
                   />
@@ -81,8 +95,76 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
                   name="description"
                   rows={8}
                   className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="This activity description"
+                  placeholder="Descreva o itinerário formativo..."
                   defaultValue={data.description}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="objective" className="block text-sm font-medium text-gray-700">
+                Objetivos
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="objective"
+                  name="objective"
+                  rows={8}
+                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Enumere os objetivos deste itinerário formativo..."
+                  defaultValue={data.objective}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="importance" className="block text-sm font-medium text-gray-700">
+                Importância
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="importance"
+                  name="importance"
+                  rows={8}
+                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Pensando na proposta do itinerário formativo, seu contexto social..."
+                  defaultValue={data.importance}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="formation" className="block text-sm font-medium text-gray-700">
+                Formação
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="formation"
+                  name="formation"
+                  rows={8}
+                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Espera-se que ao final desse aprofundamento o aluno..."
+                  defaultValue={data.formation}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+                Referências
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="description"
+                  name="description"
+                  rows={8}
+                  className="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Enumere as referências bibliográficas que sustentam esse itinerário informativo."
+                  defaultValue={data.reference}
                   onChange={handleChange}
                 />
               </div>

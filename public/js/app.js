@@ -5598,8 +5598,7 @@ var Content = function Content(_ref6) {
 var Link = function Link(_ref8) {
   var _ref8$href = _ref8.href,
       href = _ref8$href === void 0 ? '' : _ref8$href,
-      _ref8$method = _ref8.method,
-      method = _ref8$method === void 0 ? 'post' : _ref8$method,
+      method = _ref8.method,
       _ref8$as = _ref8.as,
       as = _ref8$as === void 0 ? 'a' : _ref8$as,
       children = _ref8.children;
@@ -6948,6 +6947,11 @@ var Authenticated = function Authenticated(_ref) {
     d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
     clipRule: "evenodd"
   }))))), react_1["default"].createElement(Dropdown_1["default"].Content, null, react_1["default"].createElement(Dropdown_1["default"].Link, {
+    href: (0, ziggy_js_1["default"])('itineraries.create'),
+    as: "a"
+  }, "Cadastrar Itiner\xE1rio"), react_1["default"].createElement("div", {
+    className: "border border-gray-50 border-b"
+  }), react_1["default"].createElement(Dropdown_1["default"].Link, {
     href: (0, ziggy_js_1["default"])('logout'),
     method: "post",
     as: "button"
@@ -7902,6 +7906,7 @@ var Create = function Create(props) {
     importance: '',
     formation: '',
     reference: '',
+    cycle: '',
     matrices: []
   }),
       data = _ref.data,
@@ -7947,7 +7952,7 @@ var Create = function Create(props) {
     name: "name",
     id: "name",
     className: "flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm",
-    placeholder: "My activity",
+    placeholder: "Nome do itiner\xE1rio formativo",
     value: data.name,
     onChange: handleChange
   })))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
@@ -7960,8 +7965,60 @@ var Create = function Create(props) {
     name: "description",
     rows: 8,
     className: "block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
-    placeholder: "This activity description",
+    placeholder: "Descreva o itiner\xE1rio formativo...",
     defaultValue: data.description,
+    onChange: handleChange
+  }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "objective",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Objetivos"), react_1["default"].createElement("div", {
+    className: "mt-1"
+  }, react_1["default"].createElement("textarea", {
+    id: "objective",
+    name: "objective",
+    rows: 8,
+    className: "block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+    placeholder: "Enumere os objetivos deste itiner\xE1rio formativo...",
+    defaultValue: data.objective,
+    onChange: handleChange
+  }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "importance",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Import\xE2ncia"), react_1["default"].createElement("div", {
+    className: "mt-1"
+  }, react_1["default"].createElement("textarea", {
+    id: "importance",
+    name: "importance",
+    rows: 8,
+    className: "block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+    placeholder: "Pensando na proposta do itiner\xE1rio formativo, seu contexto social...",
+    defaultValue: data.importance,
+    onChange: handleChange
+  }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "formation",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Forma\xE7\xE3o"), react_1["default"].createElement("div", {
+    className: "mt-1"
+  }, react_1["default"].createElement("textarea", {
+    id: "formation",
+    name: "formation",
+    rows: 8,
+    className: "block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+    placeholder: "Espera-se que ao final desse aprofundamento o aluno...",
+    defaultValue: data.formation,
+    onChange: handleChange
+  }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "description",
+    className: "block text-sm font-medium text-gray-700"
+  }, "Refer\xEAncias"), react_1["default"].createElement("div", {
+    className: "mt-1"
+  }, react_1["default"].createElement("textarea", {
+    id: "description",
+    name: "description",
+    rows: 8,
+    className: "block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+    placeholder: "Enumere as refer\xEAncias bibliogr\xE1ficas que sustentam esse itiner\xE1rio informativo.",
+    defaultValue: data.reference,
     onChange: handleChange
   }))), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
     htmlFor: "taxonomy",

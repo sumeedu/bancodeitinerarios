@@ -24,6 +24,9 @@ class ItineraryFactory extends Factory
             'importance' => $this->faker->paragraph(6),
             'formation' => $this->faker->paragraph(6),
             'reference' => $this->faker->paragraph(3),
+            'cycle' => $this->faker->randomElement([
+                'weekly', 'monthly', 'bimonthly', 'semiannual', 'yearly'
+            ]),
         ];
     }
 }

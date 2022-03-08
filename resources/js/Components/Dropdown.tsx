@@ -98,7 +98,7 @@ interface LinkProps {
 
 const Link: React.FC<LinkProps> = ({
   href = '',
-  method = 'post',
+  method,
   as = 'a',
   children
 }) => {

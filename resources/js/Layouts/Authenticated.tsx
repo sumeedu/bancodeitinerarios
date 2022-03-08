@@ -128,6 +128,10 @@ const Authenticated: React.FC<Props> = ({
                     </Dropdown.Trigger>
 
                     <Dropdown.Content>
+                      <Dropdown.Link href={route('itineraries.create')} as="a">
+                        Cadastrar Itinerário
+                      </Dropdown.Link>
+                      <div className="border border-gray-50 border-b" />
                       <Dropdown.Link href={route('logout')} method="post" as="button">
                         Sair
                       </Dropdown.Link>

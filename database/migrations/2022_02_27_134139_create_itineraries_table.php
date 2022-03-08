@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('importance');
             $table->text('formation');
             $table->text('reference');
+            $table->enum('cycle', [
+                'weekly', 'monthly', 'bimonthly', 'semiannual', 'yearly'
+            ]);
             $table->foreignId('user_id')->constrained();
             $table->timestamp('published_at')->nullable();
             $table->softDeletes();
