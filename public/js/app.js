@@ -8124,7 +8124,7 @@ var Index = function Index(props) {
   }, react_1["default"].createElement("div", {
     className: "border-t border-gray-200 px-4 py-6"
   }, react_1["default"].createElement(Collapse_1["default"], {
-    label: "Objetivos"
+    label: "Desenvolvimento"
   }, filters.objective.map(function (v, k) {
     return react_1["default"].createElement("div", {
       key: k,
@@ -8144,6 +8144,42 @@ var Index = function Index(props) {
   }, react_1["default"].createElement(Collapse_1["default"], {
     label: "Ciclo"
   }, ['bimestral', 'semestral', 'anual'].map(function (v, k) {
+    return react_1["default"].createElement("div", {
+      key: k,
+      className: "flex items-center"
+    }, react_1["default"].createElement("input", {
+      id: "filter-cycle-".concat(v),
+      name: "cycle[]",
+      value: v,
+      type: "checkbox",
+      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+    }), react_1["default"].createElement("label", {
+      htmlFor: "filter-cycle-".concat(v),
+      className: "ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+    }, v));
+  }))), react_1["default"].createElement("div", {
+    className: "border-t border-gray-200 px-4 py-6"
+  }, react_1["default"].createElement(Collapse_1["default"], {
+    label: "Tem\xE1tica"
+  }, ['inclusão', 'astronomia', 'audiovisual', 'engenharia', 'gastronomia', 'fotografia'].map(function (v, k) {
+    return react_1["default"].createElement("div", {
+      key: k,
+      className: "flex items-center"
+    }, react_1["default"].createElement("input", {
+      id: "filter-cycle-".concat(v),
+      name: "cycle[]",
+      value: v,
+      type: "checkbox",
+      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+    }), react_1["default"].createElement("label", {
+      htmlFor: "filter-cycle-".concat(v),
+      className: "ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+    }, v));
+  }))), react_1["default"].createElement("div", {
+    className: "border-t border-gray-200 px-4 py-6"
+  }, react_1["default"].createElement(Collapse_1["default"], {
+    label: "Metodologia"
+  }, ['laboratório', 'dança', 'debate', 'jogos', 'projetos'].map(function (v, k) {
     return react_1["default"].createElement("div", {
       key: k,
       className: "flex items-center"
@@ -8189,7 +8225,7 @@ var Index = function Index(props) {
     }, "tecnologia"), react_1["default"].createElement("a", {
       className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
       href: '#'
-    }, "humanas"))), react_1["default"].createElement("a", {
+    }, "robotica"))), react_1["default"].createElement("a", {
       className: 'contents',
       href: (0, ziggy_js_1["default"])('itineraries.show', {
         itinerary: item

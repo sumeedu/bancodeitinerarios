@@ -26,7 +26,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
               <form className="mt-4 border-t border-gray-200">
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <Collapse label="Objetivos">
+                  <Collapse label="Desenvolvimento">
                     {filters.objective.map((v: any, k: number) => (
                       <div key={k} className="flex items-center">
                         <input
@@ -68,6 +68,48 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
                       ))}
                   </Collapse>
                 </div>
+                <div className="border-t border-gray-200 px-4 py-6">
+                  <Collapse label="Temática">
+                      {['inclusão', 'astronomia', 'audiovisual', 'engenharia', 'gastronomia','fotografia'].map((v: any, k: number) => (
+                      <div key={k} className="flex items-center">
+                        <input
+                          id={`filter-cycle-${v}`}
+                          name="cycle[]"
+                          value={v}
+                          type="checkbox"
+                          className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                        />
+                        <label
+                          htmlFor={`filter-cycle-${v}`}
+                          className="ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+                        >
+                          {v}
+                        </label>
+                      </div>
+                      ))}
+                  </Collapse>
+                </div>
+                <div className="border-t border-gray-200 px-4 py-6">
+                  <Collapse label="Metodologia">
+                      {['laboratório', 'dança', 'debate', 'jogos','projetos'].map((v: any, k: number) => (
+                      <div key={k} className="flex items-center">
+                        <input
+                          id={`filter-cycle-${v}`}
+                          name="cycle[]"
+                          value={v}
+                          type="checkbox"
+                          className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                        />
+                        <label
+                          htmlFor={`filter-cycle-${v}`}
+                          className="ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+                        >
+                          {v}
+                        </label>
+                      </div>
+                      ))}
+                  </Collapse>
+                </div>
 
               </form>
             </div>
@@ -89,7 +131,7 @@ const Index: React.FC = (props: React.PropsWithChildren<any>) => {
                     <div className="px-6 pt-4 pb-2 flex justify-end">
                       <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10" href='#'>inclusão</a>
                       <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10" href='#'>tecnologia</a>
-                      <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10" href='#'>humanas</a>
+                      <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10" href='#'>robotica</a>
                     </div>
 
                   </div>
