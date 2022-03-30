@@ -7949,7 +7949,8 @@ var Create = function Create(props) {
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    console.log(data); // post(route('activities.store'))
+    console.log(data);
+    alert("This feature is disabled."); // post(route('activities.store'))
   };
 
   var handleChange = function handleChange(e) {
@@ -7964,7 +7965,7 @@ var Create = function Create(props) {
     auth: props.auth,
     errors: props.errors,
     header: react_1["default"].createElement("h2", {
-      className: "font-semibold text-xl text-gray-800 leading-tight"
+      className: "text-xl font-semibold leading-tight text-gray-800"
     }, "Cadastrar um Itiner\xE1rio Informativo")
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Cadastrar um Itiner\xE1rio Informativo"
@@ -8188,12 +8189,12 @@ var Index = function Index(props) {
       filters = props.filters; // @TODO Create breadcrumb
 
   var header = react_1["default"].createElement("h2", {
-    className: "font-semibold text-sm text-gray-800 leading-tight flex"
+    className: "flex text-sm font-semibold leading-tight text-gray-800"
   }, "Itiner\xE1rios Informativos", filters.category && react_1["default"].createElement("span", {
     className: "flex items-center"
   }, react_1["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    className: "h-4 w-4",
+    className: "w-4 h-4",
     fill: "none",
     viewBox: "0 0 24 24",
     stroke: "currentColor",
@@ -8210,19 +8211,19 @@ var Index = function Index(props) {
   }, react_1["default"].createElement(inertia_react_1.Head, {
     title: "Itiner\xE1rios Formativos"
   }), react_1["default"].createElement(Container_1["default"], {
-    className: "bg-white shadow-sm rounded-t-lg"
+    className: "bg-white rounded-t-lg shadow-sm"
   }, react_1["default"].createElement("div", {
     className: "grid grid-cols-1 gap-1 md:grid-cols-4 md:gap-4"
   }, react_1["default"].createElement("div", {
-    className: "bg-gray-50 p-6 rounded-tl-lg"
+    className: "p-6 rounded-tl-lg bg-gray-50"
   }, react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
-    className: "px-4 flex items-center justify-between"
+    className: "flex items-center justify-between px-4"
   }, react_1["default"].createElement("h2", {
     className: "text-lg font-medium text-gray-900"
   }, "Filtros")), react_1["default"].createElement("form", {
     className: "mt-4 border-t border-gray-200"
   }, react_1["default"].createElement("div", {
-    className: "border-t border-gray-200 px-4 py-6"
+    className: "px-4 py-6 border-t border-gray-200"
   }, react_1["default"].createElement(Collapse_1["default"], {
     label: "Desenvolvimento"
   }, filters.objective.map(function (v, k) {
@@ -8234,13 +8235,13 @@ var Index = function Index(props) {
       name: "objective[]",
       value: v.id,
       type: "checkbox",
-      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+      className: "w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
     }), react_1["default"].createElement("label", {
       htmlFor: "filter-objective-".concat(v.id),
-      className: "ml-3 min-w-0 flex-1 text-gray-500"
+      className: "flex-1 min-w-0 ml-3 text-gray-500"
     }, v.name));
   }))), react_1["default"].createElement("div", {
-    className: "border-t border-gray-200 px-4 py-6"
+    className: "px-4 py-6 border-t border-gray-200"
   }, react_1["default"].createElement(Collapse_1["default"], {
     label: "Ciclo"
   }, ['bimestral', 'semestral', 'anual'].map(function (v, k) {
@@ -8252,13 +8253,13 @@ var Index = function Index(props) {
       name: "cycle[]",
       value: v,
       type: "checkbox",
-      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+      className: "w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
     }), react_1["default"].createElement("label", {
       htmlFor: "filter-cycle-".concat(v),
-      className: "ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+      className: "flex-1 min-w-0 ml-3 text-gray-500 first-letter:uppercase"
     }, v));
   }))), react_1["default"].createElement("div", {
-    className: "border-t border-gray-200 px-4 py-6"
+    className: "px-4 py-6 border-t border-gray-200"
   }, react_1["default"].createElement(Collapse_1["default"], {
     label: "Tem\xE1tica"
   }, ['inclusão', 'astronomia', 'audiovisual', 'engenharia', 'gastronomia', 'fotografia'].map(function (v, k) {
@@ -8270,13 +8271,13 @@ var Index = function Index(props) {
       name: "cycle[]",
       value: v,
       type: "checkbox",
-      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+      className: "w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
     }), react_1["default"].createElement("label", {
       htmlFor: "filter-cycle-".concat(v),
-      className: "ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+      className: "flex-1 min-w-0 ml-3 text-gray-500 first-letter:uppercase"
     }, v));
   }))), react_1["default"].createElement("div", {
-    className: "border-t border-gray-200 px-4 py-6"
+    className: "px-4 py-6 border-t border-gray-200"
   }, react_1["default"].createElement(Collapse_1["default"], {
     label: "Metodologia"
   }, ['laboratório', 'dança', 'debate', 'jogos', 'projetos'].map(function (v, k) {
@@ -8288,47 +8289,47 @@ var Index = function Index(props) {
       name: "cycle[]",
       value: v,
       type: "checkbox",
-      className: "h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+      className: "w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
     }), react_1["default"].createElement("label", {
       htmlFor: "filter-cycle-".concat(v),
-      className: "ml-3 min-w-0 flex-1 text-gray-500 first-letter:uppercase"
+      className: "flex-1 min-w-0 ml-3 text-gray-500 first-letter:uppercase"
     }, v));
   })))))), react_1["default"].createElement("div", {
     className: "col-span-3 p-6"
   }, react_1["default"].createElement("div", {
     className: "gap-4"
-  }, itineraries && itineraries.map(function (item) {
+  }, itineraries.length > 0 ? itineraries.map(function (item) {
     return react_1["default"].createElement("div", {
       key: item.id,
-      className: "flex flex-col md:flex-row sm:flex-col-reverse rounded-lg bg-white shadow-lg mb-10 z-0 relative"
+      className: "relative z-0 flex flex-col mb-10 bg-white rounded-lg shadow-lg md:flex-row sm:flex-col-reverse"
     }, react_1["default"].createElement("div", {
-      className: "p-6 flex flex-col justify-start"
+      className: "flex flex-col justify-start p-6"
     }, react_1["default"].createElement("a", {
       className: "flex-1",
       href: (0, ziggy_js_1["default"])('itineraries.show', {
         itinerary: item
       })
     }, react_1["default"].createElement("h3", {
-      className: "text-gray-900 text-3xl font-bold  mb-2 line-clamp-1",
+      className: "mb-2 text-3xl font-bold text-gray-900 line-clamp-1",
       title: item.name
     }, item.name), react_1["default"].createElement("p", {
-      className: "text-gray-700 mb-4 overflow-hidden line-clamp-3",
+      className: "mb-4 overflow-hidden text-gray-700 line-clamp-3",
       title: item.description
     }, item.description), react_1["default"].createElement("p", {
-      className: "text-gray-600 text-xs",
+      className: "text-xs text-gray-600",
       title: item.user.name
     }, "Criado por: ", item.user.name)), react_1["default"].createElement("div", {
-      className: "px-6 pt-4 pb-2 flex justify-end"
+      className: "flex justify-end px-6 pt-4 pb-2"
     }, react_1["default"].createElement("a", {
-      className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
+      className: "z-10 inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full",
       href: '#',
       title: 'inclusao tag'
     }, "inclus\xE3o"), react_1["default"].createElement("a", {
-      className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
+      className: "z-10 inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full",
       href: '#',
       title: 'tecnologia tag'
     }, "tecnologia"), react_1["default"].createElement("a", {
-      className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 z-10",
+      className: "z-10 inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full",
       href: '#',
       title: 'robotica tag'
     }, "robotica"))), react_1["default"].createElement("a", {
@@ -8338,16 +8339,16 @@ var Index = function Index(props) {
       }),
       title: "imagem ilustrativa"
     }, react_1["default"].createElement("img", {
-      className: "w-64 h-64 pt-6 pr-6 pb-12 hidden md:inline-flex",
+      className: "hidden w-64 h-64 pt-6 pb-12 pr-6 md:inline-flex",
       src: "https://placeimg.com/120/120/tech",
       alt: item.description
     })), react_1["default"].createElement("a", {
       href: "",
-      className: "text-slate-500 absolute right-4 top-2 bg-gray-100 rounded-full p-2 hover:bg-gray-700 hover:text-gray-50 hover:delay-150",
+      className: "absolute p-2 bg-gray-100 rounded-full text-slate-500 right-4 top-2 hover:bg-gray-700 hover:text-gray-50 hover:delay-150",
       title: 'favoritar'
     }, react_1["default"].createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      className: "h-5 w-5",
+      className: "w-5 h-5",
       fill: "none",
       viewBox: "0 0   24 24",
       stroke: "currentColor",
@@ -8357,7 +8358,9 @@ var Index = function Index(props) {
       strokeLinejoin: "round",
       d: "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
     }))));
-  }))))));
+  }) : react_1["default"].createElement("div", {
+    className: "p-10 mb-10 text-center bg-white rounded-lg shadow-lg"
+  }, "N\xE3o foi poss\xEDvel encontrar nenhum itiner\xE1rio formativo."))))));
 };
 
 exports["default"] = Index;

@@ -45,6 +45,7 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
     console.log(data)
+    alert("This feature is disabled.")
     // post(route('activities.store'))
   }
 
@@ -62,7 +63,7 @@ const Create: React.FC = (props: React.PropsWithChildren<any>) => {
     <Authenticated
       auth={props.auth}
       errors={props.errors}
-      header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Cadastrar um Itinerário Informativo</h2>}
+      header={<h2 className="text-xl font-semibold leading-tight text-gray-800">Cadastrar um Itinerário Informativo</h2>}
     >
       <Head title="Cadastrar um Itinerário Informativo"/>
 
