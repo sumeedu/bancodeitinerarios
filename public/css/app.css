@@ -764,11 +764,11 @@ select {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .block {
   display: block;
@@ -1279,9 +1279,6 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pt-3 {
-  padding-top: 0.75rem;
-}
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1290,6 +1287,9 @@ select {
 }
 .pr-6 {
   padding-right: 1.5rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-left {
   text-align: left;
@@ -1323,13 +1323,13 @@ select {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .font-medium {
   font-weight: 500;

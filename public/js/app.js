@@ -7890,7 +7890,7 @@ var Dashboard = function Dashboard(_ref) {
     errors: errors
   }, react_1["default"].createElement(Container_1["default"], null, react_1["default"].createElement("div", {
     className: "p-6 bg-white border-b border-gray-200"
-  }, "Olarrrr! Este \xE9 um prot\xF3tipo do sistema de Itiner\xE1rios Formativos da Sum\xE9 Solutions. Use a nossa busca ou ", react_1["default"].createElement(inertia_react_1.Link, {
+  }, "Este \xE9 um prot\xF3tipo do sistema de Itiner\xE1rios Formativos da Sum\xE9 Solutions. Use a nossa busca ou ", react_1["default"].createElement(inertia_react_1.Link, {
     href: (0, ziggy_js_1["default"])('itineraries.index')
   }, "clique aqui para navegar no cat\xE1logo"), ".")));
 };
