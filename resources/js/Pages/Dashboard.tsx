@@ -17,7 +17,7 @@ const Dashboard: React.FC<Props> = ({auth, errors}) => {
         >
           <Container>
             <div className="p-6 bg-white border-b border-gray-200">
-              Olarrrr! Este é um protótipo do sistema de Itinerários Formativos da Sumé Solutions. Use a nossa busca ou <Link href={route('itineraries.index')}>clique aqui para navegar no catálogo</Link>.
+              Este é um protótipo do sistema de Itinerários Formativos da Sumé Solutions. Use a nossa busca ou <Link href={route('itineraries.index')}>clique aqui para navegar no catálogo</Link>.
             </div>
           </Container>
         </Authenticated>
