@@ -112,7 +112,7 @@ all make sure to read our [Contributor Guideline](CONTRIBUTING.md).
 
 ## Code of Conduct
 
-Would you like to contribute and participate in our communities? Please read our [Code of Conduct](https://sumelms.com/docs/conduct).
+Would you like to contribute and participate in our communities? Please read our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Contributors
 
