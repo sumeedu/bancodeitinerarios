@@ -1,5 +1,5 @@
 <!--suppress HtmlDeprecatedAttribute -->
-# Banco de Itinerários Formativos
+<h1 align="center">Banco de Itinerários Formativos</h1>
 
 <p align="center">
   <a href="https://goreportcard.com/report/github.com/sumesolutions/bancodeitinerarios">
