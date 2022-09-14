@@ -1,40 +1,25 @@
 <!--suppress HtmlDeprecatedAttribute -->
-<p align="center">
-  <img alt="Sumé LMS" src=".github/sumelms.svg" />
-</p>
+# Banco de Itinerários Formativos
 
 <p align="center">
-  <a href="https://goreportcard.com/report/github.com/sumelms/microservice-course">
-    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/sumelms/microservice-course" />
+  <a href="https://goreportcard.com/report/github.com/sumesolutions/bancodeitinerarios">
+    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/sumesolutions/bancodeitinerarios" />
   </a>
-  <a href="https://github.com/sumelms/microservice-course/actions/workflows/main.yaml">
-    <img alt="github action" src="https://github.com/sumelms/microservice-course/actions/workflows/main.yaml/badge.svg" />
+  <a href="https://github.com/sumesolutions/bancodeitinerarios/actions/workflows/main.yaml">
+    <img alt="github action" src="https://github.com/sumesolutions/bancodeitinerarios/actions/workflows/main.yaml/badge.svg" />
   </a>
-  <a href="https://codecov.io/gh/sumelms/microservice-course" >
-    <img alt="codecov" src="https://codecov.io/gh/sumelms/microservice-course/branch/main/graph/badge.svg?token=B78WZL5QDY"/>
+  <a href="https://codecov.io/gh/sumesolutions/bancodeitinerarios" >
+    <img alt="codecov" src="https://codecov.io/gh/sumesolutions/bancodeitinerarios/branch/main/graph/badge.svg?token=B78WZL5QDY"/>
     </a>
-  <img alt="GitHub" src="https://img.shields.io/github/license/sumelms/microservice-course">
+  <img alt="GitHub" src="https://img.shields.io/github/license/sumesolutions/bancodeitinerarios">
   <a href="https://discord.gg/Yh9q9cd">
     <img alt="Discord" src="https://img.shields.io/discord/726500188021063682">
   </a>
 </p>
 
-## About Sumé LMS
+## About
 
-> Note: This repository contains the **course microservice** of the Sumé LMS. If you are looking for more information
-> about the application, we strongly recommend you to [check the documentation](https://www.sumelms.com/docs).
-
-Sumé LMS is a modern and open-source learning management system that uses modern technologies to deliver performance
-and scalability to your learning environment.
-
-- Compatible with SCORM and xAPI (TinCan)
-- Flexible and modular
-- Open-source and Free
-- Fast and modern
-- Easy to install and run
-- Designed for microservices
-- REST API based application
-- and more.
+@TODO
 
 ## Table of Contents
 
@@ -131,8 +116,8 @@ Would you like to contribute and participate in our communities? Please read our
 
 ## Contributors
 
-<a href="https://github.com/sumesolutions/bancodeitinerarios//graphs/contributors">
-  <img alt="contributors" src="https://contrib.rocks/image?repo=sumesolutions/bancodeitinerarios/" />
+<a href="https://github.com/sumesolutions/bancodeitinerarios/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sumesolutions/bancodeitinerarios" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
