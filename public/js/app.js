@@ -39,7 +39,7 @@ function(t,e){ true?module.exports=e():0}(self,(function(){return(()=>{"use stri
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var n=e(__webpack_require__(/*! lodash.isequal */ "./node_modules/lodash.isequal/index.js")),r=__webpack_require__(/*! react */ "./node_modules/react/index.js"),t=e(r),o=__webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");function i(){return(i=Object.assign||function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t])}return e}).apply(this,arguments)}function u(e,n){var t=r.useState(function(){var r=o.Inertia.restore(n);return void 0!==r?r:e}),i=t[0],u=t[1];return r.useEffect(function(){o.Inertia.remember(i,n)},[i,n]),[i,u]}var a=r.createContext();a.displayName="InertiaPageContext";var c=r.createContext();function s(e){var n=e.children,t=e.initialPage,u=e.resolveComponent,s=e.titleCallback,l=e.onHeadUpdate,f=r.useState({component:e.initialComponent||null,page:t,key:null}),p=f[0],d=f[1],v=r.useMemo(function(){return o.createHeadManager("undefined"==typeof window,s||function(e){return e},l||function(){})},[]);if(r.useEffect(function(){o.Inertia.init({initialPage:t,resolveComponent:u,swapComponent:function(e){var n=e.component,r=e.page,t=e.preserveState;try{return d(function(e){return{component:n,page:r,key:t?e.key:Date.now()}}),Promise.resolve()}catch(e){return Promise.reject(e)}}})},[]),!p.component)return r.createElement(c.Provider,{value:v},r.createElement(a.Provider,{value:p.page},null));var m=n||function(e){var n=e.Component,t=e.props,o=r.createElement(n,i({key:e.key},t));return"function"==typeof n.layout?n.layout(o):Array.isArray(n.layout)?n.layout.concat(o).reverse().reduce(function(e,n){return r.createElement(n,i({children:e},t))}):o};return r.createElement(c.Provider,{value:v},r.createElement(a.Provider,{value:p.page},m({Component:p.component,key:p.key,props:p.page.props})))}function l(e){var n,o,i=e.children,u=e.title,a=r.useContext(c),s=r.useMemo(function(){return a.createProvider()},[a]);return r.useEffect(function(){return function(){s.disconnect()}},[s]),s.update((n=i,o=(Array.isArray(n)?n:[n]).filter(function(e){return e}).map(function(e){return function(e){return function e(n){var r=function(e){var n=Object.keys(e.props).reduce(function(n,r){if(["head-key","children","dangerouslySetInnerHTML"].includes(r))return n;var t=e.props[r];return""===t?n+" "+r:n+" "+r+'="'+t+'"'},"");return"<"+e.type+n+">"}(n);return n.props.children&&(r+=function(n){return"string"==typeof n.props.children?n.props.children:n.props.children.reduce(function(n,r){return n+e(r)},"")}(n)),n.props.dangerouslySetInnerHTML&&(r+=n.props.dangerouslySetInnerHTML.__html),function(e){return["area","base","br","col","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"].indexOf(e.type)>-1}(n)||(r+="</"+n.type+">"),r}(function(e){return t.cloneElement(e,{inertia:void 0!==e.props["head-key"]?e.props["head-key"]:""})}(e))}(e)}),u&&!o.find(function(e){return e.startsWith("<title")})&&o.push("<title inertia>"+u+"</title>"),o)),null}c.displayName="InertiaHeadContext",s.displayName="Inertia";var f=function(){},p=r.forwardRef(function(e,n){var t=e.children,u=e.as,a=void 0===u?"a":u,c=e.data,s=void 0===c?{}:c,l=e.href,p=e.method,d=void 0===p?"get":p,v=e.preserveScroll,m=void 0!==v&&v,y=e.preserveState,h=void 0===y?null:y,g=e.replace,S=void 0!==g&&g,k=e.only,C=void 0===k?[]:k,b=e.headers,P=void 0===b?{}:b,E=e.queryStringArrayFormat,x=void 0===E?"brackets":E,w=e.onClick,I=void 0===w?f:w,T=e.onCancelToken,O=void 0===T?f:T,j=e.onBefore,A=void 0===j?f:j,L=e.onStart,F=void 0===L?f:L,H=e.onProgress,R=void 0===H?f:H,B=e.onFinish,D=void 0===B?f:B,q=e.onCancel,M=void 0===q?f:q,N=e.onSuccess,U=void 0===N?f:N,J=e.onError,W=void 0===J?f:J,_=function(e,n){if(null==e)return{};var r,t,o={},i=Object.keys(e);for(t=0;t<i.length;t++)n.indexOf(r=i[t])>=0||(o[r]=e[r]);return o}(e,["children","as","data","href","method","preserveScroll","preserveState","replace","only","headers","queryStringArrayFormat","onClick","onCancelToken","onBefore","onStart","onProgress","onFinish","onCancel","onSuccess","onError"]),Q=r.useCallback(function(e){I(e),o.shouldIntercept(e)&&(e.preventDefault(),o.Inertia.visit(l,{data:s,method:d,preserveScroll:m,preserveState:null!=h?h:"get"!==d,replace:S,only:C,headers:P,onCancelToken:O,onBefore:A,onStart:F,onProgress:R,onFinish:D,onCancel:M,onSuccess:U,onError:W}))},[s,l,d,m,h,S,C,P,I,O,A,F,R,D,M,U,W]);a=a.toLowerCase(),d=d.toLowerCase();var z=o.mergeDataIntoQueryString(d,l||"",s,x);return l=z[0],s=z[1],"a"===a&&"get"!==d&&console.warn('Creating POST/PUT/PATCH/DELETE <a> links is discouraged as it causes "Open Link in New Tab/Window" accessibility issues.\n\nPlease specify a more appropriate element using the "as" attribute. For example:\n\n<Link href="'+l+'" method="'+d+'" as="button">...</Link>'),r.createElement(a,i({},_,"a"===a?{href:l}:{},{ref:n,onClick:Q}),t)});exports.App=s,exports.Head=l,exports.InertiaApp=s,exports.InertiaHead=l,exports.InertiaLink=p,exports.Link=p,exports.app=s,exports.createInertiaApp=function(e){try{var n,t,o,i,u,a,c;t=void 0===(n=e.id)?"app":n,o=e.resolve,i=e.setup,u=e.title,a=e.page,c=e.render;var l="undefined"==typeof window,f=l?null:document.getElementById(t),p=a||JSON.parse(f.dataset.page),d=function(e){return Promise.resolve(o(e)).then(function(e){return e.default||e})},v=[];return Promise.resolve(d(p.component).then(function(e){return i({el:f,App:s,props:{initialPage:p,initialComponent:e,resolveComponent:d,titleCallback:u,onHeadUpdate:l?function(e){return v=e}:null}})})).then(function(e){return function(){if(l)return Promise.resolve(c(r.createElement("div",{id:t,"data-page":JSON.stringify(p)},e))).then(function(e){return{head:v,body:e}})}()})}catch(e){return Promise.reject(e)}},exports.link=p,exports.useForm=function(){var e=[].slice.call(arguments),t=r.useRef(null),a="string"==typeof e[0]?e[0]:null,c=r.useState(("string"==typeof e[0]?e[1]:e[0])||{}),s=c[0],l=c[1],f=r.useRef(null),p=r.useRef(null),d=a?u(s,a+":data"):r.useState(s),v=d[0],m=d[1],y=a?u({},a+":errors"):r.useState({}),h=y[0],g=y[1],S=r.useState(!1),k=S[0],C=S[1],b=r.useState(!1),P=b[0],E=b[1],x=r.useState(null),w=x[0],I=x[1],T=r.useState(!1),O=T[0],j=T[1],A=r.useState(!1),L=A[0],F=A[1],H=function(e){return e};r.useEffect(function(){return t.current=!0,function(){t.current=!1}},[]);var R=r.useCallback(function(e,n,r){void 0===r&&(r={});var u=i({},r,{onCancelToken:function(e){if(f.current=e,r.onCancelToken)return r.onCancelToken(e)},onBefore:function(e){if(j(!1),F(!1),clearTimeout(p.current),r.onBefore)return r.onBefore(e)},onStart:function(e){if(E(!0),r.onStart)return r.onStart(e)},onProgress:function(e){if(I(e),r.onProgress)return r.onProgress(e)},onSuccess:function(e){if(t.current&&(E(!1),I(null),g({}),C(!1),j(!0),F(!0),p.current=setTimeout(function(){t.current&&F(!1)},2e3)),r.onSuccess)return r.onSuccess(e)},onError:function(e){if(t.current&&(E(!1),I(null),g(e),C(!0)),r.onError)return r.onError(e)},onCancel:function(){if(t.current&&(E(!1),I(null)),r.onCancel)return r.onCancel()},onFinish:function(){if(t.current&&(E(!1),I(null)),f.current=null,r.onFinish)return r.onFinish()}});"delete"===e?o.Inertia.delete(n,i({},u,{data:H(v)})):o.Inertia[e](n,H(v),u)},[v,g]);return{data:v,setData:function(e,n){var r;m("string"==typeof e?i({},v,((r={})[e]=n,r)):"function"==typeof e?function(n){return e(n)}:e)},isDirty:!n(v,s),errors:h,hasErrors:k,processing:P,progress:w,wasSuccessful:O,recentlySuccessful:L,transform:function(e){H=e},setDefaults:function(e,n){l(void 0===e?function(){return v}:function(r){var t;return i({},r,n?((t={})[e]=n,t):e)})},reset:function(){var e=[].slice.call(arguments);m(0===e.length?s:Object.keys(s).filter(function(n){return e.includes(n)}).reduce(function(e,n){return e[n]=s[n],e},i({},v)))},setError:function(e,n){g(function(r){var t,o=i({},r,n?((t={})[e]=n,t):e);return C(Object.keys(o).length>0),o})},clearErrors:function(){var e=[].slice.call(arguments);g(function(n){var r=Object.keys(n).reduce(function(r,t){var o;return i({},r,e.length>0&&!e.includes(t)?((o={})[t]=n[t],o):{})},{});return C(Object.keys(r).length>0),r})},submit:R,get:function(e,n){R("get",e,n)},post:function(e,n){R("post",e,n)},put:function(e,n){R("put",e,n)},patch:function(e,n){R("patch",e,n)},delete:function(e,n){R("delete",e,n)},cancel:function(){f.current&&f.current.cancel()}}},exports.usePage=function(){var e=r.useContext(a);if(!e)throw new Error("usePage must be used within the Inertia component");return e},exports.useRemember=u,exports.useRememberedState=function(e,n){return console.warn('The "useRememberedState" hook has been deprecated and will be removed in a future release. Use "useRemember" instead.'),u(e,n)};
+function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var n=e(__webpack_require__(/*! lodash.isequal */ "./node_modules/lodash.isequal/index.js")),r=__webpack_require__(/*! react */ "./node_modules/react/index.js"),t=e(r),o=__webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");function i(){return(i=Object.assign||function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t])}return e}).apply(this,arguments)}function u(e,n){var t=r.useState(function(){var r=o.Inertia.restore(n);return void 0!==r?r:e}),i=t[0],u=t[1];return r.useEffect(function(){o.Inertia.remember(i,n)},[i,n]),[i,u]}var a=r.createContext();a.displayName="InertiaPageContext";var c=r.createContext();function s(e){var n=e.children,t=e.initialPage,u=e.resolveComponent,s=e.titleCallback,l=e.onHeadUpdate,f=r.useState({component:e.initialComponent||null,page:t,key:null}),p=f[0],d=f[1],v=r.useMemo(function(){return o.createHeadManager("undefined"==typeof window,s||function(e){return e},l||function(){})},[]);if(r.useEffect(function(){o.Inertia.init({initialPage:t,resolveComponent:u,swapComponent:function(e){var n=e.component,r=e.page,t=e.preserveState;try{return d(function(e){return{component:n,page:r,key:t?e.key:Date.now()}}),Promise.resolve()}catch(e){return Promise.reject(e)}}})},[]),!p.component)return r.createElement(c.Provider,{value:v},r.createElement(a.Provider,{value:p.page},null));var m=n||function(e){var n=e.Component,t=e.props,o=r.createElement(n,i({key:e.key},t));return"function"==typeof n.layout?n.layout(o):Array.isArray(n.layout)?n.layout.concat(o).reverse().reduce(function(e,n){return r.createElement(n,i({children:e},t))}):o};return r.createElement(c.Provider,{value:v},r.createElement(a.Provider,{value:p.page},m({Component:p.component,key:p.key,props:p.page.props})))}function l(e){var n,o,i=e.children,u=e.title,a=r.useContext(c),s=r.useMemo(function(){return a.createProvider()},[a]);return r.useEffect(function(){return function(){s.disconnect()}},[s]),s.update((n=i,o=(Array.isArray(n)?n:[n]).filter(function(e){return e}).map(function(e){return function(e){return function e(n){var r=function(e){var n=Object.keys(e.props).reduce(function(n,r){if(["head-key","children","dangerouslySetInnerHTML"].includes(r))return n;var t=e.props[r];return""===t?n+" "+r:n+" "+r+'="'+t+'"'},"");return"<"+e.type+n+">"}(n);return n.props.children&&(r+=function(n){return"string"==typeof n.props.children?n.props.children:n.props.children.reduce(function(n,r){return n+e(r)},"")}(n)),n.props.dangerouslySetInnerHTML&&(r+=n.props.dangerouslySetInnerHTML.__html),function(e){return["area","base","br","col","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"].indexOf(e.type)>-1}(n)||(r+="</"+n.type+">"),r}(function(e){return t.cloneElement(e,{inertia:void 0!==e.props["head-key"]?e.props["head-key"]:""})}(e))}(e)}),u&&!o.find(function(e){return e.startsWith("<title")})&&o.push("<title inertia>"+u+"</title>"),o)),null}c.displayName="InertiaHeadContext",s.displayName="Inertia";var f=["children","as","data","href","method","preserveScroll","preserveState","replace","only","headers","queryStringArrayFormat","onClick","onCancelToken","onBefore","onStart","onProgress","onFinish","onCancel","onSuccess","onError"],p=function(){},d=r.forwardRef(function(e,n){var t=e.children,u=e.as,a=void 0===u?"a":u,c=e.data,s=void 0===c?{}:c,l=e.href,d=e.method,v=void 0===d?"get":d,m=e.preserveScroll,y=void 0!==m&&m,h=e.preserveState,g=void 0===h?null:h,S=e.replace,k=void 0!==S&&S,C=e.only,b=void 0===C?[]:C,P=e.headers,E=void 0===P?{}:P,x=e.queryStringArrayFormat,w=void 0===x?"brackets":x,I=e.onClick,T=void 0===I?p:I,O=e.onCancelToken,j=void 0===O?p:O,A=e.onBefore,L=void 0===A?p:A,F=e.onStart,H=void 0===F?p:F,R=e.onProgress,B=void 0===R?p:R,D=e.onFinish,q=void 0===D?p:D,M=e.onCancel,N=void 0===M?p:M,U=e.onSuccess,J=void 0===U?p:U,W=e.onError,_=void 0===W?p:W,Q=function(e,n){if(null==e)return{};var r,t,o={},i=Object.keys(e);for(t=0;t<i.length;t++)n.indexOf(r=i[t])>=0||(o[r]=e[r]);return o}(e,f),z=r.useCallback(function(e){T(e),o.shouldIntercept(e)&&(e.preventDefault(),o.Inertia.visit(l,{data:s,method:v,preserveScroll:y,preserveState:null!=g?g:"get"!==v,replace:k,only:b,headers:E,onCancelToken:j,onBefore:L,onStart:H,onProgress:B,onFinish:q,onCancel:N,onSuccess:J,onError:_}))},[s,l,v,y,g,k,b,E,T,j,L,H,B,q,N,J,_]);a=a.toLowerCase(),v=v.toLowerCase();var G=o.mergeDataIntoQueryString(v,l||"",s,w);return l=G[0],s=G[1],"a"===a&&"get"!==v&&console.warn('Creating POST/PUT/PATCH/DELETE <a> links is discouraged as it causes "Open Link in New Tab/Window" accessibility issues.\n\nPlease specify a more appropriate element using the "as" attribute. For example:\n\n<Link href="'+l+'" method="'+v+'" as="button">...</Link>'),r.createElement(a,i({},Q,"a"===a?{href:l}:{},{ref:n,onClick:z}),t)});exports.App=s,exports.Head=l,exports.InertiaApp=s,exports.InertiaHead=l,exports.InertiaLink=d,exports.Link=d,exports.app=s,exports.createInertiaApp=function(e){try{var n,t,o,i,u,a,c;t=void 0===(n=e.id)?"app":n,o=e.resolve,i=e.setup,u=e.title,a=e.page,c=e.render;var l="undefined"==typeof window,f=l?null:document.getElementById(t),p=a||JSON.parse(f.dataset.page),d=function(e){return Promise.resolve(o(e)).then(function(e){return e.default||e})},v=[];return Promise.resolve(d(p.component).then(function(e){return i({el:f,App:s,props:{initialPage:p,initialComponent:e,resolveComponent:d,titleCallback:u,onHeadUpdate:l?function(e){return v=e}:null}})})).then(function(e){return function(){if(l)return Promise.resolve(c(r.createElement("div",{id:t,"data-page":JSON.stringify(p)},e))).then(function(e){return{head:v,body:e}})}()})}catch(e){return Promise.reject(e)}},exports.link=d,exports.useForm=function(){var e=[].slice.call(arguments),t=r.useRef(null),a="string"==typeof e[0]?e[0]:null,c=r.useState(("string"==typeof e[0]?e[1]:e[0])||{}),s=c[0],l=c[1],f=r.useRef(null),p=r.useRef(null),d=a?u(s,a+":data"):r.useState(s),v=d[0],m=d[1],y=a?u({},a+":errors"):r.useState({}),h=y[0],g=y[1],S=r.useState(!1),k=S[0],C=S[1],b=r.useState(!1),P=b[0],E=b[1],x=r.useState(null),w=x[0],I=x[1],T=r.useState(!1),O=T[0],j=T[1],A=r.useState(!1),L=A[0],F=A[1],H=function(e){return e};r.useEffect(function(){return t.current=!0,function(){t.current=!1}},[]);var R=r.useCallback(function(e,n,r){void 0===r&&(r={});var u=i({},r,{onCancelToken:function(e){if(f.current=e,r.onCancelToken)return r.onCancelToken(e)},onBefore:function(e){if(j(!1),F(!1),clearTimeout(p.current),r.onBefore)return r.onBefore(e)},onStart:function(e){if(E(!0),r.onStart)return r.onStart(e)},onProgress:function(e){if(I(e),r.onProgress)return r.onProgress(e)},onSuccess:function(e){if(t.current&&(E(!1),I(null),g({}),C(!1),j(!0),F(!0),p.current=setTimeout(function(){t.current&&F(!1)},2e3)),r.onSuccess)return r.onSuccess(e)},onError:function(e){if(t.current&&(E(!1),I(null),g(e),C(!0)),r.onError)return r.onError(e)},onCancel:function(){if(t.current&&(E(!1),I(null)),r.onCancel)return r.onCancel()},onFinish:function(){if(t.current&&(E(!1),I(null)),f.current=null,r.onFinish)return r.onFinish()}});"delete"===e?o.Inertia.delete(n,i({},u,{data:H(v)})):o.Inertia[e](n,H(v),u)},[v,g]);return{data:v,setData:function(e,n){var r;m("string"==typeof e?i({},v,((r={})[e]=n,r)):"function"==typeof e?function(n){return e(n)}:e)},isDirty:!n(v,s),errors:h,hasErrors:k,processing:P,progress:w,wasSuccessful:O,recentlySuccessful:L,transform:function(e){H=e},setDefaults:function(e,n){l(void 0===e?function(){return v}:function(r){var t;return i({},r,n?((t={})[e]=n,t):e)})},reset:function(){var e=[].slice.call(arguments);m(0===e.length?s:Object.keys(s).filter(function(n){return e.includes(n)}).reduce(function(e,n){return e[n]=s[n],e},i({},v)))},setError:function(e,n){g(function(r){var t,o=i({},r,n?((t={})[e]=n,t):e);return C(Object.keys(o).length>0),o})},clearErrors:function(){var e=[].slice.call(arguments);g(function(n){var r=Object.keys(n).reduce(function(r,t){var o;return i({},r,e.length>0&&!e.includes(t)?((o={})[t]=n[t],o):{})},{});return C(Object.keys(r).length>0),r})},submit:R,get:function(e,n){R("get",e,n)},post:function(e,n){R("post",e,n)},put:function(e,n){R("put",e,n)},patch:function(e,n){R("patch",e,n)},delete:function(e,n){R("delete",e,n)},cancel:function(){f.current&&f.current.cancel()}}},exports.usePage=function(){var e=r.useContext(a);if(!e)throw new Error("usePage must be used within the Inertia component");return e},exports.useRemember=u,exports.useRememberedState=function(e,n){return console.warn('The "useRememberedState" hook has been deprecated and will be removed in a future release. Use "useRemember" instead.'),u(e,n)};
 //# sourceMappingURL=index.js.map
 
 
@@ -2511,6 +2511,7 @@ var stringify = function stringify(
     object,
     prefix,
     generateArrayPrefix,
+    commaRoundTrip,
     strictNullHandling,
     skipNulls,
     encoder,
@@ -2575,7 +2576,7 @@ var stringify = function stringify(
                 for (var i = 0; i < valuesArray.length; ++i) {
                     valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
                 }
-                return [formatter(keyValue) + '=' + valuesJoined];
+                return [formatter(keyValue) + (commaRoundTrip && isArray(obj) && valuesArray.length === 1 ? '[]' : '') + '=' + valuesJoined];
             }
             return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
         }
@@ -2599,6 +2600,8 @@ var stringify = function stringify(
         objKeys = sort ? keys.sort(sort) : keys;
     }
 
+    var adjustedPrefix = commaRoundTrip && isArray(obj) && obj.length === 1 ? prefix + '[]' : prefix;
+
     for (var j = 0; j < objKeys.length; ++j) {
         var key = objKeys[j];
         var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
@@ -2608,8 +2611,8 @@ var stringify = function stringify(
         }
 
         var keyPrefix = isArray(obj)
-            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(prefix, key) : prefix
-            : prefix + (allowDots ? '.' + key : '[' + key + ']');
+            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(adjustedPrefix, key) : adjustedPrefix
+            : adjustedPrefix + (allowDots ? '.' + key : '[' + key + ']');
 
         sideChannel.set(object, step);
         var valueSideChannel = getSideChannel();
@@ -2618,6 +2621,7 @@ var stringify = function stringify(
             value,
             keyPrefix,
             generateArrayPrefix,
+            commaRoundTrip,
             strictNullHandling,
             skipNulls,
             encoder,
@@ -2714,6 +2718,10 @@ module.exports = function (object, opts) {
     }
 
     var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
+    if (opts && 'commaRoundTrip' in opts && typeof opts.commaRoundTrip !== 'boolean') {
+        throw new TypeError('`commaRoundTrip` must be a boolean, or absent');
+    }
+    var commaRoundTrip = generateArrayPrefix === 'comma' && opts && opts.commaRoundTrip;
 
     if (!objKeys) {
         objKeys = Object.keys(obj);
@@ -2734,6 +2742,7 @@ module.exports = function (object, opts) {
             obj[key],
             key,
             generateArrayPrefix,
+            commaRoundTrip,
             options.strictNullHandling,
             options.skipNulls,
             options.encode ? options.encoder : null,
@@ -5341,12 +5350,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -5495,12 +5510,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -5661,12 +5682,18 @@ exports["default"] = Object.assign(Dropdown, {
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -6518,12 +6545,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -6807,12 +6840,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -7108,12 +7147,18 @@ exports["default"] = Guest;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -7318,12 +7363,18 @@ exports["default"] = ForgotPassword;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -7476,12 +7527,18 @@ exports["default"] = Login;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -7645,12 +7702,18 @@ exports["default"] = Register;
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -9313,6 +9376,7 @@ var $concat = bind.call(Function.call, Array.prototype.concat);
 var $spliceApply = bind.call(Function.apply, Array.prototype.splice);
 var $replace = bind.call(Function.call, String.prototype.replace);
 var $strSlice = bind.call(Function.call, String.prototype.slice);
+var $exec = bind.call(Function.call, RegExp.prototype.exec);
 
 /* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
 var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
@@ -9368,6 +9432,9 @@ module.exports = function GetIntrinsic(name, allowMissing) {
 		throw new $TypeError('"allowMissing" argument must be a boolean');
 	}
 
+	if ($exec(/^%?[^%]*%?$/, name) === null) {
+		throw new $SyntaxError('`%` may not be present anywhere but at the beginning and end of the intrinsic name');
+	}
 	var parts = stringToPath(name);
 	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
 
@@ -28906,9 +28973,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
             '_'
         ),
-        monthsShort: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
-            '_'
-        ),
+        monthsShort:
+            'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
+                '_'
+            ),
         weekdays: 'الأحد_الإتنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split('_'),
         weekdaysShort: 'احد_اتنين_ثلاثاء_اربعاء_خميس_جمعة_سبت'.split('_'),
         weekdaysMin: 'ح_ن_ث_ر_خ_ج_س'.split('_'),
@@ -28965,7 +29033,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 //! moment.js locale configuration
-//! locale : Arabic (Lybia) [ar-ly]
+//! locale : Arabic (Libya) [ar-ly]
 //! author : Ali Hmer: https://github.com/kikoanis
 
 ;(function (global, factory) {
@@ -29170,9 +29238,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
             '_'
         ),
-        monthsShort: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
-            '_'
-        ),
+        monthsShort:
+            'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
+                '_'
+            ),
         weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split('_'),
         weekdaysShort: 'احد_اثنين_ثلاثاء_اربعاء_خميس_جمعة_سبت'.split('_'),
         weekdaysMin: 'ح_ن_ث_ر_خ_ج_س'.split('_'),
@@ -29268,9 +29337,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
             '_'
         ),
-        monthsShort: 'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
-            '_'
-        ),
+        monthsShort:
+            'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
+                '_'
+            ),
         weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split('_'),
         weekdaysShort: 'أحد_إثنين_ثلاثاء_أربعاء_خميس_جمعة_سبت'.split('_'),
         weekdaysMin: 'ح_ن_ث_ر_خ_ج_س'.split('_'),
@@ -29366,9 +29436,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
             '_'
         ),
-        monthsShort: 'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
-            '_'
-        ),
+        monthsShort:
+            'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
+                '_'
+            ),
         weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split('_'),
         weekdaysShort: 'أحد_إثنين_ثلاثاء_أربعاء_خميس_جمعة_سبت'.split('_'),
         weekdaysMin: 'ح_ن_ث_ر_خ_ج_س'.split('_'),
@@ -29669,9 +29740,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'yan_fev_mar_apr_may_iyn_iyl_avq_sen_okt_noy_dek'.split('_'),
-        weekdays: 'Bazar_Bazar ertəsi_Çərşənbə axşamı_Çərşənbə_Cümə axşamı_Cümə_Şənbə'.split(
-            '_'
-        ),
+        weekdays:
+            'Bazar_Bazar ertəsi_Çərşənbə axşamı_Çərşənbə_Cümə axşamı_Cümə_Şənbə'.split(
+                '_'
+            ),
         weekdaysShort: 'Baz_BzE_ÇAx_Çər_CAx_Cüm_Şən'.split('_'),
         weekdaysMin: 'Bz_BE_ÇA_Çə_CA_Cü_Şə'.split('_'),
         weekdaysParseExact: true,
@@ -29796,20 +29868,21 @@ __webpack_require__.r(__webpack_exports__);
             format: 'студзеня_лютага_сакавіка_красавіка_траўня_чэрвеня_ліпеня_жніўня_верасня_кастрычніка_лістапада_снежня'.split(
                 '_'
             ),
-            standalone: 'студзень_люты_сакавік_красавік_травень_чэрвень_ліпень_жнівень_верасень_кастрычнік_лістапад_снежань'.split(
-                '_'
-            ),
+            standalone:
+                'студзень_люты_сакавік_красавік_травень_чэрвень_ліпень_жнівень_верасень_кастрычнік_лістапад_снежань'.split(
+                    '_'
+                ),
         },
-        monthsShort: 'студ_лют_сак_крас_трав_чэрв_ліп_жнів_вер_каст_ліст_снеж'.split(
-            '_'
-        ),
+        monthsShort:
+            'студ_лют_сак_крас_трав_чэрв_ліп_жнів_вер_каст_ліст_снеж'.split('_'),
         weekdays: {
             format: 'нядзелю_панядзелак_аўторак_сераду_чацвер_пятніцу_суботу'.split(
                 '_'
             ),
-            standalone: 'нядзеля_панядзелак_аўторак_серада_чацвер_пятніца_субота'.split(
-                '_'
-            ),
+            standalone:
+                'нядзеля_панядзелак_аўторак_серада_чацвер_пятніца_субота'.split(
+                    '_'
+                ),
             isFormat: /\[ ?[Ууў] ?(?:мінулую|наступную)? ?\] ?dddd/,
         },
         weekdaysShort: 'нд_пн_ат_ср_чц_пт_сб'.split('_'),
@@ -30128,9 +30201,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'জানুয়ারি_ফেব্রুয়ারি_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্টেম্বর_অক্টোবর_নভেম্বর_ডিসেম্বর'.split(
             '_'
         ),
-        monthsShort: 'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
-            '_'
-        ),
+        monthsShort:
+            'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
+                '_'
+            ),
         weekdays: 'রবিবার_সোমবার_মঙ্গলবার_বুধবার_বৃহস্পতিবার_শুক্রবার_শনিবার'.split(
             '_'
         ),
@@ -30275,9 +30349,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'জানুয়ারি_ফেব্রুয়ারি_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্টেম্বর_অক্টোবর_নভেম্বর_ডিসেম্বর'.split(
             '_'
         ),
-        monthsShort: 'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
-            '_'
-        ),
+        monthsShort:
+            'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
+                '_'
+            ),
         weekdays: 'রবিবার_সোমবার_মঙ্গলবার_বুধবার_বৃহস্পতিবার_শুক্রবার_শনিবার'.split(
             '_'
         ),
@@ -30412,14 +30487,16 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ཟླ་བ་དང་པོ_ཟླ་བ་གཉིས་པ_ཟླ་བ་གསུམ་པ_ཟླ་བ་བཞི་པ_ཟླ་བ་ལྔ་པ_ཟླ་བ་དྲུག་པ_ཟླ་བ་བདུན་པ_ཟླ་བ་བརྒྱད་པ_ཟླ་བ་དགུ་པ_ཟླ་བ་བཅུ་པ_ཟླ་བ་བཅུ་གཅིག་པ_ཟླ་བ་བཅུ་གཉིས་པ'.split(
             '_'
         ),
-        monthsShort: 'ཟླ་1_ཟླ་2_ཟླ་3_ཟླ་4_ཟླ་5_ཟླ་6_ཟླ་7_ཟླ་8_ཟླ་9_ཟླ་10_ཟླ་11_ཟླ་12'.split(
-            '_'
-        ),
+        monthsShort:
+            'ཟླ་1_ཟླ་2_ཟླ་3_ཟླ་4_ཟླ་5_ཟླ་6_ཟླ་7_ཟླ་8_ཟླ་9_ཟླ་10_ཟླ་11_ཟླ་12'.split(
+                '_'
+            ),
         monthsShortRegex: /^(ཟླ་\d{1,2})/,
         monthsParseExact: true,
-        weekdays: 'གཟའ་ཉི་མ་_གཟའ་ཟླ་བ་_གཟའ་མིག་དམར་_གཟའ་ལྷག་པ་_གཟའ་ཕུར་བུ_གཟའ་པ་སངས་_གཟའ་སྤེན་པ་'.split(
-            '_'
-        ),
+        weekdays:
+            'གཟའ་ཉི་མ་_གཟའ་ཟླ་བ་_གཟའ་མིག་དམར་_གཟའ་ལྷག་པ་_གཟའ་ཕུར་བུ_གཟའ་པ་སངས་_གཟའ་སྤེན་པ་'.split(
+                '_'
+            ),
         weekdaysShort: 'ཉི་མ་_ཟླ་བ་_མིག་དམར་_ལྷག་པ་_ཕུར་བུ_པ་སངས་_སྤེན་པ་'.split(
             '_'
         ),
@@ -30582,9 +30659,12 @@ __webpack_require__.r(__webpack_exports__);
             /^du/i,
             /^ker/i,
         ],
-        monthsRegex = /^(genver|c[ʼ\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu|gen|c[ʼ\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i,
-        monthsStrictRegex = /^(genver|c[ʼ\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu)/i,
-        monthsShortStrictRegex = /^(gen|c[ʼ\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i,
+        monthsRegex =
+            /^(genver|c[ʼ\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu|gen|c[ʼ\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i,
+        monthsStrictRegex =
+            /^(genver|c[ʼ\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu)/i,
+        monthsShortStrictRegex =
+            /^(gen|c[ʼ\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i,
         fullWeekdaysParse = [
             /^sul/i,
             /^lun/i,
@@ -30775,9 +30855,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'januar_februar_mart_april_maj_juni_juli_august_septembar_oktobar_novembar_decembar'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._mar._apr._maj._jun._jul._aug._sep._okt._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._mar._apr._maj._jun._jul._aug._sep._okt._nov._dec.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
             '_'
@@ -30878,21 +30959,24 @@ __webpack_require__.r(__webpack_exports__);
 
     var ca = moment.defineLocale('ca', {
         months: {
-            standalone: 'gener_febrer_març_abril_maig_juny_juliol_agost_setembre_octubre_novembre_desembre'.split(
-                '_'
-            ),
+            standalone:
+                'gener_febrer_març_abril_maig_juny_juliol_agost_setembre_octubre_novembre_desembre'.split(
+                    '_'
+                ),
             format: "de gener_de febrer_de març_d'abril_de maig_de juny_de juliol_d'agost_de setembre_d'octubre_de novembre_de desembre".split(
                 '_'
             ),
             isFormat: /D[oD]?(\s)+MMMM/,
         },
-        monthsShort: 'gen._febr._març_abr._maig_juny_jul._ag._set._oct._nov._des.'.split(
-            '_'
-        ),
+        monthsShort:
+            'gen._febr._març_abr._maig_juny_jul._ag._set._oct._nov._des.'.split(
+                '_'
+            ),
         monthsParseExact: true,
-        weekdays: 'diumenge_dilluns_dimarts_dimecres_dijous_divendres_dissabte'.split(
-            '_'
-        ),
+        weekdays:
+            'diumenge_dilluns_dimarts_dimecres_dijous_divendres_dissabte'.split(
+                '_'
+            ),
         weekdaysShort: 'dg._dl._dt._dc._dj._dv._ds.'.split('_'),
         weekdaysMin: 'dg_dl_dt_dc_dj_dv_ds'.split('_'),
         weekdaysParseExact: true,
@@ -30992,9 +31076,15 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var months = 'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split(
-            '_'
-        ),
+    var months = {
+            format: 'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split(
+                '_'
+            ),
+            standalone:
+                'ledna_února_března_dubna_května_června_července_srpna_září_října_listopadu_prosince'.split(
+                    '_'
+                ),
+        },
         monthsShort = 'led_úno_bře_dub_kvě_čvn_čvc_srp_zář_říj_lis_pro'.split('_'),
         monthsParse = [
             /^led/i,
@@ -31012,7 +31102,8 @@ __webpack_require__.r(__webpack_exports__);
         ],
         // NOTE: 'červen' is substring of 'červenec'; therefore 'červenec' must precede 'červen' in the regex to be fully matched.
         // Otherwise parser matches '1. červenec' as '1. červen' + 'ec'.
-        monthsRegex = /^(leden|únor|březen|duben|květen|červenec|července|červen|června|srpen|září|říjen|listopad|prosinec|led|úno|bře|dub|kvě|čvn|čvc|srp|zář|říj|lis|pro)/i;
+        monthsRegex =
+            /^(leden|únor|březen|duben|květen|červenec|července|červen|června|srpen|září|říjen|listopad|prosinec|led|úno|bře|dub|kvě|čvn|čvc|srp|zář|říj|lis|pro)/i;
 
     function plural(n) {
         return n > 1 && n < 5 && ~~(n / 10) !== 1;
@@ -31078,8 +31169,10 @@ __webpack_require__.r(__webpack_exports__);
         monthsShortRegex: monthsRegex,
         // NOTE: 'červen' is substring of 'červenec'; therefore 'červenec' must precede 'červen' in the regex to be fully matched.
         // Otherwise parser matches '1. červenec' as '1. červen' + 'ec'.
-        monthsStrictRegex: /^(leden|ledna|února|únor|březen|března|duben|dubna|květen|května|červenec|července|červen|června|srpen|srpna|září|říjen|října|listopadu|listopad|prosinec|prosince)/i,
-        monthsShortStrictRegex: /^(led|úno|bře|dub|kvě|čvn|čvc|srp|zář|říj|lis|pro)/i,
+        monthsStrictRegex:
+            /^(leden|ledna|února|únor|březen|března|duben|dubna|květen|května|červenec|července|červen|června|srpen|srpna|září|říjen|října|listopadu|listopad|prosinec|prosince)/i,
+        monthsShortStrictRegex:
+            /^(led|úno|bře|dub|kvě|čvn|čvc|srp|zář|říj|lis|pro)/i,
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
@@ -31187,9 +31280,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'кӑр_нар_пуш_ака_май_ҫӗр_утӑ_ҫур_авн_юпа_чӳк_раш'.split('_'),
-        weekdays: 'вырсарникун_тунтикун_ытларикун_юнкун_кӗҫнерникун_эрнекун_шӑматкун'.split(
-            '_'
-        ),
+        weekdays:
+            'вырсарникун_тунтикун_ытларикун_юнкун_кӗҫнерникун_эрнекун_шӑматкун'.split(
+                '_'
+            ),
         weekdaysShort: 'выр_тун_ытл_юн_кӗҫ_эрн_шӑм'.split('_'),
         weekdaysMin: 'вр_тн_ыт_юн_кҫ_эр_шм'.split('_'),
         longDateFormat: {
@@ -31271,9 +31365,10 @@ __webpack_require__.r(__webpack_exports__);
         monthsShort: 'Ion_Chwe_Maw_Ebr_Mai_Meh_Gor_Aws_Med_Hyd_Tach_Rhag'.split(
             '_'
         ),
-        weekdays: 'Dydd Sul_Dydd Llun_Dydd Mawrth_Dydd Mercher_Dydd Iau_Dydd Gwener_Dydd Sadwrn'.split(
-            '_'
-        ),
+        weekdays:
+            'Dydd Sul_Dydd Llun_Dydd Mawrth_Dydd Mercher_Dydd Iau_Dydd Gwener_Dydd Sadwrn'.split(
+                '_'
+            ),
         weekdaysShort: 'Sul_Llun_Maw_Mer_Iau_Gwe_Sad'.split('_'),
         weekdaysMin: 'Su_Ll_Ma_Me_Ia_Gw_Sa'.split('_'),
         weekdaysParseExact: true,
@@ -31473,13 +31568,13 @@ __webpack_require__.r(__webpack_exports__);
         months: 'Jänner_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
             '_'
         ),
-        monthsShort: 'Jän._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
-            '_'
-        ),
+        monthsShort:
+            'Jän._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split('_'),
         monthsParseExact: true,
-        weekdays: 'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
-            '_'
-        ),
+        weekdays:
+            'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
+                '_'
+            ),
         weekdaysShort: 'So._Mo._Di._Mi._Do._Fr._Sa.'.split('_'),
         weekdaysMin: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: true,
@@ -31568,13 +31663,13 @@ __webpack_require__.r(__webpack_exports__);
         months: 'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
             '_'
         ),
-        monthsShort: 'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
-            '_'
-        ),
+        monthsShort:
+            'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split('_'),
         monthsParseExact: true,
-        weekdays: 'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
-            '_'
-        ),
+        weekdays:
+            'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
+                '_'
+            ),
         weekdaysShort: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysMin: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: true,
@@ -31665,13 +31760,13 @@ __webpack_require__.r(__webpack_exports__);
         months: 'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
             '_'
         ),
-        monthsShort: 'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
-            '_'
-        ),
+        monthsShort:
+            'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split('_'),
         monthsParseExact: true,
-        weekdays: 'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
-            '_'
-        ),
+        weekdays:
+            'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
+                '_'
+            ),
         weekdaysShort: 'So._Mo._Di._Mi._Do._Fr._Sa.'.split('_'),
         weekdaysMin: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: true,
@@ -31858,12 +31953,14 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     var el = moment.defineLocale('el', {
-        monthsNominativeEl: 'Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος'.split(
-            '_'
-        ),
-        monthsGenitiveEl: 'Ιανουαρίου_Φεβρουαρίου_Μαρτίου_Απριλίου_Μαΐου_Ιουνίου_Ιουλίου_Αυγούστου_Σεπτεμβρίου_Οκτωβρίου_Νοεμβρίου_Δεκεμβρίου'.split(
-            '_'
-        ),
+        monthsNominativeEl:
+            'Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος'.split(
+                '_'
+            ),
+        monthsGenitiveEl:
+            'Ιανουαρίου_Φεβρουαρίου_Μαρτίου_Απριλίου_Μαΐου_Ιουνίου_Ιουλίου_Αυγούστου_Σεπτεμβρίου_Οκτωβρίου_Νοεμβρίου_Δεκεμβρίου'.split(
+                '_'
+            ),
         months: function (momentToFormat, format) {
             if (!momentToFormat) {
                 return this._monthsNominativeEl;
@@ -32747,9 +32844,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-            '_'
-        ),
+    var monthsShortDot =
+            'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
+                '_'
+            ),
         monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse = [
             /^ene/i,
@@ -32765,7 +32863,8 @@ __webpack_require__.r(__webpack_exports__);
             /^nov/i,
             /^dic/i,
         ],
-        monthsRegex = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
+        monthsRegex =
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
 
     var esDo = moment.defineLocale('es-do', {
         months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
@@ -32782,8 +32881,10 @@ __webpack_require__.r(__webpack_exports__);
         },
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-        monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+        monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+        monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
@@ -32871,9 +32972,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-            '_'
-        ),
+    var monthsShortDot =
+            'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
+                '_'
+            ),
         monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse = [
             /^ene/i,
@@ -32889,7 +32991,8 @@ __webpack_require__.r(__webpack_exports__);
             /^nov/i,
             /^dic/i,
         ],
-        monthsRegex = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
+        monthsRegex =
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
 
     var esMx = moment.defineLocale('es-mx', {
         months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
@@ -32906,8 +33009,10 @@ __webpack_require__.r(__webpack_exports__);
         },
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-        monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+        monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+        monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
@@ -32997,9 +33102,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-            '_'
-        ),
+    var monthsShortDot =
+            'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
+                '_'
+            ),
         monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse = [
             /^ene/i,
@@ -33015,7 +33121,8 @@ __webpack_require__.r(__webpack_exports__);
             /^nov/i,
             /^dic/i,
         ],
-        monthsRegex = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
+        monthsRegex =
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
 
     var esUs = moment.defineLocale('es-us', {
         months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
@@ -33032,8 +33139,10 @@ __webpack_require__.r(__webpack_exports__);
         },
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-        monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+        monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+        monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
@@ -33121,9 +33230,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-            '_'
-        ),
+    var monthsShortDot =
+            'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
+                '_'
+            ),
         monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse = [
             /^ene/i,
@@ -33139,7 +33249,8 @@ __webpack_require__.r(__webpack_exports__);
             /^nov/i,
             /^dic/i,
         ],
-        monthsRegex = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
+        monthsRegex =
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
 
     var es = moment.defineLocale('es', {
         months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
@@ -33156,8 +33267,10 @@ __webpack_require__.r(__webpack_exports__);
         },
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-        monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+        monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+        monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
@@ -33271,12 +33384,12 @@ __webpack_require__.r(__webpack_exports__);
         months: 'jaanuar_veebruar_märts_aprill_mai_juuni_juuli_august_september_oktoober_november_detsember'.split(
             '_'
         ),
-        monthsShort: 'jaan_veebr_märts_apr_mai_juuni_juuli_aug_sept_okt_nov_dets'.split(
-            '_'
-        ),
-        weekdays: 'pühapäev_esmaspäev_teisipäev_kolmapäev_neljapäev_reede_laupäev'.split(
-            '_'
-        ),
+        monthsShort:
+            'jaan_veebr_märts_apr_mai_juuni_juuli_aug_sept_okt_nov_dets'.split('_'),
+        weekdays:
+            'pühapäev_esmaspäev_teisipäev_kolmapäev_neljapäev_reede_laupäev'.split(
+                '_'
+            ),
         weekdaysShort: 'P_E_T_K_N_R_L'.split('_'),
         weekdaysMin: 'P_E_T_K_N_R_L'.split('_'),
         longDateFormat: {
@@ -33347,13 +33460,15 @@ __webpack_require__.r(__webpack_exports__);
         months: 'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua'.split(
             '_'
         ),
-        monthsShort: 'urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.'.split(
-            '_'
-        ),
+        monthsShort:
+            'urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.'.split(
+                '_'
+            ),
         monthsParseExact: true,
-        weekdays: 'igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata'.split(
-            '_'
-        ),
+        weekdays:
+            'igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata'.split(
+                '_'
+            ),
         weekdaysShort: 'ig._al._ar._az._og._ol._lr.'.split('_'),
         weekdaysMin: 'ig_al_ar_az_og_ol_lr'.split('_'),
         weekdaysParseExact: true,
@@ -33454,15 +33569,18 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
             '_'
         ),
-        monthsShort: 'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
-            '_'
-        ),
-        weekdays: 'یک\u200cشنبه_دوشنبه_سه\u200cشنبه_چهارشنبه_پنج\u200cشنبه_جمعه_شنبه'.split(
-            '_'
-        ),
-        weekdaysShort: 'یک\u200cشنبه_دوشنبه_سه\u200cشنبه_چهارشنبه_پنج\u200cشنبه_جمعه_شنبه'.split(
-            '_'
-        ),
+        monthsShort:
+            'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
+                '_'
+            ),
+        weekdays:
+            'یک\u200cشنبه_دوشنبه_سه\u200cشنبه_چهارشنبه_پنج\u200cشنبه_جمعه_شنبه'.split(
+                '_'
+            ),
+        weekdaysShort:
+            'یک\u200cشنبه_دوشنبه_سه\u200cشنبه_چهارشنبه_پنج\u200cشنبه_جمعه_شنبه'.split(
+                '_'
+            ),
         weekdaysMin: 'ی_د_س_چ_پ_ج_ش'.split('_'),
         weekdaysParseExact: true,
         longDateFormat: {
@@ -33554,9 +33672,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var numbersPast = 'nolla yksi kaksi kolme neljä viisi kuusi seitsemän kahdeksan yhdeksän'.split(
-            ' '
-        ),
+    var numbersPast =
+            'nolla yksi kaksi kolme neljä viisi kuusi seitsemän kahdeksan yhdeksän'.split(
+                ' '
+            ),
         numbersFuture = [
             'nolla',
             'yhden',
@@ -33618,12 +33737,14 @@ __webpack_require__.r(__webpack_exports__);
         months: 'tammikuu_helmikuu_maaliskuu_huhtikuu_toukokuu_kesäkuu_heinäkuu_elokuu_syyskuu_lokakuu_marraskuu_joulukuu'.split(
             '_'
         ),
-        monthsShort: 'tammi_helmi_maalis_huhti_touko_kesä_heinä_elo_syys_loka_marras_joulu'.split(
-            '_'
-        ),
-        weekdays: 'sunnuntai_maanantai_tiistai_keskiviikko_torstai_perjantai_lauantai'.split(
-            '_'
-        ),
+        monthsShort:
+            'tammi_helmi_maalis_huhti_touko_kesä_heinä_elo_syys_loka_marras_joulu'.split(
+                '_'
+            ),
+        weekdays:
+            'sunnuntai_maanantai_tiistai_keskiviikko_torstai_perjantai_lauantai'.split(
+                '_'
+            ),
         weekdaysShort: 'su_ma_ti_ke_to_pe_la'.split('_'),
         weekdaysMin: 'su_ma_ti_ke_to_pe_la'.split('_'),
         longDateFormat: {
@@ -33777,9 +33898,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'jan_feb_mar_apr_mai_jun_jul_aug_sep_okt_nov_des'.split('_'),
-        weekdays: 'sunnudagur_mánadagur_týsdagur_mikudagur_hósdagur_fríggjadagur_leygardagur'.split(
-            '_'
-        ),
+        weekdays:
+            'sunnudagur_mánadagur_týsdagur_mikudagur_hósdagur_fríggjadagur_leygardagur'.split(
+                '_'
+            ),
         weekdaysShort: 'sun_mán_týs_mik_hós_frí_ley'.split('_'),
         weekdaysMin: 'su_má_tý_mi_hó_fr_le'.split('_'),
         longDateFormat: {
@@ -33850,9 +33972,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
             '_'
         ),
-        monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
-            '_'
-        ),
+        monthsShort:
+            'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
         weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
@@ -33938,9 +34061,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
             '_'
         ),
-        monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
-            '_'
-        ),
+        monthsShort:
+            'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
         weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
@@ -34026,9 +34150,12 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsStrictRegex = /^(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
-        monthsShortStrictRegex = /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?)/i,
-        monthsRegex = /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?|janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
+    var monthsStrictRegex =
+            /^(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
+        monthsShortStrictRegex =
+            /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?)/i,
+        monthsRegex =
+            /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?|janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
         monthsParse = [
             /^janv/i,
             /^févr/i,
@@ -34048,9 +34175,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
             '_'
         ),
-        monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
-            '_'
-        ),
+        monthsShort:
+            'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+                '_'
+            ),
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
         monthsStrictRegex: monthsStrictRegex,
@@ -34149,12 +34277,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortWithDots = 'jan._feb._mrt._apr._mai_jun._jul._aug._sep._okt._nov._des.'.split(
-            '_'
-        ),
-        monthsShortWithoutDots = 'jan_feb_mrt_apr_mai_jun_jul_aug_sep_okt_nov_des'.split(
-            '_'
-        );
+    var monthsShortWithDots =
+            'jan._feb._mrt._apr._mai_jun._jul._aug._sep._okt._nov._des.'.split('_'),
+        monthsShortWithoutDots =
+            'jan_feb_mrt_apr_mai_jun_jul_aug_sep_okt_nov_des'.split('_');
 
     var fy = moment.defineLocale('fy', {
         months: 'jannewaris_febrewaris_maart_april_maaie_juny_july_augustus_septimber_oktober_novimber_desimber'.split(
@@ -34477,9 +34603,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'xaneiro_febreiro_marzo_abril_maio_xuño_xullo_agosto_setembro_outubro_novembro_decembro'.split(
             '_'
         ),
-        monthsShort: 'xan._feb._mar._abr._mai._xuñ._xul._ago._set._out._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'xan._feb._mar._abr._mai._xuñ._xul._ago._set._out._nov._dec.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'domingo_luns_martes_mércores_xoves_venres_sábado'.split('_'),
         weekdaysShort: 'dom._lun._mar._mér._xov._ven._sáb.'.split('_'),
@@ -34586,17 +34713,19 @@ __webpack_require__.r(__webpack_exports__);
 
     var gomDeva = moment.defineLocale('gom-deva', {
         months: {
-            standalone: 'जानेवारी_फेब्रुवारी_मार्च_एप्रील_मे_जून_जुलय_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
-                '_'
-            ),
+            standalone:
+                'जानेवारी_फेब्रुवारी_मार्च_एप्रील_मे_जून_जुलय_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
+                    '_'
+                ),
             format: 'जानेवारीच्या_फेब्रुवारीच्या_मार्चाच्या_एप्रीलाच्या_मेयाच्या_जूनाच्या_जुलयाच्या_ऑगस्टाच्या_सप्टेंबराच्या_ऑक्टोबराच्या_नोव्हेंबराच्या_डिसेंबराच्या'.split(
                 '_'
             ),
             isFormat: /MMMM(\s)+D[oD]?/,
         },
-        monthsShort: 'जाने._फेब्रु._मार्च_एप्री._मे_जून_जुल._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
-            '_'
-        ),
+        monthsShort:
+            'जाने._फेब्रु._मार्च_एप्री._मे_जून_जुल._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'आयतार_सोमार_मंगळार_बुधवार_बिरेस्तार_सुक्रार_शेनवार'.split('_'),
         weekdaysShort: 'आयत._सोम._मंगळ._बुध._ब्रेस्त._सुक्र._शेन.'.split('_'),
@@ -34729,17 +34858,17 @@ __webpack_require__.r(__webpack_exports__);
 
     var gomLatn = moment.defineLocale('gom-latn', {
         months: {
-            standalone: 'Janer_Febrer_Mars_Abril_Mai_Jun_Julai_Agost_Setembr_Otubr_Novembr_Dezembr'.split(
-                '_'
-            ),
+            standalone:
+                'Janer_Febrer_Mars_Abril_Mai_Jun_Julai_Agost_Setembr_Otubr_Novembr_Dezembr'.split(
+                    '_'
+                ),
             format: 'Janerachea_Febrerachea_Marsachea_Abrilachea_Maiachea_Junachea_Julaiachea_Agostachea_Setembrachea_Otubrachea_Novembrachea_Dezembrachea'.split(
                 '_'
             ),
             isFormat: /MMMM(\s)+D[oD]?/,
         },
-        monthsShort: 'Jan._Feb._Mars_Abr._Mai_Jun_Jul._Ago._Set._Otu._Nov._Dez.'.split(
-            '_'
-        ),
+        monthsShort:
+            'Jan._Feb._Mars_Abr._Mai_Jun_Jul._Ago._Set._Otu._Nov._Dez.'.split('_'),
         monthsParseExact: true,
         weekdays: "Aitar_Somar_Mongllar_Budhvar_Birestar_Sukrar_Son'var".split('_'),
         weekdaysShort: 'Ait._Som._Mon._Bud._Bre._Suk._Son.'.split('_'),
@@ -34881,9 +35010,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'જાન્યુઆરી_ફેબ્રુઆરી_માર્ચ_એપ્રિલ_મે_જૂન_જુલાઈ_ઑગસ્ટ_સપ્ટેમ્બર_ઑક્ટ્બર_નવેમ્બર_ડિસેમ્બર'.split(
             '_'
         ),
-        monthsShort: 'જાન્યુ._ફેબ્રુ._માર્ચ_એપ્રિ._મે_જૂન_જુલા._ઑગ._સપ્ટે._ઑક્ટ્._નવે._ડિસે.'.split(
-            '_'
-        ),
+        monthsShort:
+            'જાન્યુ._ફેબ્રુ._માર્ચ_એપ્રિ._મે_જૂન_જુલા._ઑગ._સપ્ટે._ઑક્ટ્._નવે._ડિસે.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'રવિવાર_સોમવાર_મંગળવાર_બુધ્વાર_ગુરુવાર_શુક્રવાર_શનિવાર'.split(
             '_'
@@ -34998,9 +35128,8 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ינואר_פברואר_מרץ_אפריל_מאי_יוני_יולי_אוגוסט_ספטמבר_אוקטובר_נובמבר_דצמבר'.split(
             '_'
         ),
-        monthsShort: 'ינו׳_פבר׳_מרץ_אפר׳_מאי_יוני_יולי_אוג׳_ספט׳_אוק׳_נוב׳_דצמ׳'.split(
-            '_'
-        ),
+        monthsShort:
+            'ינו׳_פבר׳_מרץ_אפר׳_מאי_יוני_יולי_אוג׳_ספט׳_אוק׳_נוב׳_דצמ׳'.split('_'),
         weekdays: 'ראשון_שני_שלישי_רביעי_חמישי_שישי_שבת'.split('_'),
         weekdaysShort: 'א׳_ב׳_ג׳_ד׳_ה׳_ו׳_ש׳'.split('_'),
         weekdaysMin: 'א_ב_ג_ד_ה_ו_ש'.split('_'),
@@ -35062,7 +35191,8 @@ __webpack_require__.r(__webpack_exports__);
                 return number + ' שנים';
             },
         },
-        meridiemParse: /אחה"צ|לפנה"צ|אחרי הצהריים|לפני הצהריים|לפנות בוקר|בבוקר|בערב/i,
+        meridiemParse:
+            /אחה"צ|לפנה"צ|אחרי הצהריים|לפני הצהריים|לפנות בוקר|בבוקר|בערב/i,
         isPM: function (input) {
             return /^(אחה"צ|אחרי הצהריים|בערב)$/.test(input);
         },
@@ -35163,13 +35293,13 @@ __webpack_require__.r(__webpack_exports__);
             format: 'जनवरी_फ़रवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितम्बर_अक्टूबर_नवम्बर_दिसम्बर'.split(
                 '_'
             ),
-            standalone: 'जनवरी_फरवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितंबर_अक्टूबर_नवंबर_दिसंबर'.split(
-                '_'
-            ),
+            standalone:
+                'जनवरी_फरवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितंबर_अक्टूबर_नवंबर_दिसंबर'.split(
+                    '_'
+                ),
         },
-        monthsShort: 'जन._फ़र._मार्च_अप्रै._मई_जून_जुल._अग._सित._अक्टू._नव._दिस.'.split(
-            '_'
-        ),
+        monthsShort:
+            'जन._फ़र._मार्च_अप्रै._मई_जून_जुल._अग._सित._अक्टू._नव._दिस.'.split('_'),
         weekdays: 'रविवार_सोमवार_मंगलवार_बुधवार_गुरूवार_शुक्रवार_शनिवार'.split('_'),
         weekdaysShort: 'रवि_सोम_मंगल_बुध_गुरू_शुक्र_शनि'.split('_'),
         weekdaysMin: 'र_सो_मं_बु_गु_शु_श'.split('_'),
@@ -35186,13 +35316,17 @@ __webpack_require__.r(__webpack_exports__);
         longMonthsParse: monthsParse,
         shortMonthsParse: shortMonthsParse,
 
-        monthsRegex: /^(जनवरी|जन\.?|फ़रवरी|फरवरी|फ़र\.?|मार्च?|अप्रैल|अप्रै\.?|मई?|जून?|जुलाई|जुल\.?|अगस्त|अग\.?|सितम्बर|सितंबर|सित\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर|नव\.?|दिसम्बर|दिसंबर|दिस\.?)/i,
+        monthsRegex:
+            /^(जनवरी|जन\.?|फ़रवरी|फरवरी|फ़र\.?|मार्च?|अप्रैल|अप्रै\.?|मई?|जून?|जुलाई|जुल\.?|अगस्त|अग\.?|सितम्बर|सितंबर|सित\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर|नव\.?|दिसम्बर|दिसंबर|दिस\.?)/i,
 
-        monthsShortRegex: /^(जनवरी|जन\.?|फ़रवरी|फरवरी|फ़र\.?|मार्च?|अप्रैल|अप्रै\.?|मई?|जून?|जुलाई|जुल\.?|अगस्त|अग\.?|सितम्बर|सितंबर|सित\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर|नव\.?|दिसम्बर|दिसंबर|दिस\.?)/i,
+        monthsShortRegex:
+            /^(जनवरी|जन\.?|फ़रवरी|फरवरी|फ़र\.?|मार्च?|अप्रैल|अप्रै\.?|मई?|जून?|जुलाई|जुल\.?|अगस्त|अग\.?|सितम्बर|सितंबर|सित\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर|नव\.?|दिसम्बर|दिसंबर|दिस\.?)/i,
 
-        monthsStrictRegex: /^(जनवरी?|फ़रवरी|फरवरी?|मार्च?|अप्रैल?|मई?|जून?|जुलाई?|अगस्त?|सितम्बर|सितंबर|सित?\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर?|दिसम्बर|दिसंबर?)/i,
+        monthsStrictRegex:
+            /^(जनवरी?|फ़रवरी|फरवरी?|मार्च?|अप्रैल?|मई?|जून?|जुलाई?|अगस्त?|सितम्बर|सितंबर|सित?\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर?|दिसम्बर|दिसंबर?)/i,
 
-        monthsShortStrictRegex: /^(जन\.?|फ़र\.?|मार्च?|अप्रै\.?|मई?|जून?|जुल\.?|अग\.?|सित\.?|अक्टू\.?|नव\.?|दिस\.?)/i,
+        monthsShortStrictRegex:
+            /^(जन\.?|फ़र\.?|मार्च?|अप्रै\.?|मई?|जून?|जुल\.?|अग\.?|सित\.?|अक्टू\.?|नव\.?|दिस\.?)/i,
 
         calendar: {
             sameDay: '[आज] LT',
@@ -35355,13 +35489,15 @@ __webpack_require__.r(__webpack_exports__);
             format: 'siječnja_veljače_ožujka_travnja_svibnja_lipnja_srpnja_kolovoza_rujna_listopada_studenoga_prosinca'.split(
                 '_'
             ),
-            standalone: 'siječanj_veljača_ožujak_travanj_svibanj_lipanj_srpanj_kolovoz_rujan_listopad_studeni_prosinac'.split(
+            standalone:
+                'siječanj_veljača_ožujak_travanj_svibanj_lipanj_srpanj_kolovoz_rujan_listopad_studeni_prosinac'.split(
+                    '_'
+                ),
+        },
+        monthsShort:
+            'sij._velj._ožu._tra._svi._lip._srp._kol._ruj._lis._stu._pro.'.split(
                 '_'
             ),
-        },
-        monthsShort: 'sij._velj._ožu._tra._svi._lip._srp._kol._ruj._lis._stu._pro.'.split(
-            '_'
-        ),
         monthsParseExact: true,
         weekdays: 'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
             '_'
@@ -35462,9 +35598,8 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var weekEndings = 'vasárnap hétfőn kedden szerdán csütörtökön pénteken szombaton'.split(
-        ' '
-    );
+    var weekEndings =
+        'vasárnap hétfőn kedden szerdán csütörtökön pénteken szombaton'.split(' ');
     function translate(number, withoutSuffix, key, isFuture) {
         var num = number;
         switch (key) {
@@ -35512,9 +35647,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'január_február_március_április_május_június_július_augusztus_szeptember_október_november_december'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._márc._ápr._máj._jún._júl._aug._szept._okt._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._márc._ápr._máj._jún._júl._aug._szept._okt._nov._dec.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'vasárnap_hétfő_kedd_szerda_csütörtök_péntek_szombat'.split('_'),
         weekdaysShort: 'vas_hét_kedd_sze_csüt_pén_szo'.split('_'),
@@ -35603,14 +35739,16 @@ __webpack_require__.r(__webpack_exports__);
             format: 'հունվարի_փետրվարի_մարտի_ապրիլի_մայիսի_հունիսի_հուլիսի_օգոստոսի_սեպտեմբերի_հոկտեմբերի_նոյեմբերի_դեկտեմբերի'.split(
                 '_'
             ),
-            standalone: 'հունվար_փետրվար_մարտ_ապրիլ_մայիս_հունիս_հուլիս_օգոստոս_սեպտեմբեր_հոկտեմբեր_նոյեմբեր_դեկտեմբեր'.split(
-                '_'
-            ),
+            standalone:
+                'հունվար_փետրվար_մարտ_ապրիլ_մայիս_հունիս_հուլիս_օգոստոս_սեպտեմբեր_հոկտեմբեր_նոյեմբեր_դեկտեմբեր'.split(
+                    '_'
+                ),
         },
         monthsShort: 'հնվ_փտր_մրտ_ապր_մյս_հնս_հլս_օգս_սպտ_հկտ_նմբ_դկտ'.split('_'),
-        weekdays: 'կիրակի_երկուշաբթի_երեքշաբթի_չորեքշաբթի_հինգշաբթի_ուրբաթ_շաբաթ'.split(
-            '_'
-        ),
+        weekdays:
+            'կիրակի_երկուշաբթի_երեքշաբթի_չորեքշաբթի_հինգշաբթի_ուրբաթ_շաբաթ'.split(
+                '_'
+            ),
         weekdaysShort: 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),
         weekdaysMin: 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),
         longDateFormat: {
@@ -35893,9 +36031,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'jan_feb_mar_apr_maí_jún_júl_ágú_sep_okt_nóv_des'.split('_'),
-        weekdays: 'sunnudagur_mánudagur_þriðjudagur_miðvikudagur_fimmtudagur_föstudagur_laugardagur'.split(
-            '_'
-        ),
+        weekdays:
+            'sunnudagur_mánudagur_þriðjudagur_miðvikudagur_fimmtudagur_föstudagur_laugardagur'.split(
+                '_'
+            ),
         weekdaysShort: 'sun_mán_þri_mið_fim_fös_lau'.split('_'),
         weekdaysMin: 'Su_Má_Þr_Mi_Fi_Fö_La'.split('_'),
         longDateFormat: {
@@ -36438,9 +36577,10 @@ __webpack_require__.r(__webpack_exports__);
         ),
         monthsShort: 'იან_თებ_მარ_აპრ_მაი_ივნ_ივლ_აგვ_სექ_ოქტ_ნოე_დეკ'.split('_'),
         weekdays: {
-            standalone: 'კვირა_ორშაბათი_სამშაბათი_ოთხშაბათი_ხუთშაბათი_პარასკევი_შაბათი'.split(
-                '_'
-            ),
+            standalone:
+                'კვირა_ორშაბათი_სამშაბათი_ოთხშაბათი_ხუთშაბათი_პარასკევი_შაბათი'.split(
+                    '_'
+                ),
             format: 'კვირას_ორშაბათს_სამშაბათს_ოთხშაბათს_ხუთშაბათს_პარასკევს_შაბათს'.split(
                 '_'
             ),
@@ -36466,13 +36606,12 @@ __webpack_require__.r(__webpack_exports__);
         },
         relativeTime: {
             future: function (s) {
-                return s.replace(/(წამ|წუთ|საათ|წელ|დღ|თვ)(ი|ე)/, function (
-                    $0,
-                    $1,
-                    $2
-                ) {
-                    return $2 === 'ი' ? $1 + 'ში' : $1 + $2 + 'ში';
-                });
+                return s.replace(
+                    /(წამ|წუთ|საათ|წელ|დღ|თვ)(ი|ე)/,
+                    function ($0, $1, $2) {
+                        return $2 === 'ი' ? $1 + 'ში' : $1 + $2 + 'ში';
+                    }
+                );
             },
             past: function (s) {
                 if (/(წამი|წუთი|საათი|დღე|თვე)/.test(s)) {
@@ -36673,9 +36812,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
             '_'
         ),
-        monthsShort: 'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
-            '_'
-        ),
+        monthsShort:
+            'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
+                '_'
+            ),
         weekdays: 'អាទិត្យ_ច័ន្ទ_អង្គារ_ពុធ_ព្រហស្បតិ៍_សុក្រ_សៅរ៍'.split('_'),
         weekdaysShort: 'អា_ច_អ_ព_ព្រ_សុ_ស'.split('_'),
         weekdaysMin: 'អា_ច_អ_ព_ព្រ_សុ_ស'.split('_'),
@@ -36794,9 +36934,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ಜನವರಿ_ಫೆಬ್ರವರಿ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂಬರ್_ಅಕ್ಟೋಬರ್_ನವೆಂಬರ್_ಡಿಸೆಂಬರ್'.split(
             '_'
         ),
-        monthsShort: 'ಜನ_ಫೆಬ್ರ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂ_ಅಕ್ಟೋ_ನವೆಂ_ಡಿಸೆಂ'.split(
-            '_'
-        ),
+        monthsShort:
+            'ಜನ_ಫೆಬ್ರ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂ_ಅಕ್ಟೋ_ನವೆಂ_ಡಿಸೆಂ'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'ಭಾನುವಾರ_ಸೋಮವಾರ_ಮಂಗಳವಾರ_ಬುಧವಾರ_ಗುರುವಾರ_ಶುಕ್ರವಾರ_ಶನಿವಾರ'.split(
             '_'
@@ -37043,12 +37184,12 @@ __webpack_require__.r(__webpack_exports__);
     var ku = moment.defineLocale('ku', {
         months: months,
         monthsShort: months,
-        weekdays: 'یه‌كشه‌ممه‌_دووشه‌ممه‌_سێشه‌ممه‌_چوارشه‌ممه‌_پێنجشه‌ممه‌_هه‌ینی_شه‌ممه‌'.split(
-            '_'
-        ),
-        weekdaysShort: 'یه‌كشه‌م_دووشه‌م_سێشه‌م_چوارشه‌م_پێنجشه‌م_هه‌ینی_شه‌ممه‌'.split(
-            '_'
-        ),
+        weekdays:
+            'یه‌كشه‌ممه‌_دووشه‌ممه‌_سێشه‌ممه‌_چوارشه‌ممه‌_پێنجشه‌ممه‌_هه‌ینی_شه‌ممه‌'.split(
+                '_'
+            ),
+        weekdaysShort:
+            'یه‌كشه‌م_دووشه‌م_سێشه‌م_چوارشه‌م_پێنجشه‌م_هه‌ینی_شه‌ممه‌'.split('_'),
         weekdaysMin: 'ی_د_س_چ_پ_ه_ش'.split('_'),
         weekdaysParseExact: true,
         longDateFormat: {
@@ -37312,13 +37453,15 @@ __webpack_require__.r(__webpack_exports__);
         months: 'Januar_Februar_Mäerz_Abrëll_Mee_Juni_Juli_August_September_Oktober_November_Dezember'.split(
             '_'
         ),
-        monthsShort: 'Jan._Febr._Mrz._Abr._Mee_Jun._Jul._Aug._Sept._Okt._Nov._Dez.'.split(
-            '_'
-        ),
+        monthsShort:
+            'Jan._Febr._Mrz._Abr._Mee_Jun._Jul._Aug._Sept._Okt._Nov._Dez.'.split(
+                '_'
+            ),
         monthsParseExact: true,
-        weekdays: 'Sonndeg_Méindeg_Dënschdeg_Mëttwoch_Donneschdeg_Freideg_Samschdeg'.split(
-            '_'
-        ),
+        weekdays:
+            'Sonndeg_Méindeg_Dënschdeg_Mëttwoch_Donneschdeg_Freideg_Samschdeg'.split(
+                '_'
+            ),
         weekdaysShort: 'So._Mé._Dë._Më._Do._Fr._Sa.'.split('_'),
         weekdaysMin: 'So_Mé_Dë_Më_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: true,
@@ -37399,9 +37542,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
             '_'
         ),
-        monthsShort: 'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
-            '_'
-        ),
+        monthsShort:
+            'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
+                '_'
+            ),
         weekdays: 'ອາທິດ_ຈັນ_ອັງຄານ_ພຸດ_ພະຫັດ_ສຸກ_ເສົາ'.split('_'),
         weekdaysShort: 'ທິດ_ຈັນ_ອັງຄານ_ພຸດ_ພະຫັດ_ສຸກ_ເສົາ'.split('_'),
         weekdaysMin: 'ທ_ຈ_ອຄ_ພ_ພຫ_ສກ_ສ'.split('_'),
@@ -37533,9 +37677,10 @@ __webpack_require__.r(__webpack_exports__);
             format: 'sausio_vasario_kovo_balandžio_gegužės_birželio_liepos_rugpjūčio_rugsėjo_spalio_lapkričio_gruodžio'.split(
                 '_'
             ),
-            standalone: 'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split(
-                '_'
-            ),
+            standalone:
+                'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split(
+                    '_'
+                ),
             isFormat: /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?|MMMM?(\[[^\[\]]*\]|\s)+D[oD]?/,
         },
         monthsShort: 'sau_vas_kov_bal_geg_bir_lie_rgp_rgs_spa_lap_grd'.split('_'),
@@ -37543,9 +37688,10 @@ __webpack_require__.r(__webpack_exports__);
             format: 'sekmadienį_pirmadienį_antradienį_trečiadienį_ketvirtadienį_penktadienį_šeštadienį'.split(
                 '_'
             ),
-            standalone: 'sekmadienis_pirmadienis_antradienis_trečiadienis_ketvirtadienis_penktadienis_šeštadienis'.split(
-                '_'
-            ),
+            standalone:
+                'sekmadienis_pirmadienis_antradienis_trečiadienis_ketvirtadienis_penktadienis_šeštadienis'.split(
+                    '_'
+                ),
             isFormat: /dddd HH:mm/,
         },
         weekdaysShort: 'Sek_Pir_Ant_Tre_Ket_Pen_Šeš'.split('_'),
@@ -37663,9 +37809,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'jan_feb_mar_apr_mai_jūn_jūl_aug_sep_okt_nov_dec'.split('_'),
-        weekdays: 'svētdiena_pirmdiena_otrdiena_trešdiena_ceturtdiena_piektdiena_sestdiena'.split(
-            '_'
-        ),
+        weekdays:
+            'svētdiena_pirmdiena_otrdiena_trešdiena_ceturtdiena_piektdiena_sestdiena'.split(
+                '_'
+            ),
         weekdaysShort: 'Sv_P_O_T_C_Pk_S'.split('_'),
         weekdaysMin: 'Sv_P_O_T_C_Pk_S'.split('_'),
         weekdaysParseExact: true,
@@ -37770,9 +37917,8 @@ __webpack_require__.r(__webpack_exports__);
         months: 'januar_februar_mart_april_maj_jun_jul_avgust_septembar_oktobar_novembar_decembar'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split('_'),
         monthsParseExact: true,
         weekdays: 'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
             '_'
@@ -37874,9 +38020,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'Kohi-tāte_Hui-tanguru_Poutū-te-rangi_Paenga-whāwhā_Haratua_Pipiri_Hōngoingoi_Here-turi-kōkā_Mahuru_Whiringa-ā-nuku_Whiringa-ā-rangi_Hakihea'.split(
             '_'
         ),
-        monthsShort: 'Kohi_Hui_Pou_Pae_Hara_Pipi_Hōngoi_Here_Mahu_Whi-nu_Whi-ra_Haki'.split(
-            '_'
-        ),
+        monthsShort:
+            'Kohi_Hui_Pou_Pae_Hara_Pipi_Hōngoi_Here_Mahu_Whi-nu_Whi-ra_Haki'.split(
+                '_'
+            ),
         monthsRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
         monthsStrictRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
         monthsShortRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
@@ -38057,13 +38204,15 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ജനുവരി_ഫെബ്രുവരി_മാർച്ച്_ഏപ്രിൽ_മേയ്_ജൂൺ_ജൂലൈ_ഓഗസ്റ്റ്_സെപ്റ്റംബർ_ഒക്ടോബർ_നവംബർ_ഡിസംബർ'.split(
             '_'
         ),
-        monthsShort: 'ജനു._ഫെബ്രു._മാർ._ഏപ്രി._മേയ്_ജൂൺ_ജൂലൈ._ഓഗ._സെപ്റ്റ._ഒക്ടോ._നവം._ഡിസം.'.split(
-            '_'
-        ),
+        monthsShort:
+            'ജനു._ഫെബ്രു._മാർ._ഏപ്രി._മേയ്_ജൂൺ_ജൂലൈ._ഓഗ._സെപ്റ്റ._ഒക്ടോ._നവം._ഡിസം.'.split(
+                '_'
+            ),
         monthsParseExact: true,
-        weekdays: 'ഞായറാഴ്ച_തിങ്കളാഴ്ച_ചൊവ്വാഴ്ച_ബുധനാഴ്ച_വ്യാഴാഴ്ച_വെള്ളിയാഴ്ച_ശനിയാഴ്ച'.split(
-            '_'
-        ),
+        weekdays:
+            'ഞായറാഴ്ച_തിങ്കളാഴ്ച_ചൊവ്വാഴ്ച_ബുധനാഴ്ച_വ്യാഴാഴ്ച_വെള്ളിയാഴ്ച_ശനിയാഴ്ച'.split(
+                '_'
+            ),
         weekdaysShort: 'ഞായർ_തിങ്കൾ_ചൊവ്വ_ബുധൻ_വ്യാഴം_വെള്ളി_ശനി'.split('_'),
         weekdaysMin: 'ഞാ_തി_ചൊ_ബു_വ്യാ_വെ_ശ'.split('_'),
         longDateFormat: {
@@ -38182,9 +38331,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'Нэгдүгээр сар_Хоёрдугаар сар_Гуравдугаар сар_Дөрөвдүгээр сар_Тавдугаар сар_Зургадугаар сар_Долдугаар сар_Наймдугаар сар_Есдүгээр сар_Аравдугаар сар_Арван нэгдүгээр сар_Арван хоёрдугаар сар'.split(
             '_'
         ),
-        monthsShort: '1 сар_2 сар_3 сар_4 сар_5 сар_6 сар_7 сар_8 сар_9 сар_10 сар_11 сар_12 сар'.split(
-            '_'
-        ),
+        monthsShort:
+            '1 сар_2 сар_3 сар_4 сар_5 сар_6 сар_7 сар_8 сар_9 сар_10 сар_11 сар_12 сар'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'Ням_Даваа_Мягмар_Лхагва_Пүрэв_Баасан_Бямба'.split('_'),
         weekdaysShort: 'Ням_Дав_Мяг_Лха_Пүр_Баа_Бям'.split('_'),
@@ -38384,9 +38534,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'जानेवारी_फेब्रुवारी_मार्च_एप्रिल_मे_जून_जुलै_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
             '_'
         ),
-        monthsShort: 'जाने._फेब्रु._मार्च._एप्रि._मे._जून._जुलै._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
-            '_'
-        ),
+        monthsShort:
+            'जाने._फेब्रु._मार्च._एप्रि._मे._जून._जुलै._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'रविवार_सोमवार_मंगळवार_बुधवार_गुरूवार_शुक्रवार_शनिवार'.split('_'),
         weekdaysShort: 'रवि_सोम_मंगळ_बुध_गुरू_शुक्र_शनि'.split('_'),
@@ -38685,9 +38836,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'Jan_Fra_Mar_Apr_Mej_Ġun_Lul_Aww_Set_Ott_Nov_Diċ'.split('_'),
-        weekdays: 'Il-Ħadd_It-Tnejn_It-Tlieta_L-Erbgħa_Il-Ħamis_Il-Ġimgħa_Is-Sibt'.split(
-            '_'
-        ),
+        weekdays:
+            'Il-Ħadd_It-Tnejn_It-Tlieta_L-Erbgħa_Il-Ħamis_Il-Ġimgħa_Is-Sibt'.split(
+                '_'
+            ),
         weekdaysShort: 'Ħad_Tne_Tli_Erb_Ħam_Ġim_Sib'.split('_'),
         weekdaysMin: 'Ħa_Tn_Tl_Er_Ħa_Ġi_Si'.split('_'),
         longDateFormat: {
@@ -38870,9 +39022,8 @@ __webpack_require__.r(__webpack_exports__);
         months: 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split('_'),
         monthsParseExact: true,
         weekdays: 'søndag_mandag_tirsdag_onsdag_torsdag_fredag_lørdag'.split('_'),
         weekdaysShort: 'sø._ma._ti._on._to._fr._lø.'.split('_'),
@@ -38973,9 +39124,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'जनवरी_फेब्रुवरी_मार्च_अप्रिल_मई_जुन_जुलाई_अगष्ट_सेप्टेम्बर_अक्टोबर_नोभेम्बर_डिसेम्बर'.split(
             '_'
         ),
-        monthsShort: 'जन._फेब्रु._मार्च_अप्रि._मई_जुन_जुलाई._अग._सेप्ट._अक्टो._नोभे._डिसे.'.split(
-            '_'
-        ),
+        monthsShort:
+            'जन._फेब्रु._मार्च_अप्रि._मई_जुन_जुलाई._अग._सेप्ट._अक्टो._नोभे._डिसे.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'आइतबार_सोमबार_मङ्गलबार_बुधबार_बिहिबार_शुक्रबार_शनिबार'.split(
             '_'
@@ -39084,12 +39236,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortWithDots = 'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split(
-            '_'
-        ),
-        monthsShortWithoutDots = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split(
-            '_'
-        ),
+    var monthsShortWithDots =
+            'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split('_'),
+        monthsShortWithoutDots =
+            'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split('_'),
         monthsParse = [
             /^jan/i,
             /^feb/i,
@@ -39104,7 +39254,8 @@ __webpack_require__.r(__webpack_exports__);
             /^nov/i,
             /^dec/i,
         ],
-        monthsRegex = /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
+        monthsRegex =
+            /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
 
     var nlBe = moment.defineLocale('nl-be', {
         months: 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split(
@@ -39122,16 +39273,17 @@ __webpack_require__.r(__webpack_exports__);
 
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
-        monthsShortStrictRegex: /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
+        monthsStrictRegex:
+            /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
+        monthsShortStrictRegex:
+            /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
 
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
 
-        weekdays: 'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split(
-            '_'
-        ),
+        weekdays:
+            'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split('_'),
         weekdaysShort: 'zo._ma._di._wo._do._vr._za.'.split('_'),
         weekdaysMin: 'zo_ma_di_wo_do_vr_za'.split('_'),
         weekdaysParseExact: true,
@@ -39205,12 +39357,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsShortWithDots = 'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split(
-            '_'
-        ),
-        monthsShortWithoutDots = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split(
-            '_'
-        ),
+    var monthsShortWithDots =
+            'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split('_'),
+        monthsShortWithoutDots =
+            'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split('_'),
         monthsParse = [
             /^jan/i,
             /^feb/i,
@@ -39225,7 +39375,8 @@ __webpack_require__.r(__webpack_exports__);
             /^nov/i,
             /^dec/i,
         ],
-        monthsRegex = /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
+        monthsRegex =
+            /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
 
     var nl = moment.defineLocale('nl', {
         months: 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split(
@@ -39243,16 +39394,17 @@ __webpack_require__.r(__webpack_exports__);
 
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
-        monthsShortStrictRegex: /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
+        monthsStrictRegex:
+            /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
+        monthsShortStrictRegex:
+            /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
 
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
 
-        weekdays: 'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split(
-            '_'
-        ),
+        weekdays:
+            'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split('_'),
         weekdaysShort: 'zo._ma._di._wo._do._vr._za.'.split('_'),
         weekdaysMin: 'zo_ma_di_wo_do_vr_za'.split('_'),
         weekdaysParseExact: true,
@@ -39332,9 +39484,8 @@ __webpack_require__.r(__webpack_exports__);
         months: 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split('_'),
         monthsParseExact: true,
         weekdays: 'sundag_måndag_tysdag_onsdag_torsdag_fredag_laurdag'.split('_'),
         weekdaysShort: 'su._må._ty._on._to._fr._lau.'.split('_'),
@@ -39408,17 +39559,19 @@ __webpack_require__.r(__webpack_exports__);
 
     var ocLnc = moment.defineLocale('oc-lnc', {
         months: {
-            standalone: 'genièr_febrièr_març_abril_mai_junh_julhet_agost_setembre_octòbre_novembre_decembre'.split(
-                '_'
-            ),
+            standalone:
+                'genièr_febrièr_març_abril_mai_junh_julhet_agost_setembre_octòbre_novembre_decembre'.split(
+                    '_'
+                ),
             format: "de genièr_de febrièr_de març_d'abril_de mai_de junh_de julhet_d'agost_de setembre_d'octòbre_de novembre_de decembre".split(
                 '_'
             ),
             isFormat: /D[oD]?(\s)+MMMM/,
         },
-        monthsShort: 'gen._febr._març_abr._mai_junh_julh._ago._set._oct._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'gen._febr._març_abr._mai_junh_julh._ago._set._oct._nov._dec.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'dimenge_diluns_dimars_dimècres_dijòus_divendres_dissabte'.split(
             '_'
@@ -39538,9 +39691,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
             '_'
         ),
-        monthsShort: 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
-            '_'
-        ),
+        monthsShort:
+            'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
+                '_'
+            ),
         weekdays: 'ਐਤਵਾਰ_ਸੋਮਵਾਰ_ਮੰਗਲਵਾਰ_ਬੁਧਵਾਰ_ਵੀਰਵਾਰ_ਸ਼ੁੱਕਰਵਾਰ_ਸ਼ਨੀਚਰਵਾਰ'.split(
             '_'
         ),
@@ -39648,12 +39802,14 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var monthsNominative = 'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
-            '_'
-        ),
-        monthsSubjective = 'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
-            '_'
-        ),
+    var monthsNominative =
+            'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
+                '_'
+            ),
+        monthsSubjective =
+            'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
+                '_'
+            ),
         monthsParse = [
             /^sty/i,
             /^lut/i,
@@ -39707,9 +39863,8 @@ __webpack_require__.r(__webpack_exports__);
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
-        weekdays: 'niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota'.split(
-            '_'
-        ),
+        weekdays:
+            'niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota'.split('_'),
         weekdaysShort: 'ndz_pon_wt_śr_czw_pt_sob'.split('_'),
         weekdaysMin: 'Nd_Pn_Wt_Śr_Cz_Pt_So'.split('_'),
         longDateFormat: {
@@ -39811,9 +39966,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split('_'),
-        weekdays: 'domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado'.split(
-            '_'
-        ),
+        weekdays:
+            'domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado'.split(
+                '_'
+            ),
         weekdaysShort: 'dom_seg_ter_qua_qui_sex_sáb'.split('_'),
         weekdaysMin: 'do_2ª_3ª_4ª_5ª_6ª_sá'.split('_'),
         weekdaysParseExact: true,
@@ -39887,9 +40043,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split('_'),
-        weekdays: 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split(
-            '_'
-        ),
+        weekdays:
+            'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split(
+                '_'
+            ),
         weekdaysShort: 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
         weekdaysMin: 'Do_2ª_3ª_4ª_5ª_6ª_Sá'.split('_'),
         weekdaysParseExact: true,
@@ -39986,9 +40143,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ianuarie_februarie_martie_aprilie_mai_iunie_iulie_august_septembrie_octombrie_noiembrie_decembrie'.split(
             '_'
         ),
-        monthsShort: 'ian._feb._mart._apr._mai_iun._iul._aug._sept._oct._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'ian._feb._mart._apr._mai_iun._iul._aug._sept._oct._nov._dec.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'duminică_luni_marți_miercuri_joi_vineri_sâmbătă'.split('_'),
         weekdaysShort: 'Dum_Lun_Mar_Mie_Joi_Vin_Sâm'.split('_'),
@@ -40106,23 +40264,26 @@ __webpack_require__.r(__webpack_exports__);
             format: 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split(
                 '_'
             ),
-            standalone: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
-                '_'
-            ),
+            standalone:
+                'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
+                    '_'
+                ),
         },
         monthsShort: {
             // по CLDR именно "июл." и "июн.", но какой смысл менять букву на точку?
             format: 'янв._февр._мар._апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split(
                 '_'
             ),
-            standalone: 'янв._февр._март_апр._май_июнь_июль_авг._сент._окт._нояб._дек.'.split(
-                '_'
-            ),
+            standalone:
+                'янв._февр._март_апр._май_июнь_июль_авг._сент._окт._нояб._дек.'.split(
+                    '_'
+                ),
         },
         weekdays: {
-            standalone: 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split(
-                '_'
-            ),
+            standalone:
+                'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split(
+                    '_'
+                ),
             format: 'воскресенье_понедельник_вторник_среду_четверг_пятницу_субботу'.split(
                 '_'
             ),
@@ -40135,16 +40296,20 @@ __webpack_require__.r(__webpack_exports__);
         shortMonthsParse: monthsParse,
 
         // полные названия с падежами, по три буквы, для некоторых, по 4 буквы, сокращения с точкой и без точки
-        monthsRegex: /^(январ[ья]|янв\.?|феврал[ья]|февр?\.?|марта?|мар\.?|апрел[ья]|апр\.?|ма[йя]|июн[ья]|июн\.?|июл[ья]|июл\.?|августа?|авг\.?|сентябр[ья]|сент?\.?|октябр[ья]|окт\.?|ноябр[ья]|нояб?\.?|декабр[ья]|дек\.?)/i,
+        monthsRegex:
+            /^(январ[ья]|янв\.?|феврал[ья]|февр?\.?|марта?|мар\.?|апрел[ья]|апр\.?|ма[йя]|июн[ья]|июн\.?|июл[ья]|июл\.?|августа?|авг\.?|сентябр[ья]|сент?\.?|октябр[ья]|окт\.?|ноябр[ья]|нояб?\.?|декабр[ья]|дек\.?)/i,
 
         // копия предыдущего
-        monthsShortRegex: /^(январ[ья]|янв\.?|феврал[ья]|февр?\.?|марта?|мар\.?|апрел[ья]|апр\.?|ма[йя]|июн[ья]|июн\.?|июл[ья]|июл\.?|августа?|авг\.?|сентябр[ья]|сент?\.?|октябр[ья]|окт\.?|ноябр[ья]|нояб?\.?|декабр[ья]|дек\.?)/i,
+        monthsShortRegex:
+            /^(январ[ья]|янв\.?|феврал[ья]|февр?\.?|марта?|мар\.?|апрел[ья]|апр\.?|ма[йя]|июн[ья]|июн\.?|июл[ья]|июл\.?|августа?|авг\.?|сентябр[ья]|сент?\.?|октябр[ья]|окт\.?|ноябр[ья]|нояб?\.?|декабр[ья]|дек\.?)/i,
 
         // полные названия с падежами
-        monthsStrictRegex: /^(январ[яь]|феврал[яь]|марта?|апрел[яь]|ма[яй]|июн[яь]|июл[яь]|августа?|сентябр[яь]|октябр[яь]|ноябр[яь]|декабр[яь])/i,
+        monthsStrictRegex:
+            /^(январ[яь]|феврал[яь]|марта?|апрел[яь]|ма[яй]|июн[яь]|июл[яь]|августа?|сентябр[яь]|октябр[яь]|ноябр[яь]|декабр[яь])/i,
 
         // Выражение, которое соответствует только сокращённым формам
-        monthsShortStrictRegex: /^(янв\.|февр?\.|мар[т.]|апр\.|ма[яй]|июн[ья.]|июл[ья.]|авг\.|сент?\.|окт\.|нояб?\.|дек\.)/i,
+        monthsShortStrictRegex:
+            /^(янв\.|февр?\.|мар[т.]|апр\.|ма[яй]|июн[ья.]|июл[ья.]|авг\.|сент?\.|окт\.|нояб?\.|дек\.)/i,
         longDateFormat: {
             LT: 'H:mm',
             LTS: 'H:mm:ss',
@@ -40386,12 +40551,12 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ođđajagemánnu_guovvamánnu_njukčamánnu_cuoŋománnu_miessemánnu_geassemánnu_suoidnemánnu_borgemánnu_čakčamánnu_golggotmánnu_skábmamánnu_juovlamánnu'.split(
             '_'
         ),
-        monthsShort: 'ođđj_guov_njuk_cuo_mies_geas_suoi_borg_čakč_golg_skáb_juov'.split(
-            '_'
-        ),
-        weekdays: 'sotnabeaivi_vuossárga_maŋŋebárga_gaskavahkku_duorastat_bearjadat_lávvardat'.split(
-            '_'
-        ),
+        monthsShort:
+            'ođđj_guov_njuk_cuo_mies_geas_suoi_borg_čakč_golg_skáb_juov'.split('_'),
+        weekdays:
+            'sotnabeaivi_vuossárga_maŋŋebárga_gaskavahkku_duorastat_bearjadat_lávvardat'.split(
+                '_'
+            ),
         weekdaysShort: 'sotn_vuos_maŋ_gask_duor_bear_láv'.split('_'),
         weekdaysMin: 's_v_m_g_d_b_L'.split('_'),
         longDateFormat: {
@@ -40466,9 +40631,10 @@ __webpack_require__.r(__webpack_exports__);
         monthsShort: 'ජන_පෙබ_මාර්_අප්_මැයි_ජූනි_ජූලි_අගෝ_සැප්_ඔක්_නොවැ_දෙසැ'.split(
             '_'
         ),
-        weekdays: 'ඉරිදා_සඳුදා_අඟහරුවාදා_බදාදා_බ්‍රහස්පතින්දා_සිකුරාදා_සෙනසුරාදා'.split(
-            '_'
-        ),
+        weekdays:
+            'ඉරිදා_සඳුදා_අඟහරුවාදා_බදාදා_බ්‍රහස්පතින්දා_සිකුරාදා_සෙනසුරාදා'.split(
+                '_'
+            ),
         weekdaysShort: 'ඉරි_සඳු_අඟ_බදා_බ්‍රහ_සිකු_සෙන'.split('_'),
         weekdaysMin: 'ඉ_ස_අ_බ_බ්‍ර_සි_සෙ'.split('_'),
         weekdaysParseExact: true,
@@ -40546,9 +40712,10 @@ __webpack_require__.r(__webpack_exports__);
 
     //! moment.js locale configuration
 
-    var months = 'január_február_marec_apríl_máj_jún_júl_august_september_október_november_december'.split(
-            '_'
-        ),
+    var months =
+            'január_február_marec_apríl_máj_jún_júl_august_september_október_november_december'.split(
+                '_'
+            ),
         monthsShort = 'jan_feb_mar_apr_máj_jún_júl_aug_sep_okt_nov_dec'.split('_');
     function plural(n) {
         return n > 1 && n < 5;
@@ -40796,9 +40963,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'januar_februar_marec_april_maj_junij_julij_avgust_september_oktober_november_december'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._mar._apr._maj._jun._jul._avg._sep._okt._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._mar._apr._maj._jun._jul._avg._sep._okt._nov._dec.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'nedelja_ponedeljek_torek_sreda_četrtek_petek_sobota'.split('_'),
         weekdaysShort: 'ned._pon._tor._sre._čet._pet._sob.'.split('_'),
@@ -40986,32 +41154,44 @@ __webpack_require__.r(__webpack_exports__);
         words: {
             //Different grammatical cases
             ss: ['секунда', 'секунде', 'секунди'],
-            m: ['један минут', 'једне минуте'],
-            mm: ['минут', 'минуте', 'минута'],
+            m: ['један минут', 'једног минута'],
+            mm: ['минут', 'минута', 'минута'],
             h: ['један сат', 'једног сата'],
             hh: ['сат', 'сата', 'сати'],
+            d: ['један дан', 'једног дана'],
             dd: ['дан', 'дана', 'дана'],
+            M: ['један месец', 'једног месеца'],
             MM: ['месец', 'месеца', 'месеци'],
-            yy: ['година', 'године', 'година'],
+            y: ['једну годину', 'једне године'],
+            yy: ['годину', 'године', 'година'],
         },
         correctGrammaticalCase: function (number, wordKey) {
-            return number === 1
-                ? wordKey[0]
-                : number >= 2 && number <= 4
-                ? wordKey[1]
-                : wordKey[2];
-        },
-        translate: function (number, withoutSuffix, key) {
-            var wordKey = translator.words[key];
-            if (key.length === 1) {
-                return withoutSuffix ? wordKey[0] : wordKey[1];
-            } else {
-                return (
-                    number +
-                    ' ' +
-                    translator.correctGrammaticalCase(number, wordKey)
-                );
+            if (
+                number % 10 >= 1 &&
+                number % 10 <= 4 &&
+                (number % 100 < 10 || number % 100 >= 20)
+            ) {
+                return number % 10 === 1 ? wordKey[0] : wordKey[1];
             }
+            return wordKey[2];
+        },
+        translate: function (number, withoutSuffix, key, isFuture) {
+            var wordKey = translator.words[key],
+                word;
+
+            if (key.length === 1) {
+                // Nominativ
+                if (key === 'y' && withoutSuffix) return 'једна година';
+                return isFuture || withoutSuffix ? wordKey[0] : wordKey[1];
+            }
+
+            word = translator.correctGrammaticalCase(number, wordKey);
+            // Nominativ
+            if (key === 'yy' && withoutSuffix && word === 'годину') {
+                return number + ' година';
+            }
+
+            return number + ' ' + word;
         },
     };
 
@@ -41019,9 +41199,8 @@ __webpack_require__.r(__webpack_exports__);
         months: 'јануар_фебруар_март_април_мај_јун_јул_август_септембар_октобар_новембар_децембар'.split(
             '_'
         ),
-        monthsShort: 'јан._феб._мар._апр._мај_јун_јул_авг._сеп._окт._нов._дец.'.split(
-            '_'
-        ),
+        monthsShort:
+            'јан._феб._мар._апр._мај_јун_јул_авг._сеп._окт._нов._дец.'.split('_'),
         monthsParseExact: true,
         weekdays: 'недеља_понедељак_уторак_среда_четвртак_петак_субота'.split('_'),
         weekdaysShort: 'нед._пон._уто._сре._чет._пет._суб.'.split('_'),
@@ -41077,11 +41256,11 @@ __webpack_require__.r(__webpack_exports__);
             mm: translator.translate,
             h: translator.translate,
             hh: translator.translate,
-            d: 'дан',
+            d: translator.translate,
             dd: translator.translate,
-            M: 'месец',
+            M: translator.translate,
             MM: translator.translate,
-            y: 'годину',
+            y: translator.translate,
             yy: translator.translate,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
@@ -41121,32 +41300,44 @@ __webpack_require__.r(__webpack_exports__);
         words: {
             //Different grammatical cases
             ss: ['sekunda', 'sekunde', 'sekundi'],
-            m: ['jedan minut', 'jedne minute'],
-            mm: ['minut', 'minute', 'minuta'],
+            m: ['jedan minut', 'jednog minuta'],
+            mm: ['minut', 'minuta', 'minuta'],
             h: ['jedan sat', 'jednog sata'],
             hh: ['sat', 'sata', 'sati'],
+            d: ['jedan dan', 'jednog dana'],
             dd: ['dan', 'dana', 'dana'],
+            M: ['jedan mesec', 'jednog meseca'],
             MM: ['mesec', 'meseca', 'meseci'],
-            yy: ['godina', 'godine', 'godina'],
+            y: ['jednu godinu', 'jedne godine'],
+            yy: ['godinu', 'godine', 'godina'],
         },
         correctGrammaticalCase: function (number, wordKey) {
-            return number === 1
-                ? wordKey[0]
-                : number >= 2 && number <= 4
-                ? wordKey[1]
-                : wordKey[2];
-        },
-        translate: function (number, withoutSuffix, key) {
-            var wordKey = translator.words[key];
-            if (key.length === 1) {
-                return withoutSuffix ? wordKey[0] : wordKey[1];
-            } else {
-                return (
-                    number +
-                    ' ' +
-                    translator.correctGrammaticalCase(number, wordKey)
-                );
+            if (
+                number % 10 >= 1 &&
+                number % 10 <= 4 &&
+                (number % 100 < 10 || number % 100 >= 20)
+            ) {
+                return number % 10 === 1 ? wordKey[0] : wordKey[1];
             }
+            return wordKey[2];
+        },
+        translate: function (number, withoutSuffix, key, isFuture) {
+            var wordKey = translator.words[key],
+                word;
+
+            if (key.length === 1) {
+                // Nominativ
+                if (key === 'y' && withoutSuffix) return 'jedna godina';
+                return isFuture || withoutSuffix ? wordKey[0] : wordKey[1];
+            }
+
+            word = translator.correctGrammaticalCase(number, wordKey);
+            // Nominativ
+            if (key === 'yy' && withoutSuffix && word === 'godinu') {
+                return number + ' godina';
+            }
+
+            return number + ' ' + word;
         },
     };
 
@@ -41154,9 +41345,8 @@ __webpack_require__.r(__webpack_exports__);
         months: 'januar_februar_mart_april_maj_jun_jul_avgust_septembar_oktobar_novembar_decembar'.split(
             '_'
         ),
-        monthsShort: 'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split(
-            '_'
-        ),
+        monthsShort:
+            'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split('_'),
         monthsParseExact: true,
         weekdays: 'nedelja_ponedeljak_utorak_sreda_četvrtak_petak_subota'.split(
             '_'
@@ -41214,11 +41404,11 @@ __webpack_require__.r(__webpack_exports__);
             mm: translator.translate,
             h: translator.translate,
             hh: translator.translate,
-            d: 'dan',
+            d: translator.translate,
             dd: translator.translate,
-            M: 'mesec',
+            M: translator.translate,
             MM: translator.translate,
-            y: 'godinu',
+            y: translator.translate,
             yy: translator.translate,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
@@ -41258,9 +41448,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'Bhi_Ina_Inu_Mab_Ink_Inh_Kho_Igc_Iny_Imp_Lwe_Igo'.split('_'),
-        weekdays: 'Lisontfo_Umsombuluko_Lesibili_Lesitsatfu_Lesine_Lesihlanu_Umgcibelo'.split(
-            '_'
-        ),
+        weekdays:
+            'Lisontfo_Umsombuluko_Lesibili_Lesitsatfu_Lesine_Lesihlanu_Umgcibelo'.split(
+                '_'
+            ),
         weekdaysShort: 'Lis_Umb_Lsb_Les_Lsi_Lsh_Umg'.split('_'),
         weekdaysMin: 'Li_Us_Lb_Lt_Ls_Lh_Ug'.split('_'),
         weekdaysParseExact: true,
@@ -41447,9 +41638,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ago_Sep_Okt_Nov_Des'.split('_'),
-        weekdays: 'Jumapili_Jumatatu_Jumanne_Jumatano_Alhamisi_Ijumaa_Jumamosi'.split(
-            '_'
-        ),
+        weekdays:
+            'Jumapili_Jumatatu_Jumanne_Jumatano_Alhamisi_Ijumaa_Jumamosi'.split(
+                '_'
+            ),
         weekdaysShort: 'Jpl_Jtat_Jnne_Jtan_Alh_Ijm_Jmos'.split('_'),
         weekdaysMin: 'J2_J3_J4_J5_Al_Ij_J1'.split('_'),
         weekdaysParseExact: true,
@@ -41544,12 +41736,14 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
             '_'
         ),
-        monthsShort: 'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
-            '_'
-        ),
-        weekdays: 'ஞாயிற்றுக்கிழமை_திங்கட்கிழமை_செவ்வாய்கிழமை_புதன்கிழமை_வியாழக்கிழமை_வெள்ளிக்கிழமை_சனிக்கிழமை'.split(
-            '_'
-        ),
+        monthsShort:
+            'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
+                '_'
+            ),
+        weekdays:
+            'ஞாயிற்றுக்கிழமை_திங்கட்கிழமை_செவ்வாய்கிழமை_புதன்கிழமை_வியாழக்கிழமை_வெள்ளிக்கிழமை_சனிக்கிழமை'.split(
+                '_'
+            ),
         weekdaysShort: 'ஞாயிறு_திங்கள்_செவ்வாய்_புதன்_வியாழன்_வெள்ளி_சனி'.split(
             '_'
         ),
@@ -41667,13 +41861,15 @@ __webpack_require__.r(__webpack_exports__);
         months: 'జనవరి_ఫిబ్రవరి_మార్చి_ఏప్రిల్_మే_జూన్_జులై_ఆగస్టు_సెప్టెంబర్_అక్టోబర్_నవంబర్_డిసెంబర్'.split(
             '_'
         ),
-        monthsShort: 'జన._ఫిబ్ర._మార్చి_ఏప్రి._మే_జూన్_జులై_ఆగ._సెప్._అక్టో._నవ._డిసె.'.split(
-            '_'
-        ),
+        monthsShort:
+            'జన._ఫిబ్ర._మార్చి_ఏప్రి._మే_జూన్_జులై_ఆగ._సెప్._అక్టో._నవ._డిసె.'.split(
+                '_'
+            ),
         monthsParseExact: true,
-        weekdays: 'ఆదివారం_సోమవారం_మంగళవారం_బుధవారం_గురువారం_శుక్రవారం_శనివారం'.split(
-            '_'
-        ),
+        weekdays:
+            'ఆదివారం_సోమవారం_మంగళవారం_బుధవారం_గురువారం_శుక్రవారం_శనివారం'.split(
+                '_'
+            ),
         weekdaysShort: 'ఆది_సోమ_మంగళ_బుధ_గురు_శుక్ర_శని'.split('_'),
         weekdaysMin: 'ఆ_సో_మం_బు_గు_శు_శ'.split('_'),
         longDateFormat: {
@@ -41885,9 +42081,10 @@ __webpack_require__.r(__webpack_exports__);
             format: 'январи_феврали_марти_апрели_майи_июни_июли_августи_сентябри_октябри_ноябри_декабри'.split(
                 '_'
             ),
-            standalone: 'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
-                '_'
-            ),
+            standalone:
+                'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
+                    '_'
+                ),
         },
         monthsShort: 'янв_фев_мар_апр_май_июн_июл_авг_сен_окт_ноя_дек'.split('_'),
         weekdays: 'якшанбе_душанбе_сешанбе_чоршанбе_панҷшанбе_ҷумъа_шанбе'.split(
@@ -41994,9 +42191,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'มกราคม_กุมภาพันธ์_มีนาคม_เมษายน_พฤษภาคม_มิถุนายน_กรกฎาคม_สิงหาคม_กันยายน_ตุลาคม_พฤศจิกายน_ธันวาคม'.split(
             '_'
         ),
-        monthsShort: 'ม.ค._ก.พ._มี.ค._เม.ย._พ.ค._มิ.ย._ก.ค._ส.ค._ก.ย._ต.ค._พ.ย._ธ.ค.'.split(
-            '_'
-        ),
+        monthsShort:
+            'ม.ค._ก.พ._มี.ค._เม.ย._พ.ค._มิ.ย._ก.ค._ส.ค._ก.ย._ต.ค._พ.ย._ธ.ค.'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัสบดี_ศุกร์_เสาร์'.split('_'),
         weekdaysShort: 'อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัส_ศุกร์_เสาร์'.split('_'), // yes, three characters difference
@@ -42326,19 +42524,18 @@ __webpack_require__.r(__webpack_exports__);
         months: 'tera’ jar wa’_tera’ jar cha’_tera’ jar wej_tera’ jar loS_tera’ jar vagh_tera’ jar jav_tera’ jar Soch_tera’ jar chorgh_tera’ jar Hut_tera’ jar wa’maH_tera’ jar wa’maH wa’_tera’ jar wa’maH cha’'.split(
             '_'
         ),
-        monthsShort: 'jar wa’_jar cha’_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa’maH_jar wa’maH wa’_jar wa’maH cha’'.split(
-            '_'
-        ),
+        monthsShort:
+            'jar wa’_jar cha’_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa’maH_jar wa’maH wa’_jar wa’maH cha’'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
             '_'
         ),
-        weekdaysShort: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-            '_'
-        ),
-        weekdaysMin: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-            '_'
-        ),
+        weekdaysShort:
+            'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split('_'),
+        weekdaysMin:
+            'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split('_'),
         longDateFormat: {
             LT: 'HH:mm',
             LTS: 'HH:mm:ss',
@@ -42433,7 +42630,7 @@ __webpack_require__.r(__webpack_exports__);
         weekdays: 'Pazar_Pazartesi_Salı_Çarşamba_Perşembe_Cuma_Cumartesi'.split(
             '_'
         ),
-        weekdaysShort: 'Paz_Pts_Sal_Çar_Per_Cum_Cts'.split('_'),
+        weekdaysShort: 'Paz_Pzt_Sal_Çar_Per_Cum_Cmt'.split('_'),
         weekdaysMin: 'Pz_Pt_Sa_Ça_Pe_Cu_Ct'.split('_'),
         meridiem: function (hours, minutes, isLower) {
             if (hours < 12) {
@@ -42640,9 +42837,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
             '_'
         ),
-        monthsShort: 'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
-            '_'
-        ),
+        monthsShort:
+            'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
+                '_'
+            ),
         weekdays: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
         weekdaysShort: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
         weekdaysMin: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
@@ -42712,9 +42910,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
             '_'
         ),
-        monthsShort: 'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
-            '_'
-        ),
+        monthsShort:
+            'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
+                '_'
+            ),
         weekdays: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
         weekdaysShort: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
         weekdaysMin: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
@@ -42784,9 +42983,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
             '_'
         ),
-        monthsShort: 'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
-            '_'
-        ),
+        monthsShort:
+            'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
+                '_'
+            ),
         weekdays: 'يەكشەنبە_دۈشەنبە_سەيشەنبە_چارشەنبە_پەيشەنبە_جۈمە_شەنبە'.split(
             '_'
         ),
@@ -42937,15 +43137,18 @@ __webpack_require__.r(__webpack_exports__);
     }
     function weekdaysCaseReplace(m, format) {
         var weekdays = {
-                nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
-                    '_'
-                ),
-                accusative: 'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
-                    '_'
-                ),
-                genitive: 'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split(
-                    '_'
-                ),
+                nominative:
+                    'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
+                        '_'
+                    ),
+                accusative:
+                    'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
+                        '_'
+                    ),
+                genitive:
+                    'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split(
+                        '_'
+                    ),
             },
             nounCase;
 
@@ -42976,9 +43179,10 @@ __webpack_require__.r(__webpack_exports__);
             format: 'січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня'.split(
                 '_'
             ),
-            standalone: 'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split(
-                '_'
-            ),
+            standalone:
+                'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split(
+                    '_'
+                ),
         },
         monthsShort: 'січ_лют_бер_квіт_трав_черв_лип_серп_вер_жовт_лист_груд'.split(
             '_'
@@ -43197,9 +43401,10 @@ __webpack_require__.r(__webpack_exports__);
             '_'
         ),
         monthsShort: 'Yan_Fev_Mar_Apr_May_Iyun_Iyul_Avg_Sen_Okt_Noy_Dek'.split('_'),
-        weekdays: 'Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba'.split(
-            '_'
-        ),
+        weekdays:
+            'Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba'.split(
+                '_'
+            ),
         weekdaysShort: 'Yak_Dush_Sesh_Chor_Pay_Jum_Shan'.split('_'),
         weekdaysMin: 'Ya_Du_Se_Cho_Pa_Ju_Sha'.split('_'),
         longDateFormat: {
@@ -43339,9 +43544,10 @@ __webpack_require__.r(__webpack_exports__);
         months: 'tháng 1_tháng 2_tháng 3_tháng 4_tháng 5_tháng 6_tháng 7_tháng 8_tháng 9_tháng 10_tháng 11_tháng 12'.split(
             '_'
         ),
-        monthsShort: 'Thg 01_Thg 02_Thg 03_Thg 04_Thg 05_Thg 06_Thg 07_Thg 08_Thg 09_Thg 10_Thg 11_Thg 12'.split(
-            '_'
-        ),
+        monthsShort:
+            'Thg 01_Thg 02_Thg 03_Thg 04_Thg 05_Thg 06_Thg 07_Thg 08_Thg 09_Thg 10_Thg 11_Thg 12'.split(
+                '_'
+            ),
         monthsParseExact: true,
         weekdays: 'chủ nhật_thứ hai_thứ ba_thứ tư_thứ năm_thứ sáu_thứ bảy'.split(
             '_'
@@ -43436,13 +43642,15 @@ __webpack_require__.r(__webpack_exports__);
         months: 'J~áñúá~rý_F~ébrú~árý_~Márc~h_Áp~ríl_~Máý_~Júñé~_Júl~ý_Áú~gúst~_Sép~témb~ér_Ó~ctób~ér_Ñ~óvém~bér_~Décé~mbér'.split(
             '_'
         ),
-        monthsShort: 'J~áñ_~Féb_~Már_~Ápr_~Máý_~Júñ_~Júl_~Áúg_~Sép_~Óct_~Ñóv_~Déc'.split(
-            '_'
-        ),
+        monthsShort:
+            'J~áñ_~Féb_~Már_~Ápr_~Máý_~Júñ_~Júl_~Áúg_~Sép_~Óct_~Ñóv_~Déc'.split(
+                '_'
+            ),
         monthsParseExact: true,
-        weekdays: 'S~úñdá~ý_Mó~ñdáý~_Túé~sdáý~_Wéd~ñésd~áý_T~húrs~dáý_~Fríd~áý_S~átúr~dáý'.split(
-            '_'
-        ),
+        weekdays:
+            'S~úñdá~ý_Mó~ñdáý~_Túé~sdáý~_Wéd~ñésd~áý_T~húrs~dáý_~Fríd~áý_S~átúr~dáý'.split(
+                '_'
+            ),
         weekdaysShort: 'S~úñ_~Móñ_~Túé_~Wéd_~Thú_~Frí_~Sát'.split('_'),
         weekdaysMin: 'S~ú_Mó~_Tú_~Wé_T~h_Fr~_Sá'.split('_'),
         weekdaysParseExact: true,
@@ -44382,7 +44590,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /* module decorator */ module = __webpack_require__.nmd(module);
 //! moment.js
-//! version : 2.29.1
+//! version : 2.29.4
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -44458,8 +44666,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     function map(arr, fn) {
         var res = [],
-            i;
-        for (i = 0; i < arr.length; ++i) {
+            i,
+            arrLen = arr.length;
+        for (i = 0; i < arrLen; ++i) {
             res.push(fn(arr[i], i));
         }
         return res;
@@ -44588,7 +44797,10 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         updateInProgress = false;
 
     function copyConfig(to, from) {
-        var i, prop, val;
+        var i,
+            prop,
+            val,
+            momentPropertiesLen = momentProperties.length;
 
         if (!isUndefined(from._isAMomentObject)) {
             to._isAMomentObject = from._isAMomentObject;
@@ -44621,8 +44833,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             to._locale = from._locale;
         }
 
-        if (momentProperties.length > 0) {
-            for (i = 0; i < momentProperties.length; i++) {
+        if (momentPropertiesLen > 0) {
+            for (i = 0; i < momentPropertiesLen; i++) {
                 prop = momentProperties[i];
                 val = from[prop];
                 if (!isUndefined(val)) {
@@ -44677,8 +44889,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
                 var args = [],
                     arg,
                     i,
-                    key;
-                for (i = 0; i < arguments.length; i++) {
+                    key,
+                    argLen = arguments.length;
+                for (i = 0; i < argLen; i++) {
                     arg = '';
                     if (typeof arguments[i] === 'object') {
                         arg += '\n[' + i + '] ';
@@ -44828,7 +45041,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         );
     }
 
-    var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,
+    var formattingTokens =
+            /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,
         localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g,
         formatFunctions = {},
         formatTokenFunctions = {};
@@ -45132,8 +45346,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         if (typeof units === 'object') {
             units = normalizeObjectUnits(units);
             var prioritized = getPrioritizedUnits(units),
-                i;
-            for (i = 0; i < prioritized.length; i++) {
+                i,
+                prioritizedLen = prioritized.length;
+            for (i = 0; i < prioritizedLen; i++) {
                 this[prioritized[i].unit](units[prioritized[i].unit]);
             }
         } else {
@@ -45163,7 +45378,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         matchTimestamp = /[+-]?\d+(\.\d{1,3})?/, // 123456789 123456789.123
         // any word (or two) characters or numbers including two/three word month in arabic.
         // includes scottish gaelic two word and hyphenated months
-        matchWord = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i,
+        matchWord =
+            /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i,
         regexes;
 
     regexes = {};
@@ -45189,15 +45405,12 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         return regexEscape(
             s
                 .replace('\\', '')
-                .replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (
-                    matched,
-                    p1,
-                    p2,
-                    p3,
-                    p4
-                ) {
-                    return p1 || p2 || p3 || p4;
-                })
+                .replace(
+                    /\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g,
+                    function (matched, p1, p2, p3, p4) {
+                        return p1 || p2 || p3 || p4;
+                    }
+                )
         );
     }
 
@@ -45209,7 +45422,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     function addParseToken(token, callback) {
         var i,
-            func = callback;
+            func = callback,
+            tokenLen;
         if (typeof token === 'string') {
             token = [token];
         }
@@ -45218,7 +45432,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
                 array[callback] = toInt(input);
             };
         }
-        for (i = 0; i < token.length; i++) {
+        tokenLen = token.length;
+        for (i = 0; i < tokenLen; i++) {
             tokens[token[i]] = func;
         }
     }
@@ -45329,12 +45544,12 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     // LOCALES
 
-    var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-            '_'
-        ),
-        defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
-            '_'
-        ),
+    var defaultLocaleMonths =
+            'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+                '_'
+            ),
+        defaultLocaleMonthsShort =
+            'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_'),
         MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/,
         defaultMonthsShortRegex = matchWord,
         defaultMonthsRegex = matchWord;
@@ -45776,14 +45991,12 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     addRegexToken('W', match1to2);
     addRegexToken('WW', match1to2, match2);
 
-    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (
-        input,
-        week,
-        config,
-        token
-    ) {
-        week[token.substr(0, 1)] = toInt(input);
-    });
+    addWeekParseToken(
+        ['w', 'ww', 'W', 'WW'],
+        function (input, week, config, token) {
+            week[token.substr(0, 1)] = toInt(input);
+        }
+    );
 
     // HELPERS
 
@@ -45908,9 +46121,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         return ws.slice(n, 7).concat(ws.slice(0, n));
     }
 
-    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-            '_'
-        ),
+    var defaultLocaleWeekdays =
+            'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         defaultWeekdaysRegex = matchWord,
@@ -46458,6 +46670,11 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         return globalLocale;
     }
 
+    function isLocaleNameSane(name) {
+        // Prevent names that look like filesystem paths, i.e contain '/' or '\'
+        return name.match('^[^/\\\\]*$') != null;
+    }
+
     function loadLocale(name) {
         var oldLocale = null,
             aliasedRequire;
@@ -46466,7 +46683,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             locales[name] === undefined &&
             "object" !== 'undefined' &&
             module &&
-            module.exports
+            module.exports &&
+            isLocaleNameSane(name)
         ) {
             try {
                 oldLocale = globalLocale._abbr;
@@ -46683,8 +46901,10 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     // iso 8601 regex
     // 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
-    var extendedIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
-        basicIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
+    var extendedIsoRegex =
+            /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
+        basicIsoRegex =
+            /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
         tzRegex = /Z|[+-]\d\d(?::?\d\d)?/,
         isoDates = [
             ['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/],
@@ -46715,7 +46935,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         ],
         aspNetJsonRegex = /^\/?Date\((-?\d+)/i,
         // RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
-        rfc2822 = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/,
+        rfc2822 =
+            /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/,
         obsOffsets = {
             UT: 0,
             GMT: 0,
@@ -46738,12 +46959,13 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             allowTime,
             dateFormat,
             timeFormat,
-            tzFormat;
+            tzFormat,
+            isoDatesLen = isoDates.length,
+            isoTimesLen = isoTimes.length;
 
         if (match) {
             getParsingFlags(config).iso = true;
-
-            for (i = 0, l = isoDates.length; i < l; i++) {
+            for (i = 0, l = isoDatesLen; i < l; i++) {
                 if (isoDates[i][1].exec(match[1])) {
                     dateFormat = isoDates[i][0];
                     allowTime = isoDates[i][2] !== false;
@@ -46755,7 +46977,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
                 return;
             }
             if (match[3]) {
-                for (i = 0, l = isoTimes.length; i < l; i++) {
+                for (i = 0, l = isoTimesLen; i < l; i++) {
                     if (isoTimes[i][1].exec(match[3])) {
                         // match[2] should be 'T' or space
                         timeFormat = (match[2] || ' ') + isoTimes[i][0];
@@ -46822,7 +47044,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     function preprocessRFC2822(s) {
         // Remove comments and folding whitespace and replace multiple-spaces with a single space
         return s
-            .replace(/\([^)]*\)|[\n\t]/g, ' ')
+            .replace(/\([^()]*\)|[\n\t]/g, ' ')
             .replace(/(\s\s+)/g, ' ')
             .replace(/^\s\s*/, '')
             .replace(/\s\s*$/, '');
@@ -47135,12 +47357,13 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             skipped,
             stringLength = string.length,
             totalParsedInputLength = 0,
-            era;
+            era,
+            tokenLen;
 
         tokens =
             expandFormat(config._f, config._locale).match(formattingTokens) || [];
-
-        for (i = 0; i < tokens.length; i++) {
+        tokenLen = tokens.length;
+        for (i = 0; i < tokenLen; i++) {
             token = tokens[i];
             parsedInput = (string.match(getParseRegexForToken(token, config)) ||
                 [])[0];
@@ -47235,15 +47458,16 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             i,
             currentScore,
             validFormatFound,
-            bestFormatIsValid = false;
+            bestFormatIsValid = false,
+            configfLen = config._f.length;
 
-        if (config._f.length === 0) {
+        if (configfLen === 0) {
             getParsingFlags(config).invalidFormat = true;
             config._d = new Date(NaN);
             return;
         }
 
-        for (i = 0; i < config._f.length; i++) {
+        for (i = 0; i < configfLen; i++) {
             currentScore = 0;
             validFormatFound = false;
             tempConfig = copyConfig({}, config);
@@ -47484,7 +47708,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     function isDurationValid(m) {
         var key,
             unitHasDecimal = false,
-            i;
+            i,
+            orderLen = ordering.length;
         for (key in m) {
             if (
                 hasOwnProp(m, key) &&
@@ -47497,7 +47722,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
             }
         }
 
-        for (i = 0; i < ordering.length; ++i) {
+        for (i = 0; i < orderLen; ++i) {
             if (m[ordering[i]]) {
                 if (unitHasDecimal) {
                     return false; // only allow non-integers for smallest unit
@@ -47822,7 +48047,8 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
         // from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
         // somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
         // and further modified to allow for strings containing both week and day
-        isoRegex = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
+        isoRegex =
+            /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
 
     function createDuration(input, key) {
         var duration = input,
@@ -48043,9 +48269,10 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
                 'ms',
             ],
             i,
-            property;
+            property,
+            propertyLen = properties.length;
 
-        for (i = 0; i < properties.length; i += 1) {
+        for (i = 0; i < propertyLen; i += 1) {
             property = properties[i];
             propertyTest = propertyTest || hasOwnProp(input, property);
         }
@@ -48668,19 +48895,17 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     addRegexToken('NNNN', matchEraName);
     addRegexToken('NNNNN', matchEraNarrow);
 
-    addParseToken(['N', 'NN', 'NNN', 'NNNN', 'NNNNN'], function (
-        input,
-        array,
-        config,
-        token
-    ) {
-        var era = config._locale.erasParse(input, token, config._strict);
-        if (era) {
-            getParsingFlags(config).era = era;
-        } else {
-            getParsingFlags(config).invalidEra = input;
+    addParseToken(
+        ['N', 'NN', 'NNN', 'NNNN', 'NNNNN'],
+        function (input, array, config, token) {
+            var era = config._locale.erasParse(input, token, config._strict);
+            if (era) {
+                getParsingFlags(config).era = era;
+            } else {
+                getParsingFlags(config).invalidEra = input;
+            }
         }
-    });
+    );
 
     addRegexToken('y', matchUnsigned);
     addRegexToken('yy', matchUnsigned);
@@ -48972,14 +49197,12 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     addRegexToken('GGGGG', match1to6, match6);
     addRegexToken('ggggg', match1to6, match6);
 
-    addWeekParseToken(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function (
-        input,
-        week,
-        config,
-        token
-    ) {
-        week[token.substr(0, 2)] = toInt(input);
-    });
+    addWeekParseToken(
+        ['gggg', 'ggggg', 'GGGG', 'GGGGG'],
+        function (input, week, config, token) {
+            week[token.substr(0, 2)] = toInt(input);
+        }
+    );
 
     addWeekParseToken(['gg', 'GG'], function (input, week, config, token) {
         week[token] = hooks.parseTwoDigitYear(input);
@@ -50002,7 +50225,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
     //! moment.js
 
-    hooks.version = '2.29.1';
+    hooks.version = '2.29.4';
 
     setHookCallback(createLocal);
 
@@ -50714,8 +50937,9 @@ function addNumericSeparator(num, str) {
     return $replace.call(str, sepRegex, '$&_');
 }
 
-var inspectCustom = (__webpack_require__(/*! ./util.inspect */ "?2128").custom);
-var inspectSymbol = inspectCustom && isSymbol(inspectCustom) ? inspectCustom : null;
+var utilInspect = __webpack_require__(/*! ./util.inspect */ "?2128");
+var inspectCustom = utilInspect.custom;
+var inspectSymbol = isSymbol(inspectCustom) ? inspectCustom : null;
 
 module.exports = function inspect_(obj, options, depth, seen) {
     var opts = options || {};
@@ -50805,7 +51029,7 @@ module.exports = function inspect_(obj, options, depth, seen) {
         return inspect_(value, opts, depth + 1, seen);
     }
 
-    if (typeof obj === 'function') {
+    if (typeof obj === 'function' && !isRegExp(obj)) { // in older engines, regexes are callable
         var name = nameOf(obj);
         var keys = arrObjKeys(obj, inspect);
         return '[Function' + (name ? ': ' + name : ' (anonymous)') + ']' + (keys.length > 0 ? ' { ' + $join.call(keys, ', ') + ' }' : '');
@@ -50835,15 +51059,15 @@ module.exports = function inspect_(obj, options, depth, seen) {
     }
     if (isError(obj)) {
         var parts = arrObjKeys(obj, inspect);
-        if ('cause' in obj && !isEnumerable.call(obj, 'cause')) {
+        if (!('cause' in Error.prototype) && 'cause' in obj && !isEnumerable.call(obj, 'cause')) {
             return '{ [' + String(obj) + '] ' + $join.call($concat.call('[cause]: ' + inspect(obj.cause), parts), ', ') + ' }';
         }
         if (parts.length === 0) { return '[' + String(obj) + ']'; }
         return '{ [' + String(obj) + '] ' + $join.call(parts, ', ') + ' }';
     }
     if (typeof obj === 'object' && customInspect) {
-        if (inspectSymbol && typeof obj[inspectSymbol] === 'function') {
-            return obj[inspectSymbol]();
+        if (inspectSymbol && typeof obj[inspectSymbol] === 'function' && utilInspect) {
+            return utilInspect(obj, { depth: maxDepth - depth });
         } else if (customInspect !== 'symbol' && typeof obj.inspect === 'function') {
             return obj.inspect();
         }
@@ -51352,891 +51576,6 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
-
-
-/***/ }),
-
-/***/ "./node_modules/qs/lib/formats.js":
-/*!****************************************!*\
-  !*** ./node_modules/qs/lib/formats.js ***!
-  \****************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-var replace = String.prototype.replace;
-var percentTwenties = /%20/g;
-
-var Format = {
-    RFC1738: 'RFC1738',
-    RFC3986: 'RFC3986'
-};
-
-module.exports = {
-    'default': Format.RFC3986,
-    formatters: {
-        RFC1738: function (value) {
-            return replace.call(value, percentTwenties, '+');
-        },
-        RFC3986: function (value) {
-            return String(value);
-        }
-    },
-    RFC1738: Format.RFC1738,
-    RFC3986: Format.RFC3986
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/qs/lib/index.js":
-/*!**************************************!*\
-  !*** ./node_modules/qs/lib/index.js ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var stringify = __webpack_require__(/*! ./stringify */ "./node_modules/qs/lib/stringify.js");
-var parse = __webpack_require__(/*! ./parse */ "./node_modules/qs/lib/parse.js");
-var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
-
-module.exports = {
-    formats: formats,
-    parse: parse,
-    stringify: stringify
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/qs/lib/parse.js":
-/*!**************************************!*\
-  !*** ./node_modules/qs/lib/parse.js ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
-
-var has = Object.prototype.hasOwnProperty;
-var isArray = Array.isArray;
-
-var defaults = {
-    allowDots: false,
-    allowPrototypes: false,
-    arrayLimit: 20,
-    charset: 'utf-8',
-    charsetSentinel: false,
-    comma: false,
-    decoder: utils.decode,
-    delimiter: '&',
-    depth: 5,
-    ignoreQueryPrefix: false,
-    interpretNumericEntities: false,
-    parameterLimit: 1000,
-    parseArrays: true,
-    plainObjects: false,
-    strictNullHandling: false
-};
-
-var interpretNumericEntities = function (str) {
-    return str.replace(/&#(\d+);/g, function ($0, numberStr) {
-        return String.fromCharCode(parseInt(numberStr, 10));
-    });
-};
-
-var parseArrayValue = function (val, options) {
-    if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
-        return val.split(',');
-    }
-
-    return val;
-};
-
-// This is what browsers will submit when the ✓ character occurs in an
-// application/x-www-form-urlencoded body and the encoding of the page containing
-// the form is iso-8859-1, or when the submitted form has an accept-charset
-// attribute of iso-8859-1. Presumably also with other charsets that do not contain
-// the ✓ character, such as us-ascii.
-var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
-
-// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
-var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
-
-var parseValues = function parseQueryStringValues(str, options) {
-    var obj = {};
-    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
-    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
-    var parts = cleanStr.split(options.delimiter, limit);
-    var skipIndex = -1; // Keep track of where the utf8 sentinel was found
-    var i;
-
-    var charset = options.charset;
-    if (options.charsetSentinel) {
-        for (i = 0; i < parts.length; ++i) {
-            if (parts[i].indexOf('utf8=') === 0) {
-                if (parts[i] === charsetSentinel) {
-                    charset = 'utf-8';
-                } else if (parts[i] === isoSentinel) {
-                    charset = 'iso-8859-1';
-                }
-                skipIndex = i;
-                i = parts.length; // The eslint settings do not allow break;
-            }
-        }
-    }
-
-    for (i = 0; i < parts.length; ++i) {
-        if (i === skipIndex) {
-            continue;
-        }
-        var part = parts[i];
-
-        var bracketEqualsPos = part.indexOf(']=');
-        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
-
-        var key, val;
-        if (pos === -1) {
-            key = options.decoder(part, defaults.decoder, charset, 'key');
-            val = options.strictNullHandling ? null : '';
-        } else {
-            key = options.decoder(part.slice(0, pos), defaults.decoder, charset, 'key');
-            val = utils.maybeMap(
-                parseArrayValue(part.slice(pos + 1), options),
-                function (encodedVal) {
-                    return options.decoder(encodedVal, defaults.decoder, charset, 'value');
-                }
-            );
-        }
-
-        if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
-            val = interpretNumericEntities(val);
-        }
-
-        if (part.indexOf('[]=') > -1) {
-            val = isArray(val) ? [val] : val;
-        }
-
-        if (has.call(obj, key)) {
-            obj[key] = utils.combine(obj[key], val);
-        } else {
-            obj[key] = val;
-        }
-    }
-
-    return obj;
-};
-
-var parseObject = function (chain, val, options, valuesParsed) {
-    var leaf = valuesParsed ? val : parseArrayValue(val, options);
-
-    for (var i = chain.length - 1; i >= 0; --i) {
-        var obj;
-        var root = chain[i];
-
-        if (root === '[]' && options.parseArrays) {
-            obj = [].concat(leaf);
-        } else {
-            obj = options.plainObjects ? Object.create(null) : {};
-            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
-            var index = parseInt(cleanRoot, 10);
-            if (!options.parseArrays && cleanRoot === '') {
-                obj = { 0: leaf };
-            } else if (
-                !isNaN(index)
-                && root !== cleanRoot
-                && String(index) === cleanRoot
-                && index >= 0
-                && (options.parseArrays && index <= options.arrayLimit)
-            ) {
-                obj = [];
-                obj[index] = leaf;
-            } else if (cleanRoot !== '__proto__') {
-                obj[cleanRoot] = leaf;
-            }
-        }
-
-        leaf = obj;
-    }
-
-    return leaf;
-};
-
-var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
-    if (!givenKey) {
-        return;
-    }
-
-    // Transform dot notation to bracket notation
-    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
-
-    // The regex chunks
-
-    var brackets = /(\[[^[\]]*])/;
-    var child = /(\[[^[\]]*])/g;
-
-    // Get the parent
-
-    var segment = options.depth > 0 && brackets.exec(key);
-    var parent = segment ? key.slice(0, segment.index) : key;
-
-    // Stash the parent if it exists
-
-    var keys = [];
-    if (parent) {
-        // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
-        if (!options.plainObjects && has.call(Object.prototype, parent)) {
-            if (!options.allowPrototypes) {
-                return;
-            }
-        }
-
-        keys.push(parent);
-    }
-
-    // Loop through children appending to the array until we hit depth
-
-    var i = 0;
-    while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
-        i += 1;
-        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
-            if (!options.allowPrototypes) {
-                return;
-            }
-        }
-        keys.push(segment[1]);
-    }
-
-    // If there's a remainder, just add whatever is left
-
-    if (segment) {
-        keys.push('[' + key.slice(segment.index) + ']');
-    }
-
-    return parseObject(keys, val, options, valuesParsed);
-};
-
-var normalizeParseOptions = function normalizeParseOptions(opts) {
-    if (!opts) {
-        return defaults;
-    }
-
-    if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
-        throw new TypeError('Decoder has to be a function.');
-    }
-
-    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
-        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
-    }
-    var charset = typeof opts.charset === 'undefined' ? defaults.charset : opts.charset;
-
-    return {
-        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
-        allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults.allowPrototypes,
-        arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults.arrayLimit,
-        charset: charset,
-        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
-        comma: typeof opts.comma === 'boolean' ? opts.comma : defaults.comma,
-        decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults.decoder,
-        delimiter: typeof opts.delimiter === 'string' || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
-        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
-        depth: (typeof opts.depth === 'number' || opts.depth === false) ? +opts.depth : defaults.depth,
-        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
-        interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
-        parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults.parameterLimit,
-        parseArrays: opts.parseArrays !== false,
-        plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults.plainObjects,
-        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
-    };
-};
-
-module.exports = function (str, opts) {
-    var options = normalizeParseOptions(opts);
-
-    if (str === '' || str === null || typeof str === 'undefined') {
-        return options.plainObjects ? Object.create(null) : {};
-    }
-
-    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
-    var obj = options.plainObjects ? Object.create(null) : {};
-
-    // Iterate over the keys and setup the new object
-
-    var keys = Object.keys(tempObj);
-    for (var i = 0; i < keys.length; ++i) {
-        var key = keys[i];
-        var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
-        obj = utils.merge(obj, newObj, options);
-    }
-
-    return utils.compact(obj);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/qs/lib/stringify.js":
-/*!******************************************!*\
-  !*** ./node_modules/qs/lib/stringify.js ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
-var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
-var has = Object.prototype.hasOwnProperty;
-
-var arrayPrefixGenerators = {
-    brackets: function brackets(prefix) {
-        return prefix + '[]';
-    },
-    comma: 'comma',
-    indices: function indices(prefix, key) {
-        return prefix + '[' + key + ']';
-    },
-    repeat: function repeat(prefix) {
-        return prefix;
-    }
-};
-
-var isArray = Array.isArray;
-var split = String.prototype.split;
-var push = Array.prototype.push;
-var pushToArray = function (arr, valueOrArray) {
-    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
-};
-
-var toISO = Date.prototype.toISOString;
-
-var defaultFormat = formats['default'];
-var defaults = {
-    addQueryPrefix: false,
-    allowDots: false,
-    charset: 'utf-8',
-    charsetSentinel: false,
-    delimiter: '&',
-    encode: true,
-    encoder: utils.encode,
-    encodeValuesOnly: false,
-    format: defaultFormat,
-    formatter: formats.formatters[defaultFormat],
-    // deprecated
-    indices: false,
-    serializeDate: function serializeDate(date) {
-        return toISO.call(date);
-    },
-    skipNulls: false,
-    strictNullHandling: false
-};
-
-var isNonNullishPrimitive = function isNonNullishPrimitive(v) {
-    return typeof v === 'string'
-        || typeof v === 'number'
-        || typeof v === 'boolean'
-        || typeof v === 'symbol'
-        || typeof v === 'bigint';
-};
-
-var stringify = function stringify(
-    object,
-    prefix,
-    generateArrayPrefix,
-    strictNullHandling,
-    skipNulls,
-    encoder,
-    filter,
-    sort,
-    allowDots,
-    serializeDate,
-    format,
-    formatter,
-    encodeValuesOnly,
-    charset
-) {
-    var obj = object;
-    if (typeof filter === 'function') {
-        obj = filter(prefix, obj);
-    } else if (obj instanceof Date) {
-        obj = serializeDate(obj);
-    } else if (generateArrayPrefix === 'comma' && isArray(obj)) {
-        obj = utils.maybeMap(obj, function (value) {
-            if (value instanceof Date) {
-                return serializeDate(value);
-            }
-            return value;
-        });
-    }
-
-    if (obj === null) {
-        if (strictNullHandling) {
-            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder, charset, 'key', format) : prefix;
-        }
-
-        obj = '';
-    }
-
-    if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
-        if (encoder) {
-            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder, charset, 'key', format);
-            if (generateArrayPrefix === 'comma' && encodeValuesOnly) {
-                var valuesArray = split.call(String(obj), ',');
-                var valuesJoined = '';
-                for (var i = 0; i < valuesArray.length; ++i) {
-                    valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
-                }
-                return [formatter(keyValue) + '=' + valuesJoined];
-            }
-            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
-        }
-        return [formatter(prefix) + '=' + formatter(String(obj))];
-    }
-
-    var values = [];
-
-    if (typeof obj === 'undefined') {
-        return values;
-    }
-
-    var objKeys;
-    if (generateArrayPrefix === 'comma' && isArray(obj)) {
-        // we need to join elements in
-        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void undefined }];
-    } else if (isArray(filter)) {
-        objKeys = filter;
-    } else {
-        var keys = Object.keys(obj);
-        objKeys = sort ? keys.sort(sort) : keys;
-    }
-
-    for (var j = 0; j < objKeys.length; ++j) {
-        var key = objKeys[j];
-        var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
-
-        if (skipNulls && value === null) {
-            continue;
-        }
-
-        var keyPrefix = isArray(obj)
-            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(prefix, key) : prefix
-            : prefix + (allowDots ? '.' + key : '[' + key + ']');
-
-        pushToArray(values, stringify(
-            value,
-            keyPrefix,
-            generateArrayPrefix,
-            strictNullHandling,
-            skipNulls,
-            encoder,
-            filter,
-            sort,
-            allowDots,
-            serializeDate,
-            format,
-            formatter,
-            encodeValuesOnly,
-            charset
-        ));
-    }
-
-    return values;
-};
-
-var normalizeStringifyOptions = function normalizeStringifyOptions(opts) {
-    if (!opts) {
-        return defaults;
-    }
-
-    if (opts.encoder !== null && typeof opts.encoder !== 'undefined' && typeof opts.encoder !== 'function') {
-        throw new TypeError('Encoder has to be a function.');
-    }
-
-    var charset = opts.charset || defaults.charset;
-    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
-        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
-    }
-
-    var format = formats['default'];
-    if (typeof opts.format !== 'undefined') {
-        if (!has.call(formats.formatters, opts.format)) {
-            throw new TypeError('Unknown format option provided.');
-        }
-        format = opts.format;
-    }
-    var formatter = formats.formatters[format];
-
-    var filter = defaults.filter;
-    if (typeof opts.filter === 'function' || isArray(opts.filter)) {
-        filter = opts.filter;
-    }
-
-    return {
-        addQueryPrefix: typeof opts.addQueryPrefix === 'boolean' ? opts.addQueryPrefix : defaults.addQueryPrefix,
-        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
-        charset: charset,
-        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
-        delimiter: typeof opts.delimiter === 'undefined' ? defaults.delimiter : opts.delimiter,
-        encode: typeof opts.encode === 'boolean' ? opts.encode : defaults.encode,
-        encoder: typeof opts.encoder === 'function' ? opts.encoder : defaults.encoder,
-        encodeValuesOnly: typeof opts.encodeValuesOnly === 'boolean' ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
-        filter: filter,
-        format: format,
-        formatter: formatter,
-        serializeDate: typeof opts.serializeDate === 'function' ? opts.serializeDate : defaults.serializeDate,
-        skipNulls: typeof opts.skipNulls === 'boolean' ? opts.skipNulls : defaults.skipNulls,
-        sort: typeof opts.sort === 'function' ? opts.sort : null,
-        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
-    };
-};
-
-module.exports = function (object, opts) {
-    var obj = object;
-    var options = normalizeStringifyOptions(opts);
-
-    var objKeys;
-    var filter;
-
-    if (typeof options.filter === 'function') {
-        filter = options.filter;
-        obj = filter('', obj);
-    } else if (isArray(options.filter)) {
-        filter = options.filter;
-        objKeys = filter;
-    }
-
-    var keys = [];
-
-    if (typeof obj !== 'object' || obj === null) {
-        return '';
-    }
-
-    var arrayFormat;
-    if (opts && opts.arrayFormat in arrayPrefixGenerators) {
-        arrayFormat = opts.arrayFormat;
-    } else if (opts && 'indices' in opts) {
-        arrayFormat = opts.indices ? 'indices' : 'repeat';
-    } else {
-        arrayFormat = 'indices';
-    }
-
-    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
-
-    if (!objKeys) {
-        objKeys = Object.keys(obj);
-    }
-
-    if (options.sort) {
-        objKeys.sort(options.sort);
-    }
-
-    for (var i = 0; i < objKeys.length; ++i) {
-        var key = objKeys[i];
-
-        if (options.skipNulls && obj[key] === null) {
-            continue;
-        }
-        pushToArray(keys, stringify(
-            obj[key],
-            key,
-            generateArrayPrefix,
-            options.strictNullHandling,
-            options.skipNulls,
-            options.encode ? options.encoder : null,
-            options.filter,
-            options.sort,
-            options.allowDots,
-            options.serializeDate,
-            options.format,
-            options.formatter,
-            options.encodeValuesOnly,
-            options.charset
-        ));
-    }
-
-    var joined = keys.join(options.delimiter);
-    var prefix = options.addQueryPrefix === true ? '?' : '';
-
-    if (options.charsetSentinel) {
-        if (options.charset === 'iso-8859-1') {
-            // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
-            prefix += 'utf8=%26%2310003%3B&';
-        } else {
-            // encodeURIComponent('✓')
-            prefix += 'utf8=%E2%9C%93&';
-        }
-    }
-
-    return joined.length > 0 ? prefix + joined : '';
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/qs/lib/utils.js":
-/*!**************************************!*\
-  !*** ./node_modules/qs/lib/utils.js ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
-
-var has = Object.prototype.hasOwnProperty;
-var isArray = Array.isArray;
-
-var hexTable = (function () {
-    var array = [];
-    for (var i = 0; i < 256; ++i) {
-        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
-    }
-
-    return array;
-}());
-
-var compactQueue = function compactQueue(queue) {
-    while (queue.length > 1) {
-        var item = queue.pop();
-        var obj = item.obj[item.prop];
-
-        if (isArray(obj)) {
-            var compacted = [];
-
-            for (var j = 0; j < obj.length; ++j) {
-                if (typeof obj[j] !== 'undefined') {
-                    compacted.push(obj[j]);
-                }
-            }
-
-            item.obj[item.prop] = compacted;
-        }
-    }
-};
-
-var arrayToObject = function arrayToObject(source, options) {
-    var obj = options && options.plainObjects ? Object.create(null) : {};
-    for (var i = 0; i < source.length; ++i) {
-        if (typeof source[i] !== 'undefined') {
-            obj[i] = source[i];
-        }
-    }
-
-    return obj;
-};
-
-var merge = function merge(target, source, options) {
-    /* eslint no-param-reassign: 0 */
-    if (!source) {
-        return target;
-    }
-
-    if (typeof source !== 'object') {
-        if (isArray(target)) {
-            target.push(source);
-        } else if (target && typeof target === 'object') {
-            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
-                target[source] = true;
-            }
-        } else {
-            return [target, source];
-        }
-
-        return target;
-    }
-
-    if (!target || typeof target !== 'object') {
-        return [target].concat(source);
-    }
-
-    var mergeTarget = target;
-    if (isArray(target) && !isArray(source)) {
-        mergeTarget = arrayToObject(target, options);
-    }
-
-    if (isArray(target) && isArray(source)) {
-        source.forEach(function (item, i) {
-            if (has.call(target, i)) {
-                var targetItem = target[i];
-                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
-                    target[i] = merge(targetItem, item, options);
-                } else {
-                    target.push(item);
-                }
-            } else {
-                target[i] = item;
-            }
-        });
-        return target;
-    }
-
-    return Object.keys(source).reduce(function (acc, key) {
-        var value = source[key];
-
-        if (has.call(acc, key)) {
-            acc[key] = merge(acc[key], value, options);
-        } else {
-            acc[key] = value;
-        }
-        return acc;
-    }, mergeTarget);
-};
-
-var assign = function assignSingleSource(target, source) {
-    return Object.keys(source).reduce(function (acc, key) {
-        acc[key] = source[key];
-        return acc;
-    }, target);
-};
-
-var decode = function (str, decoder, charset) {
-    var strWithoutPlus = str.replace(/\+/g, ' ');
-    if (charset === 'iso-8859-1') {
-        // unescape never throws, no try...catch needed:
-        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
-    }
-    // utf-8
-    try {
-        return decodeURIComponent(strWithoutPlus);
-    } catch (e) {
-        return strWithoutPlus;
-    }
-};
-
-var encode = function encode(str, defaultEncoder, charset, kind, format) {
-    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
-    // It has been adapted here for stricter adherence to RFC 3986
-    if (str.length === 0) {
-        return str;
-    }
-
-    var string = str;
-    if (typeof str === 'symbol') {
-        string = Symbol.prototype.toString.call(str);
-    } else if (typeof str !== 'string') {
-        string = String(str);
-    }
-
-    if (charset === 'iso-8859-1') {
-        return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
-            return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
-        });
-    }
-
-    var out = '';
-    for (var i = 0; i < string.length; ++i) {
-        var c = string.charCodeAt(i);
-
-        if (
-            c === 0x2D // -
-            || c === 0x2E // .
-            || c === 0x5F // _
-            || c === 0x7E // ~
-            || (c >= 0x30 && c <= 0x39) // 0-9
-            || (c >= 0x41 && c <= 0x5A) // a-z
-            || (c >= 0x61 && c <= 0x7A) // A-Z
-            || (format === formats.RFC1738 && (c === 0x28 || c === 0x29)) // ( )
-        ) {
-            out += string.charAt(i);
-            continue;
-        }
-
-        if (c < 0x80) {
-            out = out + hexTable[c];
-            continue;
-        }
-
-        if (c < 0x800) {
-            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
-            continue;
-        }
-
-        if (c < 0xD800 || c >= 0xE000) {
-            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
-            continue;
-        }
-
-        i += 1;
-        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
-        /* eslint operator-linebreak: [2, "before"] */
-        out += hexTable[0xF0 | (c >> 18)]
-            + hexTable[0x80 | ((c >> 12) & 0x3F)]
-            + hexTable[0x80 | ((c >> 6) & 0x3F)]
-            + hexTable[0x80 | (c & 0x3F)];
-    }
-
-    return out;
-};
-
-var compact = function compact(value) {
-    var queue = [{ obj: { o: value }, prop: 'o' }];
-    var refs = [];
-
-    for (var i = 0; i < queue.length; ++i) {
-        var item = queue[i];
-        var obj = item.obj[item.prop];
-
-        var keys = Object.keys(obj);
-        for (var j = 0; j < keys.length; ++j) {
-            var key = keys[j];
-            var val = obj[key];
-            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
-                queue.push({ obj: obj, prop: key });
-                refs.push(val);
-            }
-        }
-    }
-
-    compactQueue(queue);
-
-    return value;
-};
-
-var isRegExp = function isRegExp(obj) {
-    return Object.prototype.toString.call(obj) === '[object RegExp]';
-};
-
-var isBuffer = function isBuffer(obj) {
-    if (!obj || typeof obj !== 'object') {
-        return false;
-    }
-
-    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
-};
-
-var combine = function combine(a, b) {
-    return [].concat(a, b);
-};
-
-var maybeMap = function maybeMap(val, fn) {
-    if (isArray(val)) {
-        var mapped = [];
-        for (var i = 0; i < val.length; i += 1) {
-            mapped.push(fn(val[i]));
-        }
-        return mapped;
-    }
-    return fn(val);
-};
-
-module.exports = {
-    arrayToObject: arrayToObject,
-    assign: assign,
-    combine: combine,
-    compact: compact,
-    decode: decode,
-    encode: encode,
-    isBuffer: isBuffer,
-    isRegExp: isRegExp,
-    maybeMap: maybeMap,
-    merge: merge
-};
 
 
 /***/ }),
@@ -83349,7 +82688,892 @@ module.exports = function getSideChannel() {
   \*********************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-!function(n,t){ true?module.exports=t(__webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js")):0}(this,function(n){function t(n,t){for(var r=0;r<t.length;r++){var e=t[r];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(n,e.key,e)}}function r(n,r,e){return r&&t(n.prototype,r),e&&t(n,e),Object.defineProperty(n,"prototype",{writable:!1}),n}function e(){return e=Object.assign||function(n){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var e in r)Object.prototype.hasOwnProperty.call(r,e)&&(n[e]=r[e])}return n},e.apply(this,arguments)}function i(n){return i=Object.setPrototypeOf?Object.getPrototypeOf:function(n){return n.__proto__||Object.getPrototypeOf(n)},i(n)}function u(n,t){return u=Object.setPrototypeOf||function(n,t){return n.__proto__=t,n},u(n,t)}function o(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){})),!0}catch(n){return!1}}function f(n,t,r){return f=o()?Reflect.construct:function(n,t,r){var e=[null];e.push.apply(e,t);var i=new(Function.bind.apply(n,e));return r&&u(i,r.prototype),i},f.apply(null,arguments)}function c(n){var t="function"==typeof Map?new Map:void 0;return c=function(n){if(null===n||-1===Function.toString.call(n).indexOf("[native code]"))return n;if("function"!=typeof n)throw new TypeError("Super expression must either be null or a function");if(void 0!==t){if(t.has(n))return t.get(n);t.set(n,r)}function r(){return f(n,arguments,i(this).constructor)}return r.prototype=Object.create(n.prototype,{constructor:{value:r,enumerable:!1,writable:!0,configurable:!0}}),u(r,n)},c(n)}var s=/*#__PURE__*/function(){function n(n,t,r){var e,i;this.name=n,this.definition=t,this.bindings=null!=(e=t.bindings)?e:{},this.wheres=null!=(i=t.wheres)?i:{},this.config=r}var t=n.prototype;return t.matchesUrl=function(n){if(!this.definition.methods.includes("GET"))return!1;var t=this.template.replace(/\/{[^}?]*\?}/g,"(/[^/?]+)?").replace(/{[^}?]*\?}/g,"([^/?]+)?").replace(/{[^}]+}/g,"[^/?]+").replace(/^\w+:\/\//,"");return new RegExp("^"+t+"$").test(n.replace(/\/+$/,"").split("?").shift())},t.compile=function(n){var t=this;return this.parameterSegments.length?this.template.replace(/{([^}?]+)\??}/g,function(r,e){var i,u;if([null,void 0].includes(n[e])&&t.parameterSegments.find(function(n){return n.name===e}).required)throw new Error("Ziggy error: '"+e+"' parameter is required for route '"+t.name+"'.");return t.parameterSegments[t.parameterSegments.length-1].name===e&&".*"===t.wheres[e]?null!=(u=n[e])?u:"":encodeURIComponent(null!=(i=n[e])?i:"")}).replace(/\/+$/,""):this.template},r(n,[{key:"template",get:function(){return((this.config.absolute?this.definition.domain?""+this.config.url.match(/^\w+:\/\//)[0]+this.definition.domain+(this.config.port?":"+this.config.port:""):this.config.url:"")+"/"+this.definition.uri).replace(/\/+$/,"")}},{key:"parameterSegments",get:function(){var n,t;return null!=(n=null==(t=this.template.match(/{[^}?]+\??}/g))?void 0:t.map(function(n){return{name:n.replace(/{|\??}/g,""),required:!/\?}$/.test(n)}}))?n:[]}}]),n}(),a=/*#__PURE__*/function(t){var i,o;function f(n,r,i,u){var o;if(void 0===i&&(i=!0),(o=t.call(this)||this).t=null!=u?u:"undefined"!=typeof Ziggy?Ziggy:null==globalThis?void 0:globalThis.Ziggy,o.t=e({},o.t,{absolute:i}),n){if(!o.t.routes[n])throw new Error("Ziggy error: route '"+n+"' is not in the route list.");o.i=new s(n,o.t.routes[n],o.t),o.u=o.o(r)}return o}o=t,(i=f).prototype=Object.create(o.prototype),i.prototype.constructor=i,u(i,o);var c=f.prototype;return c.toString=function(){var t=this,r=Object.keys(this.u).filter(function(n){return!t.i.parameterSegments.some(function(t){return t.name===n})}).filter(function(n){return"_query"!==n}).reduce(function(n,r){var i;return e({},n,((i={})[r]=t.u[r],i))},{});return this.i.compile(this.u)+n.stringify(e({},r,this.u._query),{addQueryPrefix:!0,arrayFormat:"indices",encodeValuesOnly:!0,skipNulls:!0,encoder:function(n,t){return"boolean"==typeof n?Number(n):t(n)}})},c.current=function(n,t){var r=this,e=this.t.absolute?this.l().host+this.l().pathname:this.l().pathname.replace(this.t.url.replace(/^\w*:\/\/[^/]+/,""),"").replace(/^\/+/,"/"),i=Object.entries(this.t.routes).find(function(t){return new s(n,t[1],r.t).matchesUrl(e)})||[void 0,void 0],u=i[0],o=i[1];if(!n)return u;var f=new RegExp("^"+n.replace(/\./g,"\\.").replace(/\*/g,".*")+"$").test(u);if([null,void 0].includes(t)||!f)return f;var c=new s(u,o,this.t);t=this.o(t,c);var a=this.h(o);return!(!Object.values(t).every(function(n){return!n})||Object.values(a).length)||Object.entries(t).every(function(n){return a[n[0]]==n[1]})},c.l=function(){var n,t,r,e,i,u,o="undefined"!=typeof window?window.location:{},f=o.host,c=o.pathname,s=o.search;return{host:null!=(n=null==(t=this.t.location)?void 0:t.host)?n:void 0===f?"":f,pathname:null!=(r=null==(e=this.t.location)?void 0:e.pathname)?r:void 0===c?"":c,search:null!=(i=null==(u=this.t.location)?void 0:u.search)?i:void 0===s?"":s}},c.has=function(n){return Object.keys(this.t.routes).includes(n)},c.o=function(n,t){var r=this;void 0===n&&(n={}),void 0===t&&(t=this.i),n=["string","number"].includes(typeof n)?[n]:n;var i=t.parameterSegments.filter(function(n){return!r.t.defaults[n.name]});if(Array.isArray(n))n=n.reduce(function(n,t,r){var u,o;return e({},n,i[r]?((u={})[i[r].name]=t,u):((o={})[t]="",o))},{});else if(1===i.length&&!n[i[0].name]&&(n.hasOwnProperty(Object.values(t.bindings)[0])||n.hasOwnProperty("id"))){var u;(u={})[i[0].name]=n,n=u}return e({},this.v(t),this.g(n,t))},c.v=function(n){var t=this;return n.parameterSegments.filter(function(n){return t.t.defaults[n.name]}).reduce(function(n,r,i){var u,o=r.name;return e({},n,((u={})[o]=t.t.defaults[o],u))},{})},c.g=function(n,t){var r=t.bindings,i=t.parameterSegments;return Object.entries(n).reduce(function(n,t){var u,o,f=t[0],c=t[1];if(!c||"object"!=typeof c||Array.isArray(c)||!i.some(function(n){return n.name===f}))return e({},n,((o={})[f]=c,o));if(!c.hasOwnProperty(r[f])){if(!c.hasOwnProperty("id"))throw new Error("Ziggy error: object passed as '"+f+"' parameter is missing route model binding key '"+r[f]+"'.");r[f]="id"}return e({},n,((u={})[f]=c[r[f]],u))},{})},c.h=function(t){var r,i=this.l().pathname.replace(this.t.url.replace(/^\w*:\/\/[^/]+/,""),"").replace(/^\/+/,""),u=function(n,t,r){void 0===t&&(t="");var i=[n,t].map(function(n){return n.split(r)}),u=i[0];return i[1].reduce(function(n,t,r){var i;return/{[^}?]+\??}/.test(t)&&u[r]?e({},n,((i={})[t.replace(/.*{|\??}.*/g,"")]=u[r].replace(t.match(/^[^{]*/g),"").replace(t.match(/[^}]*$/g),""),i)):n},{})};return e({},u(this.l().host,t.domain,"."),u(i,t.uri,"/"),n.parse(null==(r=this.l().search)?void 0:r.replace(/^\?/,"")))},c.valueOf=function(){return this.toString()},c.check=function(n){return this.has(n)},r(f,[{key:"params",get:function(){return this.h(this.t.routes[this.current()])}}]),f}(/*#__PURE__*/c(String));return function(n,t,r,e){var i=new a(n,t,r,e);return n?i.toString():i}});
+!function(n,t){ true?module.exports=t(__webpack_require__(/*! qs */ "./node_modules/ziggy-js/node_modules/qs/lib/index.js")):0}(this,function(n){function t(n,t){for(var r=0;r<t.length;r++){var e=t[r];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(n,e.key,e)}}function r(n,r,e){return r&&t(n.prototype,r),e&&t(n,e),Object.defineProperty(n,"prototype",{writable:!1}),n}function e(){return e=Object.assign||function(n){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var e in r)Object.prototype.hasOwnProperty.call(r,e)&&(n[e]=r[e])}return n},e.apply(this,arguments)}function i(n){return i=Object.setPrototypeOf?Object.getPrototypeOf:function(n){return n.__proto__||Object.getPrototypeOf(n)},i(n)}function u(n,t){return u=Object.setPrototypeOf||function(n,t){return n.__proto__=t,n},u(n,t)}function o(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){})),!0}catch(n){return!1}}function f(n,t,r){return f=o()?Reflect.construct:function(n,t,r){var e=[null];e.push.apply(e,t);var i=new(Function.bind.apply(n,e));return r&&u(i,r.prototype),i},f.apply(null,arguments)}function c(n){var t="function"==typeof Map?new Map:void 0;return c=function(n){if(null===n||-1===Function.toString.call(n).indexOf("[native code]"))return n;if("function"!=typeof n)throw new TypeError("Super expression must either be null or a function");if(void 0!==t){if(t.has(n))return t.get(n);t.set(n,r)}function r(){return f(n,arguments,i(this).constructor)}return r.prototype=Object.create(n.prototype,{constructor:{value:r,enumerable:!1,writable:!0,configurable:!0}}),u(r,n)},c(n)}var a=/*#__PURE__*/function(){function t(n,t,r){var e,i;this.name=n,this.definition=t,this.bindings=null!=(e=t.bindings)?e:{},this.wheres=null!=(i=t.wheres)?i:{},this.config=r}var e=t.prototype;return e.matchesUrl=function(t){var r=this;if(!this.definition.methods.includes("GET"))return!1;var e=this.template.replace(/(\/?){([^}?]*)(\??)}/g,function(n,t,e,i){var u,o="(?<"+e+">"+((null==(u=r.wheres[e])?void 0:u.replace(/(^\^)|(\$$)/g,""))||"[^/?]+")+")";return i?"("+t+o+")?":""+t+o}).replace(/^\w+:\/\//,""),i=t.replace(/^\w+:\/\//,"").split("?"),u=i[0],o=i[1],f=new RegExp("^"+e+"/?$").exec(u);return!!f&&{params:f.groups,query:n.parse(o)}},e.compile=function(n){var t=this,r=this.parameterSegments;return r.length?this.template.replace(/{([^}?]+)(\??)}/g,function(e,i,u){var o,f,c;if(!u&&[null,void 0].includes(n[i]))throw new Error("Ziggy error: '"+i+"' parameter is required for route '"+t.name+"'.");if(r[r.length-1].name===i&&".*"===t.wheres[i])return encodeURIComponent(null!=(c=n[i])?c:"").replace(/%2F/g,"/");if(t.wheres[i]&&!new RegExp("^"+(u?"("+t.wheres[i]+")?":t.wheres[i])+"$").test(null!=(o=n[i])?o:""))throw new Error("Ziggy error: '"+i+"' parameter does not match required format '"+t.wheres[i]+"' for route '"+t.name+"'.");return encodeURIComponent(null!=(f=n[i])?f:"")}).replace(/\/+$/,""):this.template},r(t,[{key:"template",get:function(){return((this.config.absolute?this.definition.domain?""+this.config.url.match(/^\w+:\/\//)[0]+this.definition.domain+(this.config.port?":"+this.config.port:""):this.config.url:"")+"/"+this.definition.uri).replace(/\/+$/,"")}},{key:"parameterSegments",get:function(){var n,t;return null!=(n=null==(t=this.template.match(/{[^}?]+\??}/g))?void 0:t.map(function(n){return{name:n.replace(/{|\??}/g,""),required:!/\?}$/.test(n)}}))?n:[]}}]),t}(),s=/*#__PURE__*/function(t){var i,o;function f(n,r,i,u){var o;if(void 0===i&&(i=!0),(o=t.call(this)||this).t=null!=u?u:"undefined"!=typeof Ziggy?Ziggy:null==globalThis?void 0:globalThis.Ziggy,o.t=e({},o.t,{absolute:i}),n){if(!o.t.routes[n])throw new Error("Ziggy error: route '"+n+"' is not in the route list.");o.i=new a(n,o.t.routes[n],o.t),o.u=o.o(r)}return o}o=t,(i=f).prototype=Object.create(o.prototype),i.prototype.constructor=i,u(i,o);var c=f.prototype;return c.toString=function(){var t=this,r=Object.keys(this.u).filter(function(n){return!t.i.parameterSegments.some(function(t){return t.name===n})}).filter(function(n){return"_query"!==n}).reduce(function(n,r){var i;return e({},n,((i={})[r]=t.u[r],i))},{});return this.i.compile(this.u)+n.stringify(e({},r,this.u._query),{addQueryPrefix:!0,arrayFormat:"indices",encodeValuesOnly:!0,skipNulls:!0,encoder:function(n,t){return"boolean"==typeof n?Number(n):t(n)}})},c.l=function(n){var t=this;n?this.t.absolute&&n.startsWith("/")&&(n=this.h().host+n):n=this.v();var r={},i=Object.entries(this.t.routes).find(function(e){return r=new a(e[0],e[1],t.t).matchesUrl(n)})||[void 0,void 0];return e({name:i[0]},r,{route:i[1]})},c.v=function(){var n=this.h(),t=n.pathname,r=n.search;return(this.t.absolute?n.host+t:t.replace(this.t.url.replace(/^\w*:\/\/[^/]+/,""),"").replace(/^\/+/,"/"))+r},c.current=function(n,t){var r=this.l(),i=r.name,u=r.params,o=r.query,f=r.route;if(!n)return i;var c=new RegExp("^"+n.replace(/\./g,"\\.").replace(/\*/g,".*")+"$").test(i);if([null,void 0].includes(t)||!c)return c;var s=new a(i,f,this.t);t=this.o(t,s);var l=e({},u,o);return!(!Object.values(t).every(function(n){return!n})||Object.values(l).some(function(n){return void 0!==n}))||Object.entries(t).every(function(n){return l[n[0]]==n[1]})},c.h=function(){var n,t,r,e,i,u,o="undefined"!=typeof window?window.location:{},f=o.host,c=o.pathname,a=o.search;return{host:null!=(n=null==(t=this.t.location)?void 0:t.host)?n:void 0===f?"":f,pathname:null!=(r=null==(e=this.t.location)?void 0:e.pathname)?r:void 0===c?"":c,search:null!=(i=null==(u=this.t.location)?void 0:u.search)?i:void 0===a?"":a}},c.has=function(n){return Object.keys(this.t.routes).includes(n)},c.o=function(n,t){var r=this;void 0===n&&(n={}),void 0===t&&(t=this.i),n=["string","number"].includes(typeof n)?[n]:n;var i=t.parameterSegments.filter(function(n){return!r.t.defaults[n.name]});if(Array.isArray(n))n=n.reduce(function(n,t,r){var u,o;return e({},n,i[r]?((u={})[i[r].name]=t,u):"object"==typeof t?t:((o={})[t]="",o))},{});else if(1===i.length&&!n[i[0].name]&&(n.hasOwnProperty(Object.values(t.bindings)[0])||n.hasOwnProperty("id"))){var u;(u={})[i[0].name]=n,n=u}return e({},this.p(t),this.g(n,t))},c.p=function(n){var t=this;return n.parameterSegments.filter(function(n){return t.t.defaults[n.name]}).reduce(function(n,r,i){var u,o=r.name;return e({},n,((u={})[o]=t.t.defaults[o],u))},{})},c.g=function(n,t){var r=t.bindings,i=t.parameterSegments;return Object.entries(n).reduce(function(n,t){var u,o,f=t[0],c=t[1];if(!c||"object"!=typeof c||Array.isArray(c)||!i.some(function(n){return n.name===f}))return e({},n,((o={})[f]=c,o));if(!c.hasOwnProperty(r[f])){if(!c.hasOwnProperty("id"))throw new Error("Ziggy error: object passed as '"+f+"' parameter is missing route model binding key '"+r[f]+"'.");r[f]="id"}return e({},n,((u={})[f]=c[r[f]],u))},{})},c.valueOf=function(){return this.toString()},c.check=function(n){return this.has(n)},r(f,[{key:"params",get:function(){var n=this.l();return e({},n.params,n.query)}}]),f}(/*#__PURE__*/c(String));return function(n,t,r,e){var i=new s(n,t,r,e);return n?i.toString():i}});
+
+
+/***/ }),
+
+/***/ "./node_modules/ziggy-js/node_modules/qs/lib/formats.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/ziggy-js/node_modules/qs/lib/formats.js ***!
+  \**************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var replace = String.prototype.replace;
+var percentTwenties = /%20/g;
+
+var Format = {
+    RFC1738: 'RFC1738',
+    RFC3986: 'RFC3986'
+};
+
+module.exports = {
+    'default': Format.RFC3986,
+    formatters: {
+        RFC1738: function (value) {
+            return replace.call(value, percentTwenties, '+');
+        },
+        RFC3986: function (value) {
+            return String(value);
+        }
+    },
+    RFC1738: Format.RFC1738,
+    RFC3986: Format.RFC3986
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/ziggy-js/node_modules/qs/lib/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/ziggy-js/node_modules/qs/lib/index.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var stringify = __webpack_require__(/*! ./stringify */ "./node_modules/ziggy-js/node_modules/qs/lib/stringify.js");
+var parse = __webpack_require__(/*! ./parse */ "./node_modules/ziggy-js/node_modules/qs/lib/parse.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/ziggy-js/node_modules/qs/lib/formats.js");
+
+module.exports = {
+    formats: formats,
+    parse: parse,
+    stringify: stringify
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/ziggy-js/node_modules/qs/lib/parse.js":
+/*!************************************************************!*\
+  !*** ./node_modules/ziggy-js/node_modules/qs/lib/parse.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/ziggy-js/node_modules/qs/lib/utils.js");
+
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var defaults = {
+    allowDots: false,
+    allowPrototypes: false,
+    arrayLimit: 20,
+    charset: 'utf-8',
+    charsetSentinel: false,
+    comma: false,
+    decoder: utils.decode,
+    delimiter: '&',
+    depth: 5,
+    ignoreQueryPrefix: false,
+    interpretNumericEntities: false,
+    parameterLimit: 1000,
+    parseArrays: true,
+    plainObjects: false,
+    strictNullHandling: false
+};
+
+var interpretNumericEntities = function (str) {
+    return str.replace(/&#(\d+);/g, function ($0, numberStr) {
+        return String.fromCharCode(parseInt(numberStr, 10));
+    });
+};
+
+var parseArrayValue = function (val, options) {
+    if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
+        return val.split(',');
+    }
+
+    return val;
+};
+
+// This is what browsers will submit when the ✓ character occurs in an
+// application/x-www-form-urlencoded body and the encoding of the page containing
+// the form is iso-8859-1, or when the submitted form has an accept-charset
+// attribute of iso-8859-1. Presumably also with other charsets that do not contain
+// the ✓ character, such as us-ascii.
+var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
+
+// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
+var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
+
+var parseValues = function parseQueryStringValues(str, options) {
+    var obj = {};
+    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
+    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
+    var parts = cleanStr.split(options.delimiter, limit);
+    var skipIndex = -1; // Keep track of where the utf8 sentinel was found
+    var i;
+
+    var charset = options.charset;
+    if (options.charsetSentinel) {
+        for (i = 0; i < parts.length; ++i) {
+            if (parts[i].indexOf('utf8=') === 0) {
+                if (parts[i] === charsetSentinel) {
+                    charset = 'utf-8';
+                } else if (parts[i] === isoSentinel) {
+                    charset = 'iso-8859-1';
+                }
+                skipIndex = i;
+                i = parts.length; // The eslint settings do not allow break;
+            }
+        }
+    }
+
+    for (i = 0; i < parts.length; ++i) {
+        if (i === skipIndex) {
+            continue;
+        }
+        var part = parts[i];
+
+        var bracketEqualsPos = part.indexOf(']=');
+        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
+
+        var key, val;
+        if (pos === -1) {
+            key = options.decoder(part, defaults.decoder, charset, 'key');
+            val = options.strictNullHandling ? null : '';
+        } else {
+            key = options.decoder(part.slice(0, pos), defaults.decoder, charset, 'key');
+            val = utils.maybeMap(
+                parseArrayValue(part.slice(pos + 1), options),
+                function (encodedVal) {
+                    return options.decoder(encodedVal, defaults.decoder, charset, 'value');
+                }
+            );
+        }
+
+        if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
+            val = interpretNumericEntities(val);
+        }
+
+        if (part.indexOf('[]=') > -1) {
+            val = isArray(val) ? [val] : val;
+        }
+
+        if (has.call(obj, key)) {
+            obj[key] = utils.combine(obj[key], val);
+        } else {
+            obj[key] = val;
+        }
+    }
+
+    return obj;
+};
+
+var parseObject = function (chain, val, options, valuesParsed) {
+    var leaf = valuesParsed ? val : parseArrayValue(val, options);
+
+    for (var i = chain.length - 1; i >= 0; --i) {
+        var obj;
+        var root = chain[i];
+
+        if (root === '[]' && options.parseArrays) {
+            obj = [].concat(leaf);
+        } else {
+            obj = options.plainObjects ? Object.create(null) : {};
+            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
+            var index = parseInt(cleanRoot, 10);
+            if (!options.parseArrays && cleanRoot === '') {
+                obj = { 0: leaf };
+            } else if (
+                !isNaN(index)
+                && root !== cleanRoot
+                && String(index) === cleanRoot
+                && index >= 0
+                && (options.parseArrays && index <= options.arrayLimit)
+            ) {
+                obj = [];
+                obj[index] = leaf;
+            } else if (cleanRoot !== '__proto__') {
+                obj[cleanRoot] = leaf;
+            }
+        }
+
+        leaf = obj;
+    }
+
+    return leaf;
+};
+
+var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
+    if (!givenKey) {
+        return;
+    }
+
+    // Transform dot notation to bracket notation
+    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
+
+    // The regex chunks
+
+    var brackets = /(\[[^[\]]*])/;
+    var child = /(\[[^[\]]*])/g;
+
+    // Get the parent
+
+    var segment = options.depth > 0 && brackets.exec(key);
+    var parent = segment ? key.slice(0, segment.index) : key;
+
+    // Stash the parent if it exists
+
+    var keys = [];
+    if (parent) {
+        // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
+        if (!options.plainObjects && has.call(Object.prototype, parent)) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+
+        keys.push(parent);
+    }
+
+    // Loop through children appending to the array until we hit depth
+
+    var i = 0;
+    while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
+        i += 1;
+        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+        keys.push(segment[1]);
+    }
+
+    // If there's a remainder, just add whatever is left
+
+    if (segment) {
+        keys.push('[' + key.slice(segment.index) + ']');
+    }
+
+    return parseObject(keys, val, options, valuesParsed);
+};
+
+var normalizeParseOptions = function normalizeParseOptions(opts) {
+    if (!opts) {
+        return defaults;
+    }
+
+    if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
+        throw new TypeError('Decoder has to be a function.');
+    }
+
+    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+    }
+    var charset = typeof opts.charset === 'undefined' ? defaults.charset : opts.charset;
+
+    return {
+        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
+        allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults.allowPrototypes,
+        arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults.arrayLimit,
+        charset: charset,
+        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
+        comma: typeof opts.comma === 'boolean' ? opts.comma : defaults.comma,
+        decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults.decoder,
+        delimiter: typeof opts.delimiter === 'string' || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
+        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
+        depth: (typeof opts.depth === 'number' || opts.depth === false) ? +opts.depth : defaults.depth,
+        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
+        interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
+        parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults.parameterLimit,
+        parseArrays: opts.parseArrays !== false,
+        plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults.plainObjects,
+        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
+    };
+};
+
+module.exports = function (str, opts) {
+    var options = normalizeParseOptions(opts);
+
+    if (str === '' || str === null || typeof str === 'undefined') {
+        return options.plainObjects ? Object.create(null) : {};
+    }
+
+    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
+    var obj = options.plainObjects ? Object.create(null) : {};
+
+    // Iterate over the keys and setup the new object
+
+    var keys = Object.keys(tempObj);
+    for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+        var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
+        obj = utils.merge(obj, newObj, options);
+    }
+
+    return utils.compact(obj);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/ziggy-js/node_modules/qs/lib/stringify.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/ziggy-js/node_modules/qs/lib/stringify.js ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/ziggy-js/node_modules/qs/lib/utils.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/ziggy-js/node_modules/qs/lib/formats.js");
+var has = Object.prototype.hasOwnProperty;
+
+var arrayPrefixGenerators = {
+    brackets: function brackets(prefix) {
+        return prefix + '[]';
+    },
+    comma: 'comma',
+    indices: function indices(prefix, key) {
+        return prefix + '[' + key + ']';
+    },
+    repeat: function repeat(prefix) {
+        return prefix;
+    }
+};
+
+var isArray = Array.isArray;
+var split = String.prototype.split;
+var push = Array.prototype.push;
+var pushToArray = function (arr, valueOrArray) {
+    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
+};
+
+var toISO = Date.prototype.toISOString;
+
+var defaultFormat = formats['default'];
+var defaults = {
+    addQueryPrefix: false,
+    allowDots: false,
+    charset: 'utf-8',
+    charsetSentinel: false,
+    delimiter: '&',
+    encode: true,
+    encoder: utils.encode,
+    encodeValuesOnly: false,
+    format: defaultFormat,
+    formatter: formats.formatters[defaultFormat],
+    // deprecated
+    indices: false,
+    serializeDate: function serializeDate(date) {
+        return toISO.call(date);
+    },
+    skipNulls: false,
+    strictNullHandling: false
+};
+
+var isNonNullishPrimitive = function isNonNullishPrimitive(v) {
+    return typeof v === 'string'
+        || typeof v === 'number'
+        || typeof v === 'boolean'
+        || typeof v === 'symbol'
+        || typeof v === 'bigint';
+};
+
+var stringify = function stringify(
+    object,
+    prefix,
+    generateArrayPrefix,
+    strictNullHandling,
+    skipNulls,
+    encoder,
+    filter,
+    sort,
+    allowDots,
+    serializeDate,
+    format,
+    formatter,
+    encodeValuesOnly,
+    charset
+) {
+    var obj = object;
+    if (typeof filter === 'function') {
+        obj = filter(prefix, obj);
+    } else if (obj instanceof Date) {
+        obj = serializeDate(obj);
+    } else if (generateArrayPrefix === 'comma' && isArray(obj)) {
+        obj = utils.maybeMap(obj, function (value) {
+            if (value instanceof Date) {
+                return serializeDate(value);
+            }
+            return value;
+        });
+    }
+
+    if (obj === null) {
+        if (strictNullHandling) {
+            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder, charset, 'key', format) : prefix;
+        }
+
+        obj = '';
+    }
+
+    if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
+        if (encoder) {
+            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder, charset, 'key', format);
+            if (generateArrayPrefix === 'comma' && encodeValuesOnly) {
+                var valuesArray = split.call(String(obj), ',');
+                var valuesJoined = '';
+                for (var i = 0; i < valuesArray.length; ++i) {
+                    valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
+                }
+                return [formatter(keyValue) + '=' + valuesJoined];
+            }
+            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
+        }
+        return [formatter(prefix) + '=' + formatter(String(obj))];
+    }
+
+    var values = [];
+
+    if (typeof obj === 'undefined') {
+        return values;
+    }
+
+    var objKeys;
+    if (generateArrayPrefix === 'comma' && isArray(obj)) {
+        // we need to join elements in
+        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void undefined }];
+    } else if (isArray(filter)) {
+        objKeys = filter;
+    } else {
+        var keys = Object.keys(obj);
+        objKeys = sort ? keys.sort(sort) : keys;
+    }
+
+    for (var j = 0; j < objKeys.length; ++j) {
+        var key = objKeys[j];
+        var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
+
+        if (skipNulls && value === null) {
+            continue;
+        }
+
+        var keyPrefix = isArray(obj)
+            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(prefix, key) : prefix
+            : prefix + (allowDots ? '.' + key : '[' + key + ']');
+
+        pushToArray(values, stringify(
+            value,
+            keyPrefix,
+            generateArrayPrefix,
+            strictNullHandling,
+            skipNulls,
+            encoder,
+            filter,
+            sort,
+            allowDots,
+            serializeDate,
+            format,
+            formatter,
+            encodeValuesOnly,
+            charset
+        ));
+    }
+
+    return values;
+};
+
+var normalizeStringifyOptions = function normalizeStringifyOptions(opts) {
+    if (!opts) {
+        return defaults;
+    }
+
+    if (opts.encoder !== null && typeof opts.encoder !== 'undefined' && typeof opts.encoder !== 'function') {
+        throw new TypeError('Encoder has to be a function.');
+    }
+
+    var charset = opts.charset || defaults.charset;
+    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+    }
+
+    var format = formats['default'];
+    if (typeof opts.format !== 'undefined') {
+        if (!has.call(formats.formatters, opts.format)) {
+            throw new TypeError('Unknown format option provided.');
+        }
+        format = opts.format;
+    }
+    var formatter = formats.formatters[format];
+
+    var filter = defaults.filter;
+    if (typeof opts.filter === 'function' || isArray(opts.filter)) {
+        filter = opts.filter;
+    }
+
+    return {
+        addQueryPrefix: typeof opts.addQueryPrefix === 'boolean' ? opts.addQueryPrefix : defaults.addQueryPrefix,
+        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
+        charset: charset,
+        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
+        delimiter: typeof opts.delimiter === 'undefined' ? defaults.delimiter : opts.delimiter,
+        encode: typeof opts.encode === 'boolean' ? opts.encode : defaults.encode,
+        encoder: typeof opts.encoder === 'function' ? opts.encoder : defaults.encoder,
+        encodeValuesOnly: typeof opts.encodeValuesOnly === 'boolean' ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
+        filter: filter,
+        format: format,
+        formatter: formatter,
+        serializeDate: typeof opts.serializeDate === 'function' ? opts.serializeDate : defaults.serializeDate,
+        skipNulls: typeof opts.skipNulls === 'boolean' ? opts.skipNulls : defaults.skipNulls,
+        sort: typeof opts.sort === 'function' ? opts.sort : null,
+        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
+    };
+};
+
+module.exports = function (object, opts) {
+    var obj = object;
+    var options = normalizeStringifyOptions(opts);
+
+    var objKeys;
+    var filter;
+
+    if (typeof options.filter === 'function') {
+        filter = options.filter;
+        obj = filter('', obj);
+    } else if (isArray(options.filter)) {
+        filter = options.filter;
+        objKeys = filter;
+    }
+
+    var keys = [];
+
+    if (typeof obj !== 'object' || obj === null) {
+        return '';
+    }
+
+    var arrayFormat;
+    if (opts && opts.arrayFormat in arrayPrefixGenerators) {
+        arrayFormat = opts.arrayFormat;
+    } else if (opts && 'indices' in opts) {
+        arrayFormat = opts.indices ? 'indices' : 'repeat';
+    } else {
+        arrayFormat = 'indices';
+    }
+
+    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
+
+    if (!objKeys) {
+        objKeys = Object.keys(obj);
+    }
+
+    if (options.sort) {
+        objKeys.sort(options.sort);
+    }
+
+    for (var i = 0; i < objKeys.length; ++i) {
+        var key = objKeys[i];
+
+        if (options.skipNulls && obj[key] === null) {
+            continue;
+        }
+        pushToArray(keys, stringify(
+            obj[key],
+            key,
+            generateArrayPrefix,
+            options.strictNullHandling,
+            options.skipNulls,
+            options.encode ? options.encoder : null,
+            options.filter,
+            options.sort,
+            options.allowDots,
+            options.serializeDate,
+            options.format,
+            options.formatter,
+            options.encodeValuesOnly,
+            options.charset
+        ));
+    }
+
+    var joined = keys.join(options.delimiter);
+    var prefix = options.addQueryPrefix === true ? '?' : '';
+
+    if (options.charsetSentinel) {
+        if (options.charset === 'iso-8859-1') {
+            // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
+            prefix += 'utf8=%26%2310003%3B&';
+        } else {
+            // encodeURIComponent('✓')
+            prefix += 'utf8=%E2%9C%93&';
+        }
+    }
+
+    return joined.length > 0 ? prefix + joined : '';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/ziggy-js/node_modules/qs/lib/utils.js":
+/*!************************************************************!*\
+  !*** ./node_modules/ziggy-js/node_modules/qs/lib/utils.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/ziggy-js/node_modules/qs/lib/formats.js");
+
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var hexTable = (function () {
+    var array = [];
+    for (var i = 0; i < 256; ++i) {
+        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
+    }
+
+    return array;
+}());
+
+var compactQueue = function compactQueue(queue) {
+    while (queue.length > 1) {
+        var item = queue.pop();
+        var obj = item.obj[item.prop];
+
+        if (isArray(obj)) {
+            var compacted = [];
+
+            for (var j = 0; j < obj.length; ++j) {
+                if (typeof obj[j] !== 'undefined') {
+                    compacted.push(obj[j]);
+                }
+            }
+
+            item.obj[item.prop] = compacted;
+        }
+    }
+};
+
+var arrayToObject = function arrayToObject(source, options) {
+    var obj = options && options.plainObjects ? Object.create(null) : {};
+    for (var i = 0; i < source.length; ++i) {
+        if (typeof source[i] !== 'undefined') {
+            obj[i] = source[i];
+        }
+    }
+
+    return obj;
+};
+
+var merge = function merge(target, source, options) {
+    /* eslint no-param-reassign: 0 */
+    if (!source) {
+        return target;
+    }
+
+    if (typeof source !== 'object') {
+        if (isArray(target)) {
+            target.push(source);
+        } else if (target && typeof target === 'object') {
+            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
+                target[source] = true;
+            }
+        } else {
+            return [target, source];
+        }
+
+        return target;
+    }
+
+    if (!target || typeof target !== 'object') {
+        return [target].concat(source);
+    }
+
+    var mergeTarget = target;
+    if (isArray(target) && !isArray(source)) {
+        mergeTarget = arrayToObject(target, options);
+    }
+
+    if (isArray(target) && isArray(source)) {
+        source.forEach(function (item, i) {
+            if (has.call(target, i)) {
+                var targetItem = target[i];
+                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
+                    target[i] = merge(targetItem, item, options);
+                } else {
+                    target.push(item);
+                }
+            } else {
+                target[i] = item;
+            }
+        });
+        return target;
+    }
+
+    return Object.keys(source).reduce(function (acc, key) {
+        var value = source[key];
+
+        if (has.call(acc, key)) {
+            acc[key] = merge(acc[key], value, options);
+        } else {
+            acc[key] = value;
+        }
+        return acc;
+    }, mergeTarget);
+};
+
+var assign = function assignSingleSource(target, source) {
+    return Object.keys(source).reduce(function (acc, key) {
+        acc[key] = source[key];
+        return acc;
+    }, target);
+};
+
+var decode = function (str, decoder, charset) {
+    var strWithoutPlus = str.replace(/\+/g, ' ');
+    if (charset === 'iso-8859-1') {
+        // unescape never throws, no try...catch needed:
+        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
+    }
+    // utf-8
+    try {
+        return decodeURIComponent(strWithoutPlus);
+    } catch (e) {
+        return strWithoutPlus;
+    }
+};
+
+var encode = function encode(str, defaultEncoder, charset, kind, format) {
+    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
+    // It has been adapted here for stricter adherence to RFC 3986
+    if (str.length === 0) {
+        return str;
+    }
+
+    var string = str;
+    if (typeof str === 'symbol') {
+        string = Symbol.prototype.toString.call(str);
+    } else if (typeof str !== 'string') {
+        string = String(str);
+    }
+
+    if (charset === 'iso-8859-1') {
+        return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
+            return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
+        });
+    }
+
+    var out = '';
+    for (var i = 0; i < string.length; ++i) {
+        var c = string.charCodeAt(i);
+
+        if (
+            c === 0x2D // -
+            || c === 0x2E // .
+            || c === 0x5F // _
+            || c === 0x7E // ~
+            || (c >= 0x30 && c <= 0x39) // 0-9
+            || (c >= 0x41 && c <= 0x5A) // a-z
+            || (c >= 0x61 && c <= 0x7A) // A-Z
+            || (format === formats.RFC1738 && (c === 0x28 || c === 0x29)) // ( )
+        ) {
+            out += string.charAt(i);
+            continue;
+        }
+
+        if (c < 0x80) {
+            out = out + hexTable[c];
+            continue;
+        }
+
+        if (c < 0x800) {
+            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        if (c < 0xD800 || c >= 0xE000) {
+            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        i += 1;
+        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
+        /* eslint operator-linebreak: [2, "before"] */
+        out += hexTable[0xF0 | (c >> 18)]
+            + hexTable[0x80 | ((c >> 12) & 0x3F)]
+            + hexTable[0x80 | ((c >> 6) & 0x3F)]
+            + hexTable[0x80 | (c & 0x3F)];
+    }
+
+    return out;
+};
+
+var compact = function compact(value) {
+    var queue = [{ obj: { o: value }, prop: 'o' }];
+    var refs = [];
+
+    for (var i = 0; i < queue.length; ++i) {
+        var item = queue[i];
+        var obj = item.obj[item.prop];
+
+        var keys = Object.keys(obj);
+        for (var j = 0; j < keys.length; ++j) {
+            var key = keys[j];
+            var val = obj[key];
+            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
+                queue.push({ obj: obj, prop: key });
+                refs.push(val);
+            }
+        }
+    }
+
+    compactQueue(queue);
+
+    return value;
+};
+
+var isRegExp = function isRegExp(obj) {
+    return Object.prototype.toString.call(obj) === '[object RegExp]';
+};
+
+var isBuffer = function isBuffer(obj) {
+    if (!obj || typeof obj !== 'object') {
+        return false;
+    }
+
+    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
+};
+
+var combine = function combine(a, b) {
+    return [].concat(a, b);
+};
+
+var maybeMap = function maybeMap(val, fn) {
+    if (isArray(val)) {
+        var mapped = [];
+        for (var i = 0; i < val.length; i += 1) {
+            mapped.push(fn(val[i]));
+        }
+        return mapped;
+    }
+    return fn(val);
+};
+
+module.exports = {
+    arrayToObject: arrayToObject,
+    assign: assign,
+    combine: combine,
+    compact: compact,
+    decode: decode,
+    encode: encode,
+    isBuffer: isBuffer,
+    isRegExp: isRegExp,
+    maybeMap: maybeMap,
+    merge: merge
+};
 
 
 /***/ }),
@@ -83431,50 +83655,85 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
-var __reExport = (target, module2, copyDefault, desc) => {
-  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
-    for (let key of __getOwnPropNames(module2))
-      if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
-        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
-  return target;
+  return to;
 };
-var __toESM = (module2, isNodeMode) => {
-  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", !isNodeMode && module2 && module2.__esModule ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
-};
-var __toCommonJS = /* @__PURE__ */ ((cache) => {
-  return (module2, temp) => {
-    return cache && cache.get(module2) || (temp = __reExport(__markAsModule({}), module2, 1), cache && cache.set(module2, temp), temp);
-  };
-})(typeof WeakMap !== "undefined" ? /* @__PURE__ */ new WeakMap() : 0);
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target, mod));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
-  Combobox: () => Combobox2,
+  Combobox: () => Combobox,
   Dialog: () => Dialog2,
-  Disclosure: () => Disclosure,
+  Disclosure: () => Disclosure2,
   FocusTrap: () => FocusTrap,
-  Listbox: () => Listbox,
-  Menu: () => Menu,
-  Popover: () => Popover,
-  Portal: () => Portal,
-  RadioGroup: () => RadioGroup,
-  Switch: () => Switch,
-  Tab: () => Tab,
-  Transition: () => Transition
+  Listbox: () => Listbox2,
+  Menu: () => Menu2,
+  Popover: () => Popover2,
+  Portal: () => Portal2,
+  RadioGroup: () => RadioGroup2,
+  Switch: () => Switch2,
+  Tab: () => Tab2,
+  Transition: () => Transition2
 });
+module.exports = __toCommonJS(src_exports);
 
 // src/components/combobox/combobox.tsx
-var import_react13 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react17 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+
+// src/hooks/use-computed.ts
+var import_react3 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/hooks/use-iso-morphic-effect.ts
+var import_react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/utils/ssr.ts
+var isServer = typeof window === "undefined" || typeof document === "undefined";
+
+// src/hooks/use-iso-morphic-effect.ts
+var useIsoMorphicEffect = isServer ? import_react.useEffect : import_react.useLayoutEffect;
+
+// src/hooks/use-latest-value.ts
+var import_react2 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useLatestValue(value) {
+  let cache = (0, import_react2.useRef)(value);
+  useIsoMorphicEffect(() => {
+    cache.current = value;
+  }, [value]);
+  return cache;
+}
+
+// src/hooks/use-computed.ts
+function useComputed(cb, dependencies) {
+  let [value, setValue] = (0, import_react3.useState)(cb);
+  let cbRef = useLatestValue(cb);
+  useIsoMorphicEffect(() => setValue(cbRef.current), [cbRef, setValue, ...dependencies]);
+  return value;
+}
 
 // src/hooks/use-disposables.ts
-var import_react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var import_react4 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/utils/micro-task.ts
+function microTask(cb) {
+  if (typeof queueMicrotask === "function") {
+    queueMicrotask(cb);
+  } else {
+    Promise.resolve().then(cb).catch((e) => setTimeout(() => {
+      throw e;
+    }));
+  }
+}
 
 // src/utils/disposables.ts
 function disposables() {
@@ -83484,21 +83743,43 @@ function disposables() {
     enqueue(fn) {
       queue.push(fn);
     },
+    addEventListener(element, name, listener, options) {
+      element.addEventListener(name, listener, options);
+      return api.add(() => element.removeEventListener(name, listener, options));
+    },
     requestAnimationFrame(...args) {
       let raf = requestAnimationFrame(...args);
-      api.add(() => cancelAnimationFrame(raf));
+      return api.add(() => cancelAnimationFrame(raf));
     },
     nextFrame(...args) {
-      api.requestAnimationFrame(() => {
-        api.requestAnimationFrame(...args);
+      return api.requestAnimationFrame(() => {
+        return api.requestAnimationFrame(...args);
       });
     },
     setTimeout(...args) {
       let timer = setTimeout(...args);
-      api.add(() => clearTimeout(timer));
+      return api.add(() => clearTimeout(timer));
+    },
+    microTask(...args) {
+      let task = { current: true };
+      microTask(() => {
+        if (task.current) {
+          args[0]();
+        }
+      });
+      return api.add(() => {
+        task.current = false;
+      });
     },
     add(cb) {
       disposables2.push(cb);
+      return () => {
+        let idx = disposables2.indexOf(cb);
+        if (idx >= 0) {
+          let [dispose] = disposables2.splice(idx, 1);
+          dispose();
+        }
+      };
     },
     dispose() {
       for (let dispose of disposables2.splice(0)) {
@@ -83516,29 +83797,32 @@ function disposables() {
 
 // src/hooks/use-disposables.ts
 function useDisposables() {
-  let [d] = (0, import_react.useState)(disposables);
-  (0, import_react.useEffect)(() => () => d.dispose(), [d]);
+  let [d] = (0, import_react4.useState)(disposables);
+  (0, import_react4.useEffect)(() => () => d.dispose(), [d]);
   return d;
 }
 
-// src/hooks/use-id.ts
-var import_react4 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+// src/hooks/use-event.ts
+var import_react5 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var useEvent = function useEvent2(cb) {
+  let cache = useLatestValue(cb);
+  return import_react5.default.useCallback((...args) => cache.current(...args), [cache]);
+};
 
-// src/hooks/use-iso-morphic-effect.ts
-var import_react2 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var useIsoMorphicEffect = typeof window !== "undefined" ? import_react2.useLayoutEffect : import_react2.useEffect;
+// src/hooks/use-id.ts
+var import_react7 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 
 // src/hooks/use-server-handoff-complete.ts
-var import_react3 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var import_react6 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var state = { serverHandoffComplete: false };
 function useServerHandoffComplete() {
-  let [serverHandoffComplete, setServerHandoffComplete] = (0, import_react3.useState)(state.serverHandoffComplete);
-  (0, import_react3.useEffect)(() => {
+  let [serverHandoffComplete, setServerHandoffComplete] = (0, import_react6.useState)(state.serverHandoffComplete);
+  (0, import_react6.useEffect)(() => {
     if (serverHandoffComplete === true)
       return;
     setServerHandoffComplete(true);
   }, [serverHandoffComplete]);
-  (0, import_react3.useEffect)(() => {
+  (0, import_react6.useEffect)(() => {
     if (state.serverHandoffComplete === false)
       state.serverHandoffComplete = true;
   }, []);
@@ -83550,58 +83834,19 @@ var id = 0;
 function generateId() {
   return ++id;
 }
-function useId() {
+var _a;
+var useId = (_a = import_react7.default.useId) != null ? _a : function useId2() {
   let ready = useServerHandoffComplete();
-  let [id2, setId] = (0, import_react4.useState)(ready ? generateId : null);
+  let [id2, setId] = import_react7.default.useState(ready ? generateId : null);
   useIsoMorphicEffect(() => {
     if (id2 === null)
       setId(generateId());
   }, [id2]);
   return id2 != null ? "" + id2 : void 0;
-}
+};
 
-// src/hooks/use-computed.ts
-var import_react6 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-// src/hooks/use-latest-value.ts
-var import_react5 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function useLatestValue(value) {
-  let cache = (0, import_react5.useRef)(value);
-  (0, import_react5.useEffect)(() => {
-    cache.current = value;
-  }, [value]);
-  return cache;
-}
-
-// src/hooks/use-computed.ts
-function useComputed(cb, dependencies) {
-  let [value, setValue] = (0, import_react6.useState)(cb);
-  let cbRef = useLatestValue(cb);
-  useIsoMorphicEffect(() => setValue(cbRef.current), [cbRef, setValue, ...dependencies]);
-  return value;
-}
-
-// src/hooks/use-sync-refs.ts
-var import_react7 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function useSyncRefs(...refs) {
-  let cache = (0, import_react7.useRef)(refs);
-  (0, import_react7.useEffect)(() => {
-    cache.current = refs;
-  }, [refs]);
-  return (0, import_react7.useCallback)((value) => {
-    for (let ref of cache.current) {
-      if (ref == null)
-        continue;
-      if (typeof ref === "function")
-        ref(value);
-      else
-        ref.current = value;
-    }
-  }, [cache]);
-}
-
-// src/utils/render.ts
-var import_react8 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+// src/hooks/use-outside-click.ts
+var import_react9 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 // src/utils/match.ts
 function match(value, lookup, ...args) {
@@ -83615,111 +83860,294 @@ function match(value, lookup, ...args) {
   throw error;
 }
 
-// src/utils/render.ts
-function render({
-  props,
-  slot,
-  defaultTag,
-  features,
-  visible = true,
-  name
-}) {
-  if (visible)
-    return _render(props, slot, defaultTag, name);
-  let featureFlags = features != null ? features : 0 /* None */;
-  if (featureFlags & 2 /* Static */) {
-    let { static: isStatic = false, ...rest } = props;
-    if (isStatic)
-      return _render(rest, slot, defaultTag, name);
+// src/utils/owner.ts
+function getOwnerDocument(element) {
+  if (isServer)
+    return null;
+  if (element instanceof Node)
+    return element.ownerDocument;
+  if (element == null ? void 0 : element.hasOwnProperty("current")) {
+    if (element.current instanceof Node)
+      return element.current.ownerDocument;
   }
-  if (featureFlags & 1 /* RenderStrategy */) {
-    let { unmount = true, ...rest } = props;
-    let strategy = unmount ? 0 /* Unmount */ : 1 /* Hidden */;
-    return match(strategy, {
-      [0 /* Unmount */]() {
-        return null;
-      },
-      [1 /* Hidden */]() {
-        return _render({ ...rest, ...{ hidden: true, style: { display: "none" } } }, slot, defaultTag, name);
+  return document;
+}
+
+// src/utils/focus-management.ts
+var focusableSelector = [
+  "[contentEditable=true]",
+  "[tabindex]",
+  "a[href]",
+  "area[href]",
+  "button:not([disabled])",
+  "iframe",
+  "input:not([disabled])",
+  "select:not([disabled])",
+  "textarea:not([disabled])"
+].map( false ? 0 : (selector) => `${selector}:not([tabindex='-1'])`).join(",");
+function getFocusableElements(container = document.body) {
+  if (container == null)
+    return [];
+  return Array.from(container.querySelectorAll(focusableSelector));
+}
+function isFocusableElement(element, mode = 0 /* Strict */) {
+  var _a2;
+  if (element === ((_a2 = getOwnerDocument(element)) == null ? void 0 : _a2.body))
+    return false;
+  return match(mode, {
+    [0 /* Strict */]() {
+      return element.matches(focusableSelector);
+    },
+    [1 /* Loose */]() {
+      let next = element;
+      while (next !== null) {
+        if (next.matches(focusableSelector))
+          return true;
+        next = next.parentElement;
       }
-    });
-  }
-  return _render(props, slot, defaultTag, name);
-}
-function _render(props, slot = {}, tag, name) {
-  let {
-    as: Component = tag,
-    children,
-    refName = "ref",
-    ...passThroughProps
-  } = omit(props, ["unmount", "static"]);
-  let refRelatedProps = props.ref !== void 0 ? { [refName]: props.ref } : {};
-  let resolvedChildren = typeof children === "function" ? children(slot) : children;
-  if (passThroughProps.className && typeof passThroughProps.className === "function") {
-    ;
-    passThroughProps.className = passThroughProps.className(slot);
-  }
-  if (Component === import_react8.Fragment) {
-    if (Object.keys(passThroughProps).length > 0) {
-      if (!(0, import_react8.isValidElement)(resolvedChildren) || Array.isArray(resolvedChildren) && resolvedChildren.length > 1) {
-        throw new Error([
-          'Passing props on "Fragment"!',
-          "",
-          `The current component <${name} /> is rendering a "Fragment".`,
-          `However we need to passthrough the following props:`,
-          Object.keys(passThroughProps).map((line) => `  - ${line}`).join("\n"),
-          "",
-          "You can apply a few solutions:",
-          [
-            'Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".',
-            "Render a single element as the child so that we can forward the props onto that element."
-          ].map((line) => `  - ${line}`).join("\n")
-        ].join("\n"));
-      }
-      return (0, import_react8.cloneElement)(resolvedChildren, Object.assign({}, mergeEventFunctions(compact(omit(passThroughProps, ["ref"])), resolvedChildren.props, [
-        "onClick"
-      ]), refRelatedProps));
+      return false;
     }
-  }
-  return (0, import_react8.createElement)(Component, Object.assign({}, omit(passThroughProps, ["ref"]), Component !== import_react8.Fragment && refRelatedProps), resolvedChildren);
-}
-function mergeEventFunctions(passThroughProps, existingProps, functionsToMerge) {
-  let clone = Object.assign({}, passThroughProps);
-  for (let func of functionsToMerge) {
-    if (passThroughProps[func] !== void 0 && existingProps[func] !== void 0) {
-      Object.assign(clone, {
-        [func](event) {
-          if (!event.defaultPrevented)
-            passThroughProps[func](event);
-          if (!event.defaultPrevented)
-            existingProps[func](event);
-        }
-      });
-    }
-  }
-  return clone;
-}
-function forwardRefWithAs(component) {
-  var _a;
-  return Object.assign((0, import_react8.forwardRef)(component), {
-    displayName: (_a = component.displayName) != null ? _a : component.name
   });
 }
-function compact(object) {
-  let clone = Object.assign({}, object);
-  for (let key in clone) {
-    if (clone[key] === void 0)
-      delete clone[key];
-  }
-  return clone;
+function restoreFocusIfNecessary(element) {
+  let ownerDocument = getOwnerDocument(element);
+  disposables().nextFrame(() => {
+    if (ownerDocument && !isFocusableElement(ownerDocument.activeElement, 0 /* Strict */)) {
+      focusElement(element);
+    }
+  });
 }
-function omit(object, keysToOmit = []) {
-  let clone = Object.assign({}, object);
-  for (let key of keysToOmit) {
-    if (key in clone)
-      delete clone[key];
+function focusElement(element) {
+  element == null ? void 0 : element.focus({ preventScroll: true });
+}
+var selectableSelector = ["textarea", "input"].join(",");
+function isSelectableElement(element) {
+  var _a2, _b;
+  return (_b = (_a2 = element == null ? void 0 : element.matches) == null ? void 0 : _a2.call(element, selectableSelector)) != null ? _b : false;
+}
+function sortByDomNode(nodes, resolveKey = (i) => i) {
+  return nodes.slice().sort((aItem, zItem) => {
+    let a = resolveKey(aItem);
+    let z = resolveKey(zItem);
+    if (a === null || z === null)
+      return 0;
+    let position = a.compareDocumentPosition(z);
+    if (position & Node.DOCUMENT_POSITION_FOLLOWING)
+      return -1;
+    if (position & Node.DOCUMENT_POSITION_PRECEDING)
+      return 1;
+    return 0;
+  });
+}
+function focusFrom(current, focus) {
+  return focusIn(getFocusableElements(), focus, true, current);
+}
+function focusIn(container, focus, sorted = true, active = null) {
+  let ownerDocument = Array.isArray(container) ? container.length > 0 ? container[0].ownerDocument : document : container.ownerDocument;
+  let elements = Array.isArray(container) ? sorted ? sortByDomNode(container) : container : getFocusableElements(container);
+  active = active != null ? active : ownerDocument.activeElement;
+  let direction = (() => {
+    if (focus & (1 /* First */ | 4 /* Next */))
+      return 1 /* Next */;
+    if (focus & (2 /* Previous */ | 8 /* Last */))
+      return -1 /* Previous */;
+    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
+  })();
+  let startIndex = (() => {
+    if (focus & 1 /* First */)
+      return 0;
+    if (focus & 2 /* Previous */)
+      return Math.max(0, elements.indexOf(active)) - 1;
+    if (focus & 4 /* Next */)
+      return Math.max(0, elements.indexOf(active)) + 1;
+    if (focus & 8 /* Last */)
+      return elements.length - 1;
+    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
+  })();
+  let focusOptions = focus & 32 /* NoScroll */ ? { preventScroll: true } : {};
+  let offset = 0;
+  let total = elements.length;
+  let next = void 0;
+  do {
+    if (offset >= total || offset + total <= 0)
+      return 0 /* Error */;
+    let nextIdx = startIndex + offset;
+    if (focus & 16 /* WrapAround */) {
+      nextIdx = (nextIdx + total) % total;
+    } else {
+      if (nextIdx < 0)
+        return 3 /* Underflow */;
+      if (nextIdx >= total)
+        return 1 /* Overflow */;
+    }
+    next = elements[nextIdx];
+    next == null ? void 0 : next.focus(focusOptions);
+    offset += direction;
+  } while (next !== ownerDocument.activeElement);
+  if (focus & (4 /* Next */ | 2 /* Previous */) && isSelectableElement(next)) {
+    next.select();
   }
-  return clone;
+  if (!next.hasAttribute("tabindex"))
+    next.setAttribute("tabindex", "0");
+  return 2 /* Success */;
+}
+
+// src/hooks/use-document-event.ts
+var import_react8 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useDocumentEvent(type, listener, options) {
+  let listenerRef = useLatestValue(listener);
+  (0, import_react8.useEffect)(() => {
+    function handler(event) {
+      listenerRef.current(event);
+    }
+    document.addEventListener(type, handler, options);
+    return () => document.removeEventListener(type, handler, options);
+  }, [type, options]);
+}
+
+// src/hooks/use-outside-click.ts
+function useOutsideClick(containers, cb, enabled = true) {
+  let enabledRef = (0, import_react9.useRef)(false);
+  (0, import_react9.useEffect)( false ? 0 : () => {
+    requestAnimationFrame(() => {
+      enabledRef.current = enabled;
+    });
+  }, [enabled]);
+  function handleOutsideClick(event, resolveTarget) {
+    if (!enabledRef.current)
+      return;
+    if (event.defaultPrevented)
+      return;
+    let _containers = function resolve(containers2) {
+      if (typeof containers2 === "function") {
+        return resolve(containers2());
+      }
+      if (Array.isArray(containers2)) {
+        return containers2;
+      }
+      if (containers2 instanceof Set) {
+        return containers2;
+      }
+      return [containers2];
+    }(containers);
+    let target = resolveTarget(event);
+    if (target === null) {
+      return;
+    }
+    if (!target.ownerDocument.documentElement.contains(target))
+      return;
+    for (let container of _containers) {
+      if (container === null)
+        continue;
+      let domNode = container instanceof HTMLElement ? container : container.current;
+      if (domNode == null ? void 0 : domNode.contains(target)) {
+        return;
+      }
+    }
+    if (!isFocusableElement(target, 1 /* Loose */) && target.tabIndex !== -1) {
+      event.preventDefault();
+    }
+    return cb(event, target);
+  }
+  let initialClickTarget = (0, import_react9.useRef)(null);
+  useDocumentEvent("mousedown", (event) => {
+    if (enabledRef.current) {
+      initialClickTarget.current = event.target;
+    }
+  }, true);
+  useDocumentEvent("click", (event) => {
+    if (!initialClickTarget.current) {
+      return;
+    }
+    handleOutsideClick(event, () => {
+      return initialClickTarget.current;
+    });
+    initialClickTarget.current = null;
+  }, true);
+  useDocumentEvent("blur", (event) => handleOutsideClick(event, () => window.document.activeElement instanceof HTMLIFrameElement ? window.document.activeElement : null), true);
+}
+
+// src/hooks/use-resolve-button-type.ts
+var import_react10 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function resolveType(props) {
+  var _a2;
+  if (props.type)
+    return props.type;
+  let tag = (_a2 = props.as) != null ? _a2 : "button";
+  if (typeof tag === "string" && tag.toLowerCase() === "button")
+    return "button";
+  return void 0;
+}
+function useResolveButtonType(props, ref) {
+  let [type, setType] = (0, import_react10.useState)(() => resolveType(props));
+  useIsoMorphicEffect(() => {
+    setType(resolveType(props));
+  }, [props.type, props.as]);
+  useIsoMorphicEffect(() => {
+    if (type)
+      return;
+    if (!ref.current)
+      return;
+    if (ref.current instanceof HTMLButtonElement && !ref.current.hasAttribute("type")) {
+      setType("button");
+    }
+  }, [type, ref]);
+  return type;
+}
+
+// src/hooks/use-sync-refs.ts
+var import_react11 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var Optional = Symbol();
+function optionalRef(cb, isOptional = true) {
+  return Object.assign(cb, { [Optional]: isOptional });
+}
+function useSyncRefs(...refs) {
+  let cache = (0, import_react11.useRef)(refs);
+  (0, import_react11.useEffect)(() => {
+    cache.current = refs;
+  }, [refs]);
+  let syncRefs = useEvent((value) => {
+    for (let ref of cache.current) {
+      if (ref == null)
+        continue;
+      if (typeof ref === "function")
+        ref(value);
+      else
+        ref.current = value;
+    }
+  });
+  return refs.every((ref) => ref == null || (ref == null ? void 0 : ref[Optional])) ? void 0 : syncRefs;
+}
+
+// src/hooks/use-tree-walker.ts
+var import_react12 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useTreeWalker({
+  container,
+  accept,
+  walk,
+  enabled = true
+}) {
+  let acceptRef = (0, import_react12.useRef)(accept);
+  let walkRef = (0, import_react12.useRef)(walk);
+  (0, import_react12.useEffect)(() => {
+    acceptRef.current = accept;
+    walkRef.current = walk;
+  }, [accept, walk]);
+  useIsoMorphicEffect(() => {
+    if (!container)
+      return;
+    if (!enabled)
+      return;
+    let ownerDocument = getOwnerDocument(container);
+    if (!ownerDocument)
+      return;
+    let accept2 = acceptRef.current;
+    let walk2 = walkRef.current;
+    let acceptNode = Object.assign((node) => accept2(node), { acceptNode: accept2 });
+    let walker = ownerDocument.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, acceptNode, false);
+    while (walker.nextNode())
+      walk2(walker.currentNode);
+  }, [container, enabled, acceptRef, walkRef]);
 }
 
 // src/utils/calculate-active-index.ts
@@ -83769,6 +84197,163 @@ function calculateActiveIndex(action, resolvers) {
   return nextActiveIndex === -1 ? currentActiveIndex : nextActiveIndex;
 }
 
+// src/utils/render.ts
+var import_react13 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function render({
+  ourProps,
+  theirProps,
+  slot,
+  defaultTag,
+  features,
+  visible = true,
+  name
+}) {
+  let props = mergeProps(theirProps, ourProps);
+  if (visible)
+    return _render(props, slot, defaultTag, name);
+  let featureFlags = features != null ? features : 0 /* None */;
+  if (featureFlags & 2 /* Static */) {
+    let { static: isStatic = false, ...rest } = props;
+    if (isStatic)
+      return _render(rest, slot, defaultTag, name);
+  }
+  if (featureFlags & 1 /* RenderStrategy */) {
+    let { unmount = true, ...rest } = props;
+    let strategy = unmount ? 0 /* Unmount */ : 1 /* Hidden */;
+    return match(strategy, {
+      [0 /* Unmount */]() {
+        return null;
+      },
+      [1 /* Hidden */]() {
+        return _render({ ...rest, ...{ hidden: true, style: { display: "none" } } }, slot, defaultTag, name);
+      }
+    });
+  }
+  return _render(props, slot, defaultTag, name);
+}
+function _render(props, slot = {}, tag, name) {
+  let {
+    as: Component = tag,
+    children,
+    refName = "ref",
+    ...rest
+  } = omit(props, ["unmount", "static"]);
+  let refRelatedProps = props.ref !== void 0 ? { [refName]: props.ref } : {};
+  let resolvedChildren = typeof children === "function" ? children(slot) : children;
+  if (rest.className && typeof rest.className === "function") {
+    ;
+    rest.className = rest.className(slot);
+  }
+  let dataAttributes = {};
+  if (slot) {
+    let exposeState = false;
+    let states = [];
+    for (let [k, v] of Object.entries(slot)) {
+      if (typeof v === "boolean") {
+        exposeState = true;
+      }
+      if (v === true) {
+        states.push(k);
+      }
+    }
+    if (exposeState)
+      dataAttributes[`data-headlessui-state`] = states.join(" ");
+  }
+  if (Component === import_react13.Fragment) {
+    if (Object.keys(compact(rest)).length > 0) {
+      if (!(0, import_react13.isValidElement)(resolvedChildren) || Array.isArray(resolvedChildren) && resolvedChildren.length > 1) {
+        throw new Error([
+          'Passing props on "Fragment"!',
+          "",
+          `The current component <${name} /> is rendering a "Fragment".`,
+          `However we need to passthrough the following props:`,
+          Object.keys(rest).map((line) => `  - ${line}`).join("\n"),
+          "",
+          "You can apply a few solutions:",
+          [
+            'Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".',
+            "Render a single element as the child so that we can forward the props onto that element."
+          ].map((line) => `  - ${line}`).join("\n")
+        ].join("\n"));
+      }
+      return (0, import_react13.cloneElement)(resolvedChildren, Object.assign({}, mergeProps(resolvedChildren.props, compact(omit(rest, ["ref"]))), dataAttributes, refRelatedProps, mergeRefs(resolvedChildren.ref, refRelatedProps.ref)));
+    }
+  }
+  return (0, import_react13.createElement)(Component, Object.assign({}, omit(rest, ["ref"]), Component !== import_react13.Fragment && refRelatedProps, Component !== import_react13.Fragment && dataAttributes), resolvedChildren);
+}
+function mergeRefs(...refs) {
+  return {
+    ref: refs.every((ref) => ref == null) ? void 0 : (value) => {
+      for (let ref of refs) {
+        if (ref == null)
+          continue;
+        if (typeof ref === "function")
+          ref(value);
+        else
+          ref.current = value;
+      }
+    }
+  };
+}
+function mergeProps(...listOfProps) {
+  var _a2;
+  if (listOfProps.length === 0)
+    return {};
+  if (listOfProps.length === 1)
+    return listOfProps[0];
+  let target = {};
+  let eventHandlers = {};
+  for (let props of listOfProps) {
+    for (let prop in props) {
+      if (prop.startsWith("on") && typeof props[prop] === "function") {
+        (_a2 = eventHandlers[prop]) != null ? _a2 : eventHandlers[prop] = [];
+        eventHandlers[prop].push(props[prop]);
+      } else {
+        target[prop] = props[prop];
+      }
+    }
+  }
+  if (target.disabled || target["aria-disabled"]) {
+    return Object.assign(target, Object.fromEntries(Object.keys(eventHandlers).map((eventName) => [eventName, void 0])));
+  }
+  for (let eventName in eventHandlers) {
+    Object.assign(target, {
+      [eventName](event, ...args) {
+        let handlers = eventHandlers[eventName];
+        for (let handler of handlers) {
+          if ((event instanceof Event || (event == null ? void 0 : event.nativeEvent) instanceof Event) && event.defaultPrevented) {
+            return;
+          }
+          handler(event, ...args);
+        }
+      }
+    });
+  }
+  return target;
+}
+function forwardRefWithAs(component) {
+  var _a2;
+  return Object.assign((0, import_react13.forwardRef)(component), {
+    displayName: (_a2 = component.displayName) != null ? _a2 : component.name
+  });
+}
+function compact(object) {
+  let clone = Object.assign({}, object);
+  for (let key in clone) {
+    if (clone[key] === void 0)
+      delete clone[key];
+  }
+  return clone;
+}
+function omit(object, keysToOmit = []) {
+  let clone = Object.assign({}, object);
+  for (let key of keysToOmit) {
+    if (key in clone)
+      delete clone[key];
+  }
+  return clone;
+}
+
 // src/utils/bugs.ts
 function isDisabledReactIssue7711(element) {
   let parent = element.parentElement;
@@ -83795,179 +84380,246 @@ function isFirstLegend(element) {
   return true;
 }
 
-// src/hooks/use-window-event.ts
-var import_react9 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function useWindowEvent(type, listener, options) {
-  let listenerRef = (0, import_react9.useRef)(listener);
-  listenerRef.current = listener;
-  (0, import_react9.useEffect)(() => {
-    function handler(event) {
-      listenerRef.current.call(window, event);
+// src/utils/form.ts
+function objectToFormEntries(source = {}, parentKey = null, entries = []) {
+  for (let [key, value] of Object.entries(source)) {
+    append(entries, composeKey(parentKey, key), value);
+  }
+  return entries;
+}
+function composeKey(parent, key) {
+  return parent ? parent + "[" + key + "]" : key;
+}
+function append(entries, key, value) {
+  if (Array.isArray(value)) {
+    for (let [subkey, subvalue] of value.entries()) {
+      append(entries, composeKey(key, subkey.toString()), subvalue);
     }
-    window.addEventListener(type, handler, options);
-    return () => window.removeEventListener(type, handler, options);
-  }, [type, options]);
+  } else if (value instanceof Date) {
+    entries.push([key, value.toISOString()]);
+  } else if (typeof value === "boolean") {
+    entries.push([key, value ? "1" : "0"]);
+  } else if (typeof value === "string") {
+    entries.push([key, value]);
+  } else if (typeof value === "number") {
+    entries.push([key, `${value}`]);
+  } else if (value === null || value === void 0) {
+    entries.push([key, ""]);
+  } else {
+    objectToFormEntries(value, key, entries);
+  }
+}
+function attemptSubmit(element) {
+  var _a2;
+  let form = (_a2 = element == null ? void 0 : element.form) != null ? _a2 : element.closest("form");
+  if (!form)
+    return;
+  for (let element2 of form.elements) {
+    if (element2.tagName === "INPUT" && element2.type === "submit" || element2.tagName === "BUTTON" && element2.type === "submit" || element2.nodeName === "INPUT" && element2.type === "image") {
+      element2.click();
+      return;
+    }
+  }
 }
 
+// src/internal/hidden.tsx
+var DEFAULT_VISUALLY_HIDDEN_TAG = "div";
+var Hidden = forwardRefWithAs(function VisuallyHidden(props, ref) {
+  let { features = 1 /* None */, ...theirProps } = props;
+  let ourProps = {
+    ref,
+    "aria-hidden": (features & 2 /* Focusable */) === 2 /* Focusable */ ? true : void 0,
+    style: {
+      position: "fixed",
+      top: 1,
+      left: 1,
+      width: 1,
+      height: 0,
+      padding: 0,
+      margin: -1,
+      overflow: "hidden",
+      clip: "rect(0, 0, 0, 0)",
+      whiteSpace: "nowrap",
+      borderWidth: "0",
+      ...(features & 4 /* Hidden */) === 4 /* Hidden */ && !((features & 2 /* Focusable */) === 2 /* Focusable */) && { display: "none" }
+    }
+  };
+  return render({
+    ourProps,
+    theirProps,
+    slot: {},
+    defaultTag: DEFAULT_VISUALLY_HIDDEN_TAG,
+    name: "Hidden"
+  });
+});
+
 // src/internal/open-closed.tsx
-var import_react10 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-var Context = (0, import_react10.createContext)(null);
+var import_react14 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var Context = (0, import_react14.createContext)(null);
 Context.displayName = "OpenClosedContext";
 function useOpenClosed() {
-  return (0, import_react10.useContext)(Context);
+  return (0, import_react14.useContext)(Context);
 }
 function OpenClosedProvider({ value, children }) {
-  return /* @__PURE__ */ import_react10.default.createElement(Context.Provider, {
+  return /* @__PURE__ */ import_react14.default.createElement(Context.Provider, {
     value
   }, children);
 }
 
-// src/hooks/use-resolve-button-type.ts
-var import_react11 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function resolveType(props) {
-  var _a;
-  if (props.type)
-    return props.type;
-  let tag = (_a = props.as) != null ? _a : "button";
-  if (typeof tag === "string" && tag.toLowerCase() === "button")
-    return "button";
-  return void 0;
-}
-function useResolveButtonType(props, ref) {
-  let [type, setType] = (0, import_react11.useState)(() => resolveType(props));
-  useIsoMorphicEffect(() => {
-    setType(resolveType(props));
-  }, [props.type, props.as]);
-  useIsoMorphicEffect(() => {
-    if (type)
-      return;
-    if (!ref.current)
-      return;
-    if (ref.current instanceof HTMLButtonElement && !ref.current.hasAttribute("type")) {
-      setType("button");
-    }
-  }, [type, ref]);
-  return type;
+// src/hooks/use-controllable.ts
+var import_react15 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useControllable(controlledValue, onChange, defaultValue) {
+  let [internalValue, setInternalValue] = (0, import_react15.useState)(defaultValue);
+  let isControlled = controlledValue !== void 0;
+  return [
+    isControlled ? controlledValue : internalValue,
+    useEvent((value) => {
+      if (isControlled) {
+        return onChange == null ? void 0 : onChange(value);
+      } else {
+        setInternalValue(value);
+        return onChange == null ? void 0 : onChange(value);
+      }
+    })
+  ];
 }
 
-// src/hooks/use-tree-walker.ts
-var import_react12 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function useTreeWalker({
-  container,
-  accept,
-  walk,
-  enabled = true
-}) {
-  let acceptRef = (0, import_react12.useRef)(accept);
-  let walkRef = (0, import_react12.useRef)(walk);
-  (0, import_react12.useEffect)(() => {
-    acceptRef.current = accept;
-    walkRef.current = walk;
-  }, [accept, walk]);
-  useIsoMorphicEffect(() => {
-    if (!container)
-      return;
-    if (!enabled)
-      return;
-    let accept2 = acceptRef.current;
-    let walk2 = walkRef.current;
-    let acceptNode = Object.assign((node) => accept2(node), { acceptNode: accept2 });
-    let walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, acceptNode, false);
-    while (walker.nextNode())
-      walk2(walker.currentNode);
-  }, [container, enabled, acceptRef, walkRef]);
+// src/hooks/use-watch.ts
+var import_react16 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useWatch(cb, dependencies) {
+  let track = (0, import_react16.useRef)([]);
+  let action = useEvent(cb);
+  (0, import_react16.useEffect)(() => {
+    let oldValues = [...track.current];
+    for (let [idx, value] of dependencies.entries()) {
+      if (track.current[idx] !== value) {
+        let returnValue = action(dependencies, oldValues);
+        track.current = dependencies;
+        return returnValue;
+      }
+    }
+  }, [action, ...dependencies]);
 }
 
 // src/components/combobox/combobox.tsx
+function adjustOrderedState(state2, adjustment = (i) => i) {
+  let currentActiveOption = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex] : null;
+  let sortedOptions = sortByDomNode(adjustment(state2.options.slice()), (option) => option.dataRef.current.domRef.current);
+  let adjustedActiveOptionIndex = currentActiveOption ? sortedOptions.indexOf(currentActiveOption) : null;
+  if (adjustedActiveOptionIndex === -1) {
+    adjustedActiveOptionIndex = null;
+  }
+  return {
+    options: sortedOptions,
+    activeOptionIndex: adjustedActiveOptionIndex
+  };
+}
 var reducers = {
   [1 /* CloseCombobox */](state2) {
-    if (state2.disabled)
+    if (state2.dataRef.current.disabled)
       return state2;
     if (state2.comboboxState === 1 /* Closed */)
       return state2;
     return { ...state2, activeOptionIndex: null, comboboxState: 1 /* Closed */ };
   },
   [0 /* OpenCombobox */](state2) {
-    if (state2.disabled)
+    if (state2.dataRef.current.disabled)
       return state2;
     if (state2.comboboxState === 0 /* Open */)
       return state2;
-    return { ...state2, comboboxState: 0 /* Open */ };
+    let activeOptionIndex = state2.activeOptionIndex;
+    let { isSelected } = state2.dataRef.current;
+    let optionIdx = state2.options.findIndex((option) => isSelected(option.dataRef.current.value));
+    if (optionIdx !== -1) {
+      activeOptionIndex = optionIdx;
+    }
+    return { ...state2, comboboxState: 0 /* Open */, activeOptionIndex };
   },
-  [2 /* SetDisabled */](state2, action) {
-    if (state2.disabled === action.disabled)
+  [2 /* GoToOption */](state2, action) {
+    var _a2;
+    if (state2.dataRef.current.disabled)
       return state2;
-    return { ...state2, disabled: action.disabled };
-  },
-  [3 /* GoToOption */](state2, action) {
-    if (state2.disabled)
+    if (state2.dataRef.current.optionsRef.current && !state2.dataRef.current.optionsPropsRef.current.static && state2.comboboxState === 1 /* Closed */) {
       return state2;
-    if (state2.optionsRef.current && !state2.optionsPropsRef.current.static && state2.comboboxState === 1 /* Closed */)
-      return state2;
+    }
+    let adjustedState = adjustOrderedState(state2);
+    if (adjustedState.activeOptionIndex === null) {
+      let localActiveOptionIndex = adjustedState.options.findIndex((option) => !option.dataRef.current.disabled);
+      if (localActiveOptionIndex !== -1) {
+        adjustedState.activeOptionIndex = localActiveOptionIndex;
+      }
+    }
     let activeOptionIndex = calculateActiveIndex(action, {
-      resolveItems: () => state2.options,
-      resolveActiveIndex: () => state2.activeOptionIndex,
+      resolveItems: () => adjustedState.options,
+      resolveActiveIndex: () => adjustedState.activeOptionIndex,
       resolveId: (item) => item.id,
       resolveDisabled: (item) => item.dataRef.current.disabled
     });
-    if (state2.activeOptionIndex === activeOptionIndex)
-      return state2;
-    return { ...state2, activeOptionIndex };
-  },
-  [4 /* RegisterOption */]: (state2, action) => {
-    var _a;
-    let currentActiveOption = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex] : null;
-    let orderMap = Array.from((_a = state2.optionsRef.current) == null ? void 0 : _a.querySelectorAll('[id^="headlessui-combobox-option-"]')).reduce((lookup, element, index) => Object.assign(lookup, { [element.id]: index }), {});
-    let options = [...state2.options, { id: action.id, dataRef: action.dataRef }].sort((a, z) => orderMap[a.id] - orderMap[z.id]);
     return {
       ...state2,
-      options,
-      activeOptionIndex: (() => {
-        if (currentActiveOption === null)
-          return null;
-        return options.indexOf(currentActiveOption);
-      })()
+      ...adjustedState,
+      activeOptionIndex,
+      activationTrigger: (_a2 = action.trigger) != null ? _a2 : 1 /* Other */
     };
   },
-  [5 /* UnregisterOption */]: (state2, action) => {
-    let nextOptions = state2.options.slice();
-    let currentActiveOption = state2.activeOptionIndex !== null ? nextOptions[state2.activeOptionIndex] : null;
-    let idx = nextOptions.findIndex((a) => a.id === action.id);
-    if (idx !== -1)
-      nextOptions.splice(idx, 1);
+  [3 /* RegisterOption */]: (state2, action) => {
+    let option = { id: action.id, dataRef: action.dataRef };
+    let adjustedState = adjustOrderedState(state2, (options) => [...options, option]);
+    if (state2.activeOptionIndex === null) {
+      if (state2.dataRef.current.isSelected(action.dataRef.current.value)) {
+        adjustedState.activeOptionIndex = adjustedState.options.indexOf(option);
+      }
+    }
+    let nextState = {
+      ...state2,
+      ...adjustedState,
+      activationTrigger: 1 /* Other */
+    };
+    if (state2.dataRef.current.__demoMode && state2.dataRef.current.value === void 0) {
+      nextState.activeOptionIndex = 0;
+    }
+    return nextState;
+  },
+  [4 /* UnregisterOption */]: (state2, action) => {
+    let adjustedState = adjustOrderedState(state2, (options) => {
+      let idx = options.findIndex((a) => a.id === action.id);
+      if (idx !== -1)
+        options.splice(idx, 1);
+      return options;
+    });
     return {
       ...state2,
-      options: nextOptions,
-      activeOptionIndex: (() => {
-        if (idx === state2.activeOptionIndex)
-          return null;
-        if (currentActiveOption === null)
-          return null;
-        return nextOptions.indexOf(currentActiveOption);
-      })()
+      ...adjustedState,
+      activationTrigger: 1 /* Other */
+    };
+  },
+  [5 /* RegisterLabel */]: (state2, action) => {
+    return {
+      ...state2,
+      labelId: action.id
     };
   }
 };
-var ComboboxContext = (0, import_react13.createContext)(null);
-ComboboxContext.displayName = "ComboboxContext";
-function useComboboxContext(component) {
-  let context = (0, import_react13.useContext)(ComboboxContext);
+var ComboboxActionsContext = (0, import_react17.createContext)(null);
+ComboboxActionsContext.displayName = "ComboboxActionsContext";
+function useActions(component) {
+  let context = (0, import_react17.useContext)(ComboboxActionsContext);
   if (context === null) {
     let err = new Error(`<${component} /> is missing a parent <Combobox /> component.`);
     if (Error.captureStackTrace)
-      Error.captureStackTrace(err, useComboboxContext);
+      Error.captureStackTrace(err, useActions);
     throw err;
   }
   return context;
 }
-var ComboboxActions = (0, import_react13.createContext)(null);
-ComboboxActions.displayName = "ComboboxActions";
-function useComboboxActions() {
-  let context = (0, import_react13.useContext)(ComboboxActions);
+var ComboboxDataContext = (0, import_react17.createContext)(null);
+ComboboxDataContext.displayName = "ComboboxDataContext";
+function useData(component) {
+  let context = (0, import_react17.useContext)(ComboboxDataContext);
   if (context === null) {
-    let err = new Error(`ComboboxActions is missing a parent <Combobox /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Combobox /> component.`);
     if (Error.captureStackTrace)
-      Error.captureStackTrace(err, useComboboxActions);
+      Error.captureStackTrace(err, useData);
     throw err;
   }
   return context;
@@ -83975,161 +84627,255 @@ function useComboboxActions() {
 function stateReducer(state2, action) {
   return match(action.type, reducers, state2, action);
 }
-var DEFAULT_COMBOBOX_TAG = import_react13.Fragment;
-var ComboboxRoot = forwardRefWithAs(function Combobox(props, ref) {
-  let { value, onChange, disabled = false, ...passThroughProps } = props;
-  let comboboxPropsRef = (0, import_react13.useRef)({
-    value,
-    onChange
-  });
-  let optionsPropsRef = (0, import_react13.useRef)({
-    static: false,
-    hold: false
-  });
-  let inputPropsRef = (0, import_react13.useRef)({
-    displayValue: void 0
-  });
-  let reducerBag = (0, import_react13.useReducer)(stateReducer, {
-    comboboxState: 1 /* Closed */,
-    comboboxPropsRef,
-    optionsPropsRef,
-    inputPropsRef,
-    labelRef: (0, import_react13.createRef)(),
-    inputRef: (0, import_react13.createRef)(),
-    buttonRef: (0, import_react13.createRef)(),
-    optionsRef: (0, import_react13.createRef)(),
-    disabled,
+var DEFAULT_COMBOBOX_TAG = import_react17.Fragment;
+function ComboboxFn(props, ref) {
+  let {
+    value: controlledValue,
+    defaultValue,
+    onChange: controlledOnChange,
+    name,
+    by = (a, z) => a === z,
+    disabled = false,
+    __demoMode = false,
+    nullable = false,
+    multiple = false,
+    ...theirProps
+  } = props;
+  let [value, theirOnChange] = useControllable(controlledValue, controlledOnChange, defaultValue);
+  let [state2, dispatch] = (0, import_react17.useReducer)(stateReducer, {
+    dataRef: (0, import_react17.createRef)(),
+    comboboxState: __demoMode ? 0 /* Open */ : 1 /* Closed */,
     options: [],
-    activeOptionIndex: null
+    activeOptionIndex: null,
+    activationTrigger: 1 /* Other */,
+    labelId: null
   });
-  let [{ comboboxState, options, activeOptionIndex, optionsRef, inputRef, buttonRef }, dispatch] = reducerBag;
-  useIsoMorphicEffect(() => {
-    comboboxPropsRef.current.value = value;
-  }, [value, comboboxPropsRef]);
-  useIsoMorphicEffect(() => {
-    comboboxPropsRef.current.onChange = onChange;
-  }, [onChange, comboboxPropsRef]);
-  useIsoMorphicEffect(() => dispatch({ type: 2 /* SetDisabled */, disabled }), [disabled]);
-  useWindowEvent("mousedown", (event) => {
-    var _a, _b, _c;
-    let target = event.target;
-    if (comboboxState !== 0 /* Open */)
-      return;
-    if ((_a = buttonRef.current) == null ? void 0 : _a.contains(target))
-      return;
-    if ((_b = inputRef.current) == null ? void 0 : _b.contains(target))
-      return;
-    if ((_c = optionsRef.current) == null ? void 0 : _c.contains(target))
-      return;
-    dispatch({ type: 1 /* CloseCombobox */ });
-  });
-  let activeOption = activeOptionIndex === null ? null : options[activeOptionIndex].dataRef.current.value;
-  let slot = (0, import_react13.useMemo)(() => ({
-    open: comboboxState === 0 /* Open */,
+  let defaultToFirstOption = (0, import_react17.useRef)(false);
+  let optionsPropsRef = (0, import_react17.useRef)({ static: false, hold: false });
+  let labelRef = (0, import_react17.useRef)(null);
+  let inputRef = (0, import_react17.useRef)(null);
+  let buttonRef = (0, import_react17.useRef)(null);
+  let optionsRef = (0, import_react17.useRef)(null);
+  let compare = useEvent(typeof by === "string" ? (a, z) => {
+    let property = by;
+    return (a == null ? void 0 : a[property]) === (z == null ? void 0 : z[property]);
+  } : by);
+  let isSelected = (0, import_react17.useCallback)((compareValue) => match(data.mode, {
+    [1 /* Multi */]: () => value.some((option) => compare(option, compareValue)),
+    [0 /* Single */]: () => compare(value, compareValue)
+  }), [value]);
+  let data = (0, import_react17.useMemo)(() => ({
+    ...state2,
+    optionsPropsRef,
+    labelRef,
+    inputRef,
+    buttonRef,
+    optionsRef,
+    value,
     disabled,
-    activeIndex: activeOptionIndex,
-    activeOption
-  }), [comboboxState, disabled, options, activeOptionIndex]);
-  let syncInputValue = (0, import_react13.useCallback)(() => {
-    if (!inputRef.current)
-      return;
-    if (value === void 0)
-      return;
-    let displayValue = inputPropsRef.current.displayValue;
-    if (typeof displayValue === "function") {
-      inputRef.current.value = displayValue(value);
-    } else if (typeof value === "string") {
-      inputRef.current.value = value;
-    }
-  }, [value, inputRef, inputPropsRef]);
-  let selectOption = (0, import_react13.useCallback)((id2) => {
-    let option = options.find((item) => item.id === id2);
+    mode: multiple ? 1 /* Multi */ : 0 /* Single */,
+    get activeOptionIndex() {
+      if (defaultToFirstOption.current && state2.activeOptionIndex === null && state2.options.length > 0) {
+        let localActiveOptionIndex = state2.options.findIndex((option) => !option.dataRef.current.disabled);
+        if (localActiveOptionIndex !== -1) {
+          return localActiveOptionIndex;
+        }
+      }
+      return state2.activeOptionIndex;
+    },
+    compare,
+    isSelected,
+    nullable,
+    __demoMode
+  }), [value, disabled, multiple, nullable, __demoMode, state2]);
+  useIsoMorphicEffect(() => {
+    state2.dataRef.current = data;
+  }, [data]);
+  useOutsideClick([data.buttonRef, data.inputRef, data.optionsRef], () => dispatch({ type: 1 /* CloseCombobox */ }), data.comboboxState === 0 /* Open */);
+  let slot = (0, import_react17.useMemo)(() => ({
+    open: data.comboboxState === 0 /* Open */,
+    disabled,
+    activeIndex: data.activeOptionIndex,
+    activeOption: data.activeOptionIndex === null ? null : data.options[data.activeOptionIndex].dataRef.current.value,
+    value
+  }), [data, disabled, value]);
+  let selectOption = useEvent((id2) => {
+    let option = data.options.find((item) => item.id === id2);
     if (!option)
       return;
-    let { dataRef } = option;
-    comboboxPropsRef.current.onChange(dataRef.current.value);
-    syncInputValue();
-  }, [options, comboboxPropsRef, inputRef]);
-  let selectActiveOption = (0, import_react13.useCallback)(() => {
-    if (activeOptionIndex !== null) {
-      let { dataRef } = options[activeOptionIndex];
-      comboboxPropsRef.current.onChange(dataRef.current.value);
-      syncInputValue();
+    onChange(option.dataRef.current.value);
+  });
+  let selectActiveOption = useEvent(() => {
+    if (data.activeOptionIndex !== null) {
+      let { dataRef, id: id2 } = data.options[data.activeOptionIndex];
+      onChange(dataRef.current.value);
+      dispatch({ type: 2 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
     }
-  }, [activeOptionIndex, options, comboboxPropsRef, inputRef]);
-  let actionsBag = (0, import_react13.useMemo)(() => ({ selectOption, selectActiveOption }), [selectOption, selectActiveOption]);
-  useIsoMorphicEffect(() => {
-    if (comboboxState !== 1 /* Closed */)
-      return;
-    syncInputValue();
-  }, [syncInputValue, comboboxState]);
-  useIsoMorphicEffect(syncInputValue, [syncInputValue]);
-  return /* @__PURE__ */ import_react13.default.createElement(ComboboxActions.Provider, {
-    value: actionsBag
-  }, /* @__PURE__ */ import_react13.default.createElement(ComboboxContext.Provider, {
-    value: reducerBag
-  }, /* @__PURE__ */ import_react13.default.createElement(OpenClosedProvider, {
-    value: match(comboboxState, {
+  });
+  let openCombobox = useEvent(() => {
+    dispatch({ type: 0 /* OpenCombobox */ });
+    defaultToFirstOption.current = true;
+  });
+  let closeCombobox = useEvent(() => {
+    dispatch({ type: 1 /* CloseCombobox */ });
+    defaultToFirstOption.current = false;
+  });
+  let goToOption = useEvent((focus, id2, trigger) => {
+    defaultToFirstOption.current = false;
+    if (focus === 4 /* Specific */) {
+      return dispatch({ type: 2 /* GoToOption */, focus: 4 /* Specific */, id: id2, trigger });
+    }
+    return dispatch({ type: 2 /* GoToOption */, focus, trigger });
+  });
+  let registerOption = useEvent((id2, dataRef) => {
+    dispatch({ type: 3 /* RegisterOption */, id: id2, dataRef });
+    return () => dispatch({ type: 4 /* UnregisterOption */, id: id2 });
+  });
+  let registerLabel = useEvent((id2) => {
+    dispatch({ type: 5 /* RegisterLabel */, id: id2 });
+    return () => dispatch({ type: 5 /* RegisterLabel */, id: null });
+  });
+  let onChange = useEvent((value2) => {
+    return match(data.mode, {
+      [0 /* Single */]() {
+        return theirOnChange == null ? void 0 : theirOnChange(value2);
+      },
+      [1 /* Multi */]() {
+        let copy = data.value.slice();
+        let idx = copy.findIndex((item) => compare(item, value2));
+        if (idx === -1) {
+          copy.push(value2);
+        } else {
+          copy.splice(idx, 1);
+        }
+        return theirOnChange == null ? void 0 : theirOnChange(copy);
+      }
+    });
+  });
+  let actions = (0, import_react17.useMemo)(() => ({
+    onChange,
+    registerOption,
+    registerLabel,
+    goToOption,
+    closeCombobox,
+    openCombobox,
+    selectActiveOption,
+    selectOption
+  }), []);
+  let ourProps = ref === null ? {} : { ref };
+  return /* @__PURE__ */ import_react17.default.createElement(ComboboxActionsContext.Provider, {
+    value: actions
+  }, /* @__PURE__ */ import_react17.default.createElement(ComboboxDataContext.Provider, {
+    value: data
+  }, /* @__PURE__ */ import_react17.default.createElement(OpenClosedProvider, {
+    value: match(data.comboboxState, {
       [0 /* Open */]: 0 /* Open */,
       [1 /* Closed */]: 1 /* Closed */
     })
-  }, render({
-    props: ref === null ? passThroughProps : { ...passThroughProps, ref },
+  }, name != null && value != null && objectToFormEntries({ [name]: value }).map(([name2, value2]) => /* @__PURE__ */ import_react17.default.createElement(Hidden, {
+    features: 4 /* Hidden */,
+    ...compact({
+      key: name2,
+      as: "input",
+      type: "hidden",
+      hidden: true,
+      readOnly: true,
+      name: name2,
+      value: value2
+    })
+  })), render({
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_COMBOBOX_TAG,
     name: "Combobox"
   }))));
-});
+}
+var ComboboxRoot = forwardRefWithAs(ComboboxFn);
 var DEFAULT_INPUT_TAG = "input";
 var Input = forwardRefWithAs(function Input2(props, ref) {
-  var _a, _b;
-  let { value, onChange, displayValue, ...passThroughProps } = props;
-  let [state2, dispatch] = useComboboxContext("Combobox.Input");
-  let actions = useComboboxActions();
-  let inputRef = useSyncRefs(state2.inputRef, ref);
-  let inputPropsRef = state2.inputPropsRef;
+  var _a2, _b;
+  let { value, onChange, displayValue, type = "text", ...theirProps } = props;
+  let data = useData("Combobox.Input");
+  let actions = useActions("Combobox.Input");
+  let inputRef = useSyncRefs(data.inputRef, ref);
   let id2 = `headlessui-combobox-input-${useId()}`;
   let d = useDisposables();
-  let onChangeRef = useLatestValue(onChange);
-  useIsoMorphicEffect(() => {
-    inputPropsRef.current.displayValue = displayValue;
-  }, [displayValue, inputPropsRef]);
-  let handleKeyDown = (0, import_react13.useCallback)((event) => {
+  let currentValue = (0, import_react17.useMemo)(() => {
+    var _a3;
+    if (typeof displayValue === "function") {
+      return (_a3 = displayValue(data.value)) != null ? _a3 : "";
+    } else if (typeof data.value === "string") {
+      return data.value;
+    } else {
+      return "";
+    }
+  }, [data.value]);
+  useWatch(([currentValue2, state2], [oldCurrentValue, oldState]) => {
+    if (!data.inputRef.current)
+      return;
+    if (oldState === 0 /* Open */ && state2 === 1 /* Closed */) {
+      data.inputRef.current.value = currentValue2;
+    } else if (currentValue2 !== oldCurrentValue) {
+      data.inputRef.current.value = currentValue2;
+    }
+  }, [currentValue, data.comboboxState]);
+  let handleKeyDown = useEvent((event) => {
     switch (event.key) {
+      case "Backspace" /* Backspace */:
+      case "Delete" /* Delete */:
+        if (data.mode !== 0 /* Single */)
+          return;
+        if (!data.nullable)
+          return;
+        let input = event.currentTarget;
+        d.requestAnimationFrame(() => {
+          if (input.value === "") {
+            actions.onChange(null);
+            if (data.optionsRef.current) {
+              data.optionsRef.current.scrollTop = 0;
+            }
+            actions.goToOption(5 /* Nothing */);
+          }
+        });
+        break;
       case "Enter" /* Enter */:
+        if (data.comboboxState !== 0 /* Open */)
+          return;
         event.preventDefault();
         event.stopPropagation();
+        if (data.activeOptionIndex === null) {
+          actions.closeCombobox();
+          return;
+        }
         actions.selectActiveOption();
-        dispatch({ type: 1 /* CloseCombobox */ });
+        if (data.mode === 0 /* Single */) {
+          actions.closeCombobox();
+        }
         break;
       case "ArrowDown" /* ArrowDown */:
         event.preventDefault();
         event.stopPropagation();
-        return match(state2.comboboxState, {
+        return match(data.comboboxState, {
           [0 /* Open */]: () => {
-            return dispatch({ type: 3 /* GoToOption */, focus: 2 /* Next */ });
+            actions.goToOption(2 /* Next */);
           },
           [1 /* Closed */]: () => {
-            dispatch({ type: 0 /* OpenCombobox */ });
-            d.nextFrame(() => {
-              if (!state2.comboboxPropsRef.current.value) {
-                dispatch({ type: 3 /* GoToOption */, focus: 0 /* First */ });
-              }
-            });
+            actions.openCombobox();
           }
         });
       case "ArrowUp" /* ArrowUp */:
         event.preventDefault();
         event.stopPropagation();
-        return match(state2.comboboxState, {
+        return match(data.comboboxState, {
           [0 /* Open */]: () => {
-            return dispatch({ type: 3 /* GoToOption */, focus: 1 /* Previous */ });
+            actions.goToOption(1 /* Previous */);
           },
           [1 /* Closed */]: () => {
-            dispatch({ type: 0 /* OpenCombobox */ });
+            actions.openCombobox();
             d.nextFrame(() => {
-              if (!state2.comboboxPropsRef.current.value) {
-                dispatch({ type: 3 /* GoToOption */, focus: 3 /* Last */ });
+              if (!data.value) {
+                actions.goToOption(3 /* Last */);
               }
             });
           }
@@ -84138,50 +84884,56 @@ var Input = forwardRefWithAs(function Input2(props, ref) {
       case "PageUp" /* PageUp */:
         event.preventDefault();
         event.stopPropagation();
-        return dispatch({ type: 3 /* GoToOption */, focus: 0 /* First */ });
+        return actions.goToOption(0 /* First */);
       case "End" /* End */:
       case "PageDown" /* PageDown */:
         event.preventDefault();
         event.stopPropagation();
-        return dispatch({ type: 3 /* GoToOption */, focus: 3 /* Last */ });
+        return actions.goToOption(3 /* Last */);
       case "Escape" /* Escape */:
+        if (data.comboboxState !== 0 /* Open */)
+          return;
         event.preventDefault();
-        if (state2.optionsRef.current && !state2.optionsPropsRef.current.static) {
+        if (data.optionsRef.current && !data.optionsPropsRef.current.static) {
           event.stopPropagation();
         }
-        return dispatch({ type: 1 /* CloseCombobox */ });
+        return actions.closeCombobox();
       case "Tab" /* Tab */:
-        actions.selectActiveOption();
-        dispatch({ type: 1 /* CloseCombobox */ });
+        if (data.comboboxState !== 0 /* Open */)
+          return;
+        if (data.mode === 0 /* Single */)
+          actions.selectActiveOption();
+        actions.closeCombobox();
         break;
     }
-  }, [d, dispatch, state2, actions]);
-  let handleChange = (0, import_react13.useCallback)((event) => {
-    var _a2;
-    dispatch({ type: 0 /* OpenCombobox */ });
-    (_a2 = onChangeRef.current) == null ? void 0 : _a2.call(onChangeRef, event);
-  }, [dispatch, onChangeRef]);
+  });
+  let handleChange = useEvent((event) => {
+    actions.openCombobox();
+    onChange == null ? void 0 : onChange(event);
+  });
   let labelledby = useComputed(() => {
-    if (!state2.labelRef.current)
+    if (!data.labelId)
       return void 0;
-    return [state2.labelRef.current.id].join(" ");
-  }, [state2.labelRef.current]);
-  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
-  let propsWeControl = {
+    return [data.labelId].join(" ");
+  }, [data.labelId]);
+  let slot = (0, import_react17.useMemo)(() => ({ open: data.comboboxState === 0 /* Open */, disabled: data.disabled }), [data]);
+  let ourProps = {
     ref: inputRef,
     id: id2,
     role: "combobox",
-    type: "text",
-    "aria-controls": (_a = state2.optionsRef.current) == null ? void 0 : _a.id,
-    "aria-expanded": state2.disabled ? void 0 : state2.comboboxState === 0 /* Open */,
-    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_b = state2.options[state2.activeOptionIndex]) == null ? void 0 : _b.id,
+    type,
+    "aria-controls": (_a2 = data.optionsRef.current) == null ? void 0 : _a2.id,
+    "aria-expanded": data.disabled ? void 0 : data.comboboxState === 0 /* Open */,
+    "aria-activedescendant": data.activeOptionIndex === null ? void 0 : (_b = data.options[data.activeOptionIndex]) == null ? void 0 : _b.id,
+    "aria-multiselectable": data.mode === 1 /* Multi */ ? true : void 0,
     "aria-labelledby": labelledby,
-    disabled: state2.disabled,
+    disabled: data.disabled,
     onKeyDown: handleKeyDown,
     onChange: handleChange
   };
   return render({
-    props: { ...passThroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_INPUT_TAG,
     name: "Combobox.Input"
@@ -84189,140 +84941,148 @@ var Input = forwardRefWithAs(function Input2(props, ref) {
 });
 var DEFAULT_BUTTON_TAG = "button";
 var Button = forwardRefWithAs(function Button2(props, ref) {
-  var _a;
-  let [state2, dispatch] = useComboboxContext("Combobox.Button");
-  let actions = useComboboxActions();
-  let buttonRef = useSyncRefs(state2.buttonRef, ref);
+  var _a2;
+  let data = useData("Combobox.Button");
+  let actions = useActions("Combobox.Button");
+  let buttonRef = useSyncRefs(data.buttonRef, ref);
   let id2 = `headlessui-combobox-button-${useId()}`;
   let d = useDisposables();
-  let handleKeyDown = (0, import_react13.useCallback)((event) => {
+  let handleKeyDown = useEvent((event) => {
     switch (event.key) {
       case "ArrowDown" /* ArrowDown */:
         event.preventDefault();
         event.stopPropagation();
-        if (state2.comboboxState === 1 /* Closed */) {
-          dispatch({ type: 0 /* OpenCombobox */ });
-          d.nextFrame(() => {
-            if (!state2.comboboxPropsRef.current.value) {
-              dispatch({ type: 3 /* GoToOption */, focus: 0 /* First */ });
-            }
-          });
+        if (data.comboboxState === 1 /* Closed */) {
+          actions.openCombobox();
         }
         return d.nextFrame(() => {
-          var _a2;
-          return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+          var _a3;
+          return (_a3 = data.inputRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
         });
       case "ArrowUp" /* ArrowUp */:
         event.preventDefault();
         event.stopPropagation();
-        if (state2.comboboxState === 1 /* Closed */) {
-          dispatch({ type: 0 /* OpenCombobox */ });
+        if (data.comboboxState === 1 /* Closed */) {
+          actions.openCombobox();
           d.nextFrame(() => {
-            if (!state2.comboboxPropsRef.current.value) {
-              dispatch({ type: 3 /* GoToOption */, focus: 3 /* Last */ });
+            if (!data.value) {
+              actions.goToOption(3 /* Last */);
             }
           });
         }
         return d.nextFrame(() => {
-          var _a2;
-          return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+          var _a3;
+          return (_a3 = data.inputRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
         });
       case "Escape" /* Escape */:
+        if (data.comboboxState !== 0 /* Open */)
+          return;
         event.preventDefault();
-        if (state2.optionsRef.current && !state2.optionsPropsRef.current.static) {
+        if (data.optionsRef.current && !data.optionsPropsRef.current.static) {
           event.stopPropagation();
         }
-        dispatch({ type: 1 /* CloseCombobox */ });
+        actions.closeCombobox();
         return d.nextFrame(() => {
-          var _a2;
-          return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+          var _a3;
+          return (_a3 = data.inputRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
         });
+      default:
+        return;
     }
-  }, [d, dispatch, state2, actions]);
-  let handleClick = (0, import_react13.useCallback)((event) => {
+  });
+  let handleClick = useEvent((event) => {
     if (isDisabledReactIssue7711(event.currentTarget))
       return event.preventDefault();
-    if (state2.comboboxState === 0 /* Open */) {
-      dispatch({ type: 1 /* CloseCombobox */ });
+    if (data.comboboxState === 0 /* Open */) {
+      actions.closeCombobox();
     } else {
       event.preventDefault();
-      dispatch({ type: 0 /* OpenCombobox */ });
+      actions.openCombobox();
     }
     d.nextFrame(() => {
-      var _a2;
-      return (_a2 = state2.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+      var _a3;
+      return (_a3 = data.inputRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
     });
-  }, [dispatch, d, state2]);
+  });
   let labelledby = useComputed(() => {
-    if (!state2.labelRef.current)
+    if (!data.labelId)
       return void 0;
-    return [state2.labelRef.current.id, id2].join(" ");
-  }, [state2.labelRef.current, id2]);
-  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
-  let passthroughProps = props;
-  let propsWeControl = {
+    return [data.labelId, id2].join(" ");
+  }, [data.labelId, id2]);
+  let slot = (0, import_react17.useMemo)(() => ({
+    open: data.comboboxState === 0 /* Open */,
+    disabled: data.disabled,
+    value: data.value
+  }), [data]);
+  let theirProps = props;
+  let ourProps = {
     ref: buttonRef,
     id: id2,
-    type: useResolveButtonType(props, state2.buttonRef),
+    type: useResolveButtonType(props, data.buttonRef),
     tabIndex: -1,
     "aria-haspopup": true,
-    "aria-controls": (_a = state2.optionsRef.current) == null ? void 0 : _a.id,
-    "aria-expanded": state2.disabled ? void 0 : state2.comboboxState === 0 /* Open */,
+    "aria-controls": (_a2 = data.optionsRef.current) == null ? void 0 : _a2.id,
+    "aria-expanded": data.disabled ? void 0 : data.comboboxState === 0 /* Open */,
     "aria-labelledby": labelledby,
-    disabled: state2.disabled,
+    disabled: data.disabled,
     onClick: handleClick,
     onKeyDown: handleKeyDown
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_BUTTON_TAG,
     name: "Combobox.Button"
   });
 });
 var DEFAULT_LABEL_TAG = "label";
-function Label(props) {
-  let [state2] = useComboboxContext("Combobox.Label");
+var Label = forwardRefWithAs(function Label2(props, ref) {
+  let data = useData("Combobox.Label");
   let id2 = `headlessui-combobox-label-${useId()}`;
-  let handleClick = (0, import_react13.useCallback)(() => {
-    var _a;
-    return (_a = state2.inputRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
-  }, [state2.inputRef]);
-  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
-  let propsWeControl = { ref: state2.labelRef, id: id2, onClick: handleClick };
+  let actions = useActions("Combobox.Label");
+  let labelRef = useSyncRefs(data.labelRef, ref);
+  useIsoMorphicEffect(() => actions.registerLabel(id2), [id2]);
+  let handleClick = useEvent(() => {
+    var _a2;
+    return (_a2 = data.inputRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+  });
+  let slot = (0, import_react17.useMemo)(() => ({ open: data.comboboxState === 0 /* Open */, disabled: data.disabled }), [data]);
+  let theirProps = props;
+  let ourProps = { ref: labelRef, id: id2, onClick: handleClick };
   return render({
-    props: { ...props, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_LABEL_TAG,
     name: "Combobox.Label"
   });
-}
+});
 var DEFAULT_OPTIONS_TAG = "ul";
 var OptionsRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
 var Options = forwardRefWithAs(function Options2(props, ref) {
-  var _a;
-  let { hold = false, ...passthroughProps } = props;
-  let [state2] = useComboboxContext("Combobox.Options");
-  let { optionsPropsRef } = state2;
-  let optionsRef = useSyncRefs(state2.optionsRef, ref);
+  var _a2;
+  let { hold = false, ...theirProps } = props;
+  let data = useData("Combobox.Options");
+  let optionsRef = useSyncRefs(data.optionsRef, ref);
   let id2 = `headlessui-combobox-options-${useId()}`;
   let usesOpenClosedState = useOpenClosed();
   let visible = (() => {
     if (usesOpenClosedState !== null) {
       return usesOpenClosedState === 0 /* Open */;
     }
-    return state2.comboboxState === 0 /* Open */;
+    return data.comboboxState === 0 /* Open */;
   })();
   useIsoMorphicEffect(() => {
-    var _a2;
-    optionsPropsRef.current.static = (_a2 = props.static) != null ? _a2 : false;
-  }, [optionsPropsRef, props.static]);
+    var _a3;
+    data.optionsPropsRef.current.static = (_a3 = props.static) != null ? _a3 : false;
+  }, [data.optionsPropsRef, props.static]);
   useIsoMorphicEffect(() => {
-    optionsPropsRef.current.hold = hold;
-  }, [hold, optionsPropsRef]);
+    data.optionsPropsRef.current.hold = hold;
+  }, [data.optionsPropsRef, hold]);
   useTreeWalker({
-    container: state2.optionsRef.current,
-    enabled: state2.comboboxState === 0 /* Open */,
+    container: data.optionsRef.current,
+    enabled: data.comboboxState === 0 /* Open */,
     accept(node) {
       if (node.getAttribute("role") === "option")
         return NodeFilter.FILTER_REJECT;
@@ -84335,19 +85095,20 @@ var Options = forwardRefWithAs(function Options2(props, ref) {
     }
   });
   let labelledby = useComputed(() => {
-    var _a2, _b, _c;
-    return (_c = (_a2 = state2.labelRef.current) == null ? void 0 : _a2.id) != null ? _c : (_b = state2.buttonRef.current) == null ? void 0 : _b.id;
-  }, [state2.labelRef.current, state2.buttonRef.current]);
-  let slot = (0, import_react13.useMemo)(() => ({ open: state2.comboboxState === 0 /* Open */ }), [state2]);
-  let propsWeControl = {
-    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_a = state2.options[state2.activeOptionIndex]) == null ? void 0 : _a.id,
+    var _a3, _b;
+    return (_b = data.labelId) != null ? _b : (_a3 = data.buttonRef.current) == null ? void 0 : _a3.id;
+  }, [data.labelId, data.buttonRef.current]);
+  let slot = (0, import_react17.useMemo)(() => ({ open: data.comboboxState === 0 /* Open */ }), [data]);
+  let ourProps = {
+    "aria-activedescendant": data.activeOptionIndex === null ? void 0 : (_a2 = data.options[data.activeOptionIndex]) == null ? void 0 : _a2.id,
     "aria-labelledby": labelledby,
     role: "listbox",
     id: id2,
     ref: optionsRef
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OPTIONS_TAG,
     features: OptionsRenderFeatures,
@@ -84356,91 +85117,87 @@ var Options = forwardRefWithAs(function Options2(props, ref) {
   });
 });
 var DEFAULT_OPTION_TAG = "li";
-function Option(props) {
-  let { disabled = false, value, ...passthroughProps } = props;
-  let [state2, dispatch] = useComboboxContext("Combobox.Option");
-  let actions = useComboboxActions();
+var Option = forwardRefWithAs(function Option2(props, ref) {
+  var _a2, _b;
+  let { disabled = false, value, ...theirProps } = props;
+  let data = useData("Combobox.Option");
+  let actions = useActions("Combobox.Option");
   let id2 = `headlessui-combobox-option-${useId()}`;
-  let active = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex].id === id2 : false;
-  let selected = state2.comboboxPropsRef.current.value === value;
-  let bag = (0, import_react13.useRef)({ disabled, value });
+  let active = data.activeOptionIndex !== null ? data.options[data.activeOptionIndex].id === id2 : false;
+  let selected = data.isSelected(value);
+  let internalOptionRef = (0, import_react17.useRef)(null);
+  let bag = useLatestValue({
+    disabled,
+    value,
+    domRef: internalOptionRef,
+    textValue: (_b = (_a2 = internalOptionRef.current) == null ? void 0 : _a2.textContent) == null ? void 0 : _b.toLowerCase()
+  });
+  let optionRef = useSyncRefs(ref, internalOptionRef);
+  let select = useEvent(() => actions.selectOption(id2));
+  useIsoMorphicEffect(() => actions.registerOption(id2, bag), [bag, id2]);
+  let enableScrollIntoView = (0, import_react17.useRef)(data.__demoMode ? false : true);
   useIsoMorphicEffect(() => {
-    bag.current.disabled = disabled;
-  }, [bag, disabled]);
-  useIsoMorphicEffect(() => {
-    bag.current.value = value;
-  }, [bag, value]);
-  useIsoMorphicEffect(() => {
-    var _a, _b;
-    bag.current.textValue = (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.textContent) == null ? void 0 : _b.toLowerCase();
-  }, [bag, id2]);
-  let select = (0, import_react13.useCallback)(() => actions.selectOption(id2), [actions, id2]);
-  useIsoMorphicEffect(() => {
-    dispatch({ type: 4 /* RegisterOption */, id: id2, dataRef: bag });
-    return () => dispatch({ type: 5 /* UnregisterOption */, id: id2 });
-  }, [bag, id2]);
-  useIsoMorphicEffect(() => {
-    if (state2.comboboxState !== 0 /* Open */)
-      return;
-    if (!selected)
-      return;
-    dispatch({ type: 3 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
-  }, [state2.comboboxState, selected, id2]);
-  useIsoMorphicEffect(() => {
-    if (state2.comboboxState !== 0 /* Open */)
-      return;
-    if (!active)
+    if (!data.__demoMode)
       return;
     let d = disposables();
     d.requestAnimationFrame(() => {
-      var _a, _b;
-      (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.scrollIntoView) == null ? void 0 : _b.call(_a, { block: "nearest" });
+      enableScrollIntoView.current = true;
     });
     return d.dispose;
-  }, [
-    id2,
-    active,
-    state2.comboboxState,
-    state2.activeOptionIndex
-  ]);
-  let handleClick = (0, import_react13.useCallback)((event) => {
+  }, []);
+  useIsoMorphicEffect(() => {
+    if (data.comboboxState !== 0 /* Open */)
+      return;
+    if (!active)
+      return;
+    if (!enableScrollIntoView.current)
+      return;
+    if (data.activationTrigger === 0 /* Pointer */)
+      return;
+    let d = disposables();
+    d.requestAnimationFrame(() => {
+      var _a3, _b2;
+      (_b2 = (_a3 = internalOptionRef.current) == null ? void 0 : _a3.scrollIntoView) == null ? void 0 : _b2.call(_a3, { block: "nearest" });
+    });
+    return d.dispose;
+  }, [internalOptionRef, active, data.comboboxState, data.activationTrigger, data.activeOptionIndex]);
+  let handleClick = useEvent((event) => {
     if (disabled)
       return event.preventDefault();
     select();
-    dispatch({ type: 1 /* CloseCombobox */ });
-    disposables().nextFrame(() => {
-      var _a;
-      return (_a = state2.inputRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
-    });
-  }, [dispatch, state2.inputRef, disabled, select]);
-  let handleFocus = (0, import_react13.useCallback)(() => {
+    if (data.mode === 0 /* Single */) {
+      actions.closeCombobox();
+    }
+  });
+  let handleFocus = useEvent(() => {
     if (disabled)
-      return dispatch({ type: 3 /* GoToOption */, focus: 5 /* Nothing */ });
-    dispatch({ type: 3 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
-  }, [disabled, id2, dispatch]);
-  let handleMove = (0, import_react13.useCallback)(() => {
+      return actions.goToOption(5 /* Nothing */);
+    actions.goToOption(4 /* Specific */, id2);
+  });
+  let handleMove = useEvent(() => {
     if (disabled)
       return;
     if (active)
       return;
-    dispatch({ type: 3 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
-  }, [disabled, active, id2, dispatch]);
-  let handleLeave = (0, import_react13.useCallback)(() => {
+    actions.goToOption(4 /* Specific */, id2, 0 /* Pointer */);
+  });
+  let handleLeave = useEvent(() => {
     if (disabled)
       return;
     if (!active)
       return;
-    if (state2.optionsPropsRef.current.hold)
+    if (data.optionsPropsRef.current.hold)
       return;
-    dispatch({ type: 3 /* GoToOption */, focus: 5 /* Nothing */ });
-  }, [disabled, active, dispatch, state2.comboboxState, state2.comboboxPropsRef]);
-  let slot = (0, import_react13.useMemo)(() => ({ active, selected, disabled }), [active, selected, disabled]);
-  let propsWeControl = {
+    actions.goToOption(5 /* Nothing */);
+  });
+  let slot = (0, import_react17.useMemo)(() => ({ active, selected, disabled }), [active, selected, disabled]);
+  let ourProps = {
     id: id2,
+    ref: optionRef,
     role: "option",
     tabIndex: disabled === true ? void 0 : -1,
     "aria-disabled": disabled === true ? true : void 0,
-    "aria-selected": selected === true ? true : void 0,
+    "aria-selected": selected,
     disabled: void 0,
     onClick: handleClick,
     onFocus: handleFocus,
@@ -84450,122 +85207,53 @@ function Option(props) {
     onMouseLeave: handleLeave
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OPTION_TAG,
     name: "Combobox.Option"
   });
-}
-var Combobox2 = Object.assign(ComboboxRoot, {
-  Input,
-  Button,
-  Label,
-  Options,
-  Option
 });
+var Combobox = Object.assign(ComboboxRoot, { Input, Button, Label, Options, Option });
 
 // src/components/dialog/dialog.tsx
-var import_react20 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react28 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 
-// src/hooks/use-focus-trap.ts
-var import_react15 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+// src/components/focus-trap/focus-trap.tsx
+var import_react23 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 
-// src/utils/focus-management.ts
-var focusableSelector = [
-  "[contentEditable=true]",
-  "[tabindex]",
-  "a[href]",
-  "area[href]",
-  "button:not([disabled])",
-  "iframe",
-  "input:not([disabled])",
-  "select:not([disabled])",
-  "textarea:not([disabled])"
-].map( false ? 0 : (selector) => `${selector}:not([tabindex='-1'])`).join(",");
-function getFocusableElements(container = document.body) {
-  if (container == null)
-    return [];
-  return Array.from(container.querySelectorAll(focusableSelector));
-}
-function isFocusableElement(element, mode = 0 /* Strict */) {
-  if (element === document.body)
-    return false;
-  return match(mode, {
-    [0 /* Strict */]() {
-      return element.matches(focusableSelector);
-    },
-    [1 /* Loose */]() {
-      let next = element;
-      while (next !== null) {
-        if (next.matches(focusableSelector))
-          return true;
-        next = next.parentElement;
-      }
-      return false;
+// src/hooks/use-tab-direction.ts
+var import_react19 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+// src/hooks/use-window-event.ts
+var import_react18 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useWindowEvent(type, listener, options) {
+  let listenerRef = useLatestValue(listener);
+  (0, import_react18.useEffect)(() => {
+    function handler(event) {
+      listenerRef.current(event);
     }
-  });
+    window.addEventListener(type, handler, options);
+    return () => window.removeEventListener(type, handler, options);
+  }, [type, options]);
 }
-function focusElement(element) {
-  element == null ? void 0 : element.focus({ preventScroll: true });
-}
-function focusIn(container, focus) {
-  let elements = Array.isArray(container) ? container.slice().sort((a, z) => {
-    let position = a.compareDocumentPosition(z);
-    if (position & Node.DOCUMENT_POSITION_FOLLOWING)
-      return -1;
-    if (position & Node.DOCUMENT_POSITION_PRECEDING)
-      return 1;
-    return 0;
-  }) : getFocusableElements(container);
-  let active = document.activeElement;
-  let direction = (() => {
-    if (focus & (1 /* First */ | 4 /* Next */))
-      return 1 /* Next */;
-    if (focus & (2 /* Previous */ | 8 /* Last */))
-      return -1 /* Previous */;
-    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
-  })();
-  let startIndex = (() => {
-    if (focus & 1 /* First */)
-      return 0;
-    if (focus & 2 /* Previous */)
-      return Math.max(0, elements.indexOf(active)) - 1;
-    if (focus & 4 /* Next */)
-      return Math.max(0, elements.indexOf(active)) + 1;
-    if (focus & 8 /* Last */)
-      return elements.length - 1;
-    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
-  })();
-  let focusOptions = focus & 32 /* NoScroll */ ? { preventScroll: true } : {};
-  let offset = 0;
-  let total = elements.length;
-  let next = void 0;
-  do {
-    if (offset >= total || offset + total <= 0)
-      return 0 /* Error */;
-    let nextIdx = startIndex + offset;
-    if (focus & 16 /* WrapAround */) {
-      nextIdx = (nextIdx + total) % total;
-    } else {
-      if (nextIdx < 0)
-        return 3 /* Underflow */;
-      if (nextIdx >= total)
-        return 1 /* Overflow */;
+
+// src/hooks/use-tab-direction.ts
+function useTabDirection() {
+  let direction = (0, import_react19.useRef)(0 /* Forwards */);
+  useWindowEvent("keydown", (event) => {
+    if (event.key === "Tab") {
+      direction.current = event.shiftKey ? 1 /* Backwards */ : 0 /* Forwards */;
     }
-    next = elements[nextIdx];
-    next == null ? void 0 : next.focus(focusOptions);
-    offset += direction;
-  } while (next !== document.activeElement);
-  if (!next.hasAttribute("tabindex"))
-    next.setAttribute("tabindex", "0");
-  return 2 /* Success */;
+  }, true);
+  return direction;
 }
 
 // src/hooks/use-is-mounted.ts
-var import_react14 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var import_react20 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function useIsMounted() {
-  let mounted = (0, import_react14.useRef)(false);
-  (0, import_react14.useEffect)(() => {
+  let mounted = (0, import_react20.useRef)(false);
+  useIsoMorphicEffect(() => {
     mounted.current = true;
     return () => {
       mounted.current = false;
@@ -84574,76 +85262,164 @@ function useIsMounted() {
   return mounted;
 }
 
-// src/hooks/use-focus-trap.ts
-function useFocusTrap(container, features = 30 /* All */, {
-  initialFocus,
-  containers
-} = {}) {
-  let restoreElement = (0, import_react15.useRef)(typeof window !== "undefined" ? document.activeElement : null);
-  let previousActiveElement = (0, import_react15.useRef)(null);
-  let mounted = useIsMounted();
-  let featuresRestoreFocus = Boolean(features & 16 /* RestoreFocus */);
-  let featuresInitialFocus = Boolean(features & 2 /* InitialFocus */);
-  (0, import_react15.useEffect)(() => {
-    if (!featuresRestoreFocus)
+// src/hooks/use-owner.ts
+var import_react21 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useOwnerDocument(...args) {
+  return (0, import_react21.useMemo)(() => getOwnerDocument(...args), [...args]);
+}
+
+// src/hooks/use-event-listener.ts
+var import_react22 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function useEventListener(element, type, listener, options) {
+  let listenerRef = useLatestValue(listener);
+  (0, import_react22.useEffect)(() => {
+    element = element != null ? element : window;
+    function handler(event) {
+      listenerRef.current(event);
+    }
+    element.addEventListener(type, handler, options);
+    return () => element.removeEventListener(type, handler, options);
+  }, [element, type, options]);
+}
+
+// src/components/focus-trap/focus-trap.tsx
+var DEFAULT_FOCUS_TRAP_TAG = "div";
+var Features3 = /* @__PURE__ */ ((Features4) => {
+  Features4[Features4["None"] = 1] = "None";
+  Features4[Features4["InitialFocus"] = 2] = "InitialFocus";
+  Features4[Features4["TabLock"] = 4] = "TabLock";
+  Features4[Features4["FocusLock"] = 8] = "FocusLock";
+  Features4[Features4["RestoreFocus"] = 16] = "RestoreFocus";
+  Features4[Features4["All"] = 30] = "All";
+  return Features4;
+})(Features3 || {});
+var FocusTrap = Object.assign(forwardRefWithAs(function FocusTrap2(props, ref) {
+  let container = (0, import_react23.useRef)(null);
+  let focusTrapRef = useSyncRefs(container, ref);
+  let { initialFocus, containers, features = 30 /* All */, ...theirProps } = props;
+  if (!useServerHandoffComplete()) {
+    features = 1 /* None */;
+  }
+  let ownerDocument = useOwnerDocument(container);
+  useRestoreFocus({ ownerDocument }, Boolean(features & 16 /* RestoreFocus */));
+  let previousActiveElement = useInitialFocus({ ownerDocument, container, initialFocus }, Boolean(features & 2 /* InitialFocus */));
+  useFocusLock({ ownerDocument, container, containers, previousActiveElement }, Boolean(features & 8 /* FocusLock */));
+  let direction = useTabDirection();
+  let handleFocus = useEvent(() => {
+    let el = container.current;
+    if (!el)
       return;
-    restoreElement.current = document.activeElement;
-  }, [featuresRestoreFocus]);
-  (0, import_react15.useEffect)(() => {
-    if (!featuresRestoreFocus)
+    if (false) {} else {
+      match(direction.current, {
+        [0 /* Forwards */]: () => focusIn(el, 1 /* First */),
+        [1 /* Backwards */]: () => focusIn(el, 8 /* Last */)
+      });
+    }
+  });
+  let ourProps = { ref: focusTrapRef };
+  return /* @__PURE__ */ import_react23.default.createElement(import_react23.default.Fragment, null, Boolean(features & 4 /* TabLock */) && /* @__PURE__ */ import_react23.default.createElement(Hidden, {
+    as: "button",
+    type: "button",
+    onFocus: handleFocus,
+    features: 2 /* Focusable */
+  }), render({
+    ourProps,
+    theirProps,
+    defaultTag: DEFAULT_FOCUS_TRAP_TAG,
+    name: "FocusTrap"
+  }), Boolean(features & 4 /* TabLock */) && /* @__PURE__ */ import_react23.default.createElement(Hidden, {
+    as: "button",
+    type: "button",
+    onFocus: handleFocus,
+    features: 2 /* Focusable */
+  }));
+}), { features: Features3 });
+function useRestoreFocus({ ownerDocument }, enabled) {
+  let restoreElement = (0, import_react23.useRef)(null);
+  useEventListener(ownerDocument == null ? void 0 : ownerDocument.defaultView, "focusout", (event) => {
+    if (!enabled)
       return;
-    return () => {
+    if (restoreElement.current)
+      return;
+    restoreElement.current = event.target;
+  }, true);
+  useWatch(() => {
+    if (enabled)
+      return;
+    if ((ownerDocument == null ? void 0 : ownerDocument.activeElement) === (ownerDocument == null ? void 0 : ownerDocument.body)) {
       focusElement(restoreElement.current);
-      restoreElement.current = null;
+    }
+    restoreElement.current = null;
+  }, [enabled]);
+  let trulyUnmounted = (0, import_react23.useRef)(false);
+  (0, import_react23.useEffect)(() => {
+    trulyUnmounted.current = false;
+    return () => {
+      trulyUnmounted.current = true;
+      microTask(() => {
+        if (!trulyUnmounted.current)
+          return;
+        focusElement(restoreElement.current);
+        restoreElement.current = null;
+      });
     };
-  }, [featuresRestoreFocus]);
-  (0, import_react15.useEffect)(() => {
-    if (!featuresInitialFocus)
+  }, []);
+}
+function useInitialFocus({
+  ownerDocument,
+  container,
+  initialFocus
+}, enabled) {
+  let previousActiveElement = (0, import_react23.useRef)(null);
+  let mounted = useIsMounted();
+  useWatch(() => {
+    if (!enabled)
       return;
-    if (!container.current)
+    let containerElement = container.current;
+    if (!containerElement)
       return;
-    let activeElement = document.activeElement;
-    if (initialFocus == null ? void 0 : initialFocus.current) {
-      if ((initialFocus == null ? void 0 : initialFocus.current) === activeElement) {
+    microTask(() => {
+      if (!mounted.current) {
+        return;
+      }
+      let activeElement = ownerDocument == null ? void 0 : ownerDocument.activeElement;
+      if (initialFocus == null ? void 0 : initialFocus.current) {
+        if ((initialFocus == null ? void 0 : initialFocus.current) === activeElement) {
+          previousActiveElement.current = activeElement;
+          return;
+        }
+      } else if (containerElement.contains(activeElement)) {
         previousActiveElement.current = activeElement;
         return;
       }
-    } else if (container.current.contains(activeElement)) {
-      previousActiveElement.current = activeElement;
-      return;
-    }
-    if (initialFocus == null ? void 0 : initialFocus.current) {
-      focusElement(initialFocus.current);
-    } else {
-      if (focusIn(container.current, 1 /* First */) === 0 /* Error */) {
-        console.warn("There are no focusable elements inside the <FocusTrap />");
+      if (initialFocus == null ? void 0 : initialFocus.current) {
+        focusElement(initialFocus.current);
+      } else {
+        if (focusIn(containerElement, 1 /* First */) === 0 /* Error */) {
+          console.warn("There are no focusable elements inside the <FocusTrap />");
+        }
       }
-    }
-    previousActiveElement.current = document.activeElement;
-  }, [container, initialFocus, featuresInitialFocus]);
-  useWindowEvent("keydown", (event) => {
-    if (!(features & 4 /* TabLock */))
+      previousActiveElement.current = ownerDocument == null ? void 0 : ownerDocument.activeElement;
+    });
+  }, [enabled]);
+  return previousActiveElement;
+}
+function useFocusLock({
+  ownerDocument,
+  container,
+  containers,
+  previousActiveElement
+}, enabled) {
+  let mounted = useIsMounted();
+  useEventListener(ownerDocument == null ? void 0 : ownerDocument.defaultView, "focus", (event) => {
+    if (!enabled)
       return;
-    if (!container.current)
-      return;
-    if (event.key !== "Tab" /* Tab */)
-      return;
-    event.preventDefault();
-    if (focusIn(container.current, (event.shiftKey ? 2 /* Previous */ : 4 /* Next */) | 16 /* WrapAround */) === 2 /* Success */) {
-      previousActiveElement.current = document.activeElement;
-    }
-  });
-  useWindowEvent("focus", (event) => {
-    if (!(features & 8 /* FocusLock */))
+    if (!mounted.current)
       return;
     let allContainers = new Set(containers == null ? void 0 : containers.current);
     allContainers.add(container);
-    if (!allContainers.size)
-      return;
     let previous = previousActiveElement.current;
     if (!previous)
-      return;
-    if (!mounted.current)
       return;
     let toElement = event.target;
     if (toElement && toElement instanceof HTMLElement) {
@@ -84661,9 +85437,9 @@ function useFocusTrap(container, features = 30 /* All */, {
   }, true);
 }
 function contains(containers, element) {
-  var _a;
+  var _a2;
   for (let container of containers) {
-    if ((_a = container.current) == null ? void 0 : _a.contains(element))
+    if ((_a2 = container.current) == null ? void 0 : _a2.contains(element))
       return true;
   }
   return false;
@@ -84693,6 +85469,9 @@ function useInertOthers(container, enabled = true) {
     if (!container.current)
       return;
     let element = container.current;
+    let ownerDocument = getOwnerDocument(element);
+    if (!ownerDocument)
+      return;
     interactables.add(element);
     for (let original of originals.keys()) {
       if (original.contains(element)) {
@@ -84700,7 +85479,7 @@ function useInertOthers(container, enabled = true) {
         originals.delete(original);
       }
     }
-    document.querySelectorAll("body > *").forEach((child) => {
+    ownerDocument.querySelectorAll("body > *").forEach((child) => {
       if (!(child instanceof HTMLElement))
         return;
       for (let interactable of interactables) {
@@ -84718,7 +85497,7 @@ function useInertOthers(container, enabled = true) {
     return () => {
       interactables.delete(element);
       if (interactables.size > 0) {
-        document.querySelectorAll("body > *").forEach((child) => {
+        ownerDocument.querySelectorAll("body > *").forEach((child) => {
           if (!(child instanceof HTMLElement))
             return;
           if (originals.has(child))
@@ -84744,45 +85523,48 @@ function useInertOthers(container, enabled = true) {
 }
 
 // src/components/portal/portal.tsx
-var import_react17 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react25 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 var import_react_dom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
 // src/internal/portal-force-root.tsx
-var import_react16 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-var ForcePortalRootContext = (0, import_react16.createContext)(false);
+var import_react24 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var ForcePortalRootContext = (0, import_react24.createContext)(false);
 function usePortalRoot() {
-  return (0, import_react16.useContext)(ForcePortalRootContext);
+  return (0, import_react24.useContext)(ForcePortalRootContext);
 }
 function ForcePortalRoot(props) {
-  return /* @__PURE__ */ import_react16.default.createElement(ForcePortalRootContext.Provider, {
+  return /* @__PURE__ */ import_react24.default.createElement(ForcePortalRootContext.Provider, {
     value: props.force
   }, props.children);
 }
 
 // src/components/portal/portal.tsx
-function usePortalTarget() {
+function usePortalTarget(ref) {
   let forceInRoot = usePortalRoot();
-  let groupTarget = (0, import_react17.useContext)(PortalGroupContext);
-  let [target, setTarget] = (0, import_react17.useState)(() => {
+  let groupTarget = (0, import_react25.useContext)(PortalGroupContext);
+  let ownerDocument = useOwnerDocument(ref);
+  let [target, setTarget] = (0, import_react25.useState)(() => {
     if (!forceInRoot && groupTarget !== null)
       return null;
-    if (typeof window === "undefined")
+    if (isServer)
       return null;
-    let existingRoot = document.getElementById("headlessui-portal-root");
+    let existingRoot = ownerDocument == null ? void 0 : ownerDocument.getElementById("headlessui-portal-root");
     if (existingRoot)
       return existingRoot;
-    let root = document.createElement("div");
+    if (ownerDocument === null)
+      return null;
+    let root = ownerDocument.createElement("div");
     root.setAttribute("id", "headlessui-portal-root");
-    return document.body.appendChild(root);
+    return ownerDocument.body.appendChild(root);
   });
-  (0, import_react17.useEffect)(() => {
+  (0, import_react25.useEffect)(() => {
     if (target === null)
       return;
-    if (!document.body.contains(target)) {
-      document.body.appendChild(target);
+    if (!(ownerDocument == null ? void 0 : ownerDocument.body.contains(target))) {
+      ownerDocument == null ? void 0 : ownerDocument.body.appendChild(target);
     }
-  }, [target]);
-  (0, import_react17.useEffect)(() => {
+  }, [target, ownerDocument]);
+  (0, import_react25.useEffect)(() => {
     if (forceInRoot)
       return;
     if (groupTarget === null)
@@ -84791,53 +85573,76 @@ function usePortalTarget() {
   }, [groupTarget, setTarget, forceInRoot]);
   return target;
 }
-var DEFAULT_PORTAL_TAG = import_react17.Fragment;
-function Portal(props) {
-  let passthroughProps = props;
-  let target = usePortalTarget();
-  let [element] = (0, import_react17.useState)(() => typeof window === "undefined" ? null : document.createElement("div"));
+var DEFAULT_PORTAL_TAG = import_react25.Fragment;
+var PortalRoot = forwardRefWithAs(function Portal(props, ref) {
+  let theirProps = props;
+  let internalPortalRootRef = (0, import_react25.useRef)(null);
+  let portalRef = useSyncRefs(optionalRef((ref2) => {
+    internalPortalRootRef.current = ref2;
+  }), ref);
+  let ownerDocument = useOwnerDocument(internalPortalRootRef);
+  let target = usePortalTarget(internalPortalRootRef);
+  let [element] = (0, import_react25.useState)(() => {
+    var _a2;
+    return isServer ? null : (_a2 = ownerDocument == null ? void 0 : ownerDocument.createElement("div")) != null ? _a2 : null;
+  });
   let ready = useServerHandoffComplete();
+  let trulyUnmounted = (0, import_react25.useRef)(false);
   useIsoMorphicEffect(() => {
-    if (!target)
+    trulyUnmounted.current = false;
+    if (!target || !element)
       return;
-    if (!element)
-      return;
-    target.appendChild(element);
+    if (!target.contains(element)) {
+      element.setAttribute("data-headlessui-portal", "");
+      target.appendChild(element);
+    }
     return () => {
-      var _a;
-      if (!target)
-        return;
-      if (!element)
-        return;
-      target.removeChild(element);
-      if (target.childNodes.length <= 0) {
-        (_a = target.parentElement) == null ? void 0 : _a.removeChild(target);
-      }
+      trulyUnmounted.current = true;
+      microTask(() => {
+        var _a2;
+        if (!trulyUnmounted.current)
+          return;
+        if (!target || !element)
+          return;
+        target.removeChild(element);
+        if (target.childNodes.length <= 0) {
+          (_a2 = target.parentElement) == null ? void 0 : _a2.removeChild(target);
+        }
+      });
     };
   }, [target, element]);
   if (!ready)
     return null;
-  return !target || !element ? null : (0, import_react_dom.createPortal)(render({ props: passthroughProps, defaultTag: DEFAULT_PORTAL_TAG, name: "Portal" }), element);
-}
-var DEFAULT_GROUP_TAG = import_react17.Fragment;
-var PortalGroupContext = (0, import_react17.createContext)(null);
-function Group(props) {
-  let { target, ...passthroughProps } = props;
-  return /* @__PURE__ */ import_react17.default.createElement(PortalGroupContext.Provider, {
+  let ourProps = { ref: portalRef };
+  return !target || !element ? null : (0, import_react_dom.createPortal)(render({
+    ourProps,
+    theirProps,
+    defaultTag: DEFAULT_PORTAL_TAG,
+    name: "Portal"
+  }), element);
+});
+var DEFAULT_GROUP_TAG = import_react25.Fragment;
+var PortalGroupContext = (0, import_react25.createContext)(null);
+var Group = forwardRefWithAs(function Group2(props, ref) {
+  let { target, ...theirProps } = props;
+  let groupRef = useSyncRefs(ref);
+  let ourProps = { ref: groupRef };
+  return /* @__PURE__ */ import_react25.default.createElement(PortalGroupContext.Provider, {
     value: target
   }, render({
-    props: passthroughProps,
+    ourProps,
+    theirProps,
     defaultTag: DEFAULT_GROUP_TAG,
     name: "Popover.Group"
   }));
-}
-Portal.Group = Group;
+});
+var Portal2 = Object.assign(PortalRoot, { Group });
 
 // src/components/description/description.tsx
-var import_react18 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-var DescriptionContext = (0, import_react18.createContext)(null);
+var import_react26 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var DescriptionContext = (0, import_react26.createContext)(null);
 function useDescriptionContext() {
-  let context = (0, import_react18.useContext)(DescriptionContext);
+  let context = (0, import_react26.useContext)(DescriptionContext);
   if (context === null) {
     let err = new Error("You used a <Description /> component, but it is not inside a relevant parent.");
     if (Error.captureStackTrace)
@@ -84847,12 +85652,12 @@ function useDescriptionContext() {
   return context;
 }
 function useDescriptions() {
-  let [descriptionIds, setDescriptionIds] = (0, import_react18.useState)([]);
+  let [descriptionIds, setDescriptionIds] = (0, import_react26.useState)([]);
   return [
     descriptionIds.length > 0 ? descriptionIds.join(" ") : void 0,
-    (0, import_react18.useMemo)(() => {
+    (0, import_react26.useMemo)(() => {
       return function DescriptionProvider(props) {
-        let register = (0, import_react18.useCallback)((value) => {
+        let register = useEvent((value) => {
           setDescriptionIds((existing) => [...existing, value]);
           return () => setDescriptionIds((existing) => {
             let clone = existing.slice();
@@ -84861,9 +85666,9 @@ function useDescriptions() {
               clone.splice(idx, 1);
             return clone;
           });
-        }, []);
-        let contextBag = (0, import_react18.useMemo)(() => ({ register, slot: props.slot, name: props.name, props: props.props }), [register, props.slot, props.name, props.props]);
-        return /* @__PURE__ */ import_react18.default.createElement(DescriptionContext.Provider, {
+        });
+        let contextBag = (0, import_react26.useMemo)(() => ({ register, slot: props.slot, name: props.name, props: props.props }), [register, props.slot, props.name, props.props]);
+        return /* @__PURE__ */ import_react26.default.createElement(DescriptionContext.Provider, {
           value: contextBag
         }, props.children);
       };
@@ -84871,46 +85676,57 @@ function useDescriptions() {
   ];
 }
 var DEFAULT_DESCRIPTION_TAG = "p";
-function Description(props) {
+var Description = forwardRefWithAs(function Description2(props, ref) {
   let context = useDescriptionContext();
   let id2 = `headlessui-description-${useId()}`;
+  let descriptionRef = useSyncRefs(ref);
   useIsoMorphicEffect(() => context.register(id2), [id2, context.register]);
-  let passThroughProps = props;
-  let propsWeControl = { ...context.props, id: id2 };
+  let theirProps = props;
+  let ourProps = { ref: descriptionRef, ...context.props, id: id2 };
   return render({
-    props: { ...passThroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot: context.slot || {},
     defaultTag: DEFAULT_DESCRIPTION_TAG,
     name: context.name || "Description"
   });
-}
+});
 
 // src/internal/stack-context.tsx
-var import_react19 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-var StackContext = (0, import_react19.createContext)(() => {
+var import_react27 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var StackContext = (0, import_react27.createContext)(() => {
 });
 StackContext.displayName = "StackContext";
 function useStackContext() {
-  return (0, import_react19.useContext)(StackContext);
+  return (0, import_react27.useContext)(StackContext);
 }
 function StackProvider({
   children,
   onUpdate,
   type,
-  element
+  element,
+  enabled
 }) {
   let parentUpdate = useStackContext();
-  let notify = (0, import_react19.useCallback)((...args) => {
+  let notify = useEvent((...args) => {
     onUpdate == null ? void 0 : onUpdate(...args);
     parentUpdate(...args);
-  }, [parentUpdate, onUpdate]);
+  });
   useIsoMorphicEffect(() => {
-    notify(0 /* Add */, type, element);
-    return () => notify(1 /* Remove */, type, element);
-  }, [notify, type, element]);
-  return /* @__PURE__ */ import_react19.default.createElement(StackContext.Provider, {
+    let shouldNotify = enabled === void 0 || enabled === true;
+    shouldNotify && notify(0 /* Add */, type, element);
+    return () => {
+      shouldNotify && notify(1 /* Remove */, type, element);
+    };
+  }, [notify, type, element, enabled]);
+  return /* @__PURE__ */ import_react27.default.createElement(StackContext.Provider, {
     value: notify
   }, children);
+}
+
+// src/utils/platform.ts
+function isIOS() {
+  return /iPhone/gi.test(window.navigator.platform) || /Mac/gi.test(window.navigator.platform) && window.navigator.maxTouchPoints > 0;
 }
 
 // src/components/dialog/dialog.tsx
@@ -84921,17 +85737,51 @@ var reducers2 = {
     return { ...state2, titleId: action.id };
   }
 };
-var DialogContext = (0, import_react20.createContext)(null);
+var DialogContext = (0, import_react28.createContext)(null);
 DialogContext.displayName = "DialogContext";
 function useDialogContext(component) {
-  let context = (0, import_react20.useContext)(DialogContext);
+  let context = (0, import_react28.useContext)(DialogContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Dialog2.displayName} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Dialog /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, useDialogContext);
     throw err;
   }
   return context;
+}
+function useScrollLock(ownerDocument, enabled) {
+  (0, import_react28.useEffect)(() => {
+    var _a2;
+    if (!enabled)
+      return;
+    if (!ownerDocument)
+      return;
+    let d = disposables();
+    function style(node, property, value) {
+      let previous = node.style.getPropertyValue(property);
+      Object.assign(node.style, { [property]: value });
+      return d.add(() => {
+        Object.assign(node.style, { [property]: previous });
+      });
+    }
+    let documentElement = ownerDocument.documentElement;
+    let ownerWindow = (_a2 = ownerDocument.defaultView) != null ? _a2 : window;
+    let scrollbarWidthBefore = ownerWindow.innerWidth - documentElement.clientWidth;
+    style(documentElement, "overflow", "hidden");
+    if (scrollbarWidthBefore > 0) {
+      let scrollbarWidthAfter = documentElement.clientWidth - documentElement.offsetWidth;
+      let scrollbarWidth = scrollbarWidthBefore - scrollbarWidthAfter;
+      style(documentElement, "paddingRight", `${scrollbarWidth}px`);
+    }
+    if (isIOS()) {
+      let scrollPosition = window.pageYOffset;
+      style(documentElement, "position", "fixed");
+      style(documentElement, "marginTop", `-${scrollPosition}px`);
+      style(documentElement, "width", `100%`);
+      d.add(() => window.scrollTo(0, scrollPosition));
+    }
+    return d.dispose;
+  }, [ownerDocument, enabled]);
 }
 function stateReducer2(state2, action) {
   return match(action.type, reducers2, state2, action);
@@ -84939,8 +85789,8 @@ function stateReducer2(state2, action) {
 var DEFAULT_DIALOG_TAG = "div";
 var DialogRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
 var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
-  let { open, onClose, initialFocus, ...rest } = props;
-  let [nestedDialogCount, setNestedDialogCount] = (0, import_react20.useState)(0);
+  let { open, onClose, initialFocus, __demoMode = false, ...theirProps } = props;
+  let [nestedDialogCount, setNestedDialogCount] = (0, import_react28.useState)(0);
   let usesOpenClosedState = useOpenClosed();
   if (open === void 0 && usesOpenClosedState !== null) {
     open = match(usesOpenClosedState, {
@@ -84948,9 +85798,11 @@ var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
       [1 /* Closed */]: false
     });
   }
-  let containers = (0, import_react20.useRef)(/* @__PURE__ */ new Set());
-  let internalDialogRef = (0, import_react20.useRef)(null);
+  let containers = (0, import_react28.useRef)(/* @__PURE__ */ new Set());
+  let internalDialogRef = (0, import_react28.useRef)(null);
   let dialogRef = useSyncRefs(internalDialogRef, ref);
+  let mainTreeNode = (0, import_react28.useRef)(null);
+  let ownerDocument = useOwnerDocument(internalDialogRef);
   let hasOpen = props.hasOwnProperty("open") || usesOpenClosedState !== null;
   let hasOnClose = props.hasOwnProperty("onClose");
   if (!hasOpen && !hasOnClose) {
@@ -84969,40 +85821,38 @@ var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
     throw new Error(`You provided an \`onClose\` prop to the \`Dialog\`, but the value is not a function. Received: ${onClose}`);
   }
   let dialogState = open ? 0 /* Open */ : 1 /* Closed */;
-  let visible = (() => {
-    if (usesOpenClosedState !== null) {
-      return usesOpenClosedState === 0 /* Open */;
-    }
-    return dialogState === 0 /* Open */;
-  })();
-  let [state2, dispatch] = (0, import_react20.useReducer)(stateReducer2, {
+  let [state2, dispatch] = (0, import_react28.useReducer)(stateReducer2, {
     titleId: null,
-    descriptionId: null
+    descriptionId: null,
+    panelRef: (0, import_react28.createRef)()
   });
-  let close = (0, import_react20.useCallback)(() => onClose(false), [onClose]);
-  let setTitleId = (0, import_react20.useCallback)((id3) => dispatch({ type: 0 /* SetTitleId */, id: id3 }), [dispatch]);
+  let close = useEvent(() => onClose(false));
+  let setTitleId = useEvent((id3) => dispatch({ type: 0 /* SetTitleId */, id: id3 }));
   let ready = useServerHandoffComplete();
-  let enabled = ready && dialogState === 0 /* Open */;
+  let enabled = ready ? __demoMode ? false : dialogState === 0 /* Open */ : false;
   let hasNestedDialogs = nestedDialogCount > 1;
-  let hasParentDialog = (0, import_react20.useContext)(DialogContext) !== null;
+  let hasParentDialog = (0, import_react28.useContext)(DialogContext) !== null;
   let position = !hasNestedDialogs ? "leaf" : "parent";
-  useFocusTrap(internalDialogRef, enabled ? match(position, {
-    parent: 16 /* RestoreFocus */,
-    leaf: 30 /* All */
-  }) : 1 /* None */, { initialFocus, containers });
   useInertOthers(internalDialogRef, hasNestedDialogs ? enabled : false);
-  useWindowEvent("mousedown", (event) => {
-    var _a;
-    let target = event.target;
-    if (dialogState !== 0 /* Open */)
+  useOutsideClick(() => {
+    var _a2, _b;
+    let rootContainers = Array.from((_a2 = ownerDocument == null ? void 0 : ownerDocument.querySelectorAll("body > *, [data-headlessui-portal]")) != null ? _a2 : []).filter((container) => {
+      if (!(container instanceof HTMLElement))
+        return false;
+      if (container.contains(mainTreeNode.current))
+        return false;
+      if (state2.panelRef.current && container.contains(state2.panelRef.current))
+        return false;
+      return true;
+    });
+    return [
+      ...rootContainers,
+      (_b = state2.panelRef.current) != null ? _b : internalDialogRef.current
+    ];
+  }, close, enabled && !hasNestedDialogs);
+  useEventListener(ownerDocument == null ? void 0 : ownerDocument.defaultView, "keydown", (event) => {
+    if (event.defaultPrevented)
       return;
-    if (hasNestedDialogs)
-      return;
-    if ((_a = internalDialogRef.current) == null ? void 0 : _a.contains(target))
-      return;
-    close();
-  });
-  useWindowEvent("keydown", (event) => {
     if (event.key !== "Escape" /* Escape */)
       return;
     if (dialogState !== 0 /* Open */)
@@ -85013,22 +85863,8 @@ var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
     event.stopPropagation();
     close();
   });
-  (0, import_react20.useEffect)(() => {
-    if (dialogState !== 0 /* Open */)
-      return;
-    if (hasParentDialog)
-      return;
-    let overflow = document.documentElement.style.overflow;
-    let paddingRight = document.documentElement.style.paddingRight;
-    let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.overflow = "hidden";
-    document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
-    return () => {
-      document.documentElement.style.overflow = overflow;
-      document.documentElement.style.paddingRight = paddingRight;
-    };
-  }, [dialogState, hasParentDialog]);
-  (0, import_react20.useEffect)(() => {
+  useScrollLock(ownerDocument, dialogState === 0 /* Open */ && !hasParentDialog);
+  (0, import_react28.useEffect)(() => {
     if (dialogState !== 0 /* Open */)
       return;
     if (!internalDialogRef.current)
@@ -85045,24 +85881,21 @@ var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
   }, [dialogState, internalDialogRef, close]);
   let [describedby, DescriptionProvider] = useDescriptions();
   let id2 = `headlessui-dialog-${useId()}`;
-  let contextBag = (0, import_react20.useMemo)(() => [{ dialogState, close, setTitleId }, state2], [dialogState, state2, close, setTitleId]);
-  let slot = (0, import_react20.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
-  let propsWeControl = {
+  let contextBag = (0, import_react28.useMemo)(() => [{ dialogState, close, setTitleId }, state2], [dialogState, state2, close, setTitleId]);
+  let slot = (0, import_react28.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let ourProps = {
     ref: dialogRef,
     id: id2,
     role: "dialog",
     "aria-modal": dialogState === 0 /* Open */ ? true : void 0,
     "aria-labelledby": state2.titleId,
-    "aria-describedby": describedby,
-    onClick(event) {
-      event.stopPropagation();
-    }
+    "aria-describedby": describedby
   };
-  let passthroughProps = rest;
-  return /* @__PURE__ */ import_react20.default.createElement(StackProvider, {
+  return /* @__PURE__ */ import_react28.default.createElement(StackProvider, {
     type: "Dialog",
+    enabled: dialogState === 0 /* Open */,
     element: internalDialogRef,
-    onUpdate: (0, import_react20.useCallback)((message, type, element) => {
+    onUpdate: useEvent((message, type, element) => {
       if (type !== "Dialog")
         return;
       match(message, {
@@ -85075,33 +85908,44 @@ var DialogRoot = forwardRefWithAs(function Dialog(props, ref) {
           setNestedDialogCount((count) => count - 1);
         }
       });
-    }, [])
-  }, /* @__PURE__ */ import_react20.default.createElement(ForcePortalRoot, {
+    })
+  }, /* @__PURE__ */ import_react28.default.createElement(ForcePortalRoot, {
     force: true
-  }, /* @__PURE__ */ import_react20.default.createElement(Portal, null, /* @__PURE__ */ import_react20.default.createElement(DialogContext.Provider, {
+  }, /* @__PURE__ */ import_react28.default.createElement(Portal2, null, /* @__PURE__ */ import_react28.default.createElement(DialogContext.Provider, {
     value: contextBag
-  }, /* @__PURE__ */ import_react20.default.createElement(Portal.Group, {
+  }, /* @__PURE__ */ import_react28.default.createElement(Portal2.Group, {
     target: internalDialogRef
-  }, /* @__PURE__ */ import_react20.default.createElement(ForcePortalRoot, {
+  }, /* @__PURE__ */ import_react28.default.createElement(ForcePortalRoot, {
     force: false
-  }, /* @__PURE__ */ import_react20.default.createElement(DescriptionProvider, {
+  }, /* @__PURE__ */ import_react28.default.createElement(DescriptionProvider, {
     slot,
     name: "Dialog.Description"
+  }, /* @__PURE__ */ import_react28.default.createElement(FocusTrap, {
+    initialFocus,
+    containers,
+    features: enabled ? match(position, {
+      parent: FocusTrap.features.RestoreFocus,
+      leaf: FocusTrap.features.All & ~FocusTrap.features.FocusLock
+    }) : FocusTrap.features.None
   }, render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_DIALOG_TAG,
     features: DialogRenderFeatures,
-    visible,
+    visible: dialogState === 0 /* Open */,
     name: "Dialog"
-  }))))))));
+  })))))))), /* @__PURE__ */ import_react28.default.createElement(Hidden, {
+    features: 4 /* Hidden */,
+    ref: mainTreeNode
+  }));
 });
 var DEFAULT_OVERLAY_TAG = "div";
 var Overlay = forwardRefWithAs(function Overlay2(props, ref) {
   let [{ dialogState, close }] = useDialogContext("Dialog.Overlay");
   let overlayRef = useSyncRefs(ref);
   let id2 = `headlessui-dialog-overlay-${useId()}`;
-  let handleClick = (0, import_react20.useCallback)((event) => {
+  let handleClick = useEvent((event) => {
     if (event.target !== event.currentTarget)
       return;
     if (isDisabledReactIssue7711(event.currentTarget))
@@ -85109,44 +85953,97 @@ var Overlay = forwardRefWithAs(function Overlay2(props, ref) {
     event.preventDefault();
     event.stopPropagation();
     close();
-  }, [close]);
-  let slot = (0, import_react20.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
-  let propsWeControl = {
+  });
+  let slot = (0, import_react28.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let theirProps = props;
+  let ourProps = {
     ref: overlayRef,
     id: id2,
     "aria-hidden": true,
     onClick: handleClick
   };
-  let passthroughProps = props;
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OVERLAY_TAG,
     name: "Dialog.Overlay"
   });
 });
+var DEFAULT_BACKDROP_TAG = "div";
+var Backdrop = forwardRefWithAs(function Backdrop2(props, ref) {
+  let [{ dialogState }, state2] = useDialogContext("Dialog.Backdrop");
+  let backdropRef = useSyncRefs(ref);
+  let id2 = `headlessui-dialog-backdrop-${useId()}`;
+  (0, import_react28.useEffect)(() => {
+    if (state2.panelRef.current === null) {
+      throw new Error(`A <Dialog.Backdrop /> component is being used, but a <Dialog.Panel /> component is missing.`);
+    }
+  }, [state2.panelRef]);
+  let slot = (0, import_react28.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let theirProps = props;
+  let ourProps = {
+    ref: backdropRef,
+    id: id2,
+    "aria-hidden": true
+  };
+  return /* @__PURE__ */ import_react28.default.createElement(ForcePortalRoot, {
+    force: true
+  }, /* @__PURE__ */ import_react28.default.createElement(Portal2, null, render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_BACKDROP_TAG,
+    name: "Dialog.Backdrop"
+  })));
+});
+var DEFAULT_PANEL_TAG = "div";
+var Panel = forwardRefWithAs(function Panel2(props, ref) {
+  let [{ dialogState }, state2] = useDialogContext("Dialog.Panel");
+  let panelRef = useSyncRefs(ref, state2.panelRef);
+  let id2 = `headlessui-dialog-panel-${useId()}`;
+  let slot = (0, import_react28.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let handleClick = useEvent((event) => {
+    event.stopPropagation();
+  });
+  let theirProps = props;
+  let ourProps = {
+    ref: panelRef,
+    id: id2,
+    onClick: handleClick
+  };
+  return render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_PANEL_TAG,
+    name: "Dialog.Panel"
+  });
+});
 var DEFAULT_TITLE_TAG = "h2";
-function Title(props) {
+var Title = forwardRefWithAs(function Title2(props, ref) {
   let [{ dialogState, setTitleId }] = useDialogContext("Dialog.Title");
   let id2 = `headlessui-dialog-title-${useId()}`;
-  (0, import_react20.useEffect)(() => {
+  let titleRef = useSyncRefs(ref);
+  (0, import_react28.useEffect)(() => {
     setTitleId(id2);
     return () => setTitleId(null);
   }, [id2, setTitleId]);
-  let slot = (0, import_react20.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
-  let propsWeControl = { id: id2 };
-  let passthroughProps = props;
+  let slot = (0, import_react28.useMemo)(() => ({ open: dialogState === 0 /* Open */ }), [dialogState]);
+  let theirProps = props;
+  let ourProps = { ref: titleRef, id: id2 };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_TITLE_TAG,
     name: "Dialog.Title"
   });
-}
-var Dialog2 = Object.assign(DialogRoot, { Overlay, Title, Description });
+});
+var Dialog2 = Object.assign(DialogRoot, { Backdrop, Panel, Overlay, Title, Description });
 
 // src/components/disclosure/disclosure.tsx
-var import_react21 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react29 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 var reducers3 = {
   [0 /* ToggleDisclosure */]: (state2) => ({
     ...state2,
@@ -85181,92 +86078,107 @@ var reducers3 = {
     return { ...state2, panelId: action.panelId };
   }
 };
-var DisclosureContext = (0, import_react21.createContext)(null);
+var DisclosureContext = (0, import_react29.createContext)(null);
 DisclosureContext.displayName = "DisclosureContext";
 function useDisclosureContext(component) {
-  let context = (0, import_react21.useContext)(DisclosureContext);
+  let context = (0, import_react29.useContext)(DisclosureContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Disclosure.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Disclosure /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, useDisclosureContext);
     throw err;
   }
   return context;
 }
-var DisclosureAPIContext = (0, import_react21.createContext)(null);
+var DisclosureAPIContext = (0, import_react29.createContext)(null);
 DisclosureAPIContext.displayName = "DisclosureAPIContext";
 function useDisclosureAPIContext(component) {
-  let context = (0, import_react21.useContext)(DisclosureAPIContext);
+  let context = (0, import_react29.useContext)(DisclosureAPIContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Disclosure.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Disclosure /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, useDisclosureAPIContext);
     throw err;
   }
   return context;
 }
-var DisclosurePanelContext = (0, import_react21.createContext)(null);
+var DisclosurePanelContext = (0, import_react29.createContext)(null);
 DisclosurePanelContext.displayName = "DisclosurePanelContext";
 function useDisclosurePanelContext() {
-  return (0, import_react21.useContext)(DisclosurePanelContext);
+  return (0, import_react29.useContext)(DisclosurePanelContext);
 }
 function stateReducer3(state2, action) {
   return match(action.type, reducers3, state2, action);
 }
-var DEFAULT_DISCLOSURE_TAG = import_react21.Fragment;
-function Disclosure(props) {
-  let { defaultOpen = false, ...passthroughProps } = props;
+var DEFAULT_DISCLOSURE_TAG = import_react29.Fragment;
+var DisclosureRoot = forwardRefWithAs(function Disclosure(props, ref) {
+  let { defaultOpen = false, ...theirProps } = props;
   let buttonId = `headlessui-disclosure-button-${useId()}`;
   let panelId = `headlessui-disclosure-panel-${useId()}`;
-  let reducerBag = (0, import_react21.useReducer)(stateReducer3, {
+  let internalDisclosureRef = (0, import_react29.useRef)(null);
+  let disclosureRef = useSyncRefs(ref, optionalRef((ref2) => {
+    internalDisclosureRef.current = ref2;
+  }, props.as === void 0 || props.as === import_react29.Fragment));
+  let panelRef = (0, import_react29.useRef)(null);
+  let buttonRef = (0, import_react29.useRef)(null);
+  let reducerBag = (0, import_react29.useReducer)(stateReducer3, {
     disclosureState: defaultOpen ? 0 /* Open */ : 1 /* Closed */,
     linkedPanel: false,
+    buttonRef,
+    panelRef,
     buttonId,
     panelId
   });
   let [{ disclosureState }, dispatch] = reducerBag;
-  (0, import_react21.useEffect)(() => dispatch({ type: 2 /* SetButtonId */, buttonId }), [buttonId, dispatch]);
-  (0, import_react21.useEffect)(() => dispatch({ type: 3 /* SetPanelId */, panelId }), [panelId, dispatch]);
-  let close = (0, import_react21.useCallback)((focusableElement) => {
+  (0, import_react29.useEffect)(() => dispatch({ type: 2 /* SetButtonId */, buttonId }), [buttonId, dispatch]);
+  (0, import_react29.useEffect)(() => dispatch({ type: 3 /* SetPanelId */, panelId }), [panelId, dispatch]);
+  let close = useEvent((focusableElement) => {
     dispatch({ type: 1 /* CloseDisclosure */ });
+    let ownerDocument = getOwnerDocument(internalDisclosureRef);
+    if (!ownerDocument)
+      return;
     let restoreElement = (() => {
       if (!focusableElement)
-        return document.getElementById(buttonId);
+        return ownerDocument.getElementById(buttonId);
       if (focusableElement instanceof HTMLElement)
         return focusableElement;
       if (focusableElement.current instanceof HTMLElement)
         return focusableElement.current;
-      return document.getElementById(buttonId);
+      return ownerDocument.getElementById(buttonId);
     })();
     restoreElement == null ? void 0 : restoreElement.focus();
-  }, [dispatch, buttonId]);
-  let api = (0, import_react21.useMemo)(() => ({ close }), [close]);
-  let slot = (0, import_react21.useMemo)(() => ({ open: disclosureState === 0 /* Open */, close }), [disclosureState, close]);
-  return /* @__PURE__ */ import_react21.default.createElement(DisclosureContext.Provider, {
+  });
+  let api = (0, import_react29.useMemo)(() => ({ close }), [close]);
+  let slot = (0, import_react29.useMemo)(() => ({ open: disclosureState === 0 /* Open */, close }), [disclosureState, close]);
+  let ourProps = {
+    ref: disclosureRef
+  };
+  return /* @__PURE__ */ import_react29.default.createElement(DisclosureContext.Provider, {
     value: reducerBag
-  }, /* @__PURE__ */ import_react21.default.createElement(DisclosureAPIContext.Provider, {
+  }, /* @__PURE__ */ import_react29.default.createElement(DisclosureAPIContext.Provider, {
     value: api
-  }, /* @__PURE__ */ import_react21.default.createElement(OpenClosedProvider, {
+  }, /* @__PURE__ */ import_react29.default.createElement(OpenClosedProvider, {
     value: match(disclosureState, {
       [0 /* Open */]: 0 /* Open */,
       [1 /* Closed */]: 1 /* Closed */
     })
   }, render({
-    props: passthroughProps,
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_DISCLOSURE_TAG,
     name: "Disclosure"
   }))));
-}
+});
 var DEFAULT_BUTTON_TAG2 = "button";
 var Button3 = forwardRefWithAs(function Button4(props, ref) {
   let [state2, dispatch] = useDisclosureContext("Disclosure.Button");
-  let internalButtonRef = (0, import_react21.useRef)(null);
-  let buttonRef = useSyncRefs(internalButtonRef, ref);
   let panelContext = useDisclosurePanelContext();
   let isWithinPanel = panelContext === null ? false : panelContext === state2.panelId;
-  let handleKeyDown = (0, import_react21.useCallback)((event) => {
-    var _a;
+  let internalButtonRef = (0, import_react29.useRef)(null);
+  let buttonRef = useSyncRefs(internalButtonRef, ref, !isWithinPanel ? state2.buttonRef : null);
+  let handleKeyDown = useEvent((event) => {
+    var _a2;
     if (isWithinPanel) {
       if (state2.disclosureState === 1 /* Closed */)
         return;
@@ -85276,7 +86188,7 @@ var Button3 = forwardRefWithAs(function Button4(props, ref) {
           event.preventDefault();
           event.stopPropagation();
           dispatch({ type: 0 /* ToggleDisclosure */ });
-          (_a = document.getElementById(state2.buttonId)) == null ? void 0 : _a.focus();
+          (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus();
           break;
       }
     } else {
@@ -85289,31 +86201,31 @@ var Button3 = forwardRefWithAs(function Button4(props, ref) {
           break;
       }
     }
-  }, [dispatch, isWithinPanel, state2.disclosureState, state2.buttonId]);
-  let handleKeyUp = (0, import_react21.useCallback)((event) => {
+  });
+  let handleKeyUp = useEvent((event) => {
     switch (event.key) {
       case " " /* Space */:
         event.preventDefault();
         break;
     }
-  }, []);
-  let handleClick = (0, import_react21.useCallback)((event) => {
-    var _a;
+  });
+  let handleClick = useEvent((event) => {
+    var _a2;
     if (isDisabledReactIssue7711(event.currentTarget))
       return;
     if (props.disabled)
       return;
     if (isWithinPanel) {
       dispatch({ type: 0 /* ToggleDisclosure */ });
-      (_a = document.getElementById(state2.buttonId)) == null ? void 0 : _a.focus();
+      (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus();
     } else {
       dispatch({ type: 0 /* ToggleDisclosure */ });
     }
-  }, [dispatch, props.disabled, state2.buttonId, isWithinPanel]);
-  let slot = (0, import_react21.useMemo)(() => ({ open: state2.disclosureState === 0 /* Open */ }), [state2]);
+  });
+  let slot = (0, import_react29.useMemo)(() => ({ open: state2.disclosureState === 0 /* Open */ }), [state2]);
   let type = useResolveButtonType(props, internalButtonRef);
-  let passthroughProps = props;
-  let propsWeControl = isWithinPanel ? { ref: buttonRef, type, onKeyDown: handleKeyDown, onClick: handleClick } : {
+  let theirProps = props;
+  let ourProps = isWithinPanel ? { ref: buttonRef, type, onKeyDown: handleKeyDown, onClick: handleClick } : {
     ref: buttonRef,
     id: state2.buttonId,
     type,
@@ -85324,21 +86236,20 @@ var Button3 = forwardRefWithAs(function Button4(props, ref) {
     onClick: handleClick
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_BUTTON_TAG2,
     name: "Disclosure.Button"
   });
 });
-var DEFAULT_PANEL_TAG = "div";
+var DEFAULT_PANEL_TAG2 = "div";
 var PanelRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
-var Panel = forwardRefWithAs(function Panel2(props, ref) {
+var Panel3 = forwardRefWithAs(function Panel4(props, ref) {
   let [state2, dispatch] = useDisclosureContext("Disclosure.Panel");
   let { close } = useDisclosureAPIContext("Disclosure.Panel");
-  let panelRef = useSyncRefs(ref, () => {
-    if (state2.linkedPanel)
-      return;
-    dispatch({ type: 4 /* LinkPanel */ });
+  let panelRef = useSyncRefs(ref, state2.panelRef, (el) => {
+    dispatch({ type: el ? 4 /* LinkPanel */ : 5 /* UnlinkPanel */ });
   });
   let usesOpenClosedState = useOpenClosed();
   let visible = (() => {
@@ -85347,53 +86258,40 @@ var Panel = forwardRefWithAs(function Panel2(props, ref) {
     }
     return state2.disclosureState === 0 /* Open */;
   })();
-  (0, import_react21.useEffect)(() => () => dispatch({ type: 5 /* UnlinkPanel */ }), [dispatch]);
-  (0, import_react21.useEffect)(() => {
-    var _a;
-    if (state2.disclosureState === 1 /* Closed */ && ((_a = props.unmount) != null ? _a : true)) {
-      dispatch({ type: 5 /* UnlinkPanel */ });
-    }
-  }, [state2.disclosureState, props.unmount, dispatch]);
-  let slot = (0, import_react21.useMemo)(() => ({ open: state2.disclosureState === 0 /* Open */, close }), [state2, close]);
-  let propsWeControl = {
+  let slot = (0, import_react29.useMemo)(() => ({ open: state2.disclosureState === 0 /* Open */, close }), [state2, close]);
+  let theirProps = props;
+  let ourProps = {
     ref: panelRef,
     id: state2.panelId
   };
-  let passthroughProps = props;
-  return /* @__PURE__ */ import_react21.default.createElement(DisclosurePanelContext.Provider, {
+  return /* @__PURE__ */ import_react29.default.createElement(DisclosurePanelContext.Provider, {
     value: state2.panelId
   }, render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
-    defaultTag: DEFAULT_PANEL_TAG,
+    defaultTag: DEFAULT_PANEL_TAG2,
     features: PanelRenderFeatures,
     visible,
     name: "Disclosure.Panel"
   }));
 });
-Disclosure.Button = Button3;
-Disclosure.Panel = Panel;
-
-// src/components/focus-trap/focus-trap.tsx
-var import_react22 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var DEFAULT_FOCUS_TRAP_TAG = "div";
-function FocusTrap(props) {
-  let container = (0, import_react22.useRef)(null);
-  let { initialFocus, ...passthroughProps } = props;
-  let ready = useServerHandoffComplete();
-  useFocusTrap(container, ready ? 30 /* All */ : 1 /* None */, { initialFocus });
-  let propsWeControl = {
-    ref: container
-  };
-  return render({
-    props: { ...passthroughProps, ...propsWeControl },
-    defaultTag: DEFAULT_FOCUS_TRAP_TAG,
-    name: "FocusTrap"
-  });
-}
+var Disclosure2 = Object.assign(DisclosureRoot, { Button: Button3, Panel: Panel3 });
 
 // src/components/listbox/listbox.tsx
-var import_react23 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react30 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+function adjustOrderedState2(state2, adjustment = (i) => i) {
+  let currentActiveOption = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex] : null;
+  let sortedOptions = sortByDomNode(adjustment(state2.options.slice()), (option) => option.dataRef.current.domRef.current);
+  let adjustedActiveOptionIndex = currentActiveOption ? sortedOptions.indexOf(currentActiveOption) : null;
+  if (adjustedActiveOptionIndex === -1) {
+    adjustedActiveOptionIndex = null;
+  }
+  return {
+    options: sortedOptions,
+    activeOptionIndex: adjustedActiveOptionIndex
+  };
+}
 var reducers4 = {
   [1 /* CloseListbox */](state2) {
     if (state2.disabled)
@@ -85407,7 +86305,20 @@ var reducers4 = {
       return state2;
     if (state2.listboxState === 0 /* Open */)
       return state2;
-    return { ...state2, listboxState: 0 /* Open */ };
+    let activeOptionIndex = state2.activeOptionIndex;
+    let { value, mode, compare } = state2.propsRef.current;
+    let optionIdx = state2.options.findIndex((option) => {
+      let optionValue = option.dataRef.current.value;
+      let selected = match(mode, {
+        [1 /* Multi */]: () => value.some((option2) => compare(option2, optionValue)),
+        [0 /* Single */]: () => compare(value, optionValue)
+      });
+      return selected;
+    });
+    if (optionIdx !== -1) {
+      activeOptionIndex = optionIdx;
+    }
+    return { ...state2, listboxState: 0 /* Open */, activeOptionIndex };
   },
   [2 /* SetDisabled */](state2, action) {
     if (state2.disabled === action.disabled)
@@ -85420,19 +86331,25 @@ var reducers4 = {
     return { ...state2, orientation: action.orientation };
   },
   [4 /* GoToOption */](state2, action) {
+    var _a2;
     if (state2.disabled)
       return state2;
     if (state2.listboxState === 1 /* Closed */)
       return state2;
+    let adjustedState = adjustOrderedState2(state2);
     let activeOptionIndex = calculateActiveIndex(action, {
-      resolveItems: () => state2.options,
-      resolveActiveIndex: () => state2.activeOptionIndex,
-      resolveId: (item) => item.id,
-      resolveDisabled: (item) => item.dataRef.current.disabled
+      resolveItems: () => adjustedState.options,
+      resolveActiveIndex: () => adjustedState.activeOptionIndex,
+      resolveId: (option) => option.id,
+      resolveDisabled: (option) => option.dataRef.current.disabled
     });
-    if (state2.searchQuery === "" && state2.activeOptionIndex === activeOptionIndex)
-      return state2;
-    return { ...state2, searchQuery: "", activeOptionIndex };
+    return {
+      ...state2,
+      ...adjustedState,
+      searchQuery: "",
+      activeOptionIndex,
+      activationTrigger: (_a2 = action.trigger) != null ? _a2 : 1 /* Other */
+    };
   },
   [5 /* Search */]: (state2, action) => {
     if (state2.disabled)
@@ -85444,13 +86361,18 @@ var reducers4 = {
     let searchQuery = state2.searchQuery + action.value.toLowerCase();
     let reOrderedOptions = state2.activeOptionIndex !== null ? state2.options.slice(state2.activeOptionIndex + offset).concat(state2.options.slice(0, state2.activeOptionIndex + offset)) : state2.options;
     let matchingOption = reOrderedOptions.find((option) => {
-      var _a;
-      return !option.dataRef.current.disabled && ((_a = option.dataRef.current.textValue) == null ? void 0 : _a.startsWith(searchQuery));
+      var _a2;
+      return !option.dataRef.current.disabled && ((_a2 = option.dataRef.current.textValue) == null ? void 0 : _a2.startsWith(searchQuery));
     });
     let matchIdx = matchingOption ? state2.options.indexOf(matchingOption) : -1;
     if (matchIdx === -1 || matchIdx === state2.activeOptionIndex)
       return { ...state2, searchQuery };
-    return { ...state2, searchQuery, activeOptionIndex: matchIdx };
+    return {
+      ...state2,
+      searchQuery,
+      activeOptionIndex: matchIdx,
+      activationTrigger: 1 /* Other */
+    };
   },
   [6 /* ClearSearch */](state2) {
     if (state2.disabled)
@@ -85462,36 +86384,41 @@ var reducers4 = {
     return { ...state2, searchQuery: "" };
   },
   [7 /* RegisterOption */]: (state2, action) => {
-    var _a;
-    let orderMap = Array.from((_a = state2.optionsRef.current) == null ? void 0 : _a.querySelectorAll('[id^="headlessui-listbox-option-"]')).reduce((lookup, element, index) => Object.assign(lookup, { [element.id]: index }), {});
-    let options = [...state2.options, { id: action.id, dataRef: action.dataRef }].sort((a, z) => orderMap[a.id] - orderMap[z.id]);
-    return { ...state2, options };
+    let option = { id: action.id, dataRef: action.dataRef };
+    let adjustedState = adjustOrderedState2(state2, (options) => [...options, option]);
+    if (state2.activeOptionIndex === null) {
+      let { value, mode, compare } = state2.propsRef.current;
+      let optionValue = action.dataRef.current.value;
+      let selected = match(mode, {
+        [1 /* Multi */]: () => value.some((option2) => compare(option2, optionValue)),
+        [0 /* Single */]: () => compare(value, optionValue)
+      });
+      if (selected) {
+        adjustedState.activeOptionIndex = adjustedState.options.indexOf(option);
+      }
+    }
+    return { ...state2, ...adjustedState };
   },
   [8 /* UnregisterOption */]: (state2, action) => {
-    let nextOptions = state2.options.slice();
-    let currentActiveOption = state2.activeOptionIndex !== null ? nextOptions[state2.activeOptionIndex] : null;
-    let idx = nextOptions.findIndex((a) => a.id === action.id);
-    if (idx !== -1)
-      nextOptions.splice(idx, 1);
+    let adjustedState = adjustOrderedState2(state2, (options) => {
+      let idx = options.findIndex((a) => a.id === action.id);
+      if (idx !== -1)
+        options.splice(idx, 1);
+      return options;
+    });
     return {
       ...state2,
-      options: nextOptions,
-      activeOptionIndex: (() => {
-        if (idx === state2.activeOptionIndex)
-          return null;
-        if (currentActiveOption === null)
-          return null;
-        return nextOptions.indexOf(currentActiveOption);
-      })()
+      ...adjustedState,
+      activationTrigger: 1 /* Other */
     };
   }
 };
-var ListboxContext = (0, import_react23.createContext)(null);
+var ListboxContext = (0, import_react30.createContext)(null);
 ListboxContext.displayName = "ListboxContext";
 function useListboxContext(component) {
-  let context = (0, import_react23.useContext)(ListboxContext);
+  let context = (0, import_react30.useContext)(ListboxContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Listbox.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Listbox /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, useListboxContext);
     throw err;
@@ -85501,69 +86428,108 @@ function useListboxContext(component) {
 function stateReducer4(state2, action) {
   return match(action.type, reducers4, state2, action);
 }
-var DEFAULT_LISTBOX_TAG = import_react23.Fragment;
-function Listbox(props) {
-  let { value, onChange, disabled = false, horizontal = false, ...passThroughProps } = props;
+var DEFAULT_LISTBOX_TAG = import_react30.Fragment;
+var ListboxRoot = forwardRefWithAs(function Listbox(props, ref) {
+  let {
+    value: controlledValue,
+    defaultValue,
+    name,
+    onChange: controlledOnChange,
+    by = (a, z) => a === z,
+    disabled = false,
+    horizontal = false,
+    multiple = false,
+    ...theirProps
+  } = props;
   const orientation = horizontal ? "horizontal" : "vertical";
-  let reducerBag = (0, import_react23.useReducer)(stateReducer4, {
+  let listboxRef = useSyncRefs(ref);
+  let [value, onChange] = useControllable(controlledValue, controlledOnChange, defaultValue);
+  let reducerBag = (0, import_react30.useReducer)(stateReducer4, {
     listboxState: 1 /* Closed */,
-    propsRef: { current: { value, onChange } },
-    labelRef: (0, import_react23.createRef)(),
-    buttonRef: (0, import_react23.createRef)(),
-    optionsRef: (0, import_react23.createRef)(),
+    propsRef: {
+      current: {
+        value,
+        onChange,
+        mode: multiple ? 1 /* Multi */ : 0 /* Single */,
+        compare: useEvent(typeof by === "string" ? (a, z) => {
+          let property = by;
+          return (a == null ? void 0 : a[property]) === (z == null ? void 0 : z[property]);
+        } : by)
+      }
+    },
+    labelRef: (0, import_react30.createRef)(),
+    buttonRef: (0, import_react30.createRef)(),
+    optionsRef: (0, import_react30.createRef)(),
     disabled,
     orientation,
     options: [],
     searchQuery: "",
-    activeOptionIndex: null
+    activeOptionIndex: null,
+    activationTrigger: 1 /* Other */
   });
   let [{ listboxState, propsRef, optionsRef, buttonRef }, dispatch] = reducerBag;
+  propsRef.current.value = value;
+  propsRef.current.mode = multiple ? 1 /* Multi */ : 0 /* Single */;
   useIsoMorphicEffect(() => {
-    propsRef.current.value = value;
-  }, [value, propsRef]);
-  useIsoMorphicEffect(() => {
-    propsRef.current.onChange = onChange;
+    propsRef.current.onChange = (value2) => {
+      return match(propsRef.current.mode, {
+        [0 /* Single */]() {
+          return onChange(value2);
+        },
+        [1 /* Multi */]() {
+          let copy = propsRef.current.value.slice();
+          let { compare } = propsRef.current;
+          let idx = copy.findIndex((item) => compare(item, value2));
+          if (idx === -1) {
+            copy.push(value2);
+          } else {
+            copy.splice(idx, 1);
+          }
+          return onChange(copy);
+        }
+      });
+    };
   }, [onChange, propsRef]);
   useIsoMorphicEffect(() => dispatch({ type: 2 /* SetDisabled */, disabled }), [disabled]);
   useIsoMorphicEffect(() => dispatch({ type: 3 /* SetOrientation */, orientation }), [orientation]);
-  useWindowEvent("mousedown", (event) => {
-    var _a, _b, _c;
-    let target = event.target;
-    if (listboxState !== 0 /* Open */)
-      return;
-    if ((_a = buttonRef.current) == null ? void 0 : _a.contains(target))
-      return;
-    if ((_b = optionsRef.current) == null ? void 0 : _b.contains(target))
-      return;
+  useOutsideClick([buttonRef, optionsRef], (event, target) => {
+    var _a2;
     dispatch({ type: 1 /* CloseListbox */ });
     if (!isFocusableElement(target, 1 /* Loose */)) {
       event.preventDefault();
-      (_c = buttonRef.current) == null ? void 0 : _c.focus();
+      (_a2 = buttonRef.current) == null ? void 0 : _a2.focus();
     }
-  });
-  let slot = (0, import_react23.useMemo)(() => ({ open: listboxState === 0 /* Open */, disabled }), [listboxState, disabled]);
-  return /* @__PURE__ */ import_react23.default.createElement(ListboxContext.Provider, {
+  }, listboxState === 0 /* Open */);
+  let slot = (0, import_react30.useMemo)(() => ({ open: listboxState === 0 /* Open */, disabled, value }), [listboxState, disabled, value]);
+  let ourProps = { ref: listboxRef };
+  return /* @__PURE__ */ import_react30.default.createElement(ListboxContext.Provider, {
     value: reducerBag
-  }, /* @__PURE__ */ import_react23.default.createElement(OpenClosedProvider, {
+  }, /* @__PURE__ */ import_react30.default.createElement(OpenClosedProvider, {
     value: match(listboxState, {
       [0 /* Open */]: 0 /* Open */,
       [1 /* Closed */]: 1 /* Closed */
     })
-  }, render({
-    props: passThroughProps,
-    slot,
-    defaultTag: DEFAULT_LISTBOX_TAG,
-    name: "Listbox"
-  })));
-}
+  }, name != null && value != null && objectToFormEntries({ [name]: value }).map(([name2, value2]) => /* @__PURE__ */ import_react30.default.createElement(Hidden, {
+    features: 4 /* Hidden */,
+    ...compact({
+      key: name2,
+      as: "input",
+      type: "hidden",
+      hidden: true,
+      readOnly: true,
+      name: name2,
+      value: value2
+    })
+  })), render({ ourProps, theirProps, slot, defaultTag: DEFAULT_LISTBOX_TAG, name: "Listbox" })));
+});
 var DEFAULT_BUTTON_TAG3 = "button";
 var Button5 = forwardRefWithAs(function Button6(props, ref) {
-  var _a;
+  var _a2;
   let [state2, dispatch] = useListboxContext("Listbox.Button");
   let buttonRef = useSyncRefs(state2.buttonRef, ref);
   let id2 = `headlessui-listbox-button-${useId()}`;
   let d = useDisposables();
-  let handleKeyDown = (0, import_react23.useCallback)((event) => {
+  let handleKeyDown = useEvent((event) => {
     switch (event.key) {
       case " " /* Space */:
       case "Enter" /* Enter */:
@@ -85584,41 +86550,45 @@ var Button5 = forwardRefWithAs(function Button6(props, ref) {
         });
         break;
     }
-  }, [dispatch, state2, d]);
-  let handleKeyUp = (0, import_react23.useCallback)((event) => {
+  });
+  let handleKeyUp = useEvent((event) => {
     switch (event.key) {
       case " " /* Space */:
         event.preventDefault();
         break;
     }
-  }, []);
-  let handleClick = (0, import_react23.useCallback)((event) => {
+  });
+  let handleClick = useEvent((event) => {
     if (isDisabledReactIssue7711(event.currentTarget))
       return event.preventDefault();
     if (state2.listboxState === 0 /* Open */) {
       dispatch({ type: 1 /* CloseListbox */ });
       d.nextFrame(() => {
-        var _a2;
-        return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        var _a3;
+        return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
       });
     } else {
       event.preventDefault();
       dispatch({ type: 0 /* OpenListbox */ });
     }
-  }, [dispatch, d, state2]);
+  });
   let labelledby = useComputed(() => {
     if (!state2.labelRef.current)
       return void 0;
     return [state2.labelRef.current.id, id2].join(" ");
   }, [state2.labelRef.current, id2]);
-  let slot = (0, import_react23.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
-  let passthroughProps = props;
-  let propsWeControl = {
+  let slot = (0, import_react30.useMemo)(() => ({
+    open: state2.listboxState === 0 /* Open */,
+    disabled: state2.disabled,
+    value: state2.propsRef.current.value
+  }), [state2]);
+  let theirProps = props;
+  let ourProps = {
     ref: buttonRef,
     id: id2,
     type: useResolveButtonType(props, state2.buttonRef),
     "aria-haspopup": true,
-    "aria-controls": (_a = state2.optionsRef.current) == null ? void 0 : _a.id,
+    "aria-controls": (_a2 = state2.optionsRef.current) == null ? void 0 : _a2.id,
     "aria-expanded": state2.disabled ? void 0 : state2.listboxState === 0 /* Open */,
     "aria-labelledby": labelledby,
     disabled: state2.disabled,
@@ -85627,33 +86597,37 @@ var Button5 = forwardRefWithAs(function Button6(props, ref) {
     onClick: handleClick
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_BUTTON_TAG3,
     name: "Listbox.Button"
   });
 });
 var DEFAULT_LABEL_TAG2 = "label";
-function Label2(props) {
+var Label3 = forwardRefWithAs(function Label4(props, ref) {
   let [state2] = useListboxContext("Listbox.Label");
   let id2 = `headlessui-listbox-label-${useId()}`;
-  let handleClick = (0, import_react23.useCallback)(() => {
-    var _a;
-    return (_a = state2.buttonRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
-  }, [state2.buttonRef]);
-  let slot = (0, import_react23.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
-  let propsWeControl = { ref: state2.labelRef, id: id2, onClick: handleClick };
+  let labelRef = useSyncRefs(state2.labelRef, ref);
+  let handleClick = useEvent(() => {
+    var _a2;
+    return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+  });
+  let slot = (0, import_react30.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */, disabled: state2.disabled }), [state2]);
+  let theirProps = props;
+  let ourProps = { ref: labelRef, id: id2, onClick: handleClick };
   return render({
-    props: { ...props, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_LABEL_TAG2,
     name: "Listbox.Label"
   });
-}
+});
 var DEFAULT_OPTIONS_TAG2 = "ul";
 var OptionsRenderFeatures2 = 1 /* RenderStrategy */ | 2 /* Static */;
 var Options3 = forwardRefWithAs(function Options4(props, ref) {
-  var _a;
+  var _a2;
   let [state2, dispatch] = useListboxContext("Listbox.Options");
   let optionsRef = useSyncRefs(state2.optionsRef, ref);
   let id2 = `headlessui-listbox-options-${useId()}`;
@@ -85666,17 +86640,18 @@ var Options3 = forwardRefWithAs(function Options4(props, ref) {
     }
     return state2.listboxState === 0 /* Open */;
   })();
-  useIsoMorphicEffect(() => {
+  (0, import_react30.useEffect)(() => {
+    var _a3;
     let container = state2.optionsRef.current;
     if (!container)
       return;
     if (state2.listboxState !== 0 /* Open */)
       return;
-    if (container === document.activeElement)
+    if (container === ((_a3 = getOwnerDocument(container)) == null ? void 0 : _a3.activeElement))
       return;
     container.focus({ preventScroll: true });
   }, [state2.listboxState, state2.optionsRef]);
-  let handleKeyDown = (0, import_react23.useCallback)((event) => {
+  let handleKeyDown = useEvent((event) => {
     searchDisposables.dispose();
     switch (event.key) {
       case " " /* Space */:
@@ -85688,15 +86663,17 @@ var Options3 = forwardRefWithAs(function Options4(props, ref) {
       case "Enter" /* Enter */:
         event.preventDefault();
         event.stopPropagation();
-        dispatch({ type: 1 /* CloseListbox */ });
         if (state2.activeOptionIndex !== null) {
           let { dataRef } = state2.options[state2.activeOptionIndex];
           state2.propsRef.current.onChange(dataRef.current.value);
         }
-        disposables().nextFrame(() => {
-          var _a2;
-          return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
-        });
+        if (state2.propsRef.current.mode === 0 /* Single */) {
+          dispatch({ type: 1 /* CloseListbox */ });
+          disposables().nextFrame(() => {
+            var _a3;
+            return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
+          });
+        }
         break;
       case match(state2.orientation, { vertical: "ArrowDown" /* ArrowDown */, horizontal: "ArrowRight" /* ArrowRight */ }):
         event.preventDefault();
@@ -85721,8 +86698,8 @@ var Options3 = forwardRefWithAs(function Options4(props, ref) {
         event.stopPropagation();
         dispatch({ type: 1 /* CloseListbox */ });
         return d.nextFrame(() => {
-          var _a2;
-          return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+          var _a3;
+          return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
         });
       case "Tab" /* Tab */:
         event.preventDefault();
@@ -85735,14 +86712,16 @@ var Options3 = forwardRefWithAs(function Options4(props, ref) {
         }
         break;
     }
-  }, [d, dispatch, searchDisposables, state2]);
+  });
   let labelledby = useComputed(() => {
-    var _a2, _b, _c;
-    return (_c = (_a2 = state2.labelRef.current) == null ? void 0 : _a2.id) != null ? _c : (_b = state2.buttonRef.current) == null ? void 0 : _b.id;
+    var _a3, _b, _c;
+    return (_c = (_a3 = state2.labelRef.current) == null ? void 0 : _a3.id) != null ? _c : (_b = state2.buttonRef.current) == null ? void 0 : _b.id;
   }, [state2.labelRef.current, state2.buttonRef.current]);
-  let slot = (0, import_react23.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */ }), [state2]);
-  let propsWeControl = {
-    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_a = state2.options[state2.activeOptionIndex]) == null ? void 0 : _a.id,
+  let slot = (0, import_react30.useMemo)(() => ({ open: state2.listboxState === 0 /* Open */ }), [state2]);
+  let theirProps = props;
+  let ourProps = {
+    "aria-activedescendant": state2.activeOptionIndex === null ? void 0 : (_a2 = state2.options[state2.activeOptionIndex]) == null ? void 0 : _a2.id,
+    "aria-multiselectable": state2.propsRef.current.mode === 1 /* Multi */ ? true : void 0,
     "aria-labelledby": labelledby,
     "aria-orientation": state2.orientation,
     id: id2,
@@ -85751,9 +86730,9 @@ var Options3 = forwardRefWithAs(function Options4(props, ref) {
     tabIndex: 0,
     ref: optionsRef
   };
-  let passthroughProps = props;
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OPTIONS_TAG2,
     features: OptionsRenderFeatures2,
@@ -85762,13 +86741,33 @@ var Options3 = forwardRefWithAs(function Options4(props, ref) {
   });
 });
 var DEFAULT_OPTION_TAG2 = "li";
-function Option2(props) {
-  let { disabled = false, value, ...passthroughProps } = props;
+var Option3 = forwardRefWithAs(function Option4(props, ref) {
+  let { disabled = false, value, ...theirProps } = props;
   let [state2, dispatch] = useListboxContext("Listbox.Option");
   let id2 = `headlessui-listbox-option-${useId()}`;
   let active = state2.activeOptionIndex !== null ? state2.options[state2.activeOptionIndex].id === id2 : false;
-  let selected = state2.propsRef.current.value === value;
-  let bag = (0, import_react23.useRef)({ disabled, value });
+  let { value: optionValue, compare } = state2.propsRef.current;
+  let selected = match(state2.propsRef.current.mode, {
+    [1 /* Multi */]: () => optionValue.some((option) => compare(option, value)),
+    [0 /* Single */]: () => compare(optionValue, value)
+  });
+  let internalOptionRef = (0, import_react30.useRef)(null);
+  let optionRef = useSyncRefs(ref, internalOptionRef);
+  useIsoMorphicEffect(() => {
+    if (state2.listboxState !== 0 /* Open */)
+      return;
+    if (!active)
+      return;
+    if (state2.activationTrigger === 0 /* Pointer */)
+      return;
+    let d = disposables();
+    d.requestAnimationFrame(() => {
+      var _a2, _b;
+      (_b = (_a2 = internalOptionRef.current) == null ? void 0 : _a2.scrollIntoView) == null ? void 0 : _b.call(_a2, { block: "nearest" });
+    });
+    return d.dispose;
+  }, [internalOptionRef, active, state2.listboxState, state2.activationTrigger, state2.activeOptionIndex]);
+  let bag = (0, import_react30.useRef)({ disabled, value, domRef: internalOptionRef });
   useIsoMorphicEffect(() => {
     bag.current.disabled = disabled;
   }, [bag, disabled]);
@@ -85776,76 +86775,58 @@ function Option2(props) {
     bag.current.value = value;
   }, [bag, value]);
   useIsoMorphicEffect(() => {
-    var _a, _b;
-    bag.current.textValue = (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.textContent) == null ? void 0 : _b.toLowerCase();
-  }, [bag, id2]);
-  let select = (0, import_react23.useCallback)(() => state2.propsRef.current.onChange(value), [state2.propsRef, value]);
+    var _a2, _b;
+    bag.current.textValue = (_b = (_a2 = internalOptionRef.current) == null ? void 0 : _a2.textContent) == null ? void 0 : _b.toLowerCase();
+  }, [bag, internalOptionRef]);
+  let select = useEvent(() => state2.propsRef.current.onChange(value));
   useIsoMorphicEffect(() => {
     dispatch({ type: 7 /* RegisterOption */, id: id2, dataRef: bag });
     return () => dispatch({ type: 8 /* UnregisterOption */, id: id2 });
   }, [bag, id2]);
-  useIsoMorphicEffect(() => {
-    var _a, _b;
-    if (state2.listboxState !== 0 /* Open */)
-      return;
-    if (!selected)
-      return;
-    dispatch({ type: 4 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
-    (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.focus) == null ? void 0 : _b.call(_a);
-  }, [state2.listboxState]);
-  useIsoMorphicEffect(() => {
-    if (state2.listboxState !== 0 /* Open */)
-      return;
-    if (!active)
-      return;
-    let d = disposables();
-    d.requestAnimationFrame(() => {
-      var _a, _b;
-      (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.scrollIntoView) == null ? void 0 : _b.call(_a, { block: "nearest" });
-    });
-    return d.dispose;
-  }, [
-    id2,
-    active,
-    state2.listboxState,
-    state2.activeOptionIndex
-  ]);
-  let handleClick = (0, import_react23.useCallback)((event) => {
+  let handleClick = useEvent((event) => {
     if (disabled)
       return event.preventDefault();
     select();
-    dispatch({ type: 1 /* CloseListbox */ });
-    disposables().nextFrame(() => {
-      var _a;
-      return (_a = state2.buttonRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
-    });
-  }, [dispatch, state2.buttonRef, disabled, select]);
-  let handleFocus = (0, import_react23.useCallback)(() => {
+    if (state2.propsRef.current.mode === 0 /* Single */) {
+      dispatch({ type: 1 /* CloseListbox */ });
+      disposables().nextFrame(() => {
+        var _a2;
+        return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+      });
+    }
+  });
+  let handleFocus = useEvent(() => {
     if (disabled)
       return dispatch({ type: 4 /* GoToOption */, focus: 5 /* Nothing */ });
     dispatch({ type: 4 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
-  }, [disabled, id2, dispatch]);
-  let handleMove = (0, import_react23.useCallback)(() => {
+  });
+  let handleMove = useEvent(() => {
     if (disabled)
       return;
     if (active)
       return;
-    dispatch({ type: 4 /* GoToOption */, focus: 4 /* Specific */, id: id2 });
-  }, [disabled, active, id2, dispatch]);
-  let handleLeave = (0, import_react23.useCallback)(() => {
+    dispatch({
+      type: 4 /* GoToOption */,
+      focus: 4 /* Specific */,
+      id: id2,
+      trigger: 0 /* Pointer */
+    });
+  });
+  let handleLeave = useEvent(() => {
     if (disabled)
       return;
     if (!active)
       return;
     dispatch({ type: 4 /* GoToOption */, focus: 5 /* Nothing */ });
-  }, [disabled, active, dispatch]);
-  let slot = (0, import_react23.useMemo)(() => ({ active, selected, disabled }), [active, selected, disabled]);
-  let propsWeControl = {
+  });
+  let slot = (0, import_react30.useMemo)(() => ({ active, selected, disabled }), [active, selected, disabled]);
+  let ourProps = {
     id: id2,
+    ref: optionRef,
     role: "option",
     tabIndex: disabled === true ? void 0 : -1,
     "aria-disabled": disabled === true ? true : void 0,
-    "aria-selected": selected === true ? true : void 0,
+    "aria-selected": selected,
     disabled: void 0,
     onClick: handleClick,
     onFocus: handleFocus,
@@ -85855,19 +86836,29 @@ function Option2(props) {
     onMouseLeave: handleLeave
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OPTION_TAG2,
     name: "Listbox.Option"
   });
-}
-Listbox.Button = Button5;
-Listbox.Label = Label2;
-Listbox.Options = Options3;
-Listbox.Option = Option2;
+});
+var Listbox2 = Object.assign(ListboxRoot, { Button: Button5, Label: Label3, Options: Options3, Option: Option3 });
 
 // src/components/menu/menu.tsx
-var import_react24 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react31 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+function adjustOrderedState3(state2, adjustment = (i) => i) {
+  let currentActiveItem = state2.activeItemIndex !== null ? state2.items[state2.activeItemIndex] : null;
+  let sortedItems = sortByDomNode(adjustment(state2.items.slice()), (item) => item.dataRef.current.domRef.current);
+  let adjustedActiveItemIndex = currentActiveItem ? sortedItems.indexOf(currentActiveItem) : null;
+  if (adjustedActiveItemIndex === -1) {
+    adjustedActiveItemIndex = null;
+  }
+  return {
+    items: sortedItems,
+    activeItemIndex: adjustedActiveItemIndex
+  };
+}
 var reducers5 = {
   [1 /* CloseMenu */](state2) {
     if (state2.menuState === 1 /* Closed */)
@@ -85880,15 +86871,21 @@ var reducers5 = {
     return { ...state2, menuState: 0 /* Open */ };
   },
   [2 /* GoToItem */]: (state2, action) => {
+    var _a2;
+    let adjustedState = adjustOrderedState3(state2);
     let activeItemIndex = calculateActiveIndex(action, {
-      resolveItems: () => state2.items,
-      resolveActiveIndex: () => state2.activeItemIndex,
+      resolveItems: () => adjustedState.items,
+      resolveActiveIndex: () => adjustedState.activeItemIndex,
       resolveId: (item) => item.id,
       resolveDisabled: (item) => item.dataRef.current.disabled
     });
-    if (state2.searchQuery === "" && state2.activeItemIndex === activeItemIndex)
-      return state2;
-    return { ...state2, searchQuery: "", activeItemIndex };
+    return {
+      ...state2,
+      ...adjustedState,
+      searchQuery: "",
+      activeItemIndex,
+      activationTrigger: (_a2 = action.trigger) != null ? _a2 : 1 /* Other */
+    };
   },
   [3 /* Search */]: (state2, action) => {
     let wasAlreadySearching = state2.searchQuery !== "";
@@ -85896,13 +86893,18 @@ var reducers5 = {
     let searchQuery = state2.searchQuery + action.value.toLowerCase();
     let reOrderedItems = state2.activeItemIndex !== null ? state2.items.slice(state2.activeItemIndex + offset).concat(state2.items.slice(0, state2.activeItemIndex + offset)) : state2.items;
     let matchingItem = reOrderedItems.find((item) => {
-      var _a;
-      return ((_a = item.dataRef.current.textValue) == null ? void 0 : _a.startsWith(searchQuery)) && !item.dataRef.current.disabled;
+      var _a2;
+      return ((_a2 = item.dataRef.current.textValue) == null ? void 0 : _a2.startsWith(searchQuery)) && !item.dataRef.current.disabled;
     });
     let matchIdx = matchingItem ? state2.items.indexOf(matchingItem) : -1;
     if (matchIdx === -1 || matchIdx === state2.activeItemIndex)
       return { ...state2, searchQuery };
-    return { ...state2, searchQuery, activeItemIndex: matchIdx };
+    return {
+      ...state2,
+      searchQuery,
+      activeItemIndex: matchIdx,
+      activationTrigger: 1 /* Other */
+    };
   },
   [4 /* ClearSearch */](state2) {
     if (state2.searchQuery === "")
@@ -85910,36 +86912,32 @@ var reducers5 = {
     return { ...state2, searchQuery: "", searchActiveItemIndex: null };
   },
   [5 /* RegisterItem */]: (state2, action) => {
-    var _a;
-    let orderMap = Array.from((_a = state2.itemsRef.current) == null ? void 0 : _a.querySelectorAll('[id^="headlessui-menu-item-"]')).reduce((lookup, element, index) => Object.assign(lookup, { [element.id]: index }), {});
-    let items = [...state2.items, { id: action.id, dataRef: action.dataRef }].sort((a, z) => orderMap[a.id] - orderMap[z.id]);
-    return { ...state2, items };
+    let adjustedState = adjustOrderedState3(state2, (items) => [
+      ...items,
+      { id: action.id, dataRef: action.dataRef }
+    ]);
+    return { ...state2, ...adjustedState };
   },
   [6 /* UnregisterItem */]: (state2, action) => {
-    let nextItems = state2.items.slice();
-    let currentActiveItem = state2.activeItemIndex !== null ? nextItems[state2.activeItemIndex] : null;
-    let idx = nextItems.findIndex((a) => a.id === action.id);
-    if (idx !== -1)
-      nextItems.splice(idx, 1);
+    let adjustedState = adjustOrderedState3(state2, (items) => {
+      let idx = items.findIndex((a) => a.id === action.id);
+      if (idx !== -1)
+        items.splice(idx, 1);
+      return items;
+    });
     return {
       ...state2,
-      items: nextItems,
-      activeItemIndex: (() => {
-        if (idx === state2.activeItemIndex)
-          return null;
-        if (currentActiveItem === null)
-          return null;
-        return nextItems.indexOf(currentActiveItem);
-      })()
+      ...adjustedState,
+      activationTrigger: 1 /* Other */
     };
   }
 };
-var MenuContext = (0, import_react24.createContext)(null);
+var MenuContext = (0, import_react31.createContext)(null);
 MenuContext.displayName = "MenuContext";
 function useMenuContext(component) {
-  let context = (0, import_react24.useContext)(MenuContext);
+  let context = (0, import_react31.useContext)(MenuContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Menu.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Menu /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, useMenuContext);
     throw err;
@@ -85949,50 +86947,53 @@ function useMenuContext(component) {
 function stateReducer5(state2, action) {
   return match(action.type, reducers5, state2, action);
 }
-var DEFAULT_MENU_TAG = import_react24.Fragment;
-function Menu(props) {
-  let reducerBag = (0, import_react24.useReducer)(stateReducer5, {
+var DEFAULT_MENU_TAG = import_react31.Fragment;
+var MenuRoot = forwardRefWithAs(function Menu(props, ref) {
+  let reducerBag = (0, import_react31.useReducer)(stateReducer5, {
     menuState: 1 /* Closed */,
-    buttonRef: (0, import_react24.createRef)(),
-    itemsRef: (0, import_react24.createRef)(),
+    buttonRef: (0, import_react31.createRef)(),
+    itemsRef: (0, import_react31.createRef)(),
     items: [],
     searchQuery: "",
-    activeItemIndex: null
+    activeItemIndex: null,
+    activationTrigger: 1 /* Other */
   });
   let [{ menuState, itemsRef, buttonRef }, dispatch] = reducerBag;
-  useWindowEvent("mousedown", (event) => {
-    var _a, _b, _c;
-    let target = event.target;
-    if (menuState !== 0 /* Open */)
-      return;
-    if ((_a = buttonRef.current) == null ? void 0 : _a.contains(target))
-      return;
-    if ((_b = itemsRef.current) == null ? void 0 : _b.contains(target))
-      return;
+  let menuRef = useSyncRefs(ref);
+  useOutsideClick([buttonRef, itemsRef], (event, target) => {
+    var _a2;
     dispatch({ type: 1 /* CloseMenu */ });
     if (!isFocusableElement(target, 1 /* Loose */)) {
       event.preventDefault();
-      (_c = buttonRef.current) == null ? void 0 : _c.focus();
+      (_a2 = buttonRef.current) == null ? void 0 : _a2.focus();
     }
-  });
-  let slot = (0, import_react24.useMemo)(() => ({ open: menuState === 0 /* Open */ }), [menuState]);
-  return /* @__PURE__ */ import_react24.default.createElement(MenuContext.Provider, {
+  }, menuState === 0 /* Open */);
+  let slot = (0, import_react31.useMemo)(() => ({ open: menuState === 0 /* Open */ }), [menuState]);
+  let theirProps = props;
+  let ourProps = { ref: menuRef };
+  return /* @__PURE__ */ import_react31.default.createElement(MenuContext.Provider, {
     value: reducerBag
-  }, /* @__PURE__ */ import_react24.default.createElement(OpenClosedProvider, {
+  }, /* @__PURE__ */ import_react31.default.createElement(OpenClosedProvider, {
     value: match(menuState, {
       [0 /* Open */]: 0 /* Open */,
       [1 /* Closed */]: 1 /* Closed */
     })
-  }, render({ props, slot, defaultTag: DEFAULT_MENU_TAG, name: "Menu" })));
-}
+  }, render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_MENU_TAG,
+    name: "Menu"
+  })));
+});
 var DEFAULT_BUTTON_TAG4 = "button";
 var Button7 = forwardRefWithAs(function Button8(props, ref) {
-  var _a;
+  var _a2;
   let [state2, dispatch] = useMenuContext("Menu.Button");
   let buttonRef = useSyncRefs(state2.buttonRef, ref);
   let id2 = `headlessui-menu-button-${useId()}`;
   let d = useDisposables();
-  let handleKeyDown = (0, import_react24.useCallback)((event) => {
+  let handleKeyDown = useEvent((event) => {
     switch (event.key) {
       case " " /* Space */:
       case "Enter" /* Enter */:
@@ -86009,15 +87010,15 @@ var Button7 = forwardRefWithAs(function Button8(props, ref) {
         d.nextFrame(() => dispatch({ type: 2 /* GoToItem */, focus: 3 /* Last */ }));
         break;
     }
-  }, [dispatch, d]);
-  let handleKeyUp = (0, import_react24.useCallback)((event) => {
+  });
+  let handleKeyUp = useEvent((event) => {
     switch (event.key) {
       case " " /* Space */:
         event.preventDefault();
         break;
     }
-  }, []);
-  let handleClick = (0, import_react24.useCallback)((event) => {
+  });
+  let handleClick = useEvent((event) => {
     if (isDisabledReactIssue7711(event.currentTarget))
       return event.preventDefault();
     if (props.disabled)
@@ -86025,30 +87026,30 @@ var Button7 = forwardRefWithAs(function Button8(props, ref) {
     if (state2.menuState === 0 /* Open */) {
       dispatch({ type: 1 /* CloseMenu */ });
       d.nextFrame(() => {
-        var _a2;
-        return (_a2 = state2.buttonRef.current) == null ? void 0 : _a2.focus({ preventScroll: true });
+        var _a3;
+        return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
       });
     } else {
       event.preventDefault();
-      event.stopPropagation();
       dispatch({ type: 0 /* OpenMenu */ });
     }
-  }, [dispatch, d, state2, props.disabled]);
-  let slot = (0, import_react24.useMemo)(() => ({ open: state2.menuState === 0 /* Open */ }), [state2]);
-  let passthroughProps = props;
-  let propsWeControl = {
+  });
+  let slot = (0, import_react31.useMemo)(() => ({ open: state2.menuState === 0 /* Open */ }), [state2]);
+  let theirProps = props;
+  let ourProps = {
     ref: buttonRef,
     id: id2,
     type: useResolveButtonType(props, state2.buttonRef),
     "aria-haspopup": true,
-    "aria-controls": (_a = state2.itemsRef.current) == null ? void 0 : _a.id,
+    "aria-controls": (_a2 = state2.itemsRef.current) == null ? void 0 : _a2.id,
     "aria-expanded": props.disabled ? void 0 : state2.menuState === 0 /* Open */,
     onKeyDown: handleKeyDown,
     onKeyUp: handleKeyUp,
     onClick: handleClick
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_BUTTON_TAG4,
     name: "Menu.Button"
@@ -86057,9 +87058,10 @@ var Button7 = forwardRefWithAs(function Button8(props, ref) {
 var DEFAULT_ITEMS_TAG = "div";
 var ItemsRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
 var Items = forwardRefWithAs(function Items2(props, ref) {
-  var _a, _b;
+  var _a2, _b;
   let [state2, dispatch] = useMenuContext("Menu.Items");
   let itemsRef = useSyncRefs(state2.itemsRef, ref);
+  let ownerDocument = useOwnerDocument(state2.itemsRef);
   let id2 = `headlessui-menu-items-${useId()}`;
   let searchDisposables = useDisposables();
   let usesOpenClosedState = useOpenClosed();
@@ -86069,16 +87071,16 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
     }
     return state2.menuState === 0 /* Open */;
   })();
-  (0, import_react24.useEffect)(() => {
+  (0, import_react31.useEffect)(() => {
     let container = state2.itemsRef.current;
     if (!container)
       return;
     if (state2.menuState !== 0 /* Open */)
       return;
-    if (container === document.activeElement)
+    if (container === (ownerDocument == null ? void 0 : ownerDocument.activeElement))
       return;
     container.focus({ preventScroll: true });
-  }, [state2.menuState, state2.itemsRef]);
+  }, [state2.menuState, state2.itemsRef, ownerDocument]);
   useTreeWalker({
     container: state2.itemsRef.current,
     enabled: state2.menuState === 0 /* Open */,
@@ -86093,8 +87095,8 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
       node.setAttribute("role", "none");
     }
   });
-  let handleKeyDown = (0, import_react24.useCallback)((event) => {
-    var _a2;
+  let handleKeyDown = useEvent((event) => {
+    var _a3, _b2;
     searchDisposables.dispose();
     switch (event.key) {
       case " " /* Space */:
@@ -86108,13 +87110,10 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
         event.stopPropagation();
         dispatch({ type: 1 /* CloseMenu */ });
         if (state2.activeItemIndex !== null) {
-          let { id: id3 } = state2.items[state2.activeItemIndex];
-          (_a2 = document.getElementById(id3)) == null ? void 0 : _a2.click();
+          let { dataRef } = state2.items[state2.activeItemIndex];
+          (_b2 = (_a3 = dataRef.current) == null ? void 0 : _a3.domRef.current) == null ? void 0 : _b2.click();
         }
-        disposables().nextFrame(() => {
-          var _a3;
-          return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
-        });
+        restoreFocusIfNecessary(state2.buttonRef.current);
         break;
       case "ArrowDown" /* ArrowDown */:
         event.preventDefault();
@@ -86139,13 +87138,17 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
         event.stopPropagation();
         dispatch({ type: 1 /* CloseMenu */ });
         disposables().nextFrame(() => {
-          var _a3;
-          return (_a3 = state2.buttonRef.current) == null ? void 0 : _a3.focus({ preventScroll: true });
+          var _a4;
+          return (_a4 = state2.buttonRef.current) == null ? void 0 : _a4.focus({ preventScroll: true });
         });
         break;
       case "Tab" /* Tab */:
         event.preventDefault();
         event.stopPropagation();
+        dispatch({ type: 1 /* CloseMenu */ });
+        disposables().nextFrame(() => {
+          focusFrom(state2.buttonRef.current, event.shiftKey ? 2 /* Previous */ : 4 /* Next */);
+        });
         break;
       default:
         if (event.key.length === 1) {
@@ -86154,17 +87157,18 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
         }
         break;
     }
-  }, [dispatch, searchDisposables, state2]);
-  let handleKeyUp = (0, import_react24.useCallback)((event) => {
+  });
+  let handleKeyUp = useEvent((event) => {
     switch (event.key) {
       case " " /* Space */:
         event.preventDefault();
         break;
     }
-  }, []);
-  let slot = (0, import_react24.useMemo)(() => ({ open: state2.menuState === 0 /* Open */ }), [state2]);
-  let propsWeControl = {
-    "aria-activedescendant": state2.activeItemIndex === null ? void 0 : (_a = state2.items[state2.activeItemIndex]) == null ? void 0 : _a.id,
+  });
+  let slot = (0, import_react31.useMemo)(() => ({ open: state2.menuState === 0 /* Open */ }), [state2]);
+  let theirProps = props;
+  let ourProps = {
+    "aria-activedescendant": state2.activeItemIndex === null ? void 0 : (_a2 = state2.items[state2.activeItemIndex]) == null ? void 0 : _a2.id,
     "aria-labelledby": (_b = state2.buttonRef.current) == null ? void 0 : _b.id,
     id: id2,
     onKeyDown: handleKeyDown,
@@ -86173,9 +87177,9 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
     tabIndex: 0,
     ref: itemsRef
   };
-  let passthroughProps = props;
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_ITEMS_TAG,
     features: ItemsRenderFeatures,
@@ -86183,74 +87187,74 @@ var Items = forwardRefWithAs(function Items2(props, ref) {
     name: "Menu.Items"
   });
 });
-var DEFAULT_ITEM_TAG = import_react24.Fragment;
-function Item(props) {
-  let { disabled = false, onClick, ...passthroughProps } = props;
+var DEFAULT_ITEM_TAG = import_react31.Fragment;
+var Item = forwardRefWithAs(function Item2(props, ref) {
+  let { disabled = false, ...theirProps } = props;
   let [state2, dispatch] = useMenuContext("Menu.Item");
   let id2 = `headlessui-menu-item-${useId()}`;
   let active = state2.activeItemIndex !== null ? state2.items[state2.activeItemIndex].id === id2 : false;
+  let internalItemRef = (0, import_react31.useRef)(null);
+  let itemRef = useSyncRefs(ref, internalItemRef);
   useIsoMorphicEffect(() => {
     if (state2.menuState !== 0 /* Open */)
       return;
     if (!active)
       return;
+    if (state2.activationTrigger === 0 /* Pointer */)
+      return;
     let d = disposables();
     d.requestAnimationFrame(() => {
-      var _a, _b;
-      (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.scrollIntoView) == null ? void 0 : _b.call(_a, { block: "nearest" });
+      var _a2, _b;
+      (_b = (_a2 = internalItemRef.current) == null ? void 0 : _a2.scrollIntoView) == null ? void 0 : _b.call(_a2, { block: "nearest" });
     });
     return d.dispose;
-  }, [
-    id2,
-    active,
-    state2.menuState,
-    state2.activeItemIndex
-  ]);
-  let bag = (0, import_react24.useRef)({ disabled });
+  }, [internalItemRef, active, state2.menuState, state2.activationTrigger, state2.activeItemIndex]);
+  let bag = (0, import_react31.useRef)({ disabled, domRef: internalItemRef });
   useIsoMorphicEffect(() => {
     bag.current.disabled = disabled;
   }, [bag, disabled]);
   useIsoMorphicEffect(() => {
-    var _a, _b;
-    bag.current.textValue = (_b = (_a = document.getElementById(id2)) == null ? void 0 : _a.textContent) == null ? void 0 : _b.toLowerCase();
-  }, [bag, id2]);
+    var _a2, _b;
+    bag.current.textValue = (_b = (_a2 = internalItemRef.current) == null ? void 0 : _a2.textContent) == null ? void 0 : _b.toLowerCase();
+  }, [bag, internalItemRef]);
   useIsoMorphicEffect(() => {
     dispatch({ type: 5 /* RegisterItem */, id: id2, dataRef: bag });
     return () => dispatch({ type: 6 /* UnregisterItem */, id: id2 });
   }, [bag, id2]);
-  let handleClick = (0, import_react24.useCallback)((event) => {
+  let handleClick = useEvent((event) => {
     if (disabled)
       return event.preventDefault();
     dispatch({ type: 1 /* CloseMenu */ });
-    disposables().nextFrame(() => {
-      var _a;
-      return (_a = state2.buttonRef.current) == null ? void 0 : _a.focus({ preventScroll: true });
-    });
-    if (onClick)
-      return onClick(event);
-  }, [dispatch, state2.buttonRef, disabled, onClick]);
-  let handleFocus = (0, import_react24.useCallback)(() => {
+    restoreFocusIfNecessary(state2.buttonRef.current);
+  });
+  let handleFocus = useEvent(() => {
     if (disabled)
       return dispatch({ type: 2 /* GoToItem */, focus: 5 /* Nothing */ });
     dispatch({ type: 2 /* GoToItem */, focus: 4 /* Specific */, id: id2 });
-  }, [disabled, id2, dispatch]);
-  let handleMove = (0, import_react24.useCallback)(() => {
+  });
+  let handleMove = useEvent(() => {
     if (disabled)
       return;
     if (active)
       return;
-    dispatch({ type: 2 /* GoToItem */, focus: 4 /* Specific */, id: id2 });
-  }, [disabled, active, id2, dispatch]);
-  let handleLeave = (0, import_react24.useCallback)(() => {
+    dispatch({
+      type: 2 /* GoToItem */,
+      focus: 4 /* Specific */,
+      id: id2,
+      trigger: 0 /* Pointer */
+    });
+  });
+  let handleLeave = useEvent(() => {
     if (disabled)
       return;
     if (!active)
       return;
     dispatch({ type: 2 /* GoToItem */, focus: 5 /* Nothing */ });
-  }, [disabled, active, dispatch]);
-  let slot = (0, import_react24.useMemo)(() => ({ active, disabled }), [active, disabled]);
-  let propsWeControl = {
+  });
+  let slot = (0, import_react31.useMemo)(() => ({ active, disabled }), [active, disabled]);
+  let ourProps = {
     id: id2,
+    ref: itemRef,
     role: "menuitem",
     tabIndex: disabled === true ? void 0 : -1,
     "aria-disabled": disabled === true ? true : void 0,
@@ -86263,18 +87267,17 @@ function Item(props) {
     onMouseLeave: handleLeave
   };
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_ITEM_TAG,
     name: "Menu.Item"
   });
-}
-Menu.Button = Button7;
-Menu.Items = Items;
-Menu.Item = Item;
+});
+var Menu2 = Object.assign(MenuRoot, { Button: Button7, Items, Item });
 
 // src/components/popover/popover.tsx
-var import_react25 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react32 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 var reducers6 = {
   [0 /* TogglePopover */]: (state2) => ({
     ...state2,
@@ -86309,66 +87312,87 @@ var reducers6 = {
     return { ...state2, panelId: action.panelId };
   }
 };
-var PopoverContext = (0, import_react25.createContext)(null);
+var PopoverContext = (0, import_react32.createContext)(null);
 PopoverContext.displayName = "PopoverContext";
 function usePopoverContext(component) {
-  let context = (0, import_react25.useContext)(PopoverContext);
+  let context = (0, import_react32.useContext)(PopoverContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Popover.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Popover /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, usePopoverContext);
     throw err;
   }
   return context;
 }
-var PopoverAPIContext = (0, import_react25.createContext)(null);
+var PopoverAPIContext = (0, import_react32.createContext)(null);
 PopoverAPIContext.displayName = "PopoverAPIContext";
 function usePopoverAPIContext(component) {
-  let context = (0, import_react25.useContext)(PopoverAPIContext);
+  let context = (0, import_react32.useContext)(PopoverAPIContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${Popover.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <Popover /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, usePopoverAPIContext);
     throw err;
   }
   return context;
 }
-var PopoverGroupContext = (0, import_react25.createContext)(null);
+var PopoverGroupContext = (0, import_react32.createContext)(null);
 PopoverGroupContext.displayName = "PopoverGroupContext";
 function usePopoverGroupContext() {
-  return (0, import_react25.useContext)(PopoverGroupContext);
+  return (0, import_react32.useContext)(PopoverGroupContext);
 }
-var PopoverPanelContext = (0, import_react25.createContext)(null);
+var PopoverPanelContext = (0, import_react32.createContext)(null);
 PopoverPanelContext.displayName = "PopoverPanelContext";
 function usePopoverPanelContext() {
-  return (0, import_react25.useContext)(PopoverPanelContext);
+  return (0, import_react32.useContext)(PopoverPanelContext);
 }
 function stateReducer6(state2, action) {
   return match(action.type, reducers6, state2, action);
 }
 var DEFAULT_POPOVER_TAG = "div";
-function Popover(props) {
+var PopoverRoot = forwardRefWithAs(function Popover(props, ref) {
+  var _a2;
   let buttonId = `headlessui-popover-button-${useId()}`;
   let panelId = `headlessui-popover-panel-${useId()}`;
-  let reducerBag = (0, import_react25.useReducer)(stateReducer6, {
+  let internalPopoverRef = (0, import_react32.useRef)(null);
+  let popoverRef = useSyncRefs(ref, optionalRef((ref2) => {
+    internalPopoverRef.current = ref2;
+  }));
+  let reducerBag = (0, import_react32.useReducer)(stateReducer6, {
     popoverState: 1 /* Closed */,
     button: null,
     buttonId,
     panel: null,
-    panelId
+    panelId,
+    beforePanelSentinel: (0, import_react32.createRef)(),
+    afterPanelSentinel: (0, import_react32.createRef)()
   });
-  let [{ popoverState, button, panel }, dispatch] = reducerBag;
-  (0, import_react25.useEffect)(() => dispatch({ type: 3 /* SetButtonId */, buttonId }), [buttonId, dispatch]);
-  (0, import_react25.useEffect)(() => dispatch({ type: 5 /* SetPanelId */, panelId }), [panelId, dispatch]);
-  let registerBag = (0, import_react25.useMemo)(() => ({ buttonId, panelId, close: () => dispatch({ type: 1 /* ClosePopover */ }) }), [buttonId, panelId, dispatch]);
+  let [{ popoverState, button, panel, beforePanelSentinel, afterPanelSentinel }, dispatch] = reducerBag;
+  let ownerDocument = useOwnerDocument((_a2 = internalPopoverRef.current) != null ? _a2 : button);
+  (0, import_react32.useEffect)(() => dispatch({ type: 3 /* SetButtonId */, buttonId }), [buttonId, dispatch]);
+  (0, import_react32.useEffect)(() => dispatch({ type: 5 /* SetPanelId */, panelId }), [panelId, dispatch]);
+  let isPortalled = (0, import_react32.useMemo)(() => {
+    if (!button)
+      return false;
+    if (!panel)
+      return false;
+    for (let root of document.querySelectorAll("body > *")) {
+      if (Number(root == null ? void 0 : root.contains(button)) ^ Number(root == null ? void 0 : root.contains(panel))) {
+        return true;
+      }
+    }
+    return false;
+  }, [button, panel]);
+  let registerBag = (0, import_react32.useMemo)(() => ({ buttonId, panelId, close: () => dispatch({ type: 1 /* ClosePopover */ }) }), [buttonId, panelId, dispatch]);
   let groupContext = usePopoverGroupContext();
   let registerPopover = groupContext == null ? void 0 : groupContext.registerPopover;
-  let isFocusWithinPopoverGroup = (0, import_react25.useCallback)(() => {
-    var _a;
-    return (_a = groupContext == null ? void 0 : groupContext.isFocusWithinPopoverGroup()) != null ? _a : (button == null ? void 0 : button.contains(document.activeElement)) || (panel == null ? void 0 : panel.contains(document.activeElement));
-  }, [groupContext, button, panel]);
-  (0, import_react25.useEffect)(() => registerPopover == null ? void 0 : registerPopover(registerBag), [registerPopover, registerBag]);
-  useWindowEvent("focus", () => {
+  let isFocusWithinPopoverGroup = useEvent(() => {
+    var _a3;
+    return (_a3 = groupContext == null ? void 0 : groupContext.isFocusWithinPopoverGroup()) != null ? _a3 : (ownerDocument == null ? void 0 : ownerDocument.activeElement) && ((button == null ? void 0 : button.contains(ownerDocument.activeElement)) || (panel == null ? void 0 : panel.contains(ownerDocument.activeElement)));
+  });
+  (0, import_react32.useEffect)(() => registerPopover == null ? void 0 : registerPopover(registerBag), [registerPopover, registerBag]);
+  useEventListener(ownerDocument == null ? void 0 : ownerDocument.defaultView, "focus", (event) => {
+    var _a3, _b, _c, _d;
     if (popoverState !== 0 /* Open */)
       return;
     if (isFocusWithinPopoverGroup())
@@ -86377,71 +87401,68 @@ function Popover(props) {
       return;
     if (!panel)
       return;
+    if ((_b = (_a3 = beforePanelSentinel.current) == null ? void 0 : _a3.contains) == null ? void 0 : _b.call(_a3, event.target))
+      return;
+    if ((_d = (_c = afterPanelSentinel.current) == null ? void 0 : _c.contains) == null ? void 0 : _d.call(_c, event.target))
+      return;
     dispatch({ type: 1 /* ClosePopover */ });
   }, true);
-  useWindowEvent("mousedown", (event) => {
-    let target = event.target;
-    if (popoverState !== 0 /* Open */)
-      return;
-    if (button == null ? void 0 : button.contains(target))
-      return;
-    if (panel == null ? void 0 : panel.contains(target))
-      return;
+  useOutsideClick([button, panel], (event, target) => {
     dispatch({ type: 1 /* ClosePopover */ });
     if (!isFocusableElement(target, 1 /* Loose */)) {
       event.preventDefault();
       button == null ? void 0 : button.focus();
     }
-  });
-  let close = (0, import_react25.useCallback)((focusableElement) => {
+  }, popoverState === 0 /* Open */);
+  let close = useEvent((focusableElement) => {
     dispatch({ type: 1 /* ClosePopover */ });
     let restoreElement = (() => {
       if (!focusableElement)
         return button;
       if (focusableElement instanceof HTMLElement)
         return focusableElement;
-      if (focusableElement.current instanceof HTMLElement)
+      if ("current" in focusableElement && focusableElement.current instanceof HTMLElement)
         return focusableElement.current;
       return button;
     })();
     restoreElement == null ? void 0 : restoreElement.focus();
-  }, [dispatch, button]);
-  let api = (0, import_react25.useMemo)(() => ({ close }), [close]);
-  let slot = (0, import_react25.useMemo)(() => ({ open: popoverState === 0 /* Open */, close }), [popoverState, close]);
-  return /* @__PURE__ */ import_react25.default.createElement(PopoverContext.Provider, {
+  });
+  let api = (0, import_react32.useMemo)(() => ({ close, isPortalled }), [close, isPortalled]);
+  let slot = (0, import_react32.useMemo)(() => ({ open: popoverState === 0 /* Open */, close }), [popoverState, close]);
+  let theirProps = props;
+  let ourProps = { ref: popoverRef };
+  return /* @__PURE__ */ import_react32.default.createElement(PopoverContext.Provider, {
     value: reducerBag
-  }, /* @__PURE__ */ import_react25.default.createElement(PopoverAPIContext.Provider, {
+  }, /* @__PURE__ */ import_react32.default.createElement(PopoverAPIContext.Provider, {
     value: api
-  }, /* @__PURE__ */ import_react25.default.createElement(OpenClosedProvider, {
+  }, /* @__PURE__ */ import_react32.default.createElement(OpenClosedProvider, {
     value: match(popoverState, {
       [0 /* Open */]: 0 /* Open */,
       [1 /* Closed */]: 1 /* Closed */
     })
   }, render({
-    props,
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_POPOVER_TAG,
     name: "Popover"
   }))));
-}
+});
 var DEFAULT_BUTTON_TAG5 = "button";
 var Button9 = forwardRefWithAs(function Button10(props, ref) {
   let [state2, dispatch] = usePopoverContext("Popover.Button");
-  let internalButtonRef = (0, import_react25.useRef)(null);
+  let { isPortalled } = usePopoverAPIContext("Popover.Button");
+  let internalButtonRef = (0, import_react32.useRef)(null);
+  let sentinelId = `headlessui-focus-sentinel-${useId()}`;
   let groupContext = usePopoverGroupContext();
   let closeOthers = groupContext == null ? void 0 : groupContext.closeOthers;
   let panelContext = usePopoverPanelContext();
   let isWithinPanel = panelContext === null ? false : panelContext === state2.panelId;
   let buttonRef = useSyncRefs(internalButtonRef, ref, isWithinPanel ? null : (button) => dispatch({ type: 2 /* SetButton */, button }));
   let withinPanelButtonRef = useSyncRefs(internalButtonRef, ref);
-  let activeElementRef = (0, import_react25.useRef)(null);
-  let previousActiveElementRef = (0, import_react25.useRef)(typeof window === "undefined" ? null : document.activeElement);
-  useWindowEvent("focus", () => {
-    previousActiveElementRef.current = activeElementRef.current;
-    activeElementRef.current = document.activeElement;
-  }, true);
-  let handleKeyDown = (0, import_react25.useCallback)((event) => {
-    var _a, _b;
+  let ownerDocument = useOwnerDocument(internalButtonRef);
+  let handleKeyDown = useEvent((event) => {
+    var _a2, _b, _c;
     if (isWithinPanel) {
       if (state2.popoverState === 1 /* Closed */)
         return;
@@ -86449,9 +87470,9 @@ var Button9 = forwardRefWithAs(function Button10(props, ref) {
         case " " /* Space */:
         case "Enter" /* Enter */:
           event.preventDefault();
-          event.stopPropagation();
+          (_b = (_a2 = event.target).click) == null ? void 0 : _b.call(_a2);
           dispatch({ type: 1 /* ClosePopover */ });
-          (_a = state2.button) == null ? void 0 : _a.focus();
+          (_c = state2.button) == null ? void 0 : _c.focus();
           break;
       }
     } else {
@@ -86469,112 +87490,50 @@ var Button9 = forwardRefWithAs(function Button10(props, ref) {
             return closeOthers == null ? void 0 : closeOthers(state2.buttonId);
           if (!internalButtonRef.current)
             return;
-          if (!internalButtonRef.current.contains(document.activeElement))
+          if ((ownerDocument == null ? void 0 : ownerDocument.activeElement) && !internalButtonRef.current.contains(ownerDocument.activeElement)) {
             return;
+          }
           event.preventDefault();
           event.stopPropagation();
           dispatch({ type: 1 /* ClosePopover */ });
           break;
-        case "Tab" /* Tab */:
-          if (state2.popoverState !== 0 /* Open */)
-            return;
-          if (!state2.panel)
-            return;
-          if (!state2.button)
-            return;
-          if (event.shiftKey) {
-            if (!previousActiveElementRef.current)
-              return;
-            if ((_b = state2.button) == null ? void 0 : _b.contains(previousActiveElementRef.current))
-              return;
-            if (state2.panel.contains(previousActiveElementRef.current))
-              return;
-            let focusableElements = getFocusableElements();
-            let previousIdx = focusableElements.indexOf(previousActiveElementRef.current);
-            let buttonIdx = focusableElements.indexOf(state2.button);
-            if (buttonIdx > previousIdx)
-              return;
-            event.preventDefault();
-            event.stopPropagation();
-            focusIn(state2.panel, 8 /* Last */);
-          } else {
-            event.preventDefault();
-            event.stopPropagation();
-            focusIn(state2.panel, 1 /* First */);
-          }
-          break;
       }
     }
-  }, [
-    dispatch,
-    state2.popoverState,
-    state2.buttonId,
-    state2.button,
-    state2.panel,
-    internalButtonRef,
-    closeOthers,
-    isWithinPanel
-  ]);
-  let handleKeyUp = (0, import_react25.useCallback)((event) => {
-    var _a;
+  });
+  let handleKeyUp = useEvent((event) => {
     if (isWithinPanel)
       return;
     if (event.key === " " /* Space */) {
       event.preventDefault();
     }
-    if (state2.popoverState !== 0 /* Open */)
-      return;
-    if (!state2.panel)
-      return;
-    if (!state2.button)
-      return;
-    switch (event.key) {
-      case "Tab" /* Tab */:
-        if (!previousActiveElementRef.current)
-          return;
-        if ((_a = state2.button) == null ? void 0 : _a.contains(previousActiveElementRef.current))
-          return;
-        if (state2.panel.contains(previousActiveElementRef.current))
-          return;
-        let focusableElements = getFocusableElements();
-        let previousIdx = focusableElements.indexOf(previousActiveElementRef.current);
-        let buttonIdx = focusableElements.indexOf(state2.button);
-        if (buttonIdx > previousIdx)
-          return;
-        event.preventDefault();
-        event.stopPropagation();
-        focusIn(state2.panel, 8 /* Last */);
-        break;
-    }
-  }, [state2.popoverState, state2.panel, state2.button, isWithinPanel]);
-  let handleClick = (0, import_react25.useCallback)((event) => {
-    var _a, _b;
+  });
+  let handleClick = useEvent((event) => {
+    var _a2, _b;
     if (isDisabledReactIssue7711(event.currentTarget))
       return;
     if (props.disabled)
       return;
     if (isWithinPanel) {
       dispatch({ type: 1 /* ClosePopover */ });
-      (_a = state2.button) == null ? void 0 : _a.focus();
+      (_a2 = state2.button) == null ? void 0 : _a2.focus();
     } else {
+      event.preventDefault();
+      event.stopPropagation();
       if (state2.popoverState === 1 /* Closed */)
         closeOthers == null ? void 0 : closeOthers(state2.buttonId);
-      (_b = state2.button) == null ? void 0 : _b.focus();
       dispatch({ type: 0 /* TogglePopover */ });
+      (_b = state2.button) == null ? void 0 : _b.focus();
     }
-  }, [
-    dispatch,
-    state2.button,
-    state2.popoverState,
-    state2.buttonId,
-    props.disabled,
-    closeOthers,
-    isWithinPanel
-  ]);
-  let slot = (0, import_react25.useMemo)(() => ({ open: state2.popoverState === 0 /* Open */ }), [state2]);
+  });
+  let handleMouseDown = useEvent((event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+  let visible = state2.popoverState === 0 /* Open */;
+  let slot = (0, import_react32.useMemo)(() => ({ open: visible }), [visible]);
   let type = useResolveButtonType(props, internalButtonRef);
-  let passthroughProps = props;
-  let propsWeControl = isWithinPanel ? {
+  let theirProps = props;
+  let ourProps = isWithinPanel ? {
     ref: withinPanelButtonRef,
     type,
     onKeyDown: handleKeyDown,
@@ -86587,14 +87546,37 @@ var Button9 = forwardRefWithAs(function Button10(props, ref) {
     "aria-controls": state2.panel ? state2.panelId : void 0,
     onKeyDown: handleKeyDown,
     onKeyUp: handleKeyUp,
-    onClick: handleClick
+    onClick: handleClick,
+    onMouseDown: handleMouseDown
   };
-  return render({
-    props: { ...passthroughProps, ...propsWeControl },
+  let direction = useTabDirection();
+  let handleFocus = useEvent(() => {
+    let el = state2.panel;
+    if (!el)
+      return;
+    function run() {
+      match(direction.current, {
+        [0 /* Forwards */]: () => focusIn(el, 1 /* First */),
+        [1 /* Backwards */]: () => focusIn(el, 8 /* Last */)
+      });
+    }
+    if (false) {} else {
+      run();
+    }
+  });
+  return /* @__PURE__ */ import_react32.default.createElement(import_react32.default.Fragment, null, render({
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_BUTTON_TAG5,
     name: "Popover.Button"
-  });
+  }), visible && !isWithinPanel && isPortalled && /* @__PURE__ */ import_react32.default.createElement(Hidden, {
+    id: sentinelId,
+    features: 2 /* Focusable */,
+    as: "button",
+    type: "button",
+    onFocus: handleFocus
+  }));
 });
 var DEFAULT_OVERLAY_TAG2 = "div";
 var OverlayRenderFeatures = 1 /* RenderStrategy */ | 2 /* Static */;
@@ -86609,21 +87591,22 @@ var Overlay3 = forwardRefWithAs(function Overlay4(props, ref) {
     }
     return popoverState === 0 /* Open */;
   })();
-  let handleClick = (0, import_react25.useCallback)((event) => {
+  let handleClick = useEvent((event) => {
     if (isDisabledReactIssue7711(event.currentTarget))
       return event.preventDefault();
     dispatch({ type: 1 /* ClosePopover */ });
-  }, [dispatch]);
-  let slot = (0, import_react25.useMemo)(() => ({ open: popoverState === 0 /* Open */ }), [popoverState]);
-  let propsWeControl = {
+  });
+  let slot = (0, import_react32.useMemo)(() => ({ open: popoverState === 0 /* Open */ }), [popoverState]);
+  let theirProps = props;
+  let ourProps = {
     ref: overlayRef,
     id: id2,
     "aria-hidden": true,
     onClick: handleClick
   };
-  let passthroughProps = props;
   return render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OVERLAY_TAG2,
     features: OverlayRenderFeatures,
@@ -86631,16 +87614,19 @@ var Overlay3 = forwardRefWithAs(function Overlay4(props, ref) {
     name: "Popover.Overlay"
   });
 });
-var DEFAULT_PANEL_TAG2 = "div";
+var DEFAULT_PANEL_TAG3 = "div";
 var PanelRenderFeatures2 = 1 /* RenderStrategy */ | 2 /* Static */;
-var Panel3 = forwardRefWithAs(function Panel4(props, ref) {
-  let { focus = false, ...passthroughProps } = props;
+var Panel5 = forwardRefWithAs(function Panel6(props, ref) {
+  let { focus = false, ...theirProps } = props;
   let [state2, dispatch] = usePopoverContext("Popover.Panel");
-  let { close } = usePopoverAPIContext("Popover.Panel");
-  let internalPanelRef = (0, import_react25.useRef)(null);
+  let { close, isPortalled } = usePopoverAPIContext("Popover.Panel");
+  let beforePanelSentinelId = `headlessui-focus-sentinel-before-${useId()}`;
+  let afterPanelSentinelId = `headlessui-focus-sentinel-after-${useId()}`;
+  let internalPanelRef = (0, import_react32.useRef)(null);
   let panelRef = useSyncRefs(internalPanelRef, ref, (panel) => {
     dispatch({ type: 4 /* SetPanel */, panel });
   });
+  let ownerDocument = useOwnerDocument(internalPanelRef);
   let usesOpenClosedState = useOpenClosed();
   let visible = (() => {
     if (usesOpenClosedState !== null) {
@@ -86648,110 +87634,148 @@ var Panel3 = forwardRefWithAs(function Panel4(props, ref) {
     }
     return state2.popoverState === 0 /* Open */;
   })();
-  let handleKeyDown = (0, import_react25.useCallback)((event) => {
-    var _a;
+  let handleKeyDown = useEvent((event) => {
+    var _a2;
     switch (event.key) {
       case "Escape" /* Escape */:
         if (state2.popoverState !== 0 /* Open */)
           return;
         if (!internalPanelRef.current)
           return;
-        if (!internalPanelRef.current.contains(document.activeElement))
+        if ((ownerDocument == null ? void 0 : ownerDocument.activeElement) && !internalPanelRef.current.contains(ownerDocument.activeElement)) {
           return;
+        }
         event.preventDefault();
         event.stopPropagation();
         dispatch({ type: 1 /* ClosePopover */ });
-        (_a = state2.button) == null ? void 0 : _a.focus();
+        (_a2 = state2.button) == null ? void 0 : _a2.focus();
         break;
     }
-  }, [state2, internalPanelRef, dispatch]);
-  (0, import_react25.useEffect)(() => () => dispatch({ type: 4 /* SetPanel */, panel: null }), [dispatch]);
-  (0, import_react25.useEffect)(() => {
-    var _a;
+  });
+  (0, import_react32.useEffect)(() => {
+    var _a2;
     if (props.static)
       return;
-    if (state2.popoverState === 1 /* Closed */ && ((_a = props.unmount) != null ? _a : true)) {
+    if (state2.popoverState === 1 /* Closed */ && ((_a2 = props.unmount) != null ? _a2 : true)) {
       dispatch({ type: 4 /* SetPanel */, panel: null });
     }
   }, [state2.popoverState, props.unmount, props.static, dispatch]);
-  (0, import_react25.useEffect)(() => {
+  (0, import_react32.useEffect)(() => {
     if (!focus)
       return;
     if (state2.popoverState !== 0 /* Open */)
       return;
     if (!internalPanelRef.current)
       return;
-    let activeElement = document.activeElement;
+    let activeElement = ownerDocument == null ? void 0 : ownerDocument.activeElement;
     if (internalPanelRef.current.contains(activeElement))
       return;
     focusIn(internalPanelRef.current, 1 /* First */);
   }, [focus, internalPanelRef, state2.popoverState]);
-  useWindowEvent("keydown", (event) => {
-    var _a;
-    if (state2.popoverState !== 0 /* Open */)
-      return;
-    if (!internalPanelRef.current)
-      return;
-    if (event.key !== "Tab" /* Tab */)
-      return;
-    if (!document.activeElement)
-      return;
-    if (!internalPanelRef.current)
-      return;
-    if (!internalPanelRef.current.contains(document.activeElement))
-      return;
-    event.preventDefault();
-    let result = focusIn(internalPanelRef.current, event.shiftKey ? 2 /* Previous */ : 4 /* Next */);
-    if (result === 3 /* Underflow */) {
-      return (_a = state2.button) == null ? void 0 : _a.focus();
-    } else if (result === 1 /* Overflow */) {
-      if (!state2.button)
-        return;
-      let elements = getFocusableElements();
-      let buttonIdx = elements.indexOf(state2.button);
-      let nextElements = elements.splice(buttonIdx + 1).filter((element) => {
-        var _a2;
-        return !((_a2 = internalPanelRef.current) == null ? void 0 : _a2.contains(element));
-      });
-      if (focusIn(nextElements, 1 /* First */) === 0 /* Error */) {
-        focusIn(document.body, 1 /* First */);
-      }
-    }
-  });
-  useWindowEvent("focus", () => {
-    var _a;
-    if (!focus)
-      return;
-    if (state2.popoverState !== 0 /* Open */)
-      return;
-    if (!internalPanelRef.current)
-      return;
-    if ((_a = internalPanelRef.current) == null ? void 0 : _a.contains(document.activeElement))
-      return;
-    dispatch({ type: 1 /* ClosePopover */ });
-  }, true);
-  let slot = (0, import_react25.useMemo)(() => ({ open: state2.popoverState === 0 /* Open */, close }), [state2, close]);
-  let propsWeControl = {
+  let slot = (0, import_react32.useMemo)(() => ({ open: state2.popoverState === 0 /* Open */, close }), [state2, close]);
+  let ourProps = {
     ref: panelRef,
     id: state2.panelId,
-    onKeyDown: handleKeyDown
+    onKeyDown: handleKeyDown,
+    onBlur: focus && state2.popoverState === 0 /* Open */ ? (event) => {
+      var _a2, _b, _c, _d, _e;
+      let el = event.relatedTarget;
+      if (!el)
+        return;
+      if (!internalPanelRef.current)
+        return;
+      if ((_a2 = internalPanelRef.current) == null ? void 0 : _a2.contains(el))
+        return;
+      dispatch({ type: 1 /* ClosePopover */ });
+      if (((_c = (_b = state2.beforePanelSentinel.current) == null ? void 0 : _b.contains) == null ? void 0 : _c.call(_b, el)) || ((_e = (_d = state2.afterPanelSentinel.current) == null ? void 0 : _d.contains) == null ? void 0 : _e.call(_d, el))) {
+        el.focus({ preventScroll: true });
+      }
+    } : void 0,
+    tabIndex: -1
   };
-  return /* @__PURE__ */ import_react25.default.createElement(PopoverPanelContext.Provider, {
+  let direction = useTabDirection();
+  let handleBeforeFocus = useEvent(() => {
+    let el = internalPanelRef.current;
+    if (!el)
+      return;
+    function run() {
+      match(direction.current, {
+        [0 /* Forwards */]: () => {
+          focusIn(el, 1 /* First */);
+        },
+        [1 /* Backwards */]: () => {
+          var _a2;
+          (_a2 = state2.button) == null ? void 0 : _a2.focus({ preventScroll: true });
+        }
+      });
+    }
+    if (false) {} else {
+      run();
+    }
+  });
+  let handleAfterFocus = useEvent(() => {
+    let el = internalPanelRef.current;
+    if (!el)
+      return;
+    function run() {
+      match(direction.current, {
+        [0 /* Forwards */]: () => {
+          var _a2, _b, _c;
+          if (!state2.button)
+            return;
+          let elements = getFocusableElements();
+          let idx = elements.indexOf(state2.button);
+          let before = elements.slice(0, idx + 1);
+          let after = elements.slice(idx + 1);
+          let combined = [...after, ...before];
+          for (let element of combined.slice()) {
+            if (((_b = (_a2 = element == null ? void 0 : element.id) == null ? void 0 : _a2.startsWith) == null ? void 0 : _b.call(_a2, "headlessui-focus-sentinel-")) || ((_c = state2.panel) == null ? void 0 : _c.contains(element))) {
+              let idx2 = combined.indexOf(element);
+              if (idx2 !== -1)
+                combined.splice(idx2, 1);
+            }
+          }
+          focusIn(combined, 1 /* First */, false);
+        },
+        [1 /* Backwards */]: () => focusIn(el, 8 /* Last */)
+      });
+    }
+    if (false) {} else {
+      run();
+    }
+  });
+  return /* @__PURE__ */ import_react32.default.createElement(PopoverPanelContext.Provider, {
     value: state2.panelId
-  }, render({
-    props: { ...passthroughProps, ...propsWeControl },
+  }, visible && isPortalled && /* @__PURE__ */ import_react32.default.createElement(Hidden, {
+    id: beforePanelSentinelId,
+    ref: state2.beforePanelSentinel,
+    features: 2 /* Focusable */,
+    as: "button",
+    type: "button",
+    onFocus: handleBeforeFocus
+  }), render({
+    ourProps,
+    theirProps,
     slot,
-    defaultTag: DEFAULT_PANEL_TAG2,
+    defaultTag: DEFAULT_PANEL_TAG3,
     features: PanelRenderFeatures2,
     visible,
     name: "Popover.Panel"
+  }), visible && isPortalled && /* @__PURE__ */ import_react32.default.createElement(Hidden, {
+    id: afterPanelSentinelId,
+    ref: state2.afterPanelSentinel,
+    features: 2 /* Focusable */,
+    as: "button",
+    type: "button",
+    onFocus: handleAfterFocus
   }));
 });
 var DEFAULT_GROUP_TAG2 = "div";
-function Group2(props) {
-  let groupRef = (0, import_react25.useRef)(null);
-  let [popovers, setPopovers] = (0, import_react25.useState)([]);
-  let unregisterPopover = (0, import_react25.useCallback)((registerbag) => {
+var Group3 = forwardRefWithAs(function Group4(props, ref) {
+  let internalGroupRef = (0, import_react32.useRef)(null);
+  let groupRef = useSyncRefs(internalGroupRef, ref);
+  let [popovers, setPopovers] = (0, import_react32.useState)([]);
+  let unregisterPopover = useEvent((registerbag) => {
     setPopovers((existing) => {
       let idx = existing.indexOf(registerbag);
       if (idx !== -1) {
@@ -86761,69 +87785,70 @@ function Group2(props) {
       }
       return existing;
     });
-  }, [setPopovers]);
-  let registerPopover = (0, import_react25.useCallback)((registerbag) => {
+  });
+  let registerPopover = useEvent((registerbag) => {
     setPopovers((existing) => [...existing, registerbag]);
     return () => unregisterPopover(registerbag);
-  }, [setPopovers, unregisterPopover]);
-  let isFocusWithinPopoverGroup = (0, import_react25.useCallback)(() => {
-    var _a;
-    let element = document.activeElement;
-    if ((_a = groupRef.current) == null ? void 0 : _a.contains(element))
+  });
+  let isFocusWithinPopoverGroup = useEvent(() => {
+    var _a2;
+    let ownerDocument = getOwnerDocument(internalGroupRef);
+    if (!ownerDocument)
+      return false;
+    let element = ownerDocument.activeElement;
+    if ((_a2 = internalGroupRef.current) == null ? void 0 : _a2.contains(element))
       return true;
     return popovers.some((bag) => {
-      var _a2, _b;
-      return ((_a2 = document.getElementById(bag.buttonId)) == null ? void 0 : _a2.contains(element)) || ((_b = document.getElementById(bag.panelId)) == null ? void 0 : _b.contains(element));
+      var _a3, _b;
+      return ((_a3 = ownerDocument.getElementById(bag.buttonId)) == null ? void 0 : _a3.contains(element)) || ((_b = ownerDocument.getElementById(bag.panelId)) == null ? void 0 : _b.contains(element));
     });
-  }, [groupRef, popovers]);
-  let closeOthers = (0, import_react25.useCallback)((buttonId) => {
+  });
+  let closeOthers = useEvent((buttonId) => {
     for (let popover of popovers) {
       if (popover.buttonId !== buttonId)
         popover.close();
     }
-  }, [popovers]);
-  let contextBag = (0, import_react25.useMemo)(() => ({
+  });
+  let contextBag = (0, import_react32.useMemo)(() => ({
     registerPopover,
     unregisterPopover,
     isFocusWithinPopoverGroup,
     closeOthers
   }), [registerPopover, unregisterPopover, isFocusWithinPopoverGroup, closeOthers]);
-  let slot = (0, import_react25.useMemo)(() => ({}), []);
-  let propsWeControl = { ref: groupRef };
-  let passthroughProps = props;
-  return /* @__PURE__ */ import_react25.default.createElement(PopoverGroupContext.Provider, {
+  let slot = (0, import_react32.useMemo)(() => ({}), []);
+  let theirProps = props;
+  let ourProps = { ref: groupRef };
+  return /* @__PURE__ */ import_react32.default.createElement(PopoverGroupContext.Provider, {
     value: contextBag
   }, render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_GROUP_TAG2,
     name: "Popover.Group"
   }));
-}
-Popover.Button = Button9;
-Popover.Overlay = Overlay3;
-Popover.Panel = Panel3;
-Popover.Group = Group2;
+});
+var Popover2 = Object.assign(PopoverRoot, { Button: Button9, Overlay: Overlay3, Panel: Panel5, Group: Group3 });
 
 // src/components/radio-group/radio-group.tsx
-var import_react28 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react35 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 
 // src/hooks/use-flags.ts
-var import_react26 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var import_react33 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function useFlags(initialFlags = 0) {
-  let [flags, setFlags] = (0, import_react26.useState)(initialFlags);
-  let addFlag = (0, import_react26.useCallback)((flag) => setFlags((flags2) => flags2 | flag), [setFlags]);
-  let hasFlag = (0, import_react26.useCallback)((flag) => Boolean(flags & flag), [flags]);
-  let removeFlag = (0, import_react26.useCallback)((flag) => setFlags((flags2) => flags2 & ~flag), [setFlags]);
-  let toggleFlag = (0, import_react26.useCallback)((flag) => setFlags((flags2) => flags2 ^ flag), [setFlags]);
+  let [flags, setFlags] = (0, import_react33.useState)(initialFlags);
+  let addFlag = (0, import_react33.useCallback)((flag) => setFlags((flags2) => flags2 | flag), [flags]);
+  let hasFlag = (0, import_react33.useCallback)((flag) => Boolean(flags & flag), [flags]);
+  let removeFlag = (0, import_react33.useCallback)((flag) => setFlags((flags2) => flags2 & ~flag), [setFlags]);
+  let toggleFlag = (0, import_react33.useCallback)((flag) => setFlags((flags2) => flags2 ^ flag), [setFlags]);
   return { addFlag, hasFlag, removeFlag, toggleFlag };
 }
 
 // src/components/label/label.tsx
-var import_react27 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-var LabelContext = (0, import_react27.createContext)(null);
+var import_react34 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var LabelContext = (0, import_react34.createContext)(null);
 function useLabelContext() {
-  let context = (0, import_react27.useContext)(LabelContext);
+  let context = (0, import_react34.useContext)(LabelContext);
   if (context === null) {
     let err = new Error("You used a <Label /> component, but it is not inside a relevant parent.");
     if (Error.captureStackTrace)
@@ -86833,12 +87858,12 @@ function useLabelContext() {
   return context;
 }
 function useLabels() {
-  let [labelIds, setLabelIds] = (0, import_react27.useState)([]);
+  let [labelIds, setLabelIds] = (0, import_react34.useState)([]);
   return [
     labelIds.length > 0 ? labelIds.join(" ") : void 0,
-    (0, import_react27.useMemo)(() => {
+    (0, import_react34.useMemo)(() => {
       return function LabelProvider(props) {
-        let register = (0, import_react27.useCallback)((value) => {
+        let register = useEvent((value) => {
           setLabelIds((existing) => [...existing, value]);
           return () => setLabelIds((existing) => {
             let clone = existing.slice();
@@ -86847,9 +87872,9 @@ function useLabels() {
               clone.splice(idx, 1);
             return clone;
           });
-        }, []);
-        let contextBag = (0, import_react27.useMemo)(() => ({ register, slot: props.slot, name: props.name, props: props.props }), [register, props.slot, props.name, props.props]);
-        return /* @__PURE__ */ import_react27.default.createElement(LabelContext.Provider, {
+        });
+        let contextBag = (0, import_react34.useMemo)(() => ({ register, slot: props.slot, name: props.name, props: props.props }), [register, props.slot, props.name, props.props]);
+        return /* @__PURE__ */ import_react34.default.createElement(LabelContext.Provider, {
           value: contextBag
         }, props.children);
       };
@@ -86857,32 +87882,40 @@ function useLabels() {
   ];
 }
 var DEFAULT_LABEL_TAG3 = "label";
-function Label3(props) {
-  let { passive = false, ...passThroughProps } = props;
+var Label5 = forwardRefWithAs(function Label6(props, ref) {
+  let { passive = false, ...theirProps } = props;
   let context = useLabelContext();
   let id2 = `headlessui-label-${useId()}`;
+  let labelRef = useSyncRefs(ref);
   useIsoMorphicEffect(() => context.register(id2), [id2, context.register]);
-  let propsWeControl = { ...context.props, id: id2 };
-  let allProps = { ...passThroughProps, ...propsWeControl };
-  if (passive)
-    delete allProps["onClick"];
+  let ourProps = { ref: labelRef, ...context.props, id: id2 };
+  if (passive) {
+    if ("onClick" in ourProps) {
+      delete ourProps["onClick"];
+    }
+    if ("onClick" in theirProps) {
+      delete theirProps["onClick"];
+    }
+  }
   return render({
-    props: allProps,
+    ourProps,
+    theirProps,
     slot: context.slot || {},
     defaultTag: DEFAULT_LABEL_TAG3,
     name: context.name || "Label"
   });
-}
+});
 
 // src/components/radio-group/radio-group.tsx
 var reducers7 = {
   [0 /* RegisterOption */](state2, action) {
+    let nextOptions = [
+      ...state2.options,
+      { id: action.id, element: action.element, propsRef: action.propsRef }
+    ];
     return {
       ...state2,
-      options: [
-        ...state2.options,
-        { id: action.id, element: action.element, propsRef: action.propsRef }
-      ]
+      options: sortByDomNode(nextOptions, (option) => option.element.current)
     };
   },
   [1 /* UnregisterOption */](state2, action) {
@@ -86894,12 +87927,12 @@ var reducers7 = {
     return { ...state2, options };
   }
 };
-var RadioGroupContext = (0, import_react28.createContext)(null);
+var RadioGroupContext = (0, import_react35.createContext)(null);
 RadioGroupContext.displayName = "RadioGroupContext";
 function useRadioGroupContext(component) {
-  let context = (0, import_react28.useContext)(RadioGroupContext);
+  let context = (0, import_react35.useContext)(RadioGroupContext);
   if (context === null) {
-    let err = new Error(`<${component} /> is missing a parent <${RadioGroup.name} /> component.`);
+    let err = new Error(`<${component} /> is missing a parent <RadioGroup /> component.`);
     if (Error.captureStackTrace)
       Error.captureStackTrace(err, useRadioGroupContext);
     throw err;
@@ -86910,35 +87943,48 @@ function stateReducer7(state2, action) {
   return match(action.type, reducers7, state2, action);
 }
 var DEFAULT_RADIO_GROUP_TAG = "div";
-function RadioGroup(props) {
-  let { value, onChange, disabled = false, ...passThroughProps } = props;
-  let [{ options }, dispatch] = (0, import_react28.useReducer)(stateReducer7, {
-    options: []
-  });
+var RadioGroupRoot = forwardRefWithAs(function RadioGroup(props, ref) {
+  let {
+    value: controlledValue,
+    defaultValue,
+    name,
+    onChange: controlledOnChange,
+    by = (a, z) => a === z,
+    disabled = false,
+    ...theirProps
+  } = props;
+  let compare = useEvent(typeof by === "string" ? (a, z) => {
+    let property = by;
+    return (a == null ? void 0 : a[property]) === (z == null ? void 0 : z[property]);
+  } : by);
+  let [state2, dispatch] = (0, import_react35.useReducer)(stateReducer7, { options: [] });
+  let options = state2.options;
   let [labelledby, LabelProvider] = useLabels();
   let [describedby, DescriptionProvider] = useDescriptions();
   let id2 = `headlessui-radiogroup-${useId()}`;
-  let radioGroupRef = (0, import_react28.useRef)(null);
-  let firstOption = (0, import_react28.useMemo)(() => options.find((option) => {
+  let internalRadioGroupRef = (0, import_react35.useRef)(null);
+  let radioGroupRef = useSyncRefs(internalRadioGroupRef, ref);
+  let [value, onChange] = useControllable(controlledValue, controlledOnChange, defaultValue);
+  let firstOption = (0, import_react35.useMemo)(() => options.find((option) => {
     if (option.propsRef.current.disabled)
       return false;
     return true;
   }), [options]);
-  let containsCheckedOption = (0, import_react28.useMemo)(() => options.some((option) => option.propsRef.current.value === value), [options, value]);
-  let triggerChange = (0, import_react28.useCallback)((nextValue) => {
-    var _a;
+  let containsCheckedOption = (0, import_react35.useMemo)(() => options.some((option) => compare(option.propsRef.current.value, value)), [options, value]);
+  let triggerChange = useEvent((nextValue) => {
+    var _a2;
     if (disabled)
       return false;
-    if (nextValue === value)
+    if (compare(nextValue, value))
       return false;
-    let nextOption = (_a = options.find((option) => option.propsRef.current.value === nextValue)) == null ? void 0 : _a.propsRef.current;
+    let nextOption = (_a2 = options.find((option) => compare(option.propsRef.current.value, nextValue))) == null ? void 0 : _a2.propsRef.current;
     if (nextOption == null ? void 0 : nextOption.disabled)
       return false;
-    onChange(nextValue);
+    onChange == null ? void 0 : onChange(nextValue);
     return true;
-  }, [onChange, value, disabled, options]);
+  });
   useTreeWalker({
-    container: radioGroupRef.current,
+    container: internalRadioGroupRef.current,
     accept(node) {
       if (node.getAttribute("role") === "radio")
         return NodeFilter.FILTER_REJECT;
@@ -86950,12 +87996,16 @@ function RadioGroup(props) {
       node.setAttribute("role", "none");
     }
   });
-  let handleKeyDown = (0, import_react28.useCallback)((event) => {
-    let container = radioGroupRef.current;
+  let handleKeyDown = useEvent((event) => {
+    let container = internalRadioGroupRef.current;
     if (!container)
       return;
+    let ownerDocument = getOwnerDocument(container);
     let all = options.filter((option) => option.propsRef.current.disabled === false).map((radio) => radio.element.current);
     switch (event.key) {
+      case "Enter" /* Enter */:
+        attemptSubmit(event.currentTarget);
+        break;
       case "ArrowLeft" /* ArrowLeft */:
       case "ArrowUp" /* ArrowUp */:
         {
@@ -86963,7 +88013,7 @@ function RadioGroup(props) {
           event.stopPropagation();
           let result = focusIn(all, 2 /* Previous */ | 16 /* WrapAround */);
           if (result === 2 /* Success */) {
-            let activeOption = options.find((option) => option.element.current === document.activeElement);
+            let activeOption = options.find((option) => option.element.current === (ownerDocument == null ? void 0 : ownerDocument.activeElement));
             if (activeOption)
               triggerChange(activeOption.propsRef.current.value);
           }
@@ -86976,7 +88026,7 @@ function RadioGroup(props) {
           event.stopPropagation();
           let result = focusIn(all, 4 /* Next */ | 16 /* WrapAround */);
           if (result === 2 /* Success */) {
-            let activeOption = options.find((option) => option.element.current === document.activeElement);
+            let activeOption = options.find((option) => option.element.current === (ownerDocument == null ? void 0 : ownerDocument.activeElement));
             if (activeOption)
               triggerChange(activeOption.propsRef.current.value);
           }
@@ -86986,26 +88036,27 @@ function RadioGroup(props) {
         {
           event.preventDefault();
           event.stopPropagation();
-          let activeOption = options.find((option) => option.element.current === document.activeElement);
+          let activeOption = options.find((option) => option.element.current === (ownerDocument == null ? void 0 : ownerDocument.activeElement));
           if (activeOption)
             triggerChange(activeOption.propsRef.current.value);
         }
         break;
     }
-  }, [radioGroupRef, options, triggerChange]);
-  let registerOption = (0, import_react28.useCallback)((option) => {
+  });
+  let registerOption = useEvent((option) => {
     dispatch({ type: 0 /* RegisterOption */, ...option });
     return () => dispatch({ type: 1 /* UnregisterOption */, id: option.id });
-  }, [dispatch]);
-  let api = (0, import_react28.useMemo)(() => ({
+  });
+  let api = (0, import_react35.useMemo)(() => ({
     registerOption,
     firstOption,
     containsCheckedOption,
     change: triggerChange,
     disabled,
-    value
-  }), [registerOption, firstOption, containsCheckedOption, triggerChange, disabled, value]);
-  let propsWeControl = {
+    value,
+    compare
+  }), [registerOption, firstOption, containsCheckedOption, triggerChange, disabled, value, compare]);
+  let ourProps = {
     ref: radioGroupRef,
     id: id2,
     role: "radiogroup",
@@ -87013,27 +88064,43 @@ function RadioGroup(props) {
     "aria-describedby": describedby,
     onKeyDown: handleKeyDown
   };
-  return /* @__PURE__ */ import_react28.default.createElement(DescriptionProvider, {
+  let slot = (0, import_react35.useMemo)(() => ({ value }), [value]);
+  return /* @__PURE__ */ import_react35.default.createElement(DescriptionProvider, {
     name: "RadioGroup.Description"
-  }, /* @__PURE__ */ import_react28.default.createElement(LabelProvider, {
+  }, /* @__PURE__ */ import_react35.default.createElement(LabelProvider, {
     name: "RadioGroup.Label"
-  }, /* @__PURE__ */ import_react28.default.createElement(RadioGroupContext.Provider, {
+  }, /* @__PURE__ */ import_react35.default.createElement(RadioGroupContext.Provider, {
     value: api
-  }, render({
-    props: { ...passThroughProps, ...propsWeControl },
+  }, name != null && value != null && objectToFormEntries({ [name]: value }).map(([name2, value2]) => /* @__PURE__ */ import_react35.default.createElement(Hidden, {
+    features: 4 /* Hidden */,
+    ...compact({
+      key: name2,
+      as: "input",
+      type: "radio",
+      checked: value2 != null,
+      hidden: true,
+      readOnly: true,
+      name: name2,
+      value: value2
+    })
+  })), render({
+    ourProps,
+    theirProps,
+    slot,
     defaultTag: DEFAULT_RADIO_GROUP_TAG,
     name: "RadioGroup"
   }))));
-}
+});
 var DEFAULT_OPTION_TAG3 = "div";
-function Option3(props) {
-  let optionRef = (0, import_react28.useRef)(null);
+var Option5 = forwardRefWithAs(function Option6(props, ref) {
+  let internalOptionRef = (0, import_react35.useRef)(null);
+  let optionRef = useSyncRefs(internalOptionRef, ref);
   let id2 = `headlessui-radiogroup-option-${useId()}`;
   let [labelledby, LabelProvider] = useLabels();
   let [describedby, DescriptionProvider] = useDescriptions();
   let { addFlag, removeFlag, hasFlag } = useFlags(1 /* Empty */);
-  let { value, disabled = false, ...passThroughProps } = props;
-  let propsRef = (0, import_react28.useRef)({ value, disabled });
+  let { value, disabled = false, ...theirProps } = props;
+  let propsRef = (0, import_react35.useRef)({ value, disabled });
   useIsoMorphicEffect(() => {
     propsRef.current.value = value;
   }, [value, propsRef]);
@@ -87046,22 +88113,29 @@ function Option3(props) {
     change,
     firstOption,
     containsCheckedOption,
-    value: radioGroupValue
+    value: radioGroupValue,
+    compare
   } = useRadioGroupContext("RadioGroup.Option");
-  useIsoMorphicEffect(() => registerOption({ id: id2, element: optionRef, propsRef }), [id2, registerOption, optionRef, props]);
-  let handleClick = (0, import_react28.useCallback)(() => {
-    var _a;
+  useIsoMorphicEffect(() => registerOption({ id: id2, element: internalOptionRef, propsRef }), [id2, registerOption, internalOptionRef, props]);
+  let handleClick = useEvent((event) => {
+    var _a2;
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
     if (!change(value))
       return;
     addFlag(2 /* Active */);
-    (_a = optionRef.current) == null ? void 0 : _a.focus();
-  }, [addFlag, change, value]);
-  let handleFocus = (0, import_react28.useCallback)(() => addFlag(2 /* Active */), [addFlag]);
-  let handleBlur = (0, import_react28.useCallback)(() => removeFlag(2 /* Active */), [removeFlag]);
+    (_a2 = internalOptionRef.current) == null ? void 0 : _a2.focus();
+  });
+  let handleFocus = useEvent((event) => {
+    if (isDisabledReactIssue7711(event.currentTarget))
+      return event.preventDefault();
+    addFlag(2 /* Active */);
+  });
+  let handleBlur = useEvent(() => removeFlag(2 /* Active */));
   let isFirstOption = (firstOption == null ? void 0 : firstOption.id) === id2;
   let isDisabled = radioGroupDisabled || disabled;
-  let checked = radioGroupValue === value;
-  let propsWeControl = {
+  let checked = compare(radioGroupValue, value);
+  let ourProps = {
     ref: optionRef,
     id: id2,
     role: "radio",
@@ -87082,35 +88156,36 @@ function Option3(props) {
     onFocus: isDisabled ? void 0 : handleFocus,
     onBlur: isDisabled ? void 0 : handleBlur
   };
-  let slot = (0, import_react28.useMemo)(() => ({ checked, disabled: isDisabled, active: hasFlag(2 /* Active */) }), [checked, isDisabled, hasFlag]);
-  return /* @__PURE__ */ import_react28.default.createElement(DescriptionProvider, {
+  let slot = (0, import_react35.useMemo)(() => ({ checked, disabled: isDisabled, active: hasFlag(2 /* Active */) }), [checked, isDisabled, hasFlag]);
+  return /* @__PURE__ */ import_react35.default.createElement(DescriptionProvider, {
     name: "RadioGroup.Description"
-  }, /* @__PURE__ */ import_react28.default.createElement(LabelProvider, {
+  }, /* @__PURE__ */ import_react35.default.createElement(LabelProvider, {
     name: "RadioGroup.Label"
   }, render({
-    props: { ...passThroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_OPTION_TAG3,
     name: "RadioGroup.Option"
   })));
-}
-RadioGroup.Option = Option3;
-RadioGroup.Label = Label3;
-RadioGroup.Description = Description;
+});
+var RadioGroup2 = Object.assign(RadioGroupRoot, { Option: Option5, Label: Label5, Description });
 
 // src/components/switch/switch.tsx
-var import_react29 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-var GroupContext = (0, import_react29.createContext)(null);
+var import_react36 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var GroupContext = (0, import_react36.createContext)(null);
 GroupContext.displayName = "GroupContext";
-var DEFAULT_GROUP_TAG3 = import_react29.Fragment;
-function Group3(props) {
-  let [switchElement, setSwitchElement] = (0, import_react29.useState)(null);
+var DEFAULT_GROUP_TAG3 = import_react36.Fragment;
+function Group5(props) {
+  let [switchElement, setSwitchElement] = (0, import_react36.useState)(null);
   let [labelledby, LabelProvider] = useLabels();
   let [describedby, DescriptionProvider] = useDescriptions();
-  let context = (0, import_react29.useMemo)(() => ({ switch: switchElement, setSwitch: setSwitchElement, labelledby, describedby }), [switchElement, setSwitchElement, labelledby, describedby]);
-  return /* @__PURE__ */ import_react29.default.createElement(DescriptionProvider, {
+  let context = (0, import_react36.useMemo)(() => ({ switch: switchElement, setSwitch: setSwitchElement, labelledby, describedby }), [switchElement, setSwitchElement, labelledby, describedby]);
+  let ourProps = {};
+  let theirProps = props;
+  return /* @__PURE__ */ import_react36.default.createElement(DescriptionProvider, {
     name: "Switch.Description"
-  }, /* @__PURE__ */ import_react29.default.createElement(LabelProvider, {
+  }, /* @__PURE__ */ import_react36.default.createElement(LabelProvider, {
     name: "Switch.Label",
     props: {
       onClick() {
@@ -87120,33 +88195,48 @@ function Group3(props) {
         switchElement.focus({ preventScroll: true });
       }
     }
-  }, /* @__PURE__ */ import_react29.default.createElement(GroupContext.Provider, {
+  }, /* @__PURE__ */ import_react36.default.createElement(GroupContext.Provider, {
     value: context
-  }, render({ props, defaultTag: DEFAULT_GROUP_TAG3, name: "Switch.Group" }))));
+  }, render({
+    ourProps,
+    theirProps,
+    defaultTag: DEFAULT_GROUP_TAG3,
+    name: "Switch.Group"
+  }))));
 }
 var DEFAULT_SWITCH_TAG = "button";
-function Switch(props) {
-  let { checked, onChange, ...passThroughProps } = props;
+var SwitchRoot = forwardRefWithAs(function Switch(props, ref) {
+  let {
+    checked: controlledChecked,
+    defaultChecked = false,
+    onChange: controlledOnChange,
+    name,
+    value,
+    ...theirProps
+  } = props;
   let id2 = `headlessui-switch-${useId()}`;
-  let groupContext = (0, import_react29.useContext)(GroupContext);
-  let internalSwitchRef = (0, import_react29.useRef)(null);
-  let switchRef = useSyncRefs(internalSwitchRef, groupContext === null ? null : groupContext.setSwitch);
-  let toggle = (0, import_react29.useCallback)(() => onChange(!checked), [onChange, checked]);
-  let handleClick = (0, import_react29.useCallback)((event) => {
+  let groupContext = (0, import_react36.useContext)(GroupContext);
+  let internalSwitchRef = (0, import_react36.useRef)(null);
+  let switchRef = useSyncRefs(internalSwitchRef, ref, groupContext === null ? null : groupContext.setSwitch);
+  let [checked, onChange] = useControllable(controlledChecked, controlledOnChange, defaultChecked);
+  let toggle = useEvent(() => onChange == null ? void 0 : onChange(!checked));
+  let handleClick = useEvent((event) => {
     if (isDisabledReactIssue7711(event.currentTarget))
       return event.preventDefault();
     event.preventDefault();
     toggle();
-  }, [toggle]);
-  let handleKeyUp = (0, import_react29.useCallback)((event) => {
-    if (event.key !== "Tab" /* Tab */)
+  });
+  let handleKeyUp = useEvent((event) => {
+    if (event.key === " " /* Space */) {
       event.preventDefault();
-    if (event.key === " " /* Space */)
       toggle();
-  }, [toggle]);
-  let handleKeyPress = (0, import_react29.useCallback)((event) => event.preventDefault(), []);
-  let slot = (0, import_react29.useMemo)(() => ({ checked }), [checked]);
-  let propsWeControl = {
+    } else if (event.key === "Enter" /* Enter */) {
+      attemptSubmit(event.currentTarget);
+    }
+  });
+  let handleKeyPress = useEvent((event) => event.preventDefault());
+  let slot = (0, import_react36.useMemo)(() => ({ checked }), [checked]);
+  let ourProps = {
     id: id2,
     ref: switchRef,
     role: "switch",
@@ -87159,63 +88249,136 @@ function Switch(props) {
     onKeyUp: handleKeyUp,
     onKeyPress: handleKeyPress
   };
-  return render({
-    props: { ...passThroughProps, ...propsWeControl },
-    slot,
-    defaultTag: DEFAULT_SWITCH_TAG,
-    name: "Switch"
-  });
-}
-Switch.Group = Group3;
-Switch.Label = Label3;
-Switch.Description = Description;
+  return /* @__PURE__ */ import_react36.default.createElement(import_react36.default.Fragment, null, name != null && checked && /* @__PURE__ */ import_react36.default.createElement(Hidden, {
+    features: 4 /* Hidden */,
+    ...compact({
+      as: "input",
+      type: "checkbox",
+      hidden: true,
+      readOnly: true,
+      checked,
+      name,
+      value
+    })
+  }), render({ ourProps, theirProps, slot, defaultTag: DEFAULT_SWITCH_TAG, name: "Switch" }));
+});
+var Switch2 = Object.assign(SwitchRoot, { Group: Group5, Label: Label5, Description });
 
 // src/components/tabs/tabs.tsx
-var import_react30 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+var import_react38 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+
+// src/internal/focus-sentinel.tsx
+var import_react37 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
+function FocusSentinel({ onFocus }) {
+  let [enabled, setEnabled] = (0, import_react37.useState)(true);
+  if (!enabled)
+    return null;
+  return /* @__PURE__ */ import_react37.default.createElement(Hidden, {
+    as: "button",
+    type: "button",
+    features: 2 /* Focusable */,
+    onFocus: (event) => {
+      event.preventDefault();
+      let frame;
+      let tries = 50;
+      function forwardFocus() {
+        if (tries-- <= 0) {
+          if (frame)
+            cancelAnimationFrame(frame);
+          return;
+        }
+        if (onFocus()) {
+          setEnabled(false);
+          cancelAnimationFrame(frame);
+          return;
+        }
+        frame = requestAnimationFrame(forwardFocus);
+      }
+      frame = requestAnimationFrame(forwardFocus);
+    }
+  });
+}
+
+// src/components/tabs/tabs.tsx
 var reducers8 = {
   [0 /* SetSelectedIndex */](state2, action) {
-    if (state2.selectedIndex === action.index)
+    let focusableTabs = state2.tabs.filter((tab) => {
+      var _a2;
+      return !((_a2 = tab.current) == null ? void 0 : _a2.hasAttribute("disabled"));
+    });
+    if (action.index < 0) {
+      return { ...state2, selectedIndex: state2.tabs.indexOf(focusableTabs[0]) };
+    } else if (action.index > state2.tabs.length) {
+      return {
+        ...state2,
+        selectedIndex: state2.tabs.indexOf(focusableTabs[focusableTabs.length - 1])
+      };
+    }
+    let before = state2.tabs.slice(0, action.index);
+    let after = state2.tabs.slice(action.index);
+    let next = [...after, ...before].find((tab) => focusableTabs.includes(tab));
+    if (!next)
       return state2;
-    return { ...state2, selectedIndex: action.index };
+    return { ...state2, selectedIndex: state2.tabs.indexOf(next) };
   },
-  [1 /* SetOrientation */](state2, action) {
-    if (state2.orientation === action.orientation)
-      return state2;
-    return { ...state2, orientation: action.orientation };
-  },
-  [2 /* SetActivation */](state2, action) {
-    if (state2.activation === action.activation)
-      return state2;
-    return { ...state2, activation: action.activation };
-  },
-  [3 /* RegisterTab */](state2, action) {
+  [1 /* RegisterTab */](state2, action) {
+    var _a2;
     if (state2.tabs.includes(action.tab))
       return state2;
-    return { ...state2, tabs: [...state2.tabs, action.tab] };
+    let activeTab = state2.tabs[state2.selectedIndex];
+    let adjustedTabs = sortByDomNode([...state2.tabs, action.tab], (tab) => tab.current);
+    let selectedIndex = (_a2 = adjustedTabs.indexOf(activeTab)) != null ? _a2 : state2.selectedIndex;
+    if (selectedIndex === -1)
+      selectedIndex = state2.selectedIndex;
+    return { ...state2, tabs: adjustedTabs, selectedIndex };
   },
-  [4 /* UnregisterTab */](state2, action) {
+  [2 /* UnregisterTab */](state2, action) {
     return { ...state2, tabs: state2.tabs.filter((tab) => tab !== action.tab) };
   },
-  [5 /* RegisterPanel */](state2, action) {
+  [3 /* RegisterPanel */](state2, action) {
     if (state2.panels.includes(action.panel))
       return state2;
-    return { ...state2, panels: [...state2.panels, action.panel] };
+    return {
+      ...state2,
+      panels: sortByDomNode([...state2.panels, action.panel], (panel) => panel.current)
+    };
   },
-  [6 /* UnregisterPanel */](state2, action) {
+  [4 /* UnregisterPanel */](state2, action) {
     return { ...state2, panels: state2.panels.filter((panel) => panel !== action.panel) };
-  },
-  [7 /* ForceRerender */](state2) {
-    return { ...state2 };
   }
 };
-var TabsContext = (0, import_react30.createContext)(null);
-TabsContext.displayName = "TabsContext";
-function useTabsContext(component) {
-  let context = (0, import_react30.useContext)(TabsContext);
+var TabsSSRContext = (0, import_react38.createContext)(null);
+TabsSSRContext.displayName = "TabsSSRContext";
+function useSSRTabsCounter(component) {
+  let context = (0, import_react38.useContext)(TabsSSRContext);
   if (context === null) {
     let err = new Error(`<${component} /> is missing a parent <Tab.Group /> component.`);
     if (Error.captureStackTrace)
-      Error.captureStackTrace(err, useTabsContext);
+      Error.captureStackTrace(err, useSSRTabsCounter);
+    throw err;
+  }
+  return context;
+}
+var TabsDataContext = (0, import_react38.createContext)(null);
+TabsDataContext.displayName = "TabsDataContext";
+function useData2(component) {
+  let context = (0, import_react38.useContext)(TabsDataContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <Tab.Group /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useData2);
+    throw err;
+  }
+  return context;
+}
+var TabsActionsContext = (0, import_react38.createContext)(null);
+TabsActionsContext.displayName = "TabsActionsContext";
+function useActions2(component) {
+  let context = (0, import_react38.useContext)(TabsActionsContext);
+  if (context === null) {
+    let err = new Error(`<${component} /> is missing a parent <Tab.Group /> component.`);
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(err, useActions2);
     throw err;
   }
   return context;
@@ -87223,127 +88386,121 @@ function useTabsContext(component) {
 function stateReducer8(state2, action) {
   return match(action.type, reducers8, state2, action);
 }
-var DEFAULT_TABS_TAG = import_react30.Fragment;
-function Tabs(props) {
+var DEFAULT_TABS_TAG = import_react38.Fragment;
+var Tabs = forwardRefWithAs(function Tabs2(props, ref) {
   let {
     defaultIndex = 0,
     vertical = false,
     manual = false,
     onChange,
     selectedIndex = null,
-    ...passThroughProps
+    ...theirProps
   } = props;
   const orientation = vertical ? "vertical" : "horizontal";
   const activation = manual ? "manual" : "auto";
-  let [state2, dispatch] = (0, import_react30.useReducer)(stateReducer8, {
-    selectedIndex: null,
+  let isControlled = selectedIndex !== null;
+  let tabsRef = useSyncRefs(ref);
+  let [state2, dispatch] = (0, import_react38.useReducer)(stateReducer8, {
+    selectedIndex: selectedIndex != null ? selectedIndex : defaultIndex,
     tabs: [],
-    panels: [],
-    orientation,
-    activation
+    panels: []
   });
-  let slot = (0, import_react30.useMemo)(() => ({ selectedIndex: state2.selectedIndex }), [state2.selectedIndex]);
-  let onChangeRef = (0, import_react30.useRef)(() => {
-  });
-  (0, import_react30.useEffect)(() => {
-    dispatch({ type: 1 /* SetOrientation */, orientation });
-  }, [orientation]);
-  (0, import_react30.useEffect)(() => {
-    dispatch({ type: 2 /* SetActivation */, activation });
-  }, [activation]);
-  (0, import_react30.useEffect)(() => {
-    if (typeof onChange === "function") {
-      onChangeRef.current = onChange;
-    }
-  }, [onChange]);
-  (0, import_react30.useEffect)(() => {
-    if (state2.tabs.length <= 0)
-      return;
-    if (selectedIndex === null && state2.selectedIndex !== null)
-      return;
-    let tabs = state2.tabs.map((tab) => tab.current).filter(Boolean);
-    let focusableTabs = tabs.filter((tab) => !tab.hasAttribute("disabled"));
-    let indexToSet = selectedIndex != null ? selectedIndex : defaultIndex;
-    if (indexToSet < 0) {
-      dispatch({ type: 0 /* SetSelectedIndex */, index: tabs.indexOf(focusableTabs[0]) });
-    } else if (indexToSet > state2.tabs.length) {
-      dispatch({
-        type: 0 /* SetSelectedIndex */,
-        index: tabs.indexOf(focusableTabs[focusableTabs.length - 1])
-      });
-    } else {
-      let before = tabs.slice(0, indexToSet);
-      let after = tabs.slice(indexToSet);
-      let next = [...after, ...before].find((tab) => focusableTabs.includes(tab));
-      if (!next)
-        return;
-      dispatch({ type: 0 /* SetSelectedIndex */, index: tabs.indexOf(next) });
-    }
-  }, [defaultIndex, selectedIndex, state2.tabs, state2.selectedIndex]);
-  let lastChangedIndex = (0, import_react30.useRef)(state2.selectedIndex);
-  (0, import_react30.useEffect)(() => {
-    lastChangedIndex.current = state2.selectedIndex;
-  }, [state2.selectedIndex]);
-  let providerBag = (0, import_react30.useMemo)(() => [
-    state2,
-    {
-      dispatch,
-      change(index) {
-        if (lastChangedIndex.current !== index)
-          onChangeRef.current(index);
-        lastChangedIndex.current = index;
+  let slot = (0, import_react38.useMemo)(() => ({ selectedIndex: state2.selectedIndex }), [state2.selectedIndex]);
+  let onChangeRef = useLatestValue(onChange || (() => {
+  }));
+  let stableTabsRef = useLatestValue(state2.tabs);
+  let tabsData = (0, import_react38.useMemo)(() => ({ orientation, activation, ...state2 }), [orientation, activation, state2]);
+  let realSelectedIndex = useLatestValue(isControlled ? props.selectedIndex : state2.selectedIndex);
+  let tabsActions = (0, import_react38.useMemo)(() => ({
+    registerTab(tab) {
+      dispatch({ type: 1 /* RegisterTab */, tab });
+      return () => dispatch({ type: 2 /* UnregisterTab */, tab });
+    },
+    registerPanel(panel) {
+      dispatch({ type: 3 /* RegisterPanel */, panel });
+      return () => dispatch({ type: 4 /* UnregisterPanel */, panel });
+    },
+    change(index) {
+      if (realSelectedIndex.current !== index) {
+        onChangeRef.current(index);
+      }
+      if (!isControlled) {
         dispatch({ type: 0 /* SetSelectedIndex */, index });
       }
     }
-  ], [state2, dispatch]);
-  return /* @__PURE__ */ import_react30.default.createElement(TabsContext.Provider, {
-    value: providerBag
-  }, render({
-    props: { ...passThroughProps },
+  }), [dispatch, isControlled]);
+  useIsoMorphicEffect(() => {
+    dispatch({ type: 0 /* SetSelectedIndex */, index: selectedIndex != null ? selectedIndex : defaultIndex });
+  }, [selectedIndex]);
+  let SSRCounter = (0, import_react38.useRef)({ tabs: [], panels: [] });
+  let ourProps = { ref: tabsRef };
+  return /* @__PURE__ */ import_react38.default.createElement(TabsSSRContext.Provider, {
+    value: SSRCounter
+  }, /* @__PURE__ */ import_react38.default.createElement(TabsActionsContext.Provider, {
+    value: tabsActions
+  }, /* @__PURE__ */ import_react38.default.createElement(TabsDataContext.Provider, {
+    value: tabsData
+  }, tabsData.tabs.length <= 0 && /* @__PURE__ */ import_react38.default.createElement(FocusSentinel, {
+    onFocus: () => {
+      var _a2, _b;
+      for (let tab of stableTabsRef.current) {
+        if (((_a2 = tab.current) == null ? void 0 : _a2.tabIndex) === 0) {
+          (_b = tab.current) == null ? void 0 : _b.focus();
+          return true;
+        }
+      }
+      return false;
+    }
+  }), render({
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_TABS_TAG,
     name: "Tabs"
-  }));
-}
+  }))));
+});
 var DEFAULT_LIST_TAG = "div";
-function List(props) {
-  let [{ selectedIndex, orientation }] = useTabsContext("Tab.List");
+var List = forwardRefWithAs(function List2(props, ref) {
+  let { orientation, selectedIndex } = useData2("Tab.List");
+  let listRef = useSyncRefs(ref);
   let slot = { selectedIndex };
-  let propsWeControl = {
+  let theirProps = props;
+  let ourProps = {
+    ref: listRef,
     role: "tablist",
     "aria-orientation": orientation
   };
-  let passThroughProps = props;
   return render({
-    props: { ...passThroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_LIST_TAG,
     name: "Tabs.List"
   });
-}
+});
 var DEFAULT_TAB_TAG = "button";
-function Tab(props) {
-  var _a, _b;
+var TabRoot = forwardRefWithAs(function Tab(props, ref) {
+  var _a2, _b;
   let id2 = `headlessui-tabs-tab-${useId()}`;
-  let [{ selectedIndex, tabs, panels, orientation, activation }, { dispatch, change }] = useTabsContext(Tab.name);
-  let internalTabRef = (0, import_react30.useRef)(null);
-  let tabRef = useSyncRefs(internalTabRef, (element) => {
-    if (!element)
-      return;
-    dispatch({ type: 7 /* ForceRerender */ });
-  });
-  useIsoMorphicEffect(() => {
-    dispatch({ type: 3 /* RegisterTab */, tab: internalTabRef });
-    return () => dispatch({ type: 4 /* UnregisterTab */, tab: internalTabRef });
-  }, [dispatch, internalTabRef]);
+  let { orientation, activation, selectedIndex, tabs, panels } = useData2("Tab");
+  let actions = useActions2("Tab");
+  let SSRContext = useSSRTabsCounter("Tab");
+  let internalTabRef = (0, import_react38.useRef)(null);
+  let tabRef = useSyncRefs(internalTabRef, ref);
+  useIsoMorphicEffect(() => actions.registerTab(internalTabRef), [actions, internalTabRef]);
+  let mySSRIndex = SSRContext.current.tabs.indexOf(id2);
+  if (mySSRIndex === -1)
+    mySSRIndex = SSRContext.current.tabs.push(id2) - 1;
   let myIndex = tabs.indexOf(internalTabRef);
+  if (myIndex === -1)
+    myIndex = mySSRIndex;
   let selected = myIndex === selectedIndex;
-  let handleKeyDown = (0, import_react30.useCallback)((event) => {
+  let handleKeyDown = useEvent((event) => {
     let list = tabs.map((tab) => tab.current).filter(Boolean);
     if (event.key === " " /* Space */ || event.key === "Enter" /* Enter */) {
       event.preventDefault();
       event.stopPropagation();
-      change(myIndex);
+      actions.change(myIndex);
       return;
     }
     switch (event.key) {
@@ -87358,7 +88515,7 @@ function Tab(props) {
         event.stopPropagation();
         return focusIn(list, 8 /* Last */);
     }
-    return match(orientation, {
+    if (match(orientation, {
       vertical() {
         if (event.key === "ArrowUp" /* ArrowUp */)
           return focusIn(list, 2 /* Previous */ | 16 /* WrapAround */);
@@ -87373,102 +88530,114 @@ function Tab(props) {
           return focusIn(list, 4 /* Next */ | 16 /* WrapAround */);
         return;
       }
+    })) {
+      return event.preventDefault();
+    }
+  });
+  let handleFocus = useEvent(() => {
+    var _a3;
+    (_a3 = internalTabRef.current) == null ? void 0 : _a3.focus();
+  });
+  let ready = (0, import_react38.useRef)(false);
+  let handleSelection = useEvent(() => {
+    var _a3;
+    if (ready.current)
+      return;
+    ready.current = true;
+    (_a3 = internalTabRef.current) == null ? void 0 : _a3.focus();
+    actions.change(myIndex);
+    microTask(() => {
+      ready.current = false;
     });
-  }, [tabs, orientation, myIndex, change]);
-  let handleFocus = (0, import_react30.useCallback)(() => {
-    var _a2;
-    (_a2 = internalTabRef.current) == null ? void 0 : _a2.focus();
-  }, [internalTabRef]);
-  let handleSelection = (0, import_react30.useCallback)(() => {
-    var _a2;
-    (_a2 = internalTabRef.current) == null ? void 0 : _a2.focus();
-    change(myIndex);
-  }, [change, myIndex, internalTabRef]);
-  let slot = (0, import_react30.useMemo)(() => ({ selected }), [selected]);
-  let propsWeControl = {
+  });
+  let handleMouseDown = useEvent((event) => {
+    event.preventDefault();
+  });
+  let slot = (0, import_react38.useMemo)(() => ({ selected }), [selected]);
+  let theirProps = props;
+  let ourProps = {
     ref: tabRef,
     onKeyDown: handleKeyDown,
     onFocus: activation === "manual" ? handleFocus : handleSelection,
+    onMouseDown: handleMouseDown,
     onClick: handleSelection,
     id: id2,
     role: "tab",
     type: useResolveButtonType(props, internalTabRef),
-    "aria-controls": (_b = (_a = panels[myIndex]) == null ? void 0 : _a.current) == null ? void 0 : _b.id,
+    "aria-controls": (_b = (_a2 = panels[myIndex]) == null ? void 0 : _a2.current) == null ? void 0 : _b.id,
     "aria-selected": selected,
     tabIndex: selected ? 0 : -1
   };
-  let passThroughProps = props;
   return render({
-    props: { ...passThroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_TAB_TAG,
     name: "Tabs.Tab"
   });
-}
+});
 var DEFAULT_PANELS_TAG = "div";
-function Panels(props) {
-  let [{ selectedIndex }] = useTabsContext("Tab.Panels");
-  let slot = (0, import_react30.useMemo)(() => ({ selectedIndex }), [selectedIndex]);
+var Panels = forwardRefWithAs(function Panels2(props, ref) {
+  let { selectedIndex } = useData2("Tab.Panels");
+  let panelsRef = useSyncRefs(ref);
+  let slot = (0, import_react38.useMemo)(() => ({ selectedIndex }), [selectedIndex]);
+  let theirProps = props;
+  let ourProps = { ref: panelsRef };
   return render({
-    props,
+    ourProps,
+    theirProps,
     slot,
     defaultTag: DEFAULT_PANELS_TAG,
     name: "Tabs.Panels"
   });
-}
-var DEFAULT_PANEL_TAG3 = "div";
+});
+var DEFAULT_PANEL_TAG4 = "div";
 var PanelRenderFeatures3 = 1 /* RenderStrategy */ | 2 /* Static */;
-function Panel5(props) {
-  var _a, _b;
-  let [{ selectedIndex, tabs, panels }, { dispatch }] = useTabsContext("Tab.Panel");
+var Panel7 = forwardRefWithAs(function Panel8(props, ref) {
+  var _a2, _b, _c;
+  let { selectedIndex, tabs, panels } = useData2("Tab.Panel");
+  let actions = useActions2("Tab.Panel");
+  let SSRContext = useSSRTabsCounter("Tab.Panel");
   let id2 = `headlessui-tabs-panel-${useId()}`;
-  let internalPanelRef = (0, import_react30.useRef)(null);
-  let panelRef = useSyncRefs(internalPanelRef, (element) => {
-    if (!element)
-      return;
-    dispatch({ type: 7 /* ForceRerender */ });
-  });
-  useIsoMorphicEffect(() => {
-    dispatch({ type: 5 /* RegisterPanel */, panel: internalPanelRef });
-    return () => dispatch({ type: 6 /* UnregisterPanel */, panel: internalPanelRef });
-  }, [dispatch, internalPanelRef]);
+  let internalPanelRef = (0, import_react38.useRef)(null);
+  let panelRef = useSyncRefs(internalPanelRef, ref);
+  useIsoMorphicEffect(() => actions.registerPanel(internalPanelRef), [actions, internalPanelRef]);
+  let mySSRIndex = SSRContext.current.panels.indexOf(id2);
+  if (mySSRIndex === -1)
+    mySSRIndex = SSRContext.current.panels.push(id2) - 1;
   let myIndex = panels.indexOf(internalPanelRef);
+  if (myIndex === -1)
+    myIndex = mySSRIndex;
   let selected = myIndex === selectedIndex;
-  let slot = (0, import_react30.useMemo)(() => ({ selected }), [selected]);
-  let propsWeControl = {
+  let slot = (0, import_react38.useMemo)(() => ({ selected }), [selected]);
+  let theirProps = props;
+  let ourProps = {
     ref: panelRef,
     id: id2,
     role: "tabpanel",
-    "aria-labelledby": (_b = (_a = tabs[myIndex]) == null ? void 0 : _a.current) == null ? void 0 : _b.id,
+    "aria-labelledby": (_b = (_a2 = tabs[myIndex]) == null ? void 0 : _a2.current) == null ? void 0 : _b.id,
     tabIndex: selected ? 0 : -1
   };
-  let passThroughProps = props;
+  if (!selected && ((_c = props.unmount) != null ? _c : true)) {
+    return /* @__PURE__ */ import_react38.default.createElement(Hidden, {
+      as: "span",
+      ...ourProps
+    });
+  }
   return render({
-    props: { ...passThroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     slot,
-    defaultTag: DEFAULT_PANEL_TAG3,
+    defaultTag: DEFAULT_PANEL_TAG4,
     features: PanelRenderFeatures3,
     visible: selected,
     name: "Tabs.Panel"
   });
-}
-Tab.Group = Tabs;
-Tab.List = List;
-Tab.Panels = Panels;
-Tab.Panel = Panel5;
+});
+var Tab2 = Object.assign(TabRoot, { Group: Tabs, List, Panels, Panel: Panel7 });
 
 // src/components/transitions/transition.tsx
-var import_react32 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
-
-// src/hooks/use-is-initial-render.ts
-var import_react31 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function useIsInitialRender() {
-  let initial = (0, import_react31.useRef)(true);
-  (0, import_react31.useEffect)(() => {
-    initial.current = false;
-  }, []);
-  return initial.current;
-}
+var import_react39 = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"), 1);
 
 // src/utils/once.ts
 function once(cb) {
@@ -87493,77 +88662,139 @@ function waitForTransition(node, done) {
   if (!node)
     return d.dispose;
   let { transitionDuration, transitionDelay } = getComputedStyle(node);
-  let [durationMs, delaysMs] = [transitionDuration, transitionDelay].map((value) => {
+  let [durationMs, delayMs] = [transitionDuration, transitionDelay].map((value) => {
     let [resolvedValue = 0] = value.split(",").filter(Boolean).map((v) => v.includes("ms") ? parseFloat(v) : parseFloat(v) * 1e3).sort((a, z) => z - a);
     return resolvedValue;
   });
-  if (durationMs !== 0) {
-    d.setTimeout(() => {
-      done("finished" /* Finished */);
-    }, durationMs + delaysMs);
+  let totalDuration = durationMs + delayMs;
+  if (totalDuration !== 0) {
+    let listeners = [];
+    if (false) {} else {
+      listeners.push(d.addEventListener(node, "transitionrun", (event) => {
+        if (event.target !== event.currentTarget)
+          return;
+        listeners.splice(0).forEach((dispose) => dispose());
+        listeners.push(d.addEventListener(node, "transitionend", (event2) => {
+          if (event2.target !== event2.currentTarget)
+            return;
+          done("ended" /* Ended */);
+          listeners.splice(0).forEach((dispose) => dispose());
+        }), d.addEventListener(node, "transitioncancel", (event2) => {
+          if (event2.target !== event2.currentTarget)
+            return;
+          done("cancelled" /* Cancelled */);
+          listeners.splice(0).forEach((dispose) => dispose());
+        }));
+      }));
+    }
   } else {
-    done("finished" /* Finished */);
+    done("ended" /* Ended */);
   }
   d.add(() => done("cancelled" /* Cancelled */));
   return d.dispose;
 }
-function transition(node, base, from, to, entered, done) {
+function transition(node, classes, show, done) {
+  let direction = show ? "enter" : "leave";
   let d = disposables();
   let _done = done !== void 0 ? once(done) : () => {
   };
-  removeClasses(node, ...entered);
+  if (direction === "enter") {
+    node.removeAttribute("hidden");
+    node.style.display = "";
+  }
+  let base = match(direction, {
+    enter: () => classes.enter,
+    leave: () => classes.leave
+  });
+  let to = match(direction, {
+    enter: () => classes.enterTo,
+    leave: () => classes.leaveTo
+  });
+  let from = match(direction, {
+    enter: () => classes.enterFrom,
+    leave: () => classes.leaveFrom
+  });
+  removeClasses(node, ...classes.enter, ...classes.enterTo, ...classes.enterFrom, ...classes.leave, ...classes.leaveFrom, ...classes.leaveTo, ...classes.entered);
   addClasses(node, ...base, ...from);
   d.nextFrame(() => {
     removeClasses(node, ...from);
     addClasses(node, ...to);
-    d.add(waitForTransition(node, (reason) => {
-      removeClasses(node, ...to, ...base);
-      addClasses(node, ...entered);
+    waitForTransition(node, (reason) => {
+      if (reason === "ended" /* Ended */) {
+        removeClasses(node, ...base);
+        addClasses(node, ...classes.entered);
+      }
       return _done(reason);
-    }));
+    });
   });
-  d.add(() => removeClasses(node, ...base, ...from, ...to, ...entered));
-  d.add(() => _done("cancelled" /* Cancelled */));
   return d.dispose;
 }
 
-// src/components/transitions/transition.tsx
-function useSplitClasses(classes = "") {
-  return (0, import_react32.useMemo)(() => classes.split(" ").filter((className) => className.trim().length > 1), [classes]);
+// src/hooks/use-transition.ts
+function useTransition({ container, direction, classes, onStart, onStop }) {
+  let mounted = useIsMounted();
+  let d = useDisposables();
+  let latestDirection = useLatestValue(direction);
+  useIsoMorphicEffect(() => {
+    let dd = disposables();
+    d.add(dd.dispose);
+    let node = container.current;
+    if (!node)
+      return;
+    if (latestDirection.current === "idle")
+      return;
+    if (!mounted.current)
+      return;
+    dd.dispose();
+    onStart.current(latestDirection.current);
+    dd.add(transition(node, classes.current, latestDirection.current === "enter", (reason) => {
+      dd.dispose();
+      match(reason, {
+        ["ended" /* Ended */]() {
+          onStop.current(latestDirection.current);
+        },
+        ["cancelled" /* Cancelled */]: () => {
+        }
+      });
+    }));
+    return dd.dispose;
+  }, [direction]);
 }
-var TransitionContext = (0, import_react32.createContext)(null);
+
+// src/components/transitions/transition.tsx
+function splitClasses(classes = "") {
+  return classes.split(" ").filter((className) => className.trim().length > 1);
+}
+var TransitionContext = (0, import_react39.createContext)(null);
 TransitionContext.displayName = "TransitionContext";
 function useTransitionContext() {
-  let context = (0, import_react32.useContext)(TransitionContext);
+  let context = (0, import_react39.useContext)(TransitionContext);
   if (context === null) {
     throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
   }
   return context;
 }
 function useParentNesting() {
-  let context = (0, import_react32.useContext)(NestingContext);
+  let context = (0, import_react39.useContext)(NestingContext);
   if (context === null) {
     throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
   }
   return context;
 }
-var NestingContext = (0, import_react32.createContext)(null);
+var NestingContext = (0, import_react39.createContext)(null);
 NestingContext.displayName = "NestingContext";
 function hasChildren(bag) {
   if ("children" in bag)
     return hasChildren(bag.children);
-  return bag.current.filter(({ state: state2 }) => state2 === "visible" /* Visible */).length > 0;
+  return bag.current.filter(({ el }) => el.current !== null).filter(({ state: state2 }) => state2 === "visible" /* Visible */).length > 0;
 }
-function useNesting(done) {
-  let doneRef = (0, import_react32.useRef)(done);
-  let transitionableChildren = (0, import_react32.useRef)([]);
+function useNesting(done, parent) {
+  let doneRef = useLatestValue(done);
+  let transitionableChildren = (0, import_react39.useRef)([]);
   let mounted = useIsMounted();
-  (0, import_react32.useEffect)(() => {
-    doneRef.current = done;
-  }, [done]);
-  let unregister = (0, import_react32.useCallback)((childId, strategy = 1 /* Hidden */) => {
-    var _a;
-    let idx = transitionableChildren.current.findIndex(({ id: id2 }) => id2 === childId);
+  let d = useDisposables();
+  let unregister = useEvent((container, strategy = 1 /* Hidden */) => {
+    let idx = transitionableChildren.current.findIndex(({ el }) => el === container);
     if (idx === -1)
       return;
     match(strategy, {
@@ -87574,46 +88805,89 @@ function useNesting(done) {
         transitionableChildren.current[idx].state = "hidden" /* Hidden */;
       }
     });
-    if (!hasChildren(transitionableChildren) && mounted.current) {
-      (_a = doneRef.current) == null ? void 0 : _a.call(doneRef);
-    }
-  }, [doneRef, mounted, transitionableChildren]);
-  let register = (0, import_react32.useCallback)((childId) => {
-    let child = transitionableChildren.current.find(({ id: id2 }) => id2 === childId);
+    d.microTask(() => {
+      var _a2;
+      if (!hasChildren(transitionableChildren) && mounted.current) {
+        (_a2 = doneRef.current) == null ? void 0 : _a2.call(doneRef);
+      }
+    });
+  });
+  let register = useEvent((container) => {
+    let child = transitionableChildren.current.find(({ el }) => el === container);
     if (!child) {
-      transitionableChildren.current.push({ id: childId, state: "visible" /* Visible */ });
+      transitionableChildren.current.push({ el: container, state: "visible" /* Visible */ });
     } else if (child.state !== "visible" /* Visible */) {
       child.state = "visible" /* Visible */;
     }
-    return () => unregister(childId, 0 /* Unmount */);
-  }, [transitionableChildren, unregister]);
-  return (0, import_react32.useMemo)(() => ({
+    return () => unregister(container, 0 /* Unmount */);
+  });
+  let todos = (0, import_react39.useRef)([]);
+  let wait = (0, import_react39.useRef)(Promise.resolve());
+  let chains = (0, import_react39.useRef)({
+    enter: [],
+    leave: [],
+    idle: []
+  });
+  let onStart = useEvent((container, direction, cb) => {
+    todos.current.splice(0);
+    if (parent) {
+      parent.chains.current[direction] = parent.chains.current[direction].filter(([containerInParent]) => containerInParent !== container);
+    }
+    parent == null ? void 0 : parent.chains.current[direction].push([
+      container,
+      new Promise((resolve) => {
+        todos.current.push(resolve);
+      })
+    ]);
+    parent == null ? void 0 : parent.chains.current[direction].push([
+      container,
+      new Promise((resolve) => {
+        Promise.all(chains.current[direction].map(([_container, promise]) => promise)).then(() => resolve());
+      })
+    ]);
+    if (direction === "enter") {
+      wait.current = wait.current.then(() => parent == null ? void 0 : parent.wait.current).then(() => cb(direction));
+    } else {
+      cb(direction);
+    }
+  });
+  let onStop = useEvent((_container, direction, cb) => {
+    Promise.all(chains.current[direction].splice(0).map(([_container2, promise]) => promise)).then(() => {
+      var _a2;
+      (_a2 = todos.current.shift()) == null ? void 0 : _a2();
+    }).then(() => cb(direction));
+  });
+  return (0, import_react39.useMemo)(() => ({
     children: transitionableChildren,
     register,
-    unregister
-  }), [register, unregister, transitionableChildren]);
+    unregister,
+    onStart,
+    onStop,
+    wait,
+    chains
+  }), [register, unregister, transitionableChildren, onStart, onStop, chains, wait]);
 }
 function noop() {
 }
 var eventNames = ["beforeEnter", "afterEnter", "beforeLeave", "afterLeave"];
 function ensureEventHooksExist(events) {
-  var _a;
+  var _a2;
   let result = {};
   for (let name of eventNames) {
-    result[name] = (_a = events[name]) != null ? _a : noop;
+    result[name] = (_a2 = events[name]) != null ? _a2 : noop;
   }
   return result;
 }
 function useEvents(events) {
-  let eventsRef = (0, import_react32.useRef)(ensureEventHooksExist(events));
-  (0, import_react32.useEffect)(() => {
+  let eventsRef = (0, import_react39.useRef)(ensureEventHooksExist(events));
+  (0, import_react39.useEffect)(() => {
     eventsRef.current = ensureEventHooksExist(events);
   }, [events]);
   return eventsRef;
 }
 var DEFAULT_TRANSITION_CHILD_TAG = "div";
 var TransitionChildRenderFeatures = 1 /* RenderStrategy */;
-function TransitionChild(props) {
+var TransitionChild = forwardRefWithAs(function TransitionChild2(props, ref) {
   let {
     beforeEnter,
     afterEnter,
@@ -87628,114 +88902,127 @@ function TransitionChild(props) {
     leaveTo,
     ...rest
   } = props;
-  let container = (0, import_react32.useRef)(null);
-  let [state2, setState] = (0, import_react32.useState)("visible" /* Visible */);
+  let container = (0, import_react39.useRef)(null);
+  let transitionRef = useSyncRefs(container, ref);
   let strategy = rest.unmount ? 0 /* Unmount */ : 1 /* Hidden */;
   let { show, appear, initial } = useTransitionContext();
-  let { register, unregister } = useParentNesting();
-  let id2 = useId();
-  let isTransitioning = (0, import_react32.useRef)(false);
-  let nesting = useNesting(() => {
-    if (!isTransitioning.current) {
-      setState("hidden" /* Hidden */);
-      unregister(id2);
-      events.current.afterLeave();
-    }
-  });
-  useIsoMorphicEffect(() => {
-    if (!id2)
-      return;
-    return register(id2);
-  }, [register, id2]);
-  useIsoMorphicEffect(() => {
+  let [state2, setState] = (0, import_react39.useState)(show ? "visible" /* Visible */ : "hidden" /* Hidden */);
+  let parentNesting = useParentNesting();
+  let { register, unregister } = parentNesting;
+  let prevShow = (0, import_react39.useRef)(null);
+  (0, import_react39.useEffect)(() => register(container), [register, container]);
+  (0, import_react39.useEffect)(() => {
     if (strategy !== 1 /* Hidden */)
       return;
-    if (!id2)
+    if (!container.current)
       return;
     if (show && state2 !== "visible" /* Visible */) {
       setState("visible" /* Visible */);
       return;
     }
-    match(state2, {
-      ["hidden" /* Hidden */]: () => unregister(id2),
-      ["visible" /* Visible */]: () => register(id2)
+    return match(state2, {
+      ["hidden" /* Hidden */]: () => unregister(container),
+      ["visible" /* Visible */]: () => register(container)
     });
-  }, [state2, id2, register, unregister, show, strategy]);
-  let enterClasses = useSplitClasses(enter);
-  let enterFromClasses = useSplitClasses(enterFrom);
-  let enterToClasses = useSplitClasses(enterTo);
-  let enteredClasses = useSplitClasses(entered);
-  let leaveClasses = useSplitClasses(leave);
-  let leaveFromClasses = useSplitClasses(leaveFrom);
-  let leaveToClasses = useSplitClasses(leaveTo);
-  let events = useEvents({ beforeEnter, afterEnter, beforeLeave, afterLeave });
+  }, [state2, container, register, unregister, show, strategy]);
+  let classes = useLatestValue({
+    enter: splitClasses(enter),
+    enterFrom: splitClasses(enterFrom),
+    enterTo: splitClasses(enterTo),
+    entered: splitClasses(entered),
+    leave: splitClasses(leave),
+    leaveFrom: splitClasses(leaveFrom),
+    leaveTo: splitClasses(leaveTo)
+  });
+  let events = useEvents({
+    beforeEnter,
+    afterEnter,
+    beforeLeave,
+    afterLeave
+  });
   let ready = useServerHandoffComplete();
-  (0, import_react32.useEffect)(() => {
+  (0, import_react39.useEffect)(() => {
     if (ready && state2 === "visible" /* Visible */ && container.current === null) {
       throw new Error("Did you forget to passthrough the `ref` to the actual DOM node?");
     }
   }, [container, state2, ready]);
   let skip = initial && !appear;
-  useIsoMorphicEffect(() => {
-    let node = container.current;
-    if (!node)
-      return;
+  let transitionDirection = (() => {
+    if (!ready)
+      return "idle";
     if (skip)
-      return;
-    isTransitioning.current = true;
-    if (show)
-      events.current.beforeEnter();
-    if (!show)
-      events.current.beforeLeave();
-    return show ? transition(node, enterClasses, enterFromClasses, enterToClasses, enteredClasses, (reason) => {
-      isTransitioning.current = false;
-      if (reason === "finished" /* Finished */)
-        events.current.afterEnter();
-    }) : transition(node, leaveClasses, leaveFromClasses, leaveToClasses, enteredClasses, (reason) => {
-      isTransitioning.current = false;
-      if (reason !== "finished" /* Finished */)
-        return;
-      if (!hasChildren(nesting)) {
-        setState("hidden" /* Hidden */);
-        unregister(id2);
-        events.current.afterLeave();
+      return "idle";
+    if (prevShow.current === show)
+      return "idle";
+    return show ? "enter" : "leave";
+  })();
+  let beforeEvent = useEvent((direction) => {
+    return match(direction, {
+      enter: () => events.current.beforeEnter(),
+      leave: () => events.current.beforeLeave(),
+      idle: () => {
       }
     });
-  }, [
-    events,
-    id2,
-    isTransitioning,
-    unregister,
-    nesting,
+  });
+  let afterEvent = useEvent((direction) => {
+    return match(direction, {
+      enter: () => events.current.afterEnter(),
+      leave: () => events.current.afterLeave(),
+      idle: () => {
+      }
+    });
+  });
+  let nesting = useNesting(() => {
+    setState("hidden" /* Hidden */);
+    unregister(container);
+  }, parentNesting);
+  useTransition({
     container,
-    skip,
-    show,
-    enterClasses,
-    enterFromClasses,
-    enterToClasses,
-    leaveClasses,
-    leaveFromClasses,
-    leaveToClasses
-  ]);
-  let propsWeControl = { ref: container };
-  let passthroughProps = rest;
-  return /* @__PURE__ */ import_react32.default.createElement(NestingContext.Provider, {
+    classes,
+    direction: transitionDirection,
+    onStart: useLatestValue((direction) => {
+      nesting.onStart(container, direction, beforeEvent);
+    }),
+    onStop: useLatestValue((direction) => {
+      nesting.onStop(container, direction, afterEvent);
+      if (direction === "leave" && !hasChildren(nesting)) {
+        setState("hidden" /* Hidden */);
+        unregister(container);
+      }
+    })
+  });
+  (0, import_react39.useEffect)(() => {
+    if (!skip)
+      return;
+    if (strategy === 1 /* Hidden */) {
+      prevShow.current = null;
+    } else {
+      prevShow.current = show;
+    }
+  }, [show, skip, state2]);
+  let theirProps = rest;
+  let ourProps = { ref: transitionRef };
+  return /* @__PURE__ */ import_react39.default.createElement(NestingContext.Provider, {
     value: nesting
-  }, /* @__PURE__ */ import_react32.default.createElement(OpenClosedProvider, {
+  }, /* @__PURE__ */ import_react39.default.createElement(OpenClosedProvider, {
     value: match(state2, {
       ["visible" /* Visible */]: 0 /* Open */,
       ["hidden" /* Hidden */]: 1 /* Closed */
     })
   }, render({
-    props: { ...passthroughProps, ...propsWeControl },
+    ourProps,
+    theirProps,
     defaultTag: DEFAULT_TRANSITION_CHILD_TAG,
     features: TransitionChildRenderFeatures,
     visible: state2 === "visible" /* Visible */,
     name: "Transition.Child"
   })));
-}
-function Transition(props) {
-  let { show, appear = false, unmount, ...passthroughProps } = props;
+});
+var TransitionRoot = forwardRefWithAs(function Transition(props, ref) {
+  let { show, appear = false, unmount, ...theirProps } = props;
+  let internalTransitionRef = (0, import_react39.useRef)(null);
+  let transitionRef = useSyncRefs(internalTransitionRef, ref);
+  useServerHandoffComplete();
   let usesOpenClosedState = useOpenClosed();
   if (show === void 0 && usesOpenClosedState !== null) {
     show = match(usesOpenClosedState, {
@@ -87746,50 +89033,71 @@ function Transition(props) {
   if (![true, false].includes(show)) {
     throw new Error("A <Transition /> is used but it is missing a `show={true | false}` prop.");
   }
-  let [state2, setState] = (0, import_react32.useState)(show ? "visible" /* Visible */ : "hidden" /* Hidden */);
+  let [state2, setState] = (0, import_react39.useState)(show ? "visible" /* Visible */ : "hidden" /* Hidden */);
   let nestingBag = useNesting(() => {
     setState("hidden" /* Hidden */);
   });
-  let initial = useIsInitialRender();
-  let transitionBag = (0, import_react32.useMemo)(() => ({ show, appear: appear || !initial, initial }), [show, appear, initial]);
-  (0, import_react32.useEffect)(() => {
+  let [initial, setInitial] = (0, import_react39.useState)(true);
+  let changes = (0, import_react39.useRef)([show]);
+  useIsoMorphicEffect(() => {
+    if (initial === false) {
+      return;
+    }
+    if (changes.current[changes.current.length - 1] !== show) {
+      changes.current.push(show);
+      setInitial(false);
+    }
+  }, [changes, show]);
+  let transitionBag = (0, import_react39.useMemo)(() => ({ show, appear, initial }), [show, appear, initial]);
+  (0, import_react39.useEffect)(() => {
     if (show) {
       setState("visible" /* Visible */);
     } else if (!hasChildren(nestingBag)) {
       setState("hidden" /* Hidden */);
+    } else if (true) {
+      let node = internalTransitionRef.current;
+      if (!node)
+        return;
+      let rect = node.getBoundingClientRect();
+      if (rect.x === 0 && rect.y === 0 && rect.width === 0 && rect.height === 0) {
+        setState("hidden" /* Hidden */);
+      }
     }
   }, [show, nestingBag]);
   let sharedProps = { unmount };
-  return /* @__PURE__ */ import_react32.default.createElement(NestingContext.Provider, {
+  return /* @__PURE__ */ import_react39.default.createElement(NestingContext.Provider, {
     value: nestingBag
-  }, /* @__PURE__ */ import_react32.default.createElement(TransitionContext.Provider, {
+  }, /* @__PURE__ */ import_react39.default.createElement(TransitionContext.Provider, {
     value: transitionBag
   }, render({
-    props: {
+    ourProps: {
       ...sharedProps,
-      as: import_react32.Fragment,
-      children: /* @__PURE__ */ import_react32.default.createElement(TransitionChild, {
+      as: import_react39.Fragment,
+      children: /* @__PURE__ */ import_react39.default.createElement(TransitionChild, {
+        ref: transitionRef,
         ...sharedProps,
-        ...passthroughProps
+        ...theirProps
       })
     },
-    defaultTag: import_react32.Fragment,
+    theirProps: {},
+    defaultTag: import_react39.Fragment,
     features: TransitionChildRenderFeatures,
     visible: state2 === "visible" /* Visible */,
     name: "Transition"
   })));
-}
-Transition.Child = function Child(props) {
-  let hasTransitionContext = (0, import_react32.useContext)(TransitionContext) !== null;
+});
+var Child = forwardRefWithAs(function Child2(props, ref) {
+  let hasTransitionContext = (0, import_react39.useContext)(TransitionContext) !== null;
   let hasOpenClosedContext = useOpenClosed() !== null;
-  return !hasTransitionContext && hasOpenClosedContext ? /* @__PURE__ */ import_react32.default.createElement(Transition, {
+  return /* @__PURE__ */ import_react39.default.createElement(import_react39.default.Fragment, null, !hasTransitionContext && hasOpenClosedContext ? /* @__PURE__ */ import_react39.default.createElement(TransitionRoot, {
+    ref,
     ...props
-  }) : /* @__PURE__ */ import_react32.default.createElement(TransitionChild, {
+  }) : /* @__PURE__ */ import_react39.default.createElement(TransitionChild, {
+    ref,
     ...props
-  });
-};
-Transition.Root = Transition;
-module.exports = __toCommonJS(src_exports);
+  }));
+});
+var Transition2 = Object.assign(TransitionRoot, { Child, Root: TransitionRoot });
 
 
 /***/ }),

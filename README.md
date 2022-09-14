@@ -1,64 +1,154 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
+<!--suppress HtmlDeprecatedAttribute -->
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img alt="Sumé LMS" src=".github/sumelms.svg" />
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://goreportcard.com/report/github.com/sumelms/microservice-course">
+    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/sumelms/microservice-course" />
+  </a>
+  <a href="https://github.com/sumelms/microservice-course/actions/workflows/main.yaml">
+    <img alt="github action" src="https://github.com/sumelms/microservice-course/actions/workflows/main.yaml/badge.svg" />
+  </a>
+  <a href="https://codecov.io/gh/sumelms/microservice-course" >
+    <img alt="codecov" src="https://codecov.io/gh/sumelms/microservice-course/branch/main/graph/badge.svg?token=B78WZL5QDY"/>
+    </a>
+  <img alt="GitHub" src="https://img.shields.io/github/license/sumelms/microservice-course">
+  <a href="https://discord.gg/Yh9q9cd">
+    <img alt="Discord" src="https://img.shields.io/discord/726500188021063682">
+  </a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About Sumé LMS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> Note: This repository contains the **course microservice** of the Sumé LMS. If you are looking for more information
+> about the application, we strongly recommend you to [check the documentation](https://www.sumelms.com/docs).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sumé LMS is a modern and open-source learning management system that uses modern technologies to deliver performance
+and scalability to your learning environment.
 
-## Learning Laravel
+- Compatible with SCORM and xAPI (TinCan)
+- Flexible and modular
+- Open-source and Free
+- Fast and modern
+- Easy to install and run
+- Designed for microservices
+- REST API based application
+- and more.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Table of Contents
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- [Prerequisites](#prerequisites)
+- [Prepare](#prepare)
+- [Running](#running)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [Code of Conduct](#code-of-conduct)
+- [Contributors](#contributors)
+- [Support](#support)
+- [License](#license)
 
-## Laravel Sponsors
+## Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- PHP >= 8.0
+- MariaDB >= 10
+- NodeJS >= 18.4
+- Yarn >= 1.22 or NPM >= 8.12
+- Composer >= 2.4
 
-### Premium Partners
+## Prepare
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Clone the repository
+
+```bash
+$ git clone git@github.com:sumesolutions/bancodeitinerarios.git
+```
+
+Access the project folder, and download the dependencies
+
+```bash
+$ yarn install
+$ composer install
+```
+
+It may take a while to download all the dependencies, then you are [ready to run](#running).
+
+## Running
+
+OK! Now you build it you need to run the project. That should also be pretty easy.
+
+1. You need to configure your application
+
+```bash
+$ cp .env.example .env
+$ php artisan key:generate
+```
+
+Edit the `.env` file and configure your database connection.
+
+2. Run the migrations using 
+
+```bash
+$ php artisan migrate
+```
+
+> You can add `--seed` to the end of the migrate command to seed the database with some fake data.
+
+3. (new terminal) Start the frontend
+
+```bash
+$ yarn dev
+```
+
+4. (new terminal) Run the backend
+
+```bash
+$ php artisan serve
+```
+
+## Testing
+
+You can run all the tests with one single command:
+
+### Frontend testing
+```bash
+$ yarn test
+```
+
+### Backend testing
+```bash
+$ php artisan test
+```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Thank you for considering contributing to the project. In order to ensure that the Sumé LMS community is welcome to
+all make sure to read our [Contributor Guideline](CONTRIBUTING.md).
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Would you like to contribute and participate in our communities? Please read our [Code of Conduct](https://sumelms.com/docs/conduct).
 
-## Security Vulnerabilities
+## Contributors
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<a href="https://github.com/sumesolutions/bancodeitinerarios//graphs/contributors">
+  <img alt="contributors" src="https://contrib.rocks/image?repo=sumesolutions/bancodeitinerarios/" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
+## Support
+
+### Discussion
+
+You can reach us or get community support in our [Discord server](https://discord.gg/Yh9q9cd). This is the best way to
+find help and get in touch with the community.
+
+### Bugs or feature requests
+
+If you found a bug or have a feature request, the best way to do
+it is [opening an issue](https://github.com/sumesolutions/bancodeitinerarios/issues).
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project licensed by the Apache License 2.0. For more information check the LICENSE file.
