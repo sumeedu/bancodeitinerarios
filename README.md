@@ -107,7 +107,7 @@ $ php artisan test
 
 ## Contributing
 
-Thank you for considering contributing to the project. In order to ensure that the Sumé LMS community is welcome to
+Thank you for considering contributing to the project. In order to ensure that the Sumé community is welcome to
 all make sure to read our [Contributor Guideline](CONTRIBUTING.md).
 
 ## Code of Conduct
