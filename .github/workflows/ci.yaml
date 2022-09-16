@@ -69,7 +69,7 @@ jobs:
         yarn dev
 
     - name: 🔬 Run tests
-      run: php artisan test --coverage
+      run: php artisan test
 
     # - name: 📊 Upload coverage to Codecov
     #   uses: codecov/codecov-action@v2
