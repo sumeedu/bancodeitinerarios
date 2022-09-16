@@ -1,120 +1,128 @@
 <!--suppress HtmlDeprecatedAttribute -->
-<h1 align="center">Banco de Itinerários Formativos</h1>
+<h1 align="center">Banco de Itinerários</h1>
 
 <p align="center">
-  <a href="https://goreportcard.com/report/github.com/sumesolutions/bancodeitinerarios">
-    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/sumesolutions/bancodeitinerarios" />
-  </a>
-  <a href="https://github.com/sumesolutions/bancodeitinerarios/actions/workflows/main.yaml">
-    <img alt="github action" src="https://github.com/sumesolutions/bancodeitinerarios/actions/workflows/main.yaml/badge.svg" />
-  </a>
-  <a href="https://codecov.io/gh/sumesolutions/bancodeitinerarios" >
-    <img alt="codecov" src="https://codecov.io/gh/sumesolutions/bancodeitinerarios/branch/main/graph/badge.svg?token=B78WZL5QDY"/>
-    </a>
   <img alt="GitHub" src="https://img.shields.io/github/license/sumesolutions/bancodeitinerarios">
   <a href="https://discord.gg/Yh9q9cd">
     <img alt="Discord" src="https://img.shields.io/discord/726500188021063682">
   </a>
 </p>
 
-## About
+## Sobre o Projeto
 
-@TODO
+O **Banco de Itinerários** é um projeto de **código aberto**, que tem como principal objetivo oferecer uma ferramenta colaborativa para auxiliar instituições de ensino, secretarias educacionais e educadores da rede pública e privada por meio do intercâmbio de itinerários formativos e materiais educacionais.
 
-## Table of Contents
+### Quem faz?
 
-- [Prerequisites](#prerequisites)
-- [Prepare](#prepare)
-- [Running](#running)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Code of Conduct](#code-of-conduct)
-- [Contributors](#contributors)
-- [Support](#support)
-- [License](#license)
+O **Banco de Itinerários** é desenvolvido de forma colaborativa. As contribuições são realizadas das mais diversas formas, por profissionais dos mais diversos backgrounds. Sendo que o projeto é idealizado e coordenado pela iniciativa [Sumé Edu](https://github.com/sumeedu), parte da [Sumé Solutions](https://github.com/sumesolutions).
 
-## Prerequisites
+## Índice
 
-- PHP >= 8.0
-- MariaDB >= 10
-- NodeJS >= 18.4
-- Yarn >= 1.22 or NPM >= 8.12
-- Composer >= 2.4
+-   [Pré-requisitos](#pré-requisitos)
+-   [Preparar](#preparar)
+-   [Running](#running)
+-   [Testes](#testes)
+-   [Contribuições](#como-fazer-contribuições)
+-   [Código de conduta](#codigo-de-conduta)
+-   [Contribuidores](#contribuidores)
+-   [Suporte](#suporte)
+-   [Licença de uso](#licença-de-uso)
 
-## Prepare
+## Pré-requisitos
 
-Clone the repository
+-   PHP >= 8.0
+-   MariaDB >= 10
+-   NodeJS >= 18.4
+-   Yarn >= 1.22 or NPM >= 8.12
+-   Composer >= 2.4
+
+## Preparar
+
+1. Clone o repositório:
 
 ```bash
 $ git clone git@github.com:sumesolutions/bancodeitinerarios.git
 ```
 
-Access the project folder, and download the dependencies
+2. Abra o pasta do projeto no terminal:
+
+```bash
+$ cd bancodeitinerarios
+```
+
+3. Faça o dowload das dependencias, utilizando o sequinte comando:
 
 ```bash
 $ yarn install
 $ composer install
 ```
 
-It may take a while to download all the dependencies, then you are [ready to run](#running).
+_Pode demorar um pouco para baixar todas as dependências, então você está [pronto para rodar](#rodar)_
 
-## Running
+## Rodar projeto
 
-OK! Now you build it you need to run the project. That should also be pretty easy.
+_OK! Agora que você o constrói, você precisa executar o projeto. Isso também deve ser muito fácil._
 
-1. You need to configure your application
+1. Você precisa configurar sua aplicação:
 
 ```bash
 $ cp .env.example .env
 $ php artisan key:generate
 ```
 
-Edit the `.env` file and configure your database connection.
+> Edite o arquivo `.env` e configure sua conexão com o banco de dados.
 
-2. Run the migrations using 
+@TODO: Adicionar mais informações sobre banco de dados.
+
+2. Rode a migração usando:
 
 ```bash
 $ php artisan migrate
 ```
 
-> You can add `--seed` to the end of the migrate command to seed the database with some fake data.
+> Você pode adicionar `--seed` ao final do comando migrate para semear o banco de dados com alguns dados falsos.
 
-3. (new terminal) Start the frontend
+3. (Em um novo terminal) Inicie o frontend:
 
 ```bash
 $ yarn dev
 ```
 
-4. (new terminal) Run the backend
+4. (Em um novo terminal) Rode o backend:
 
 ```bash
 $ php artisan serve
 ```
 
-## Testing
+## Testes
 
-You can run all the tests with one single command:
+Todos os testes serão executados com um único comando:
 
-### Frontend testing
+### Frontend
+
 ```bash
 $ yarn test
 ```
 
-### Backend testing
+### Backend
+
 ```bash
 $ php artisan test
 ```
 
-## Contributing
+## Como fazer contribuições?
 
-Thank you for considering contributing to the project. In order to ensure that the Sumé community is welcome to
-all make sure to read our [Contributor Guideline](CONTRIBUTING.md).
+Obrigado por considerar contribuir para o projeto!
 
-## Code of Conduct
+Para garantir que a comunidade Sumé seja bem-vinda a
+todos certifiquem-se de ler nossas [Diretrizes do Contribuidor](CONTRIBUTING.md).
 
-Would you like to contribute and participate in our communities? Please read our [Code of Conduct](CODE_OF_CONDUCT.md).
+## Código de conduta
 
-## Contributors
+Você gostaria de contribuir e participar de nossas comunidades?
+Leia nosso [Código de Conduta](CODE_OF_CONDUCT.md).
+
+## Contrubuidores
 
 <a href="https://github.com/sumesolutions/bancodeitinerarios/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sumesolutions/bancodeitinerarios" />
@@ -122,18 +130,22 @@ Would you like to contribute and participate in our communities? Please read our
 
 Made with [contrib.rocks](https://contrib.rocks).
 
-## Support
+## Suporte
 
-### Discussion
+### Comunidade
 
-You can reach us or get community support in our [Discord server](https://discord.gg/Yh9q9cd). This is the best way to
-find help and get in touch with the community.
+Você pode entrar em contato conosco ou obter suporte da comunidade em nosso [servidor Discord](https://discord.gg/Yh9q9cd).
 
-### Bugs or feature requests
+_Esta é a melhor maneira de encontrar ajuda!_
 
-If you found a bug or have a feature request, the best way to do
-it is [opening an issue](https://github.com/sumesolutions/bancodeitinerarios/issues).
+### Bugs e solicitação de recursos
 
-## License
+Se você encontrou um bug ou tem uma solicitação de recurso, a melhor maneira de fazer isso é [opening a issue](https://github.com/sumesolutions/bancodeitinerarios/issues).
 
-This project licensed by the Apache License 2.0. For more information check the LICENSE file.
+## Licença
+
+Este projeto licenciado pela Apache License 2.0. Para mais informações consulte o arquivo LICENSE.
+
+---
+
+with ❤ - [SumeEduTeam](https://github.com/sumeedu)
