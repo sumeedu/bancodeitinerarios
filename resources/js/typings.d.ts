@@ -3,6 +3,7 @@ declare module '@ckeditor/ckeditor5-react' {
   import Event from '@ckeditor/ckeditor5-utils/src/eventinfo'
   import { EditorConfig } from '@ckeditor/ckeditor5-core/src/editor/editorconfig'
   import * as React from 'react';
+
   const CKEditor: React.FunctionComponent<{
     disabled?: boolean;
     editor: typeof ClassicEditor;

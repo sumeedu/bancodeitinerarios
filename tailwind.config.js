@@ -2,13 +2,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
+        'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './resources/js/**/*.js',
-        './resources/js/**/*.jsx',
-        './resources/js/**/*.ts',
-        './resources/js/**/*.tsx',
+        './resources/js/**/*.{js,jsx,ts,tsx}',
     ],
 
     theme: {
@@ -21,7 +19,8 @@ module.exports = {
     },
 
     plugins: [
-        require('@tailwindcss/forms'), 
+        require('flowbite/plugin'),
+        require('@tailwindcss/forms'),
         require('@tailwindcss/line-clamp'),
     ],
 
