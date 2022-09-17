@@ -1494,6 +1494,10 @@ select {
   margin-bottom: 0.5rem;
 }
 
+.-mr-1 {
+  margin-right: -0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1802,6 +1806,10 @@ select {
 
 .flex-auto {
   flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
 }
 
 .flex-shrink-0 {
@@ -3098,6 +3106,10 @@ select {
 
 .tracking-tighter {
   letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 
 .text-gray-500 {
@@ -4973,6 +4985,10 @@ select {
     height: 5rem;
   }
 
+  .sm\:h-9 {
+    height: 2.25rem;
+  }
+
   .sm\:w-10 {
     width: 2.5rem;
   }
@@ -5082,6 +5098,10 @@ select {
     right: 0px;
     bottom: 0px;
     left: 0px;
+  }
+
+  .md\:order-2 {
+    order: 2;
   }
 
   .md\:mx-2 {
