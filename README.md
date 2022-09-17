@@ -2,10 +2,13 @@
 <h1 align="center">Banco de Itinerários</h1>
 
 <p align="center">
-  <img alt="GitHub" src="https://img.shields.io/github/license/sumesolutions/bancodeitinerarios">
+  <a href="http://commitizen.github.io/cz-cli/">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
+  </a>
+  <img alt="GitHub" src="https://img.shields.io/github/license/sumesolutions/bancodeitinerarios">  
   <a href="https://discord.gg/Yh9q9cd">
     <img alt="Discord" src="https://img.shields.io/discord/726500188021063682">
-  </a>
+  </a>  
 </p>
 
 ## Sobre o Projeto
