@@ -122,7 +122,7 @@ todos certifiquem-se de ler nossas [Diretrizes do Contribuidor](CONTRIBUTING.md)
 Você gostaria de contribuir e participar de nossas comunidades?
 Leia nosso [Código de Conduta](CODE_OF_CONDUCT.md).
 
-## Contrubuidores
+## Contribuidores
 
 <a href="https://github.com/sumesolutions/bancodeitinerarios/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sumesolutions/bancodeitinerarios" />
