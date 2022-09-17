@@ -32,7 +32,7 @@ Never made an open source contribution before? Wondering how contributions work 
 
 ## Where can I go for help?
 
-If you need help, you can ask questions please, [join us at our Discord Community](https://discord.gg/S6J9pUmj2t).
+If you need help, you can ask questions please, [join us at our Discord Community](https://discord.gg/Yh9q9cd).
 
 ## What does the Code of Conduct mean for me?
 
