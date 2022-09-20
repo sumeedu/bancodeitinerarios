@@ -15,7 +15,7 @@ If you are interested in making a code contribution and would like to learn more
 
 Never made an open source contribution before? Wondering how contributions work in the in our project? Here's a quick rundown!
 
-1. [Find an issue](https://github.com/sumesolutions/bancodeitinerarios/issues) that you are interested in addressing or a feature that you would like to add.
+1. [Find an issue](https://github.com/sumeedu/bancodeitinerarios/issues) that you are interested in addressing or a feature that you would like to add.
 2. Fork the repository associated with the issue to your local GitHub organization. This means that you will have a copy of the repository under `your-GitHub-username/repository-name`.
 3. Clone the repository to your local machine using `git clone https://github.com/github-username/repository-name.git`.
 4. Create a new branch for your fix using `git checkout -b branch-name-here`.
@@ -29,6 +29,14 @@ Never made an open source contribution before? Wondering how contributions work 
 12. Wait for the pull request to be reviewed by a maintainer.
 13. Make changes to the pull request if the reviewing maintainer recommends them.
 14. Celebrate your success after your pull request is merged! 🎉 🎉
+
+### Sync with upstream
+
+It is common that you want to keep your fork updated with the upstream repository. Here's a quick rundown!
+
+1. Add the upstream repository to your fork using `git remote add upstream https://github.com/sumeedu/bancodeitinerarios.git`
+2. Sync you branch with upstream's `main` using `git pull upstream main --rebase`
+3. Celebrate your updated branch!  🎉 🎉
 
 ## Where can I go for help?
 
