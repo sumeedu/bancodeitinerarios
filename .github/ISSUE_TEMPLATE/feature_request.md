@@ -6,8 +6,11 @@ labels: ''
 assignees: ''
 ---
 
-**Descreva aqui o problema que a sua funcionalidade resolve**
-Uma descrição clara e coesa do problema que a sua solução resolve. (Exemplo: Eu estou sempre cansado de não encontrar [...])
+**Conte sua história**
+
+- Como um **(quem é você no sistema?)**
+- Eu quero **(qual funcionalidade você busca?)**
+- Para que **(qual o resultado final desejado?)**
 
 **Como seria a sua solução?**
 Descreva de forma clara e coesa o comportamento que você deseja ver acontecer. (Exemplo: Eu poderia filtrar os resultados por [...])
