@@ -6,6 +6,8 @@ use App\Http\Requests\Itinerary\StoreRequest;
 use App\Http\Requests\Itinerary\UpdateRequest;
 use App\Models\Category;
 use App\Models\Itinerary;
+use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -35,6 +37,11 @@ class ItineraryController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param string $slug
+     * @return Response
+     */
     public function category(Request $request, string $slug) : Response
     {
         $itineraries = Itinerary::whereHas('categories', function ($query) use ($slug) {
@@ -127,5 +134,29 @@ class ItineraryController extends Controller
         return redirect()
             ->route('itineraries.index')
             ->with('message', 'Itinerary was successfully deleted!');
+    }
+
+    /**
+     * @param User $user
+     * @param Itinerary $itinerary
+     * @return void
+     */
+    public function setFavorite(User $user, Itinerary $itinerary): void
+    {
+        $user = User::find($user->getAttributeValue('id'));
+        $itinerary = Itinerary::find($itinerary->getAttributeValue('id'));
+
+        $user->toggleFavorite($itinerary);
+    }
+
+    /**
+     * @param User $user
+     * @return JsonResponse
+     */
+    public function getFavorites(User $user): JsonResponse
+    {
+        $favorites = $user->getFavoriteItems(Itinerary::class)->paginate();
+
+        return response()->json($favorites);
     }
 }

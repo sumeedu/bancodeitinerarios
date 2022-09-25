@@ -49,6 +49,8 @@ Route::controller(ItineraryController::class)->group(function() {
 
         Route::delete('/itinerarios', 'destroy')->name('itineraries.destroy');
 
+        Route::post('/itinerarios/favoritar/{user}/{itinerary}', 'setFavorite')->name('itineraries.favorite');
+        Route::get('/itinerarios/favoritos/{user}', 'getFavorites')->name('itineraries.favorites');
     });
 
     Route::get('/itinerarios', 'index')->name('itineraries.index');
