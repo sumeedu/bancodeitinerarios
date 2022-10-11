@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency: ${{ github.ref }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:8.1
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: test
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+    - name: 📥 Check out the code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+
+    - name: ⏳ Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    - name: ⏳ Setup Composer Cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+
+    - name: ⏳ Get yarn cache
+      id: yarn-cache
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - name: ⏳ Setup Yarn Cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.yarn-cache.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: 💿 Install Composer dependencies
+      run: |
+        composer install --no-scripts
+
+    - name: 🏭 Prepare Laravel application
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
+
+    - name: 🧰 Install front-end dependencies
+      run: |
+        yarn install
+        yarn dev
+
+    - name: 🔬 Run tests
+      run: php artisan test
+
+    # - name: 📊 Upload coverage to Codecov
+    #   uses: codecov/codecov-action@v2
+    #   with:
+    #     fail_ci_if_error: true
+    #     files: coverage/coverage-final.json
+    #     token: ${{ secrets.CODECOV_TOKEN }}
+    #     verbose: true
