@@ -16,6 +16,7 @@ class ItineraryController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return Response
      */
     public function index(Request $request) : Response
@@ -35,6 +36,11 @@ class ItineraryController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param string $slug
+     * @return Response
+     */
     public function category(Request $request, string $slug) : Response
     {
         $itineraries = Itinerary::whereHas('categories', function ($query) use ($slug) {

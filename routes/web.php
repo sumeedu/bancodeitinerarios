@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\ItineraryController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Foundation\Application;
@@ -49,6 +50,9 @@ Route::controller(ItineraryController::class)->group(function() {
 
         Route::delete('/itinerarios', 'destroy')->name('itineraries.destroy');
 
+        Route::resource('favourite', FavouriteController::class)->only([
+            'index', 'store', 'destroy'
+        ]);
     });
 
     Route::get('/itinerarios', 'index')->name('itineraries.index');
